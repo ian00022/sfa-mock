@@ -1,0 +1,69 @@
+<!-- 參數設定 -->
+<div class="modal fade" id="modalCreateSysDropDSettingEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">編輯參數類別 <span class="modal-under-review-show"><span class="tag square red ml-2 ">待覆核</span></span></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group" data-id="referValue">
+            <label>項目名稱
+              <span class="markRed">*</span>
+              <a class="modal-under-review-notice pop-hover-stay" data-toggle="popover" href="#noticeSysItemNameDropD3"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
+            </label>
+            <input class="form-control inputstyle" type="text" name="sysItemName" placeholder="請輸入..." value="編輯範例">
+          </div>
+          <div class="form-group">
+            <label>項目系統代碼
+              <span class="markRed">*</span>
+            </label>
+            <input class="form-control inputstyle" type="text" name="sysItemCode" placeholder="請輸入..." value="readonlyData" readonly="readonly">
+            <input type="hidden" name="sysItemFrom" value=""/>
+          </div>
+          <div class="form-group displayno">
+            <input type="checkbox" value="true" name="hasNextLayerDropD3" id="hasNextLayerDropD3" checked readonly="readonly">
+            <label for="hasNextLayerDropD3">是否有下一層</label>
+          </div>
+        </form>
+        <div class="modal-edit-show">
+          <div class="dropdown-divider mb-3"></div>
+          <form class="row">
+            <h6 class="col-3 text-black-50">申請人</h6>
+            <h6 class="col-9">李維維&nbsp;<small class="text-black-50">2018/03/23</small></h6>
+
+            <h6 class="col-3 text-black-50">覆核主管</h6>
+            <h6 class="col-9">Vivian Chen&nbsp;<small class="text-black-50">2018/03/29</small></h6>
+          </form>
+        </div>
+        <div class="modal-under-review-show">
+          <div class="dropdown-divider mb-3"></div>
+          <form class="row">
+            <h6 class="col-3 text-black-50">申請人</h6>
+            <h6 class="col-9">李維維&nbsp;<small class="text-black-50">2018/03/23</small></h6>
+          </form>
+        </div>
+      </div>
+      <div class="displayno" id="noticeSysItemNameDropD3">
+        <b>項目名稱</b>
+        <div class="dropdown-divider"></div>
+        <div class="text-black-50">異動前：原先項目名稱</div>
+        <div class="">異動後：編輯範例</div>
+      </div>
+      <div class="modal-footer">
+        <div class="modal-m-review-hide">
+          <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+          <button type="submit" class="btn btn-ylw " data-dismiss="modal" aria-label="Close" onclick="modalCreateSysDrop.editSubmit.call(this)">確定</button>
+        </div>
+        <div class="modal-m-review-show">
+          <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+          <button type="button" class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close" onclick="modalCreateSysDrop.review.call(this, false)">退回</button>
+          <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close" onclick="modalCreateSysDrop.review.call(this, true)">放行</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

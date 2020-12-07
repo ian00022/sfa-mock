@@ -1,0 +1,549 @@
+@@if(navbarType === 'agent' || navbarType === '') {
+<div id="result_2" class="table-responsive data-list table-striped">
+  <table class="table table-striped tableinfo">
+    <thead>
+      <tr>
+
+        <th scope="col ">單號</th>
+        <th scope="col ">主旨
+
+        </th>
+        <th scope="col ">建立者</th>
+        <th scope="col ">指派單位</th>
+        <th scope="col ">指定回覆日期</th>
+        <th scope="col ">結案日</th>
+
+        <th scope="col "></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          日本東京來回機票資格審核名單
+        </td>
+        <td>陳先生</td>
+        <td>01234 板橋分行</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>-</td>
+        <td class="money-right">
+
+          <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_search_trans_Maindata.html' }">
+            檢視
+          </button>
+
+
+        </td>
+      </tr>
+      <tr>
+
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          日本名古屋來回機票特別貴賓禮遇豪華資格審...
+        </td>
+        <td>陳先生</td>
+        <td>01234 板橋分行</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>2018/01/07</td>
+
+        <td class="money-right">
+
+          <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_search_trans_Maindata.html' }">
+            檢視
+          </button>
+
+
+        </td>
+      </tr>
+      <tr>
+
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          地溝油廠商來訪名單
+        </td>
+        <td>陳先生</td>
+        <td>01234 板橋分行</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>-</td>
+
+        <td class="money-right">
+
+          <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_search_trans_Maindata.html' }">
+            檢視
+          </button>
+
+
+        </td>
+      </tr>
+      <tr>
+
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          日本東京來回機票資格審核名單
+        </td>
+        <td>陳先生</td>
+        <td>01234 板橋分行</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>2018/01/07</td>
+
+        <td class="money-right">
+
+          <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_search_trans_Maindata.html' }">
+            檢視
+          </button>
+
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <!-- pageNum -->
+  @@include('../datatable/pagination.html')
+</div>
+}
+@@if(navbarType === 'manager') {
+@@if(shPage === '') {
+<div id="result_2" class="table-responsive data-list table-striped">
+  <table class="table table-striped tableinfo">
+    <thead>
+      <tr>
+        <th>
+          <input type="checkbox" name="table-checkbox" id="table-checkbox_h_1" class="check">
+          <label for="table-checkbox_h_1"></label>
+
+        </th>
+        <th scope="col ">單號</th>
+        <th scope="col ">主旨
+
+        </th>
+        <th scope="col ">建立者</th>
+        <th scope="col ">指派單位</th>
+        <th scope="col ">指定回覆日期</th>
+        <th scope="col ">結案日</th>
+
+        <th scope="col "></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input type="checkbox" name="table-checkbox" id="table-checkbox_h_2" class="check">
+          <label for="table-checkbox_h_2"></label>
+        </td>
+
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          日本東京來回機票資格審核名單
+        </td>
+        <td>陳先生</td>
+        <td>01234 板橋分行</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>-</td>
+        <td class="money-right">
+
+          <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_search_trans_Maindata.html' }">
+            檢視
+          </button>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" name="table-checkbox" id="table-checkbox_h_3" class="check">
+          <label for="table-checkbox_h_3"></label>
+        </td>
+
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          日本名古屋來回機票特別貴賓禮遇豪華資格審...
+        </td>
+        <td>陳先生</td>
+        <td>01234 板橋分行</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>2018/01/07</td>
+
+        <td class="money-right">
+
+          <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_search_trans_Maindata.html' }">
+            檢視
+          </button>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" name="table-checkbox" id="table-checkbox_h_4" class="check">
+          <label for="table-checkbox_h_4"></label>
+        </td>
+
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          地溝油廠商來訪名單
+        </td>
+        <td>陳先生</td>
+        <td>01234 板橋分行</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>-</td>
+
+        <td class="money-right">
+
+          <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_search_trans_Maindata.html' }">
+            檢視
+          </button>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" name="table-checkbox" id="table-checkbox_h_5" class="check">
+          <label for="table-checkbox_h_5"></label>
+        </td>
+
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          日本東京來回機票資格審核名單
+        </td>
+        <td>陳先生</td>
+        <td>01234 板橋分行</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>2018/01/07</td>
+
+        <td class="money-right">
+
+          <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_search_trans_Maindata.html' }">
+            檢視
+          </button>
+
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <!-- pageNum -->
+  @@include('../datatable/pagination.html')
+</div>
+}
+@@if(shPage === 'recheck') {
+<div id="result_2" class="table-responsive data-list table-striped">
+  <table class="table table-striped tableinfo">
+    <thead>
+      <tr>
+
+        <th scope="col ">單號</th>
+        <th scope="col ">主旨
+
+        </th>
+        <th scope="col ">建立者</th>
+        <th scope="col ">指派單位</th>
+        <th scope="col ">指定回覆日期</th>
+        <th scope="col ">結案日</th>
+
+        <th scope="col "></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          日本東京來回機票資格審核名單
+        </td>
+        <td>陳先生</td>
+        <td>01234 板橋分行</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>-</td>
+        <td class="money-right">
+
+          <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./M_namelist_search_trans_Maindata.html' }">
+            檢視
+          </button>
+
+
+        </td>
+      </tr>
+      <tr>
+
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          日本名古屋來回機票特別貴賓禮遇豪華資格審...
+        </td>
+        <td>陳先生</td>
+        <td>01234 板橋分行</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>2018/01/07</td>
+
+        <td class="money-right">
+
+          <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./M_namelist_search_trans_Maindata.html' }">
+            檢視
+          </button>
+
+
+        </td>
+      </tr>
+      <tr>
+
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          地溝油廠商來訪名單
+        </td>
+        <td>陳先生</td>
+        <td>01234 板橋分行</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>-</td>
+
+        <td class="money-right">
+
+          <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./M_namelist_search_trans_Maindata.html' }">
+            檢視
+          </button>
+
+
+        </td>
+      </tr>
+      <tr>
+
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          日本東京來回機票資格審核名單
+        </td>
+        <td>陳先生</td>
+        <td>01234 板橋分行</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>2018/01/07</td>
+
+        <td class="money-right">
+
+          <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./M_namelist_search_trans_Maindata.html' }">
+            檢視
+          </button>
+
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <!-- pageNum -->
+  @@include('../datatable/pagination.html')
+</div>
+}
+@@if(shPage === 'trans') {
+<div id="result_2" class="table-responsive data-list">
+  <table class="table table-striped tableinfo">
+    <thead>
+      <tr>
+        <th scope="col ">
+          <input type="checkbox" name="table-checkbox" id="table-checkbox_h_6" class="check">
+          <label for="table-checkbox_h_6"></label>
+        </th>
+        <th scope="col ">單號</th>
+        <th scope="col ">主旨
+
+        </th>
+        <th scope="col ">建立者</th>
+        <th scope="col ">目前處理者</th>
+        <th scope="col ">指定回覆日期</th>
+        <th scope="col ">結案日</th>
+
+        <th scope="col "></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input type="checkbox" name="table-checkbox" id="table-checkbox_h_7" class="check">
+          <label for="table-checkbox_h_7"></label>
+        </td>
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          日本東京來回機票資格審核名單
+        </td>
+        <td>陳先生</td>
+        <td>林美玲</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>-</td>
+
+        <td class="money-right">
+          <div class="btn-group ">
+            <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./M_namelist_search_trans_Maindata.html' } ">
+              檢視
+            </button>
+            <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+              aria-haspopup="true " aria-expanded="fals">
+              <span class="sr-only ">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu ">
+              <a class="dropdown-item " data-toggle="modal" href="#trans">分派</a>
+              <a class="dropdown-item " href="#backToBank" data-toggle="modal">退回總行</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" name="table-checkbox" id="table-checkbox_h_8" class="check">
+          <label for="table-checkbox_h_8"></label>
+        </td>
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          日本名古屋來回機票特別貴賓禮遇豪華資格審...
+        </td>
+        <td>陳先生</td>
+        <td>林美玲</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>2018/01/07</td>
+
+        <td class="money-right">
+          <div class="btn-group ">
+            <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./M_namelist_search_trans_Maindata.html' } ">
+              檢視
+            </button>
+            <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+              aria-haspopup="true " aria-expanded="fals">
+              <span class="sr-only ">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu ">
+              <a class="dropdown-item " data-toggle="modal" href="#trans">分派</a>
+              <a class="dropdown-item " href="#backToBank" data-toggle="modal">退回總行</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" name="table-checkbox" id="table-checkbox_h_9" class="check">
+          <label for="table-checkbox_h_9"></label>
+        </td>
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          地溝油廠商來訪名單
+        </td>
+        <td>陳先生</td>
+        <td>林美玲</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>-</td>
+
+        <td class="money-right">
+          <div class="btn-group ">
+            <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./M_namelist_search_trans_Maindata.html' } ">
+              檢視
+            </button>
+            <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+              aria-haspopup="true " aria-expanded="fals">
+              <span class="sr-only ">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu ">
+              <a class="dropdown-item " data-toggle="modal" href="#trans">分派</a>
+              <a class="dropdown-item " href="#backToBank" data-toggle="modal">退回總行</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" name="table-checkbox" id="table-checkbox_h_10" class="check">
+          <label for="table-checkbox_h_10"></label>
+        </td>
+        <td>
+          AA0012356789
+        </td>
+        <td>
+          日本東京來回機票資格審核名單
+        </td>
+        <td>陳先生</td>
+        <td>林美玲</td>
+        <td>
+          2018/01/07
+        </td>
+        <td>2018/01/07</td>
+
+        <td class="money-right">
+          <div class="btn-group ">
+            <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./M_namelist_search_trans_Maindata.html' } ">
+              檢視
+            </button>
+            <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+              aria-haspopup="true " aria-expanded="fals">
+              <span class="sr-only ">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu ">
+              <a class="dropdown-item " data-toggle="modal" href="#trans">分派</a>
+              <a class="dropdown-item " href="#backToBank" data-toggle="modal">退回總行</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <!-- pageNum -->
+  @@include('../datatable/pagination.html')
+</div>
+}}

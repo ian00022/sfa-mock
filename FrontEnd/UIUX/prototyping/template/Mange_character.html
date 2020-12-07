@@ -1,0 +1,1296 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+
+<body>
+  <div class="container-fluid pl-0 pr-0">
+    @@include('./components/sidebar.html', { "sidebarCollapseFirst": "mange", "sidebar": "mangeCharacter" })
+    <div id="main-content" class="main-content">
+      @@include('./components/navbar.html', { "navbarType": "" })
+
+      <!-- 顧客查詢 -->
+      <section>
+        <nav class="navbar justify-content-between panel-head ">
+          <span class="navbar-brand ">角色權限設定</span>
+          <ul class="nav float-lg-right float-sm-none nav-function-btn">
+            <li>
+
+              <div class="nav-link " href="#">
+                <span class="textGary">排序</span>
+
+                <button class="btn dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  修改日期（最近）
+                </button>
+                <div class="dropdown-menu dropdown-menu-right-sorting">
+                  <a class="dropdown-item " href="# ">名單狀態</a>
+                  <a class="dropdown-item " href="# ">分派/建立日期</a>
+                  <a class="dropdown-item " href="# ">統一編號</a>
+                  <a class="dropdown-item " href="# ">戶名</a>
+                  <a class="dropdown-item " href="# ">行銷單位</a>
+                  <a class="dropdown-item " href="# ">行銷人員</a>
+                  <a class="dropdown-item " href="# ">產品</a>
+                  <a class="dropdown-item " href="# ">名單來源</a>
+                  <a class="dropdown-item " href="# ">名單類型</a>
+                </div>
+
+              </div>
+
+
+            </li>
+
+          </ul>
+
+        </nav>
+        <div class="pills-tab-container shadow">
+          <ul class="nav nav-pills tab" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a id="pills-home-tab" class="nav-link active" data-toggle="tab" href="#pills-base-info" role="tab" aria-controls="pills-base-info"
+                aria-selected="true">人員管理</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-notice-tab" data-toggle="pill" href="#pills-notice" role="tab" aria-controls="pills-notice"
+                aria-selected="false">
+                系統角色設定</a>
+            </li>
+
+
+
+
+
+          </ul>
+
+        </div>
+
+
+        <div class="tab-content" id="pills-tabContent">
+          <!--  人員管理 -->
+          <div class="tab-pane fade show active" id="pills-base-info" role="tabpanel" aria-labelledby="pills-base-info-tab">
+            <div class="area shadow">
+              <div id="search-section-0" class="form-row mr-0">
+                <div class="form-group col-12 col-md-4 col-lg-3">
+                  <label>系統角色</label>
+                  <select class="selectpicker inputstyleSelect">
+                    <option value="" class="displayno">請選擇...</option>
+                  </select>
+
+
+                </div>
+                <div class="form-group col-12 col-md-4 col-lg-3">
+                  <label>狀態</label>
+                  <select class="selectpicker inputstyleSelect">
+                    <option value="" class="displayno">請選擇...</option>
+                  </select>
+                </div>
+                <div class="form-group col-12 col-md-4 col-lg-3">
+                  <label>員工姓名</label>
+                  <input id="custID" type="text" class="form-control inputstyle " placeholder="e.g. 王大明 " maxlength="10">
+                </div>
+                <div class="form-group col-12 col-md-4 col-lg-3">
+                  <label>員工編號</label>
+                  <input id="custID" type="text" class="form-control inputstyle " placeholder="e.g. 131313 " maxlength="10">
+
+                </div>
+
+                <div class="form-group col-12 col-md-4 col-lg-3">
+                  <label>職稱</label>
+                  <select class="selectpicker inputstyleSelect">
+                    <option value="" class="displayno">請選擇...</option>
+                  </select>
+
+
+                </div>
+                <div class="form-group col-12 col-md-4 col-lg-3">
+                  <label>部門代號</label>
+                  <input id="custID" type="text" class="form-control inputstyle " placeholder="e.g. C131313 " maxlength="10">
+                </div>
+                <div class="form-group col-12 col-md-4 col-lg-3">
+                  @@include('./components/input/searh-btn-group.html')
+                </div>
+              </div>
+            </div>
+            <!-- Customer 表單 -->
+            <div id="data-list-0" class="table-responsive data-list">
+              <table class="table table-striped tableinfo">
+                <thead>
+                  <tr>
+                    <th scope="col ">員工編號</th>
+                    <th scope="col ">姓名</th>
+                    <th scope="col ">職稱</th>
+                    <th scope="col ">部門代號</th>
+                    <th scope="col ">系統角色</th>
+                    <th scope="col ">修改日期</th>
+                    <th scope="col ">狀態
+                      <i class="fa fa-question-circle-o iconspace" aria-hidden="true" data-toggle="modal" data-target="#stateInfo" data-whatever="@mdo "></i>
+                    </th>
+                    <th scope="col "></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>01234</td>
+                    <td>陳先生</td>
+                    <td>襄理</td>
+                    <td>9133</td>
+                    <td>後台管理主管</td>
+                    <td>-</td>
+                    <td>生效</td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editCharacterwork"
+                        data-whatever="@mdo">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="table-light">
+                    <td>01235</td>
+                    <td>馬力歐</td>
+                    <td>副理</td>
+                    <td>C307</td>
+                    <td>後台管理經辦, 行銷職系經辦</td>
+                    <td>2017/12/30</td>
+                    <td>停用</td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editCharacterNo"
+                        data-whatever="@mdo">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>01236</td>
+                    <td>傅哲人</td>
+                    <td>副總經理</td>
+                    <td>B060</td>
+                    <td>總行管理主管</td>
+                    <td>2018/03/23</td>
+                    <td>生效</td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editCharacterworkEdited">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="markRed">
+                    <td>01237</td>
+                    <td>安元輝</td>
+                    <td>資深襄理</td>
+                    <td>1230</td>
+                    <td>-</td>
+                    <td>2018/03/17</td>
+                    <td>待覆核</td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editCharacterRecheck"
+                        data-whatever="@mdo">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>01238</td>
+                    <td>楊宇哲</td>
+                    <td>資深專員</td>
+                    <td>0587</td>
+                    <td>後台管理主管, 行銷職系主管</td>
+                    <td>2017/11/23</td>
+                    <td>暫存</td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editCharacterTemp"
+                        data-whatever="@mdo">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>01239</td>
+                    <td>薩摩爾</td>
+                    <td>經理</td>
+                    <td>F208</td>
+                    <td>行銷職系經辦</td>
+                    <td>2017/11/28</td>
+                    <td>主管退回
+                      <i class="fa fa-ban markRed pop-hover-stay" data-toggle="popover" href="#t1528763431100" aria-hidden="true"></i>
+                    </td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editCharacterwork">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--  系統角色設定 -->
+          <div class="tab-pane fade" id="pills-notice" role="tabpanel" aria-labelledby="pills-notice-tab">
+
+            <nav class="navbar justify-content-between panel-head info-area">
+              <span class="navbar-brand "></span>
+
+              <ul class="nav float-lg-right float-sm-none nav-function-btn">
+                <li>
+                  <div class="nav-link " href="#">
+                    <span class="textGary">排序</span>
+
+                    <button class="btn dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      建立日期
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right-sorting">
+                      <a class="dropdown-item " href="# ">名單狀態</a>
+                      <a class="dropdown-item " href="# ">分派/建立日期</a>
+                      <a class="dropdown-item " href="# ">統一編號</a>
+                      <a class="dropdown-item " href="# ">戶名</a>
+                      <a class="dropdown-item " href="# ">行銷單位</a>
+                      <a class="dropdown-item " href="# ">行銷人員</a>
+                      <a class="dropdown-item " href="# ">產品</a>
+                      <a class="dropdown-item " href="# ">名單來源</a>
+                      <a class="dropdown-item " href="# ">名單類型</a>
+                    </div>
+
+                  </div>
+
+                </li>
+                <li>
+                  <button type="button" class="nav-link btn" data-toggle="modal" data-target="#editCharacterAdd" data-whatever="@mdo ">
+                    <i class="fa fa-plus iconspace" aria-hidden="true"></i>新增系統角色</button>
+                </li>
+
+              </ul>
+            </nav>
+            <!-- Customer 表單 -->
+            <div id="data-list-0" class="table-responsive data-list">
+              <table class="table table-striped tableinfo">
+                <thead>
+                  <tr>
+
+                    <th scope="col ">系統角色</th>
+                    <th scope="col ">角色說明</th>
+                    <th scope="col ">建立者</th>
+                    <th scope="col ">建立日期</th>
+                    <th scope="col ">狀態
+                      <i class="fa fa-question-circle-o iconspace" aria-hidden="true" data-toggle="modal" data-target="#stateInfo" data-whatever="@mdo "></i>
+                    </th>
+                    <th scope="col "></th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>後台管理主管</td>
+                    <td>角色說明至多兩行，過長用刪節號表示，如此範例可點選檢視查看詳情角
+                      <br />色說明至多兩行，過長用刪節號...
+                    </td>
+                    <td>系統預設</td>
+                    <td>2018/03/17</td>
+                    <td>生效</td>
+                    <td><button data-toggle="modal" data-target="#roleSettingEdit" class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button></td>
+                  </tr>
+                  <tr>
+                    <td>後台管理經辦</td>
+                    <td>新增系統角色</td>
+                    <td>系統預設</td>
+                    <td>2018/03/17</td>
+                    <td>生效</td>
+                    <td><button data-toggle="modal" data-target="#roleSettingEdit" class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button></td>
+                  </tr>
+                  <tr>
+                    <td>總行管理主管</td>
+                    <td>管理系統角色</td>
+                    <td>系統預設</td>
+                    <td>2018/03/17</td>
+                    <td>生效</td>
+                    <td><button data-toggle="modal" data-target="#roleSettingEdit" class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button></td>
+                  </tr>
+                  <tr>
+                    <td>總行管理經辦</td>
+                    <td>管理系統角色</td>
+                    <td>系統預設</td>
+                    <td>2018/03/17</td>
+                    <td>生效</td>
+                    <td><button data-toggle="modal" data-target="#roleSettingEdit" class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button></td>
+                  </tr>
+                  <tr>
+                    <td>行銷職系主管</td>
+                    <td>管理系統角色</td>
+                    <td>系統預設</td>
+                    <td>2018/03/17</td>
+                    <td>生效</td>
+                    <td><button data-toggle="modal" data-target="#roleSettingEdit" class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button></td>
+                  </tr>
+                  <tr>
+                    <td>行銷職系經辦</td>
+                    <td>管理系統角色</td>
+                    <td>系統預設</td>
+                    <td>2018/03/17</td>
+                    <td>生效</td>
+                    <td><button data-toggle="modal" data-target="#roleSettingEdit" class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button></td>
+                  </tr>
+                  <tr>
+                    <td>退回總行預設窗口</td>
+                    <td>管理系統角色</td>
+                    <td>系統預設</td>
+                    <td>2018/03/17</td>
+                    <td>生效</td>
+                    <td><button data-toggle="modal" data-target="#roleSettingEdit" class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button></td>
+                  </tr>
+                  <tr class="markRed">
+                    <td>Zookeeper</td>
+                    <td>管理系統角色</td>
+                    <td>楊文祥</td>
+                    <td>2018/03/17</td>
+                    <td>待覆核</td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#roleSettingUnderReview" style="padding: 5px 15px;">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button>
+                    </td>
+                  </tr>
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+
+      </section>
+      <!-- 新增系統角色設定 -->
+      <div class="modal fade" id="editCharacterAdd" tabindex="-1" role="dialog" aria-labelledby="editCharacterAdd" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">新增系統角色設定</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="form-group">
+                <label>系統角色名稱</label>
+                <input type="text" class="form-control inputstyle " placeholder="請輸入...">
+              </div>
+              <div class="form-group">
+                <label>角色說明</label>
+                <textarea class="form-control inputstyle  " rows="5" placeholder="請輸入..."></textarea>
+              </div>
+              <div class="form-group">
+                <label>角色功能</label>
+                <div id="normal" class="dropdown ">
+                  <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="btn-text">EBM</span>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                      <label class="form-check-label" for="normal_none">入口首頁</label>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">推播通知</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">相關專區連結</label>
+                      </div>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                      <label class="form-check-label" for="normal_none">個人資訊總覽</label>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">資訊搜尋</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">基本資料檢視</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">產品服務往來一覽</label>
+                      </div>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                      <label class="form-check-label" for="normal_none">轉介案件查詢</label>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">處理中案件總覽</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">商機轉介</label>
+                      </div>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                      <label class="form-check-label" for="normal_none">管理後台</label>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">角色權限管理</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">人員角色設定</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">推播內容通知設定</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">總行案件指派</label>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">暫存</button>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- 編輯系統角色設定 -->
+      <div class="modal fade" id="roleSettingEdit" tabindex="-1" role="dialog" aria-labelledby="roleSettingEdit" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">編輯系統角色設定</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="form-group">
+                <label>系統角色名稱</label>
+                <input type="text" class="form-control inputstyle" value="總行管理主管" placeholder="請輸入...">
+              </div>
+              <div class="form-group">
+                <label>角色說明</label>
+                <textarea class="form-control inputstyle" rows="5" placeholder="請輸入...">管理系統角色</textarea>
+              </div>
+              <div class="form-group">
+                <label>角色功能</label>
+                <div id="normal" class="dropdown ">
+                  <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="btn-text">EBM</span>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                      <label class="form-check-label" for="normal_none">入口首頁</label>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">推播通知</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">相關專區連結</label>
+                      </div>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                      <label class="form-check-label" for="normal_none">個人資訊總覽</label>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">資訊搜尋</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">基本資料檢視</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">產品服務往來一覽</label>
+                      </div>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                      <label class="form-check-label" for="normal_none">轉介案件查詢</label>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">處理中案件總覽</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">商機轉介</label>
+                      </div>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                      <label class="form-check-label" for="normal_none">管理後台</label>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">角色權限管理</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">人員角色設定</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">推播內容通知設定</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">總行案件指派</label>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown-divider mt-3 mb-3"></div>
+              <div class=" ps_note">角色功能(1)</div>
+              <p class=" mt-1 choosen">BEM</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">暫存</button>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- 待覆核系統角色設定 -->
+      <div class="modal fade" id="roleSettingUnderReview" tabindex="-1" role="dialog" aria-labelledby="roleSettingUnderReview" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">編輯系統角色設定 <span class="tag square red ml-2">待覆核</span></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="form-group">
+                <label>系統角色名稱</label>
+                <input type="text" class="form-control inputstyle" value="總行管理主管" placeholder="請輸入..." readonly>
+              </div>
+              <div class="form-group">
+                <label>角色說明</label>
+                <textarea class="form-control inputstyle" readonly rows="5" placeholder="請輸入...">管理系統角色</textarea>
+              </div>
+              <div class="form-group">
+                <label>角色功能</label>
+                <div id="normal" class="dropdown ">
+                  <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown" disabled 
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="btn-text">EBM</span>
+                  </button>
+                </div>
+              </div>
+              <div class="dropdown-divider mt-3 mb-3"></div>
+              <div class=" ps_note">角色功能(1)</div>
+              <p class=" mt-1 choosen">BEM</p>
+              <div class="dropdown-divider mt-3 mb-3"></div>
+              <div class="row">
+
+                <h6 class="col-3 text-black-50">申請人</h6>
+                <h6 class="col-9">李維維&nbsp;<small class="text-black-50">2018/03/23</small></h6>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- 編輯人員角色-生效 -->
+      <div class="modal fade" id="editCharacterwork" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-whatever="@mdo">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">編輯人員角色</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="form-group">
+                <h2 class="mb-3">陳大壕
+                  <span class="tag square blue ml-2 ">生效</span>
+                </h2>
+                <div class="row">
+                  <div class="col-3 ">
+                    <h6 class="textGary">系統角色</h6>
+                  </div>
+                  <div class="col-4">
+                    <h6>-</h6>
+                  </div>
+                  <div class="col-5"></div>
+
+                </div>
+              </div>
+              <div class="dropdown-divider  mt-3 mb-3"></div>
+              <div class="form-group">
+                <label class="note">角色設定</label>
+                <div id="character" class="dropdown ">
+                  <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="btn-text">後台管理主管</span>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#character')">全選</a>
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#character')">取消全選</a>
+                    <div class="dropdown-divider"></div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_0" value="後台管理主管">
+                      <label class="form-check-label" for="character_0">後台管理主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_1" value="後台管理經辦">
+                      <label class="form-check-label" for="character_1">後台管理經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_2" value="總行管理主管">
+                      <label class="form-check-label" for="character_2">總行管理主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_3" value="總行管理經辦">
+                      <label class="form-check-label" for="character_3">總行管理經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_4" value="行銷職系主管">
+                      <label class="form-check-label" for="character_4">行銷職系主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_5" value="行銷職系經辦">
+                      <label class="form-check-label" for="character_5">行銷職系經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_6" value="其他檢閱人員">
+                      <label class="form-check-label" for="character_6">其他檢閱人員</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div id="detail_result" class="col-12 row no-gutters"> -->
+              <div class="dropdown-divider mt-3 mb-3"></div>
+              <div class=" ps_note">角色設定(1)</div>
+              <p class=" mt-1 choosen">總行管理主管</p>
+
+              <!-- </div> -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">停用</button>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">暫存</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 編輯人員角色-生效&有編輯過->會有申請人及主管 -->
+      <div class="modal fade" id="editCharacterworkEdited" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-whatever="@mdo">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">編輯人員角色</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="form-group">
+                <h2 class="mb-3">陳大壕
+                  <span class="tag square blue ml-2 ">生效</span>
+                </h2>
+                <div class="row">
+                  <div class="col-3 ">
+                    <h6 class="textGary">系統角色</h6>
+                  </div>
+                  <div class="col-4">
+                    <h6>-</h6>
+                  </div>
+                  <div class="col-5"></div>
+
+                </div>
+              </div>
+              <div class="dropdown-divider  mt-3 mb-3"></div>
+              <div class="form-group">
+                <label class="note">角色設定</label>
+                <div id="character" class="dropdown ">
+                  <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="btn-text">後台管理主管</span>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#character')">全選</a>
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#character')">取消全選</a>
+                    <div class="dropdown-divider"></div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_0" value="後台管理主管">
+                      <label class="form-check-label" for="character_0">後台管理主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_1" value="後台管理經辦">
+                      <label class="form-check-label" for="character_1">後台管理經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_2" value="總行管理主管">
+                      <label class="form-check-label" for="character_2">總行管理主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_3" value="總行管理經辦">
+                      <label class="form-check-label" for="character_3">總行管理經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_4" value="行銷職系主管">
+                      <label class="form-check-label" for="character_4">行銷職系主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_5" value="行銷職系經辦">
+                      <label class="form-check-label" for="character_5">行銷職系經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="character_6" value="其他檢閱人員">
+                      <label class="form-check-label" for="character_6">其他檢閱人員</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div id="detail_result" class="col-12 row no-gutters"> -->
+              <div class="dropdown-divider mt-3 mb-3"></div>
+              <div class=" ps_note">角色設定(1)</div>
+              <p class=" mt-1 choosen">總行管理主管</p>
+              <div class="dropdown-divider mt-3 mb-3"></div>
+              <div class="row">
+
+                <h6 class="col-3 text-black-50">申請人</h6>
+                <h6 class="col-9">李維維&nbsp;<small class="text-black-50">2018/03/23</small></h6>
+                <h6 class="col-3 text-black-50">覆核主管</h6>
+                <h6 class="col-9">Vivan Chen&nbsp;<small class="text-black-50">2018/03/30</small></h6>
+              </div>
+              <!-- </div> -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">停用</button>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">暫存</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 編輯人員角色-待覆核 -->
+      <div class="modal fade" id="editCharacterRecheck" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-whatever="@mdo">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">編輯人員角色</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- <div class="col-12 bgBlue pt-3 pb-3 mb-4">
+                <h4 class="mb-2">更變(3)</h4>
+                <span class="textGary">新增</span>
+                <span class="blueText">後台管理主管、總行管理主管、行銷職系經辦</span>
+              </div> -->
+              <div class="form-group">
+
+                <h2 class="mb-3">陳大壕
+                  <span class="tag square red ml-2">待覆核</span>
+                </h2>
+                <div class="row">
+                  <div class="col-3 ">
+                    <h6 class="textGary">系統角色</h6>
+                  </div>
+                  <div class="col-4">
+                    <h6>總行管理主管</h6>
+                  </div>
+                  <div class="col-5"></div>
+
+                </div>
+              </div>
+              <div class="dropdown-divider  mt-3 mb-3"></div>
+              <div class="form-group">
+                <label class="note">角色設定&nbsp;<a class="under-review-notice pop-hover-stay" data-toggle="popover" href="#t1528764414084"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
+                </label>
+                <div id="normal" class="dropdown ">
+                  <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="btn-text">後台管理主管...+2</span>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#normal')">全選</a>
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#normal')">取消全選</a>
+                    <div class="dropdown-divider"></div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                      <label class="form-check-label" for="normal_none">後台管理主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_tracked" value="追蹤中">
+                      <label class="form-check-label" for="normal_tracked">後台管理經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">總行管理主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_accepted" value="已受理">
+                      <label class="form-check-label" for="normal_accepted">總行管理經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">行銷職系主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">行銷職系經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">其他檢閱人員</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div id="detail_result" class="col-12 row no-gutters"> -->
+              <div class="dropdown-divider mt-3 mb-3"></div>
+              <div class=" ps_note">角色設定(1)</div>
+              <p class=" mt-1 choosen">總行管理主管</p>
+              <div class="dropdown-divider mt-3 mb-3"></div>
+              <div class="row">
+
+                <h6 class="col-3 text-black-50">申請人</h6>
+                <h6 class="col-9">李維維&nbsp;<small class="text-black-50">2018/03/23</small></h6>
+              </div>
+              <!-- </div> -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">停用</button>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- 編輯人員角色-暫存 -->
+      <div class="modal fade" id="editCharacterTemp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-whatever="@mdo">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">編輯人員角色</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- <div class="col-12 bgBlue pt-3 pb-3 mb-4">
+                <h4 class="mb-2">更變(3)</h4>
+                <div class="mb-2">
+                  <span class="textGary">新增</span>
+                  <span class="blueText">後台管理主管、總行管理主管、行銷職系經辦</span>
+                </div>
+                <div class="mb-2">
+                  <span class="textGary">刪除</span>
+                  <span class="redText">後台管理主管</span>
+                </div>
+              </div> -->
+              <div class="form-group">
+
+                <h2 class="mb-3">陳大壕
+                  <span class="tag square orange ml-2 ">暫存</span>
+                  <a class="btn-link ml-1 mr-1 small" href=""><small><i class="fa fa-exclamation-triangle"></i>&nbsp;還原至最後生效狀態</small></a>
+                </h2>
+                <div class="row">
+                  <div class="col-3 ">
+                    <h6 class="textGary">系統角色</h6>
+                  </div>
+                  <div class="col-4">
+                    <h6>總行管理主管</h6>
+                  </div>
+                  <div class="col-5"></div>
+
+                </div>
+              </div>
+              <div class="dropdown-divider mt-3 mb-3"></div>
+              <div class="form-group">
+                <label class="note">角色設定&nbsp;<a class="under-review-notice pop-hover-stay" data-toggle="popover" href="#t1528764414084"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a></label>
+                <div id="normal" class="dropdown ">
+                  <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="btn-text">後台管理主管...+2</span>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#normal')">全選</a>
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#normal')">取消全選</a>
+                    <div class="dropdown-divider"></div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                      <label class="form-check-label" for="normal_none">後台管理主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_tracked" value="追蹤中">
+                      <label class="form-check-label" for="normal_tracked">後台管理經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">總行管理主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_accepted" value="已受理">
+                      <label class="form-check-label" for="normal_accepted">總行管理經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">行銷職系主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">行銷職系經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">其他檢閱人員</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div id="detail_result" class="col-12 row no-gutters"> -->
+              <div class="dropdown-divider mt-3 mb-3"></div>
+              <div class=" ps_note">角色設定(1)</div>
+              <p class=" mt-1 choosen">總行管理主管</p>
+
+              <div class="dropdown-divider mt-3 mb-3"></div>
+              <div class="row">
+
+                <h6 class="col-3 text-black-50">申請人</h6>
+                <h6 class="col-9">李維維&nbsp;<small class="text-black-50">2018/03/23</small></h6>
+              </div>
+              <!-- </div> -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">停用</button>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">暫存</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- 編輯人員角色-停用 -->
+      <div class="modal fade" id="editCharacterNo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-whatever="@mdo">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">編輯人員角色</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- <div class="col-12 bgBlue pt-3 pb-3 mb-4">
+                <h4 class="mb-2">更變(3)</h4>
+                <div class="mb-2">
+                  <span class="textGary">新增</span>
+                  <span class="blueText">後台管理主管、總行管理主管、行銷職系經辦</span>
+                </div>
+                <div class="mb-2">
+                  <span class="textGary">刪除</span>
+                  <span class="redText">後台管理主管</span>
+                </div>
+              </div> -->
+              <div class="form-group">
+
+                <h2 class="mb-3">陳大壕
+                  <span class="tag square red ml-2 ">停用</span>
+                </h2>
+                <div class="row">
+                  <div class="col-3 ">
+                    <h6 class="textGary">系統角色</h6>
+                  </div>
+                  <div class="col-4">
+                    <h6>總行管理主管</h6>
+                  </div>
+                  <div class="col-5"></div>
+
+                </div>
+              </div>
+              <div class="dropdown-divider  mt-3 mb-3"></div>
+              <div class="form-group">
+                <label class="note">角色設定
+
+                </label>
+                <div id="normal" class="dropdown ">
+                  <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" disabled>
+                    <span class="btn-text">後台管理主管...+2</span>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#normal')">全選</a>
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#normal')">取消全選</a>
+                    <div class="dropdown-divider"></div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                      <label class="form-check-label" for="normal_none">後台管理主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_tracked" value="追蹤中">
+                      <label class="form-check-label" for="normal_tracked">後台管理經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">總行管理主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_accepted" value="已受理">
+                      <label class="form-check-label" for="normal_accepted">總行管理經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">行銷職系主管</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">行銷職系經辦</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">其他檢閱人員</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div id="detail_result" class="col-12 row no-gutters"> -->
+              <div class="dropdown-divider mt-3 mb-3"></div>
+              <div class=" ps_note">角色設定(1)</div>
+              <p class=" mt-1 choosen">總行管理主管</p>
+
+              <!-- </div> -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">啟用</button>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-ylw " disabled>確定</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- pageNum -->
+      <nav class="navNum navbar-light">
+        <form class="form-inline">
+          <div>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
+            <span class="loanChartNote">1 of 1</span>
+          </div>
+          <div>
+            <span class="loanChartNote">Items per page:
+              <select class="form-control inputstyle">
+                <option>50</option>
+              </select>
+            </span>
+          </div>
+        </form>
+      </nav>
+    </div>
+
+    <!-- 狀態說明 -->
+    <div class="modal fade" id="stateInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">狀態說明</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="table statusInfo">
+              <thead>
+                <tr>
+                  <th scope="col">標示</th>
+                  <th scope="col">說明</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+
+                  <td>
+                    <span class="light light-red">
+                    </span>
+                  </td>
+                  <td>紅色燈號，當此燈亮起閃爍時代表該名單即將逾期，原因包含如下：(1)未分派(限主管) (2)未執行 (3)追蹤逾期 (4)到期通知</td>
+
+                </tr>
+                <tr>
+
+                  <td>
+                    <span class="light light-gary">
+                    </span>
+                  </td>
+                  <td>灰色燈號，該名單尚未逾期</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="iconyellow">
+                      <i class="fa fa-clock-o " aria-hidden="true"></i>
+                    </span>
+                  </td>
+                  <td>當顯示此標示時，即代表該名單待主管放行</td>
+
+                </tr>
+                <tr>
+                  <td>
+                    <span class="markRed">
+                      <i class="fa fa-ban" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                  <td>當顯示此標示時，即代表該名單遭主管退回</td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- 調閱行內帳務資訊 -->
+    <div class="modal fade" id="bankInfo" tabindex="-1" role="dialog" aria-labelledby="bankInfo" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">行銷警示註記</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>此顧客
+              <span class="markRed">不接受電話行銷</span>，請留意！</p>
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+            <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">新增行程
+
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 上傳文件 -->
+    <div class="modal fade" id="uplateInfo" tabindex="-1" role="dialog" aria-labelledby="uplateInfo" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="uplateInfo">上傳文件</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="uplatearea">
+              <div>
+                <a href="#">
+                  <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                </a>
+                <span>申請書</span>
+              </div>
+              <div>
+                <a href="#">
+                  <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                </a>
+                <span>身分證</span>
+              </div>
+
+              <div>
+                <a href="#">
+                  <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                </a>
+                <span>所得文件</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  @@include('./components/footer.html')
+  <script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+
+    function openDatePicker(id) {
+      console.log('aaa')
+      var did = "#" + id
+      $(did).datepicker('show');
+    }
+  </script>
+
+  <script id="search_error" type="text/template">
+    <div class="nodata">
+      <div>
+        <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+      </div>
+      <h6>查無資料</h6>
+
+    </div>
+  </script>
+</body>
+
+</html>

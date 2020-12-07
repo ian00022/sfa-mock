@@ -1,0 +1,144 @@
+
+				<!-- navbar -->
+				<nav class="navbar navbar-light shadow sticky-top">
+					<form class="form-inline">
+						<button type="button" onclick="toggle()" class="btn">
+							<i class="fa fa-bars greenLink" aria-hidden="true"></i>
+						</button>
+						<h2 class="greenLink pr-3 pl-3">SFA | 平台</h2>
+						<div class="input-group global-search">
+							<span class="input-group-addon inputstyle" id="basic-addon1">
+								<i style="vertical-align: bottom;" class="fa fa-search iconspace" aria-hidden="true"></i>
+							</span>
+							<input id="globalSearchText" type="text" class="form-control inputstyle" placeholder="搜尋整站..." autocomplete="off"  aria-describedby="basic-addon1" onkeyup="gSearch.keyup(event, this)">
+							<div class="global-search-select dropdown-menu">
+								<a class="dropdown-item" href="#">Regular link <small class="text-muted">small text</small></a>
+							</div>
+						</div>
+					</form>
+					<form class="form-inline">
+						<div id="salesJob" class="btn-group displayno">
+								<button type="button" class="btn greenLink" onclick="openNav()">
+										<i class="fa fa-line-chart" aria-hidden="true"></i>
+								</button>
+            </div>
+						<div class="btn-group">
+							<button type="button" class="btn notic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-bell iconspace fa-lg" aria-hidden="true"></i>
+							</button>
+							<div class="dropdown-menu dropdown-menu-right-bell shadow">
+
+
+								<div class="container no-gutters">
+
+									<div class="row">
+										<div class="col-12 pr-0 pl-0">
+											<div class="notice-board">
+												<div class="panel panel-default">
+													<div class="panel-heading pr-3 pl-3">
+														我的通知
+														<a class="greenLink float-right" onclick="noticeRead()">標示全部為已讀</a>
+													</div>
+													<div class="panel-body">
+
+														<ul>
+															<li>
+																<a onclick="noticeRead(this)" data-toggle="modal" href="#modalAssignNotification">已分派名單3筆
+																	<br />
+																	<span class="loanChartNote">2018/01/29</span>
+																</a>
+															</li>
+															<li>
+																<a onclick="noticeRead(this)" data-toggle="modal" href="#modalAssignNotification">未分派名單3筆
+																	<br />
+																	<span class="loanChartNote">2018/01/29</span>
+																</a>
+															</li>
+															<li class="read">
+																<a onclick="noticeRead(this)" data-toggle="modal" href="#modalAssignNotification">未分派名單3筆
+																	<br />
+																	<span class="loanChartNote">2018/01/29</span>
+																</a>
+															</li>
+															<li>
+																<a onclick="noticeRead(this)" data-toggle="modal" href="#modalAssignNotification">未分派名單3筆
+																	<br />
+																	<span class="loanChartNote">2018/01/29</span>
+																</a>
+															</li>
+
+														</ul>
+													</div>
+													<div class="panel-footer text-center">
+														<a class="greenLink ">查看歷史通知</a>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="btn-group">
+							<button type="button" class="btn dropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<img src="img/person.png" class="rounded-circle " alt="Cinque Terre " style="width:40px; height:40px; ">
+								<i class="fa fa-angle-down iconspace" aria-hidden="true"></i>
+							</button>
+							<div class="dropdown-menu dropdown-menu-right-person">
+
+
+								<div class="container no-gutters">
+
+									<div class="row">
+										<div class="col-12 pr-0 pl-0">
+											<div class="notice-board">
+												<div class="panel panel-default">
+													<div class="panel-heading pr-3 pl-3 pt-3 pb-4">
+														<div class="row">
+															<div class="col-4 ">
+
+
+																<img src="img/person.png" class="rounded-circle " alt="Cinque Terre" style="width: 80px;height: 80px; position:absolute;">
+
+
+
+
+															</div>
+															<div class="col-6 pt-4">
+																<span>你好，王小圖</span>
+																<br />
+																<span class="sub-tit">123123@bank.com</span>
+															</div>
+														</div>
+													</div>
+													<div class="panel-body pt-3">
+
+
+														<a class="dropdown-item" href="#">切換代理人</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModalREST" data-whatever="@mdo">休假代理</a>
+														<a class="dropdown-item" href="#" onclick="{location.href='./login.html' }">登出</a>
+
+													</div>
+
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						@@if(typeof marketingMap !== 'undefined' && marketingMap === true) {
+							@@include('./marketingMap.html')
+						}
+					</form>
+				</nav>
+				<div class="navbar-height"></div>
+        
+
+          @@include('./mananger/modalSalesJob.html')
+					<!-- @@if(typeof navbarType !== 'undefined' && navbarType === 'mananger') {}		 -->
+					@@include('./modalAssignNotification.html')

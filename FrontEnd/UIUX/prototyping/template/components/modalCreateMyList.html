@@ -1,0 +1,113 @@
+<!-- 新增自自建名單 -->
+<div class="modal fade" id="addselflist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">新增自建名單</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+                <label>顧客姓名
+                  <span class="markRed">*</span>
+                </label>
+                <input type="text" class="form-control inputstyle" value="陳大發">
+
+              </div>
+              <div class="col">
+                <label>統一編號
+                  <span class="markRed">*</span>
+                </label>
+                <input type="text" class="form-control inputstyle" value="A123456789">
+
+              </div>
+
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+                <label>產品別
+                  <span class="markRed">*</span>
+                </label>
+                <select class="selectpicker inputstyleSelect">
+                  <option value="" class="displayno">請選擇...</option>
+                  <option>信貸</option>
+                  <option>副擔保</option>
+                  <option>房貸</option>
+                  <option>小型事業(SB)</option>
+                  <option>卡友貸</option>
+                  <option>保險(儲蓄險、房貸壽險)</option>
+                </select>
+              </div>
+              <div class="col">
+                <label>來源說明
+                  <span class="markRed">*</span>
+                </label>
+                <select id="source" class="selectpicker inputstyleSelect">
+                  <option value="" class="displayno">請選擇...</option>
+                  <option value="">主動進線</option>
+                  <option value="">自來件(既有顧客)</option>
+                  <option value="">自來件(非既有顧客)</option>
+                  <option value="">聯行轉介</option>
+                  <option value="">客服轉介</option>
+                  <option value="">總行指派</option>
+                  <option value="">推薦產品</option>
+                  <option value="customerIntro">顧客介紹</option>
+                  <option value="">代書或房仲轉介</option>
+                  <option value="">ISMS雙向簡訊</option>
+                  <option value="">EDM行銷</option>
+                  <option value="other">其他</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div data-select-from='{"source": "customerIntro"}' class="form-group displayno">
+            <div class="row">
+              <div class="col">
+                <label>介紹人姓名
+                  <span class="markRed">(擇一必填)</span>
+                </label>
+                <input type="text" class="form-control inputstyle" value="" placeholder="e.g. 王大明">
+              </div>
+              <div class="col">
+                <label>介紹人統一編號
+                  <span class="markRed">(擇一必填)</span>
+                </label>
+                <input type="text" class="form-control inputstyle" value="" placeholder="e.g. A123456789">
+
+              </div>
+            </div>
+          </div>
+          <div class="form-group displayno" data-select-from='{"source": "other"}'>
+            <label class="note">備註
+
+            </label>
+            <label class="float-right ps_note"> (0/250)</label>
+            <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="isFromTrans" value="是否為轉貸名單">
+                  <label class="form-check-label" for="isFromTrans">是否為轉貸名單</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+        <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+      </div>
+    </div>
+  </div>
+</div>

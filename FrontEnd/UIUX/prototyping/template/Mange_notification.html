@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+<body>
+    <div class="container-fluid pl-0 pr-0">
+        @@include('./components/sidebar.html', {
+            "sidebarCollapseFirst": "mange",
+			"sidebar": "mangeNotification"
+		})
+        <div id="main-content" class="main-content">
+            @@include('./components/navbar.html', { "navbarType": "" })
+            <!-- 顧客查詢 -->
+            <section>
+                <nav class="navbar justify-content-between panel-head ">
+                    <span class="navbar-brand ">推播通知設定
+
+                    </span>
+
+                    <ul class="nav float-lg-right float-sm-none nav-function-btn">
+                        <li>
+
+                            <div class="nav-link " href="#">
+                                <span class="textGary">排序</span>
+
+                                <button class="btn dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    最近
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right-sorting">
+                                    <a class="dropdown-item " href="# ">名單狀態</a>
+                                    <a class="dropdown-item " href="# ">分派/建立日期</a>
+                                    <a class="dropdown-item " href="# ">統一編號</a>
+                                    <a class="dropdown-item " href="# ">戶名</a>
+                                    <a class="dropdown-item " href="# ">行銷單位</a>
+                                    <a class="dropdown-item " href="# ">行銷人員</a>
+                                    <a class="dropdown-item " href="# ">產品</a>
+                                    <a class="dropdown-item " href="# ">名單來源</a>
+                                    <a class="dropdown-item " href="# ">名單類型</a>
+                                </div>
+
+                            </div>
+
+
+                        </li>
+                        <li>
+                            <button type="button" class="nav-link btn" data-toggle="modal" data-target="#Addnotic" data-whatever="@mdo ">
+                                <i class="fa fa-plus iconspace" aria-hidden="true">
+                                </i>新增推播通知</button>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="area shadow">
+                    <div id="search-section-0" class="form-row mr-0">
+
+                        <div class="form-group col-12 col-md-4 col-lg-3">
+                            <label>狀態
+
+                            </label>
+                            <select class="selectpicker inputstyleSelect">
+                                <option value="" class="displayno">請選擇...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-12 col-md-4 col-lg-3">
+                            <label>標題</label>
+
+                            <input type="text" class="form-control inputstyle" placeholder="以關鍵字搜尋...">
+
+                        </div>
+                        <div class="form-group col-12 col-md-4 col-lg-3">
+                            <label>建立人
+
+                            </label>
+                            <select class="selectpicker inputstyleSelect">
+                                <option value="" class="displayno">請選擇...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-12 col-md-8 col-lg-6">
+                            <div class="form-row">
+                                <div class="form-group col-6">
+                                    <label>發布日期</label>
+                                    @@include('./components/input/date.html')
+                                </div>
+                                <div class="form-group col-6">
+                                    <label>結束日期</label>
+                                    @@include('./components/input/date.html')
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-12 col-md-4 col-lg-3">@@include('./components/input/searh-btn-group.html')</div>
+
+
+                    </div>
+                </div>
+            </section>
+            <!--  表單 -->
+            <div id="data-list-0" class="table-responsive data-list">
+
+                <table class="table table-striped tableinfo">
+                    <thead>
+                        <tr>
+                            <th scope="col ">標題</th>
+                            <th scope="col ">建立者</th>
+                            <th scope="col ">建立日期</th>
+                            <th scope="col ">發佈日期</th>
+                            <th scope="col ">結束日期</th>
+                            <th scope="col ">覆核主管</th>
+                            <th scope="col ">狀態
+
+                            </th>
+                            <th scope="col "></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「SFA平台網路投保」暨「SFA平台安心保」行銷活動上線</td>
+                            <td>陳先生</td>
+                            <td>2018/03/08</td>
+                            <td>2018/03/23</td>
+                            <td>2018/03/23</td>
+                            <td>Vivian Chen</td>
+                            <td>暫存</td>
+                            <td>
+                                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#Viewnotic" data-whatever="@mdo">
+                                    預覽
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#Editnotic" data-whatever="@mdo">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="markRed">
+                            <td>瑞光分行、沙鹿分行開業活動</td>
+                            <td>馬力歐</td>
+                            <td>2018/03/08</td>
+                            <td>2018/03/23</td>
+                            <td>2018/03/23</td>
+                            <td>Tommy Wang</td>
+                            <td>待覆核</td>
+                            <td>
+                                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#Viewnotic" data-whatever="@mdo">
+                                    預覽
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#Editnotic" data-whatever="@mdo">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>「SFA平台網路投保」暨「SFA平台安心保」行銷活動上線</td>
+                            <td>陳先生</td>
+                            <td>2018/03/08</td>
+                            <td>2018/03/23</td>
+                            <td>2018/03/23</td>
+                            <td>Vivian Chen</td>
+                            <td>生效</td>
+                            <td>
+                                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#Viewnotic" data-whatever="@mdo">
+                                    預覽
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#Editnotic" data-whatever="@mdo">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="markgary">
+                            <td>「SFA平台網路投保」暨「SFA平台安心保」行銷活動上線</td>
+                            <td>陳先生</td>
+                            <td>2018/03/08</td>
+                            <td>2018/03/23</td>
+                            <td>2018/03/23</td>
+                            <td>Vivian Chen</td>
+                            <td>停用</td>
+                            <td>
+                                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#Viewnotic" data-whatever="@mdo"
+                                    disabled>
+                                    預覽
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#Editnotic" data-whatever="@mdo"
+                                    disabled>
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- pageNum -->
+            <!--<nav class="navNum navbar-light">
+                    <form class="form-inline">
+                        <div>
+                            <button class=" btn-sm pageNum">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            </button>
+                            <button class=" btn-sm pageNum">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </button>
+                            <span class="loanChartNote">1-1 of 1</span>
+                        </div>
+                        <div>
+                            <span class="loanChartNote">Items per page:
+                                <select class="selectpicker inputstyleSelect">
+                                    <option>1</option>
+                                </select>
+                            </span>
+                        </div>
+                    </form>
+                </nav> -->
+        </div>
+
+        <!-- 新增推播通知 -->
+        <div class="modal fade" id="Addnotic" tabindex="-1" role="dialog" aria-labelledby="Addnotic" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="Addnotic">新增推播通知</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label>標題</label>
+                                <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+                            </div>
+                            <div class="form-group">
+                                <label>內文</label>
+                                <textarea class="form-control inputstyletextArea" rows="8" placeholder="請輸入..."></textarea>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col ml-3">
+                                        <label>建立者</label>
+                                        <select disabled class="selectpicker" data-live-search="true">
+                                            <option data-tokens="ketchup mustard">馬力歐</option>
+                                            <option data-tokens="mustard">科四海</option>
+                                            <option data-tokens="frosting">林熟分</option>
+                                            <option data-tokens="ketchup mustard">陳美琳</option>
+                                            <option data-tokens="mustard">理完稅</option>
+                                            <option data-tokens="frosting">陳沼澤</option>
+                                        </select>
+                                    </div>
+                                    <div class="col mr-3">
+                                        <label>覆核主管</label>
+                                        <select class="selectpicker" data-live-search="true">
+                                            <option data-tokens="ketchup mustard">馬力歐</option>
+                                            <option data-tokens="mustard">科四海</option>
+                                            <option data-tokens="frosting">林熟分</option>
+                                            <option data-tokens="ketchup mustard">陳美琳</option>
+                                            <option data-tokens="mustard">理完稅</option>
+                                            <option data-tokens="frosting">陳沼澤</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>重要性
+                                    <span class="markRed">*</span>
+                                </label>
+                                <div class="form-row">
+                                    <div class="form-check">
+                                        <input id="customer" name="client" checked="true" type="radio" style="cursor: pointer;">
+                                        <label for="customer" style="cursor: pointer;">重要</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input id="company" name="client" type="radio">
+                                        <label for="company" style="cursor: pointer;">一般</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+
+                                    <div class="col mr-3">
+                                        <label>發佈日期</label>
+                                        @@include('./components/input/date.html', {"daterange": false})
+                                    </div>
+                                    <div class="col mr-3">
+                                        <label>結束日期</label>
+                                        @@include('./components/input/date.html', {"daterange": false})
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col ml-3">
+                                        <label>發布對象
+
+                                        </label>
+
+                                        <select class="selectpicker inputstyleSelect">
+                                            <option value="" class="displayno">請選擇...</option>
+                                            <option>職系</option>
+                                            <option>經辦</option>
+
+
+                                        </select>
+                                    </div>
+                                    <div class="col mr-3 pt-1">
+                                        <label></label>
+
+                                        <select class="selectpicker inputstyleSelect">
+                                            <option value="" class="displayno">請選擇...</option>
+                                            <option>理大壕</option>
+                                            <option>理大壕</option>
+                                            <option>理大壕</option>
+                                            <option>理大壕</option>
+
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                        <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">儲存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 編輯推播通知 -->
+        <div class="modal fade" id="Editnotic" tabindex="-1" role="dialog" aria-labelledby="Editnotic" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="Editnotic">編輯推播通知
+                            <span class="tag square orange ml-2">暫存</span>
+                            <a class="btn-link ml-1 mr-1 small" href=""><small><i class="fa fa-exclamation-triangle"></i>&nbsp;還原至最後生效狀態</small></a>
+                        </h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label>標題</label>
+                                <input type="text" class="form-control inputstyle" value="「SFA平台網路投保」暨「SFA平台安心保」行銷活動上線">
+                            </div>
+                            <div class="form-group">
+                                <label>內文</label>
+                                <textarea class="form-control inputstyletextArea" rows="8">感謝您的愛護，2018年3月12日起，頭份分行於苗栗縣頭份市中央路56號提供您優質的金融服務，歡迎您繼續支持與指導！ 服務項目：企業金融、消費金融、存款、個人理財、共同基金、代理收付、信用卡、匯兌、電子銀行、便捷金融區、外匯指定銀行等業務。
+                                </textarea>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col ml-3">
+                                        <label>建立者</label>
+                                        <select disabled class="selectpicker" data-live-search="true">
+                                            <option data-tokens="ketchup mustard">李維維</option>
+                                            <option data-tokens="mustard">科四海</option>
+                                            <option data-tokens="frosting">林熟分</option>
+                                            <option data-tokens="ketchup mustard">陳美琳</option>
+                                            <option data-tokens="mustard">理完稅</option>
+                                            <option data-tokens="frosting">陳沼澤</option>
+                                        </select>
+                                    </div>
+                                    <div class="col mr-3">
+                                        <label>覆核主管</label>
+                                        <select class="selectpicker" data-live-search="true">
+                                            <option data-tokens="ketchup mustard">Vivian Chen</option>
+                                            <option data-tokens="mustard">科四海</option>
+                                            <option data-tokens="frosting">林熟分</option>
+                                            <option data-tokens="ketchup mustard">陳美琳</option>
+                                            <option data-tokens="mustard">理完稅</option>
+                                            <option data-tokens="frosting">陳沼澤</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>重要性
+                                    <span class="markRed">*</span>
+                                </label>
+                                <div class="form-row">
+                                    <div class="form-check">
+                                        <input id="customer" name="client" checked="true" type="radio" style="cursor: pointer;">
+                                        <label for="customer" style="cursor: pointer;">重要</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input id="company" name="client" type="radio">
+                                        <label for="company" style="cursor: pointer;">一般</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+
+                                    <div class="col mr-3">
+                                        <label>發佈日期</label>
+                                        @@include('./components/input/date.html', {"daterange": false})
+                                    </div>
+                                    <div class="col mr-3">
+                                        <label>結束日期</label>
+                                        @@include('./components/input/date.html', {"daterange": false})
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col ml-3">
+                                        <label>發布對象
+
+                                        </label>
+
+                                        <select class="selectpicker inputstyleSelect">
+
+                                            <option>職系</option>
+                                            <option>經辦</option>
+
+
+                                        </select>
+                                    </div>
+                                    <div class="col mr-3 pt-1">
+                                        <label></label>
+
+                                        <select class="selectpicker inputstyleSelect">
+
+                                            <option>全部</option>
+                                            <option>理大壕</option>
+                                            <option>理大壕</option>
+                                            <option>理大壕</option>
+
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                        <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">儲存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 預覽 -->
+        <div class="modal fade" id="Viewnotic" tabindex="-1" role="dialog" aria-labelledby="Viewnotic" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="Viewnotic">「SFA平台網路投保」暨「SFA平台安心保」行銷活動上線
+                            <span class="tag square blue ml-2">生效</span>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>感謝您的愛護，2018年3月12日起，頭份分行於苗栗縣頭份市中央路56號提供您優質的金融服務，歡迎您繼續支持與指導！ 服務項目：企業金融、消費金融、存款、個人理財、共同基金、代理收付 、信用卡、匯兌、電子銀行、便捷金融區、外匯指定銀行等業務。</p>
+                        <div class="dropdown-divider mb-4"></div>
+                        <form class="mb-4">
+                            <div class="col-12 pl-0 mt-2">
+                                <h6 class="topform-tit">建立者</h6>
+                                <h6 class="form-body">李維維</h6>
+                            </div>
+                            <div class="col-12 pl-0 mt-2">
+                                <h6 class="topform-tit">覆核主管</h6>
+                                <h6 class="form-body">Vivian Chen</h6>
+                            </div>
+                            <div class="col-12 pl-0 mt-2">
+                                <h6 class="topform-tit">建立日期</h6>
+                                <h6 class="form-body">2018/03/23</h6>
+                            </div>
+                            <div class="col-12 pl-0 mt-2">
+                                <h6 class="topform-tit">發布日期</h6>
+                                <h6 class="form-body">2018/03/23</h6>
+                            </div>
+                            <div class="col-12 pl-0 mt-2">
+                                <h6 class="topform-tit">發佈對象</h6>
+                                <h6 class="form-body">職系 - 行銷職系經辦</h6>
+                            </div>
+
+
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                        <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">寄出</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+@@include('./components/footer.html')
+<script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+
+    // function openDatePicker(id) {
+    //     console.log('aaa')
+    //     var did = "#" + id
+    //     $(did).datepicker('show');
+    // }
+</script>
+
+<script id="search_error" type="text/template">
+    <div class="nodata">
+        <div>
+            <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+        </div>
+        <h6>查無資料</h6>
+
+    </div>
+</script>
+</body>
+</html>

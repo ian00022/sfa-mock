@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+
+<body>
+  <div class="container-fluid pl-0 pr-0">
+    @@include('./components/sidebar.html', { "sidebarCollapseFirst": "mange", "sidebar": "mangeEmail" })
+    <div id="main-content" class="main-content">
+      @@include('./components/navbar.html', { "navbarType": "" })
+
+      <!-- 顧客查詢 -->
+      <section>
+        <nav class="navbar justify-content-between panel-head ">
+          <span class="navbar-brand ">E-mail 樣板設定</span>
+          <ul class="nav float-lg-right float-sm-none nav-function-btn">
+            <li>
+
+              <div class="nav-link " href="#">
+                <span class="textGary">排序</span>
+
+                <button class="btn dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  最近
+                </button>
+                <div class="dropdown-menu dropdown-menu-right-sorting">
+                  <a class="dropdown-item " href="# ">名單狀態</a>
+                  <a class="dropdown-item " href="# ">分派/建立日期</a>
+                  <a class="dropdown-item " href="# ">統一編號</a>
+                  <a class="dropdown-item " href="# ">戶名</a>
+                  <a class="dropdown-item " href="# ">行銷單位</a>
+                  <a class="dropdown-item " href="# ">行銷人員</a>
+                  <a class="dropdown-item " href="# ">產品</a>
+                  <a class="dropdown-item " href="# ">名單來源</a>
+                  <a class="dropdown-item " href="# ">名單類型</a>
+                </div>
+
+              </div>
+
+
+            </li>
+            <li>
+              <button type="button" class="nav-link btn" data-toggle="modal" data-target="#addMail" data-whatever="@mdo ">
+                <i class="fa fa-plus iconspace" aria-hidden="true">
+                </i>新增 E-mail 樣版</button>
+            </li>
+
+          </ul>
+        </nav>
+
+        <div class="area shadow">
+          <div id="search-section-0" class="form-row mr-0">
+            <div class="form-group col-12 col-md-4 col-lg-3">
+              <label>樣版類別</label>
+              <select class="selectpicker inputstyleSelect">
+                <option value="" class="displayno">請選擇...</option>
+              </select>
+
+            </div>
+            <div class="form-group col-12 col-md-4 col-lg-3">
+              <label>產品類別</label>
+              <select class="selectpicker inputstyleSelect">
+                <option>信貸</option>
+                <option>副擔保</option>
+                <option>房貸</option>
+                <option>小型事業(SB)</option>
+                <option>卡友貸</option>
+                <option>保險(儲蓄險、房貸壽險)</option>
+              </select>
+
+            </div>
+            <div class="form-group col-12 col-md-4 col-lg-3">
+              <label>樣版類別</label>
+
+              <select class="selectpicker" data-live-search="true">
+
+                <option data-tokens="ketchup mustard" value="" class="displayno">請輸入關鍵字...</option>
+                <option data-tokens="mustard">科四海</option>
+                <option data-tokens="frosting">林熟分</option>
+                <option data-tokens="ketchup mustard">陳美琳</option>
+                <option data-tokens="mustard">理完稅</option>
+                <option data-tokens="frosting">陳沼澤</option>
+              </select>
+
+
+
+            </div>
+            <div class="form-group col-12 col-md-4 col-lg-3">
+              <label>上架日期</label>
+              @@include('./components/input/date.html', {"daterange": true})
+            </div>
+
+            <div class="form-group col-12 col-md-4 col-lg-3">
+              @@include('./components/input/searh-btn-group.html')
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Customer 表單 -->
+      <div id="data-list-0" class="table-responsive data-list">
+        <table class="table table-striped tableinfo">
+          <thead>
+            <tr>
+              <th scope="col ">樣版類別</th>
+              <th scope="col ">產品類型</th>
+              <th scope="col ">名稱</th>
+              <th scope="col ">上架日期</th>
+              <th scope="col ">有效期限</th>
+              <th scope="col ">狀態
+
+              </th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>電子 DM</td>
+              <td>信貸</td>
+              <td>
+                SFA平台公教人員信貸專案
+              </td>
+              <td>2018/02/28</td>
+              <td>2018/12/31</td>
+              <td>生效</td>
+              <td class="money-right">
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" onclick="window.open('./components/sys/modalMockEmail.html', '_blank')">
+                  檢視
+                </button>
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" onclick="openNav('#modalEmailEdit')">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>電子 DM</td>
+              <td>信貸</td>
+              <td>
+                SFA平台青年創業信貸專案
+              </td>
+              <td>2018/02/28</td>
+              <td>2018/12/31</td>
+              <td>暫存</td>
+              <td class="money-right">
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" onclick="window.open('./components/sys/modalMockEmail.html', '_blank')">
+                  檢視
+                </button>
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" onclick="openNav('#modalEmailEdit')">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+            <tr class="markRed">
+              <td>感謝信</td>
+              <td>信貸</td>
+              <td>
+                SFA平台公教人員信貸專案
+              </td>
+              <td>2018/02/28</td>
+              <td>2018/12/31</td>
+              <td>待覆核</td>
+              <td class="money-right">
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" onclick="window.open('./components/sys/modalMockEmail.html', '_blank')">
+                  檢視
+                </button>
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" onclick="openNav('#modalEmailEdit')">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+            <tr class="markgary">
+              <td>感謝信</td>
+              <td>信貸</td>
+              <td>
+                SFA平台公教人員信貸專案
+              </td>
+              <td>2018/02/28</td>
+              <td>2018/12/31</td>
+              <td>停用</td>
+              <td class="money-right">
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" disabled>
+                  檢視
+                </button>
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" disabled>
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+      <!-- 確認寄出 -->
+      <div class="modal fade" id="emailResult" tabindex="-1" role="dialog" aria-labelledby="bankInfo" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Email 試算結果</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>收信人
+                  <span class="markRed">*</span>
+                </label>
+                <input type="text" class="form-control inputstyle" placeholder="以“，”區隔多個收件人">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">寄出</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- pageNum -->
+      <!--<nav class="navNum navbar-light">
+                    <form class="form-inline">
+                        <div>
+                            <button class=" btn-sm pageNum">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            </button>
+                            <button class=" btn-sm pageNum">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </button>
+                            <span class="loanChartNote">1-1 of 1</span>
+                        </div>
+                        <div>
+                            <span class="loanChartNote">Items per page:
+                                <select class="selectpicker inputstyleSelect">
+                                    <option>1</option>
+                                </select>
+                            </span>
+                        </div>
+                    </form>
+                </nav> -->
+    </div>
+    <!-- 檢視 -->
+    <div class="modal fade" id="viewMail" tabindex="-1" role="dialog" aria-labelledby="viewMail" aria-hidden="true">
+      <div class="modal-dialog photo" role="document">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="modal fade" id="addMail" tabindex="-1" role="dialog" aria-labelledby="addMail" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addMail">新增 Email 樣板</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col">
+                    <label>樣板類型
+                      <span class="markRed">*</span>
+                    </label>
+                    <select class="selectpicker inputstyleSelect">
+                      <option>電子ＤM</option>
+                      <option>感謝信</option>
+
+                    </select>
+                  </div>
+                  <div class="col">
+                    <label>產品類型
+                      <span class="markRed">*</span>
+                    </label>
+                    <select class="selectpicker inputstyleSelect">
+                      <option>信貸</option>
+
+                    </select>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col">
+                    <label>上架日期</label>
+                    <input class="form-control inputstyle" type="text" name="singledate" placeholder="請選擇...">
+                  </div>
+                  <div class="col">
+                    <label>有效期限</label>
+                    <input class="form-control inputstyle" type="text" name="singledate" placeholder="請選擇...">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col">
+                    <label>名稱</label>
+                    <input type="text" class="form-control inputstyle" value="SFA平台公教人員信貸專案">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>HTML
+
+                </label>
+                <textarea class="form-control inputstyletextArea" rows="20">
+                  font-face{font-family:'FontAwesome';src:url('/common/font/fontawesome-webfont.eot?v=3.2.1');src:url('/common/font/fontawesome-webfont.eot?#iefix&v=3.2.1')
+                  format('embedded-opentype'),url('/common/font/fontawesome-webfont.woff?v=3.2.1') format('woff'),url('/common/font/fontawesome-webfont.ttf?v=3.2.1')
+                  format('truetype'),url('/common/font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');font-weight:normal;font-style:normal;}[class^="icon-"],[class*="
+                  icon-"]{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;*margin-right:.3em;}
+                  [class^="icon-"]:before,[class*=" icon-"]:before{text-decoration:inherit;display:inline-block;speak:none;}
+                  .icon-large:before{vertical-align:-10%;font-size:1.3333333333333333em;} a [class^="icon-"],a [class*="
+                  icon-"]{display:inline;} [class^="icon-"].icon-fixed-width,[class*=" icon-"].icon-fixed-width{display:inline-block;width:1.1428571428571428em;text-align:right;padding-right:0.2857142857142857em;}[class^="icon-"].icon-fixed-width.icon-large,[class*="
+                  icon-"].icon-fixed-width.icon-large{width:1.4285714285714286em;} .icons-ul{margin-left:2.142857142857143em;list-style-type:none;}.icons-ul>li{position:relative;}
+                  .icons-ul .icon-li{position:absolute;left:-2.142857142857143em;width:2.142857142857143em;text-align:center;line-height:inherit;}
+                  [class^="icon-"].hide,[class*=" icon-"].hide{display:none;} .icon-muted{color:#eeeeee;} .icon-light{color:#ffffff;}
+                  .icon-dark{color:#333333;} .icon-border{border:solid 1px #eeeeee;padding:.2em .25em .15em;-webkit-border-radius:3px;-moz-b
+                </textarea>
+              </div>
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+            <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">儲存</button>
+          </div>
+        </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+
+  </div>
+
+
+  </div>
+
+  @@include('./components/sys/modalEmailEdit.html') @@include('./components/footer.html')
+  <script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+
+    function openDatePicker(id) {
+      console.log('aaa')
+      var did = "#" + id
+      // $(did).datepicker('show');
+    }
+
+    function closeModal(id) {
+      var did = "#" + id
+      console.log(did)
+      $(did).modal('hide');
+    }
+  </script>
+
+  <script id="search_error" type="text/template">
+    <div class="nodata">
+      <div>
+        <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+      </div>
+      <h6>查無資料</h6>
+
+    </div>
+  </script>
+</body>
+
+</html>

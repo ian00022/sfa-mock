@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+
+<body>
+  <div class="container-fluid pl-0 pr-0">
+    @@include('./components/sidebar.html', { "sidebarCollapseFirst": "mange", "sidebar": "mangeMarketing" })
+    <div id="main-content" class="main-content">
+      @@include('./components/navbar.html', { "navbarType": "" })
+
+      <!-- 麵包削 -->
+      <nav class="clearfix nav-top">
+        <ol class="breadcrumb float-sm-left float-xs-none mb-xs-0">
+          <li class="breadcrumb-item">
+            <a href="Mange_marketing.html">行銷團隊設定</a>
+          </li>
+
+        </ol>
+        <ul class="nav float-sm-right float-xs-none nav-function-btn">
+          <li>
+              <a class="nav-link disabled btn" href="#modalSysBack" data-toggle="modal" role="button">
+                <i class="fa fa-ban iconspace" aria-hidden="true"></i> 退回</a>
+            </li>
+            <li>
+              <a class="nav-link disabled btn" href="#modalAgree" data-toggle="modal" role="button">
+                <i class="fa fa-exchange iconspace" aria-hidden="true"></i> 放行</a>
+            </li>
+        </ul>
+      </nav>
+      <section>
+
+        <div class="info-area">
+          <div class="wrap-box-l">
+            <h4 class="name">
+              <span>01234 團隊名稱 1 (6)&nbsp;<a class="under-review-notice pop-hover-stay" data-toggle="popover" href="#t1529221497824"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
+              </span>
+            </h4>
+            <div id="t1529221497824" class="displayno">
+              <b>團隊名稱</b>
+              <div class="dropdown-divider"></div>
+              <span class="textGary">異動前：01234 團隊名稱 1</span>
+              <br />
+              <span class="textGary">異動後：</span><span class="text-highlight">01234 團隊名稱...新 1</span>
+              
+              <div class="dropdown-divider"></div>
+              <div>申請人：Vivan Chen <small class="text-black-50">2018/6/6</small></div>
+            </div>
+              
+            <div class="listinfoarea collapse show" id="collapseInfo" aria-labelledby="headingInfo" data-parent="#Infoaccordion">
+              <div class="row">
+                <div class="col-lg-4 col-sm-12 col-md-12">
+                  <ul class="listinfo">
+                    <li>
+                      <span class="topform-tit">組織代碼</span>9133</li>
+                    <li>
+                      <span class="topform-tit">團隊類型</span>空中 AO</li>
+                    <li>
+                      <span class="topform-tit">可承作產品</span>信貸、房貸、SB
+                    </li>
+                    <li>
+                      <span class="topform-tit">名單上限</span>200</li>
+                    <li>
+                  </ul>
+                </div>
+                <div class="col-lg-5 col-sm-12 col-md-12">
+                  <ul class="listinfo">
+                    <li>
+                      <span class="topform-tit">可接受名單來源</span>
+                      <span class="form-body"> 名單來源 1、名單來源 2、名單來源 1、名單來源 2、名單來源 1、名單來源 2、名單來源 1、名單來源 2、名單來源 1、名單來源 2</span>
+                    </li>
+                    <li>
+                      <span class="topform-tit">團隊描述&nbsp;<a class="under-review-notice pop-hover-stay" data-toggle="popover" href="#t1529221497830"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a></span>
+                      <span class="form-body">
+                        行銷團隊描述在此，詳文直接羅列在這個區塊行銷團隊描述在此，詳文直接羅列在這個區塊行銷團隊描述在此，詳文直接羅列在這個區塊行銷團隊描述在此，詳文直接羅列在這個區塊行銷團隊描述在此，詳文直接羅列在這個區塊</span>
+                        <div id="t1529221497830" class="displayno">
+                          <b>團隊描述</b>
+                          <div class="dropdown-divider"></div>
+                          <span class="textGary">異動前：異動前的描述 1</span>
+                          <br />
+                          <span class="textGary">異動後：</span><span class="text-highlight">行銷團隊描述在此，詳文直接羅列在這個區塊行銷團隊描述在此，詳文直接羅列在這個區塊行銷團隊描述在此，詳文直接羅列在這個區塊行銷團隊描述在此，詳文直接羅列在這個區塊行銷團隊描述在此，詳文直接羅列在這個區塊</span>
+                          
+                          <div class="dropdown-divider"></div>
+                          <div>申請人：Vivan Chen <small class="text-black-50">2018/6/6</small></div>
+                        </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-12 collapseInfoTit">
+
+              <a class="close-area" href="javascript:void(0)" onclick="collapse(this, 'fa-angle-double-up', 'fa-angle-double-down')" name="collapseInfo">收闔團隊資訊
+                <i id="collapseInfo_icon" class="fa fa-angle-double-up iconspace" aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+
+
+
+
+          </div>
+
+
+
+      </section>
+
+      <div id="t1529221497930" class="displayno">
+        <b>團隊成員</b>
+        <div class="dropdown-divider"></div>
+        <span class="textGary">異動前：馬力歐 01234、馬歐 01235、力歐 01236</span>
+        <br />
+        <span class="textGary">異動後：</span><span class="text-highlight">馬力歐 01234、力歐 01236、歐歐 01238</span>
+        
+        <div class="dropdown-divider"></div>
+        <div>申請人：Vivan Chen <small class="text-black-50">2018/6/6</small></div>
+      </div>
+      <!-- Customer 表單 -->
+      <div id="data-list-0" class="table-responsive data-list">
+        <table class="table tableinfo">
+          <thead>
+            <tr>
+              <th scope="col ">員工編號&nbsp;<a class="under-review-notice pop-hover-stay" data-toggle="popover" href="#t1529221497930"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a></th>
+              <th scope="col ">姓名</th>
+              <th scope="col ">職稱</th>
+              <th scope="col ">部門代號</th>
+              <th scope="col ">系統角色</th>
+              <th scope="col ">加入日期</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01234</td>
+              <td>馬力歐</td>
+              <td>襄理</td>
+              <td>9133</td>
+              <td>後台管理主管</td>
+              <td>2017/12/30</td>
+              <td class="text-right">
+                <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#delet" data-whatever="@mdo">
+                  移除
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>01236</td>
+              <td>力歐</td>
+              <td>資深襄理</td>
+              <td>9133</td>
+              <td>後台管理經辦, 行銷職系經辦</td>
+              <td>2017/12/30</td>
+              <td class="text-right">
+                <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#delet" data-whatever="@mdo">
+                  移除
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>01238</td>
+              <td>歐歐</td>
+              <td>經理</td>
+              <td>9133</td>
+              <td>行銷職系經辦</td>
+              <td>2017/12/30</td>
+              <td class="text-right">
+                <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#delet" data-whatever="@mdo">
+                  移除
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- pageNum -->
+      <nav class="navNum navbar-light">
+        <form class="form-inline">
+          <div>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
+            <span class="loanChartNote">1 of 1</span>
+          </div>
+          <div>
+            <span class="loanChartNote">Items per page:
+              <select class="form-control inputstyle">
+                <option>50</option>
+              </select>
+            </span>
+          </div>
+        </form>
+      </nav>
+      <!-- 編輯備註 -->
+      <div class="modal fade" id="addnote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">編輯備註</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label class="note">備註
+                  <span class="markRed">*</span>
+                </label>
+                <label class="float-right ps_note">(0/250)</label>
+                <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+              </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">暫存</button>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">結案</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- 移除 -->
+      <div class="modal fade" id="delet" tabindex="-1" role="dialog" aria-labelledby="delet" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="delet">確認移除</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <p>
+                是否確認移除？
+
+              </p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry " data-dismiss="modal" aria-label="Close">確定</button>
+              <button type="button" class="btn btn-ylw" data-dismiss="modal" aria-label="Close">取消</button>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- 撤回總行 -->
+      <div class="modal fade" id="backToBank" tabindex="-1" role="dialog" aria-labelledby="backToBank" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">撤回名單（3)</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>你確定要撤回這 3 筆名單嗎？請告知我們撤回的原因，謝謝！</p>
+              <div class="form-group">
+                <label>原因
+                  <span class="markRed">*</span>
+
+                </label>
+                <span class="float-right ps_note">(0/300)</span>
+                <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">撤回
+
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    @@include('./components/footer.html')
+    <script>
+      var myChart;
+      var modalChart;
+
+      $(document).ready(function () {
+        // clockpicker
+        $('input[name=clockpicker]').clockpicker({
+          autoclose: true,
+        });
+        // fix two step modal problem
+        $(document).on('shown.bs.modal', '.modal', function () {
+          $(document.body).addClass('modal-open')
+        })
+        $(document).on('hidden.bs.modal', '.modal', function () {
+          $(document.body).removeClass('modal-open')
+        })
+
+        var wrap = $(".content");
+        scrollEvent($(window))
+
+        $('#nav-dropdown a').click(function (e) {
+          e.preventDefault()
+          //console.log($('#pills-bank'))
+          //$('#pills-bank').tab('show');
+          $(this).tab('show');
+        })
+
+      })
+
+      // function openDatePicker(id) {
+      //     console.log('aaa')
+      //     var did = "#" + id
+      //     $(did).datepicker('show');
+      // }
+
+      function smoothscroll() {
+        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+
+        if (currentScroll > 0) {
+          window.requestAnimationFrame(smoothscroll);
+          window.scrollTo(0, currentScroll - (currentScroll / 5));
+        }
+      }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+<body>
+    <div class="container-fluid pl-0 pr-0">
+        @@include('./components/sidebar.html', {
+            "sidebarCollapseFirst": "",
+            "sidebar": "reportSearch"
+        })
+        <div id="main-content" class="main-content">
+            @@include('./components/navbar.html', { "navbarType": "" })
+            <!-- 顧客查詢 -->
+            <section>
+                <nav class="navbar justify-content-between panel-head ">
+                    <span class="navbar-brand ">成效報表</span>
+
+
+
+
+                </nav>
+                <div class="pills-tab-container shadow">
+                    <ul class="nav nav-pills tab" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a id="pills-home-tab" class="nav-link active" data-toggle="tab" href="#pills-base-info" role="tab" aria-controls="pills-base-info"
+                                aria-selected="true">名單執行成效</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-notice-tab" data-toggle="pill" href="#pills-notice" role="tab" aria-controls="pills-notice"
+                                aria-selected="false">
+                                名單執行明細</a>
+                        </li>
+
+
+
+
+
+
+                    </ul>
+
+                </div>
+
+
+                <div class="tab-content" id="pills-tabContent">
+                    <!--  名單執行成效 -->
+                    <div class="tab-pane fade show active" id="pills-base-info" role="tabpanel" aria-labelledby="pills-base-info-tab">
+                        <div id="search-section-0" class="form-row mr-0 area ">
+
+                            <div class="form-group col-12 col-md-4 col-lg-3">
+                                <label>單位</label>
+
+                                <select id="select" class="selectpicker inputstyle select-change">
+                                    <option>全行</option>
+                                    <option>分行</option>
+                                    <option>總行</option>
+                                    <option>消金中心</option>
+                                </select>
+
+                            </div>
+
+                            <div searchfrom="select_1" class="form-group col-12 col-md-4 col-lg-3 displayno">
+                                <label>分行</label>
+                                <select class="selectpicker inputstyleSelect">
+                                    <option value="" class="displayno">請選擇...</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+
+                                </select>
+                            </div>
+                            <div searchfrom="select_1" class="form-group col-12 col-md-4 col-lg-3 displayno">
+                                <label>分行主管
+
+                                </label>
+                                <select class="selectpicker inputstyleSelect">
+                                    <option value="" class="displayno">請選擇...</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+
+                                </select>
+                            </div>
+                            <div searchfrom="select_1" class="form-group col-12 col-md-4 col-lg-3 displayno">
+                                <label>分行經辦
+
+                                </label>
+                                <select class="selectpicker inputstyleSelect">
+                                    <option value="" class="displayno">請選擇...</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+
+                                </select>
+                            </div>
+
+                            <div searchfrom="select_3" class="form-group form-group col-12 col-md-4 col-lg-3 displayno">
+                                <label>消金中心
+
+                                </label>
+                                <select class="selectpicker inputstyleSelect">
+                                    <option value="" class="displayno">請選擇...</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+
+                                </select>
+                            </div>
+
+                            <div class="form-group col-12 col-md-4 col-lg-3">
+                                <label>名單日期
+                                    <span class="must-input">*</span>
+                                </label>
+                                @@include('./components/input/date.html', {"daterange": true})
+                            </div>
+
+                        </div>
+                        <div id="search-section-1" class="form-row mr-0 info-area area">
+
+                            <div class="form-group col-12 col-md-4 col-lg-3">
+                                <label>名單來源</label>
+                                <div id="namelist_source1" class="dropdown ">
+                                    <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <span class="btn-text">請選擇</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#namelist_source1')">全選</a>
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#namelist_source1')">取消全選</a>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_source1_0" value="EBM">
+                                            <label class="form-check-label" for="namelist_source1_0">EBM</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_source1_1" value="網路進件">
+                                            <label class="form-check-label" for="namelist_source1_1">網路進件</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_source1_2" value="自建名單">
+                                            <label class="form-check-label" for="namelist_source1_2">自建名單</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_source1_3" value="轉介">
+                                            <label class="form-check-label" for="namelist_source1_3">轉介</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-12 col-md-4 col-lg-3">
+                                <label>名單類型</label>
+                                <div id="namelist_type1" class="dropdown ">
+                                    <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <span class="btn-text">請選擇</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#namelist_type1')">全選</a>
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#namelist_type1')">取消全選</a>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_type1_0" value="EBM">
+                                            <label class="form-check-label" for="namelist_type1_0">EBM</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_type1_1" value="網路進件">
+                                            <label class="form-check-label" for="namelist_type1_1">網路進件</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_type1_2" value="自建名單">
+                                            <label class="form-check-label" for="namelist_type1_2">自建名單</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_type1_3" value="轉介">
+                                            <label class="form-check-label" for="namelist_type1_3">轉介</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-12 col-md-4 col-lg-3">
+                                <label>產品</label>
+                                <div id="new_prod1" class="dropdown ">
+                                    <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <span class="btn-text">請選擇</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#new_prod1')">全選</a>
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#new_prod1')">取消全選</a>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="new_prod1_0" value="信貸">
+                                            <label class="form-check-label" for="new_prod1_0">信貸</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="new_prod1_1" value="副擔保">
+                                            <label class="form-check-label" for="new_prod1_1">副擔保</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="new_prod1_2" value="房貸">
+                                            <label class="form-check-label" for="new_prod1_2">房貸</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="new_prod1_3" value="小型事業(SB)">
+                                            <label class="form-check-label" for="new_prod1_3">小型事業(SB)</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="new_prod1_4" value="卡友貸">
+                                            <label class="form-check-label" for="new_prod1_4">卡友貸</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="new_prod1_5" value="保險(儲蓄險、房貸壽險)">
+                                            <label class="form-check-label" for="new_prod1_5">保險(儲蓄險、房貸壽險)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-12 col-md-4 col-lg-3">
+                                @@include('./components/input/searh-btn-group.html')
+                            </div>
+
+                            <div class="navExport">
+                                <a href="#" data-toggle="modal" data-target="#export" data-whatever="@mdo ">
+                                    <i class="fa fa-reply iconspace" aria-hidden="true"></i>匯出報表</a>
+                            </div>
+
+
+                        </div>
+                        <!-- Customer 表單 -->
+                        <div id="result_1" class="table-responsive data-list displayno">
+                            <table class="table tableinfo">
+                                <thead>
+                                    <tr>
+                                        <th scope="col ">
+                                            單位代碼/單位
+                                        </th>
+                                        <th scope="col ">行銷經辦</th>
+                                        <th scope="col ">名單來源
+
+                                        </th>
+                                        <th scope="col ">名單類型</th>
+                                        <th scope="col ">產品</th>
+                                        <th scope="col " class="money-right">名單數</th>
+                                        <th scope="col " class="money-right">執行數</th>
+                                        <th scope="col " class="money-right">執行率</th>
+                                        <th scope="col " class="money-right">送件數</th>
+                                        <th scope="col " class="money-right">送件率</th>
+                                        <th scope="col " class="money-right">核貸數</th>
+                                        <th scope="col " class="money-right">核貸率</th>
+                                        <th scope="col " class="money-right">核貸金額</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01234 板橋分行</td>
+                                        <td>馬力歐</td>
+                                        <td>EBM</td>
+                                        <td>-</td>
+                                        <td>信貸</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">23%</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">19%</td>
+                                        <td class="money-right">12</td>
+                                        <td class="money-right">2%</td>
+                                        <td class="money-right">6,232,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>01234 板橋分行</td>
+                                        <td>馬力歐</td>
+                                        <td>EBM</td>
+                                        <td>-</td>
+                                        <td>信貸</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">23%</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">19%</td>
+                                        <td class="money-right">12</td>
+                                        <td class="money-right">2%</td>
+                                        <td class="money-right">6,232,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>01234 板橋分行</td>
+                                        <td>馬力歐</td>
+                                        <td>EBM</td>
+                                        <td>-</td>
+                                        <td>信貸</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">23%</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">19%</td>
+                                        <td class="money-right">12</td>
+                                        <td class="money-right">2%</td>
+                                        <td class="money-right">6,232,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>01234 板橋分行</td>
+                                        <td>馬力歐</td>
+                                        <td>EBM</td>
+                                        <td>-</td>
+                                        <td>信貸</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">23%</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">19%</td>
+                                        <td class="money-right">12</td>
+                                        <td class="money-right">2%</td>
+                                        <td class="money-right">6,232,500</td>
+                                    </tr>
+                                    <tr class="bg-warning">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="font-weight: bolder;">總計</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">23%</td>
+                                        <td class="money-right">10</td>
+                                        <td class="money-right">19%</td>
+                                        <td class="money-right">12</td>
+                                        <td class="money-right">2%</td>
+                                        <td class="money-right">6,232,500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- pageNum -->
+                            <nav class="navNum navbar-light">
+                                <form class="form-inline">
+                                    <div>
+                                        <button class=" btn-sm pageNum">
+                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                        </button>
+                                        <button class=" btn-sm pageNum">
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </button>
+                                        <span class="loanChartNote">1 of 1</span>
+                                    </div>
+                                    <div>
+                                        <span class="loanChartNote">Items per page:
+                                            <select class="form-control inputstyle">
+                                                <option>50</option>
+                                            </select>
+                                        </span>
+                                    </div>
+                                </form>
+                            </nav>
+                        </div>
+                    </div>
+                    <!--  名單執行明細 -->
+                    <div class="tab-pane fade" id="pills-notice" role="tabpanel" aria-labelledby="pills-notice-tab">
+                        <div id="search-section-0" class="form-row mr-0 area ">
+
+                            <div class="form-group col-12 col-md-4 col-lg-3">
+                                <label>單位</label>
+
+                                <select id="selectH" class="selectpicker inputstyle select-change">
+                                    <option>全行</option>
+                                    <option>分行</option>
+                                    <option>總行</option>
+                                    <option>消金中心</option>
+                                </select>
+
+                            </div>
+
+                            <div searchfrom="selectH_1" class="form-group col-12 col-md-4 col-lg-3 displayno">
+                                <label>分行</label>
+                                <select class="selectpicker inputstyleSelect">
+                                    <option value="" class="displayno">請選擇...</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+
+                                </select>
+                            </div>
+                            <div searchfrom="selectH_1" class="form-group col-12 col-md-4 col-lg-3 displayno">
+                                <label>分行主管
+
+                                </label>
+                                <select class="selectpicker inputstyleSelect">
+                                    <option value="" class="displayno">請選擇...</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+
+                                </select>
+                            </div>
+                            <div searchfrom="selectH_1" class="form-group col-12 col-md-4 col-lg-3 displayno">
+                                <label>分行經辦
+
+                                </label>
+                                <select class="selectpicker inputstyleSelect">
+                                    <option value="" class="displayno">請選擇...</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+
+                                </select>
+                            </div>
+
+                            <div searchfrom="selectH_3" class="form-group form-group col-12 col-md-4 col-lg-3 displayno">
+                                <label>消金中心
+
+                                </label>
+                                <select class="selectpicker inputstyleSelect">
+                                    <option value="" class="displayno">請選擇...</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+                                    <option>請選擇</option>
+
+                                </select>
+                            </div>
+
+                            <div class="form-group col-12 col-md-4 col-lg-3">
+                                <label>名單日期
+                                    <span class="must-input">*</span>
+                                </label>
+                                @@include('./components/input/date.html', {"daterange": true})
+                            </div>
+
+                        </div>
+                        <div id="search-section-1" class="form-row mr-0 info-area area">
+
+                            <div class="form-group col-12 col-md-4 col-lg-3">
+                                <label>名單來源</label>
+                                <div id="namelist_source1" class="dropdown ">
+                                    <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <span class="btn-text">請選擇</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#namelist_source1')">全選</a>
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#namelist_source1')">取消全選</a>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_source1_0" value="EBM">
+                                            <label class="form-check-label" for="namelist_source1_0">EBM</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_source1_1" value="網路進件">
+                                            <label class="form-check-label" for="namelist_source1_1">網路進件</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_source1_2" value="自建名單">
+                                            <label class="form-check-label" for="namelist_source1_2">自建名單</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_source1_3" value="轉介">
+                                            <label class="form-check-label" for="namelist_source1_3">轉介</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-12 col-md-4 col-lg-3">
+                                <label>名單類型</label>
+                                <div id="namelist_type1" class="dropdown ">
+                                    <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <span class="btn-text">請選擇</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#namelist_type1')">全選</a>
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#namelist_type1')">取消全選</a>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_type1_0" value="EBM">
+                                            <label class="form-check-label" for="namelist_type1_0">EBM</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_type1_1" value="網路進件">
+                                            <label class="form-check-label" for="namelist_type1_1">網路進件</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_type1_2" value="自建名單">
+                                            <label class="form-check-label" for="namelist_type1_2">自建名單</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="namelist_type1_3" value="轉介">
+                                            <label class="form-check-label" for="namelist_type1_3">轉介</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-12 col-md-4 col-lg-3">
+                                <label>產品</label>
+                                <div id="new_prod1" class="dropdown ">
+                                    <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <span class="btn-text">請選擇</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#new_prod1')">全選</a>
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#new_prod1')">取消全選</a>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="new_prod1_0" value="信貸">
+                                            <label class="form-check-label" for="new_prod1_0">信貸</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="new_prod1_1" value="副擔保">
+                                            <label class="form-check-label" for="new_prod1_1">副擔保</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="new_prod1_2" value="房貸">
+                                            <label class="form-check-label" for="new_prod1_2">房貸</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="new_prod1_3" value="小型事業(SB)">
+                                            <label class="form-check-label" for="new_prod1_3">小型事業(SB)</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="new_prod1_4" value="卡友貸">
+                                            <label class="form-check-label" for="new_prod1_4">卡友貸</label>
+                                        </div>
+                                        <div class="form-check form-check-inline dropdown-item">
+                                            <input class="form-check-input" type="checkbox" id="new_prod1_5" value="保險(儲蓄險、房貸壽險)">
+                                            <label class="form-check-label" for="new_prod1_5">保險(儲蓄險、房貸壽險)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-12 col-md-4 col-lg-3">
+                                @@include('./components/input/searh-btn-group.html', {"specialSearchTarget": "result_2"})
+                            </div>
+
+                            <div class="navExport">
+                                <a href="#" data-toggle="modal" data-target="#export" data-whatever="@mdo ">
+                                    <i class="fa fa-reply iconspace" aria-hidden="true"></i>匯出報表</a>
+                            </div>
+
+
+                        </div>
+                        <!-- Customer 表單 -->
+                        <div id="result_2" class="table-responsive displayno">
+                            <table class="table table-striped tableinfo">
+                                <thead>
+                                    <tr>
+                                        <th scope="col ">
+                                            名單日期
+                                        </th>
+                                        <th scope="col ">分派日期</th>
+                                        <th scope="col ">名單來源
+
+                                        </th>
+                                        <th scope="col ">名單類型</th>
+                                        <th scope="col ">產品</th>
+                                        <th scope="col ">統一編號</th>
+                                        <th scope="col ">戶名</th>
+
+                                        <th scope="col ">行銷經辦</th>
+                                        <th scope="col ">轉介人員</th>
+                                        <th scope="col ">處理天數</th>
+                                        <th scope="col ">名單狀態
+                                            <a href="#">
+                                                <i class="fa fa-question-circle-o iconspace" aria-hidden="true" data-toggle="modal" data-target="#stateInfo" data-whatever="@mdo "></i>
+                                            </a>
+                                        </th>
+                                        <th scope="col ">審核結果</th>
+                                        <th scope="col " class="money-right">核貸(保)金額</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2018/01/05</td>
+                                        <td>2018/01/05</td>
+                                        <td>EBM</td>
+                                        <td>精彩稅月</td>
+                                        <td>信貸</td>
+                                        <td>A123456789</td>
+                                        <td>
+                                            <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                                        </td>
+                                        <td>馬力歐</td>
+                                        <td>馬力歐</td>
+                                        <td>0</td>
+                                        <td>
+                                            <span class="light light-red"></span>追蹤中
+
+                                        </td>
+                                        <td>無</td>
+                                        <td class="money-right">6,232,500</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>2018/01/05</td>
+                                        <td>2018/01/05</td>
+                                        <td>EBM</td>
+                                        <td>精彩稅月</td>
+                                        <td>信貸</td>
+                                        <td>A123456789</td>
+                                        <td>
+                                            <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                                        </td>
+                                        <td>馬力歐</td>
+                                        <td>馬力歐</td>
+                                        <td>0</td>
+                                        <td>
+                                            <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期"></span>未執行
+                                        </td>
+                                        <td>無</td>
+                                        <td class="money-right">6,232,500</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>2018/01/05</td>
+                                        <td>2018/01/05</td>
+                                        <td>EBM</td>
+                                        <td>精彩稅月</td>
+                                        <td>信貸</td>
+                                        <td>A123456789</td>
+                                        <td>
+                                            <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                                        </td>
+                                        <td>馬力歐</td>
+                                        <td>馬力歐</td>
+                                        <td>0</td>
+                                        <td>
+                                            <span class="light light-red"></span>追蹤中
+
+                                        </td>
+                                        <td>無</td>
+                                        <td class="money-right">6,232,500</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>2018/01/05</td>
+                                        <td>2018/01/05</td>
+                                        <td>EBM</td>
+                                        <td>精彩稅月</td>
+                                        <td>信貸</td>
+                                        <td>A123456789</td>
+                                        <td>
+                                            <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                                        </td>
+                                        <td>馬力歐</td>
+                                        <td>馬力歐</td>
+                                        <td>0</td>
+                                        <td>
+                                            <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期"></span>未執行
+                                        </td>
+                                        <td>無</td>
+                                        <td class="money-right">6,232,500</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>2018/01/05</td>
+                                        <td>2018/01/05</td>
+                                        <td>EBM</td>
+                                        <td>精彩稅月</td>
+                                        <td>信貸</td>
+                                        <td>A123456789</td>
+                                        <td>
+                                            <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                                        </td>
+                                        <td>馬力歐</td>
+                                        <td>馬力歐</td>
+                                        <td>0</td>
+                                        <td>
+                                            <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期"></span>未執行
+                                        </td>
+                                        <td>無</td>
+                                        <td class="money-right">6,232,500</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- pageNum -->
+                            <nav class="navNum navbar-light">
+                                <form class="form-inline">
+                                    <div>
+                                        <button class=" btn-sm pageNum">
+                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                        </button>
+                                        <button class=" btn-sm pageNum">
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </button>
+                                        <span class="loanChartNote">1 of 1</span>
+                                    </div>
+                                    <div>
+                                        <span class="loanChartNote">Items per page:
+                                            <select class="form-control inputstyle">
+                                                <option>50</option>
+                                            </select>
+                                        </span>
+                                    </div>
+                                </form>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- 狀態說明 -->
+    <div class="modal fade" id="stateInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">狀態說明</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table statusInfo">
+                        <thead>
+                            <tr>
+                                <th scope="col">標示</th>
+                                <th scope="col">說明</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td>
+                                    <span class="light light-red">
+                                    </span>
+                                </td>
+                                <td>紅色燈號，當此燈亮起閃爍時代表該名單即將逾期，原因包含如下：(1)未分派(限主管) (2)未執行 (3)追蹤逾期 (4)到期通知</td>
+
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <span class="light light-gary">
+                                    </span>
+                                </td>
+                                <td>灰色燈號，該名單尚未逾期</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="iconyellow">
+                                        <i class="fa fa-clock-o " aria-hidden="true"></i>
+                                    </span>
+                                </td>
+                                <td>當顯示此標示時，即代表該名單待主管放行</td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="markRed">
+                                        <i class="fa fa-ban" aria-hidden="true"></i>
+                                    </span>
+                                </td>
+                                <td>當顯示此標示時，即代表該名單遭主管退回</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 調閱行內帳務資訊 -->
+    <div class="modal fade" id="bankInfo" tabindex="-1" role="dialog" aria-labelledby="bankInfo" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">行銷警示註記</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>此顧客
+                        <span class="markRed">不接受電話行銷</span>，請留意！</p>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                    <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">新增行程</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 匯出報表｜名單執行明細 -->
+    <div class="modal fade" id="export" tabindex="-1" role="dialog" aria-labelledby="export" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="export">匯出報表｜名單執行明細</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <div class="card-form">
+                                <span class="navTit pr-3">單位</span>
+                                <span class="navBody">全行</span>
+                            </div>
+                            <div class="card-form">
+                                <span class="navTit pr-3">日期</span>
+                                <span class="navBody">2018/01/01-2018/03/20</span>
+                            </div>
+                            <div class="card-form">
+                                <span class="navTit pr-3">名單來源</span>
+                                <span class="navBody">全部</span>
+                            </div>
+                            <div class="card-form">
+                                <span class="navTit pr-3">名單類型</span>
+                                <span class="navBody">全部</span>
+                            </div>
+                            <div class="card-form">
+                                <span class="navTit pr-3">名單類型</span>
+                                <span class="navBody">全部</span>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="form-group pt-1 ">
+                                <label class="pb-2">匯出範圍
+
+                                </label>
+                                <div class="form-row ">
+                                    <div class="form-check">
+                                        <input id="one" type="radio" name="print" checked>
+                                        <label for="one" style="cursor: pointer;">本頁</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input id="reportExportAll" type="radio" name="print">
+                                        <label for="reportExportAll" style="cursor: pointer;">全部</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                    <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close" onclick="reportExportModal()">匯出</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 匯出全部報表提示 -->
+    @@include('./components/report/modalReportExportAll.html')
+@@include('./components/footer.html')
+<script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+    $(document).ready(function () {
+        /**
+         *   1. add class 'select-change'
+         *   2. view's id naming rule is 'selectID_option順序'
+         */
+        $('select.select-change').each(function () {
+            var select_id = $(this).attr('id');
+            var childrenCount = $('#' + select_id).children().length;
+            $('#' + select_id).on('changed.bs.select', function (e, clickedIndex, isSelected,
+                previousValue) {
+                for (var i = 0; i < childrenCount; i++) {
+                    var view_id = '[searchfrom=' + select_id + '_' + i + ']';
+                    $(view_id).addClass('displayno');
+                    // console.log(view_id);
+                }
+                $('[searchfrom=' + select_id + '_' + clickedIndex + ']').removeClass('displayno');
+
+
+                // 額外條件 展示細項類別使用
+                if (select_id === 'selectmore') {
+                    if (clickedIndex === 1) {
+                        $('#detail_result').removeClass('displayno')
+                    } else {
+                        $('#detail_result').addClass('displayno')
+                    }
+                }
+            })
+        })
+        /**/
+        // dropdown-menu-stop 
+        $(document).on('click', '.dropdown-menu-stop', function (e) {
+            e.stopPropagation();
+        });
+        $('input[type=checkbox].form-check-input').on('change', function () {
+            var id = '#' + $(this).closest('.form-check').closest(
+                '.dropdown-menu.dropdown-menu-stop').closest('.dropdown')[0].id;
+            var strings = [];
+            $(id).find('.dropdown-menu.dropdown-menu-stop').children().each(function () {
+                var checked = $(this).find('input').prop('checked')
+                if (checked) {
+                    strings.push($(this).find('input').val())
+                }
+            })
+            var buttonTitle = strings.length == 0 ? '請選擇' : strings.join(', ');
+            $(id).find('.btn-text').text(buttonTitle)
+        })
+
+        
+    });
+
+    function search(id) {
+        $('#' + id).removeClass('displayno');
+    }
+
+    function reportExportModal() {
+        if ($('input[type="radio"][id="reportExportAll"]:checked').length > 0) {
+            $('#modalReportExportAll').modal('show');
+        }
+    }
+
+    // function openDatePicker(id) {
+    //     console.log('aaa')
+    //     var did = "#" + id
+    //     $(did).datepicker('show');
+    // }
+
+</script>
+
+<script id="search_error" type="text/template">
+    <div class="nodata">
+        <div>
+            <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+        </div>
+        <h6>查無資料</h6>
+
+    </div>
+</script>
+</body>
+</html>

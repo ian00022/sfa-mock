@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+
+<body>
+  <div class="container-fluid pl-0 pr-0">
+    @@include('./components/sidebar.html', { "sidebarCollapseFirst": "mange", "sidebar": "mangeLateNotice" })
+    <div id="main-content" class="main-content">
+      @@include('./components/navbar.html', { "navbarType": "" })
+
+      <!-- 顧客查詢 -->
+      <section>
+        <nav class="navbar justify-content-between panel-head shadow">
+          <span class="navbar-brand ">名單/案件逾期設定</span>
+
+          <ul class="nav float-lg-right float-sm-none nav-function-btn">
+            <li>
+
+              <div class="nav-link " href="#">
+                <span class="textGary">排序</span>
+
+                <button class="btn dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  最近
+                </button>
+                <div class="dropdown-menu dropdown-menu-right-sorting">
+                  <a class="dropdown-item " href="# ">名單狀態</a>
+                  <a class="dropdown-item " href="# ">分派/建立日期</a>
+                  <a class="dropdown-item " href="# ">統一編號</a>
+                  <a class="dropdown-item " href="# ">戶名</a>
+                  <a class="dropdown-item " href="# ">行銷單位</a>
+                  <a class="dropdown-item " href="# ">行銷人員</a>
+                  <a class="dropdown-item " href="# ">產品</a>
+                  <a class="dropdown-item " href="# ">名單來源</a>
+                  <a class="dropdown-item " href="# ">名單類型</a>
+                </div>
+
+              </div>
+
+            </li>
+            <li>
+              <a class="nav-link disabled btn" href="#modalSysBack" data-toggle="modal" role="button">
+                <i class="fa fa-ban iconspace" aria-hidden="true"></i> 退回
+              </a>
+            </li>
+            <li>
+              <a class="nav-link disabled btn" href="#modalAgree" data-toggle="modal" role="button">
+                <i class="fa fa-exchange iconspace" aria-hidden="true"></i> 放行
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+
+      </section>
+      <!-- Customer 表單 -->
+      <div id="data-list-0" class="table-responsive data-list">
+        <table class="table table-striped tableinfo">
+          <thead>
+            <tr>
+              <th>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_01">
+                <label for="table-checkbox_01" onclick="{
+                  var _this = this;
+                  setTimeout(function(){
+                    var chooseAll = $(_this).siblings('input[type=\'checkbox\']').prop('checked');
+
+                    $(_this).closest('table').find('tbody .markRed input[type=\'checkbox\']').prop('checked', chooseAll);
+                  }, 0);
+                }"></label>
+              </th>
+              <th scope="col ">通知原因</th>
+              <th scope="col ">通知事件</th>
+              <th scope="col ">案件來源</th>
+              <th scope="col ">產品別</th>
+              <th scope="col ">建立日期</th>
+              <th scope="col ">狀態
+
+              </th>
+              <th scope="col "></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input disabled type="checkbox" name="table-checkbox" value="1" id="table-checkbox_02">
+                <label for="table-checkbox_02"></label>                
+              </td> 
+              <td>未分派</td>
+              <td>-</td>
+              <td class="normal-wrap">EBM</td>
+              <td>信貸, 房貸, 副擔保, SB</td>
+              <td>2017/12/30</td>
+              <td>暫存</td>
+              <td class="money-right fixed-side">
+                <div class="btn-group">
+                  <button class="btn btn-outline-primary btn-sm " type="button" data-toggle="modal" data-target="#view">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true " aria-expanded="fals">
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+                    <a class="dropdown-item " href="#Editlate" data-toggle="modal" data-whatever="@mdo" onclick="$('#Editlate').removeClass('modal-under-review')">檢視編輯</a>
+                  </div>
+                </div>
+              </td>
+
+            </tr>
+            <tr class="markRed">
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_03">
+                <label for="table-checkbox_03"></label>                
+              </td> 
+              <td>已分派</td>
+              <td>已達分派上限</td>
+              <td class="normal-wrap">EBM, 網路進件</td>
+              <td>信貸, 房貸, 副擔保, SB</td>
+              <td>2017/12/30</td>
+              <td>待覆核</td>
+              <td class="money-right fixed-side">
+                <div class="btn-group">
+                  <button class="btn btn-outline-primary btn-sm " type="button" data-toggle="modal" data-target="#view">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true " aria-expanded="fals">
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+                    <a class="dropdown-item " href="#Editlate" data-toggle="modal" data-whatever="@mdo" onclick="$('#Editlate').addClass('modal-under-review')">檢視編輯</a>
+                    <a class="dropdown-item " href="#modalAgree" data-toggle="modal"  data-whatever="@mdo">放行</a>
+                    <a class="dropdown-item " href="#modalSysBack" data-toggle="modal" data-whatever="@mdo">退回</a>
+                  </div>
+                </div>
+              </td>
+
+            </tr>
+            <tr>
+              <td>
+                <input disabled type="checkbox" name="table-checkbox" value="1" id="table-checkbox_04">
+                <label for="table-checkbox_04"></label>                
+              </td> 
+              <td>未執行</td>
+              <td>-</td>
+              <td class="normal-wrap">EBM</td>
+              <td>信貸, 房貸, 副擔保, SB</td>
+              <td>2017/12/30</td>
+              <td>生效</td>
+              <td class="money-right fixed-side">
+                <div class="btn-group">
+                  <button class="btn btn-outline-primary btn-sm " type="button" data-toggle="modal" data-target="#view">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true " aria-expanded="fals">
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+                    <a class="dropdown-item " href="#Editlate" data-toggle="modal" data-whatever="@mdo" onclick="$('#Editlate').removeClass('modal-under-review')">檢視編輯</a>
+                  </div>
+                </div>
+              </td>
+
+            </tr>
+            <tr>
+              <td>
+                <input disabled type="checkbox" name="table-checkbox" value="1" id="table-checkbox_05">
+                <label for="table-checkbox_05"></label>                
+              </td> 
+              <td>逾期通知</td>
+              <td>-</td>
+              <td class="normal-wrap">系統轉介, 自建名單</td>
+              <td>信貸,副擔保, SB</td>
+              <td>2017/12/30</td>
+              <td>主管退回
+                <i class="fa fa-ban markRed pop-hover-stay" data-toggle="popover" href="#t1528763431100" aria-hidden="true"></i>
+              </td>
+              <td class="money-right fixed-side">
+                <div class="btn-group">
+                  <button class="btn btn-outline-primary btn-sm " type="button" data-toggle="modal" data-target="#view">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true " aria-expanded="fals">
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+                    <a class="dropdown-item " href="#Editlate" data-toggle="modal" data-whatever="@mdo" onclick="$('#Editlate').removeClass('modal-under-review')">檢視編輯</a>
+                  </div>
+                </div>
+              </td>
+
+            </tr>
+            <tr>
+              <td>
+                <input disabled type="checkbox" name="table-checkbox" value="1" id="table-checkbox_06">
+                <label for="table-checkbox_06"></label>                
+              </td> 
+              <td>到期通知</td>
+              <td>-</td>
+              <td class="normal-wrap">EBM, 網路進件,系統轉介, 自建名單, 總行指派案案件</td>
+              <td>信貸, 房貸</td>
+              <td>2017/12/30</td>
+              <td>暫存</td>
+              <td class="money-right fixed-side">
+                <div class="btn-group">
+                  <button class="btn btn-outline-primary btn-sm " type="button" data-toggle="modal" data-target="#view">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true " aria-expanded="fals">
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+                    <a class="dropdown-item " href="#Editlate" data-toggle="modal" data-whatever="@mdo" onclick="$('#Editlate').removeClass('modal-under-review')">檢視編輯</a>
+                  </div>
+                </div>
+              </td>
+
+            </tr>
+
+
+          </tbody>
+        </table>
+      </div>
+      <!-- pageNum -->
+      <nav class="navNum navbar-light">
+        <form class="form-inline">
+          <div>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
+            <span class="loanChartNote">1 of 1</span>
+          </div>
+          <div>
+            <span class="loanChartNote">Items per page:
+              <select class="form-control inputstyle">
+                <option>50</option>
+              </select>
+            </span>
+          </div>
+        </form>
+      </nav>
+    </div>
+    <!-- 編輯逾期設定 -->
+    <div class="modal fade" id="Editlate" tabindex="-1" role="dialog" aria-labelledby="Editlate" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="Datelate">編輯逾期設定 <span class="modal-under-review-show"><span class="tag square red ml-2 ">待覆核</span></span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="form-row">
+              <div class="form-group col-6">
+                <label>通知原因
+                  <span class="markRed">*</span>
+                </label>
+                <select disabled class="selectpicker inputstyleSelect">
+                  <option value="" class="displayno">請選擇...</option>
+                  <option>未分派</option>
+                  <option>已分派</option>
+                  <option>未執行</option>
+                  <option>追蹤逾期</option>
+                  <option>到期通知</option>
+                </select>
+              </div>
+              <div class="form-group col-6">
+                <label>案件來源
+                  <span class="markRed">*</span>
+                </label>
+                <div class="dropdown">
+                  <button disabled class="btn inputstyle col-12 dropdown-toggle dropchoose" type="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="btn-text">EBM, 網路進件</span>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group col-6" name="tel">
+                <label>產品別</label>
+                <div id="edit_prod" class="dropdown">
+                  <button disabled class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="btn-text">信貸, 副擔保, 房貸, 小型事業(SB)</span>
+                  </button>
+                </div>
+
+
+              </div>
+            </form>
+            <div class="dropdown-divider mb-4"></div>
+            <form class="mb-4">
+              <h4>規則一：<a href="#role3" data-toggle="collapse" class="greenLink float-right" onclick="$(this).hasClass('collapsed') ? $(this).html('<i class=\'ion-ios-arrow-up\'></i>&nbsp;收闔') : $(this).html('<i class=\'ion-ios-arrow-down\'></i>&nbsp;展開')"><i class="ion-ios-arrow-up"></i>&nbsp;收闔</a></h4>
+              <div id="role3" class="collapse show">
+                <div class="form-group">
+                  <label>通知方式
+                    <span class="markRed">*</span>
+                  </label>
+                  <div id="edit_notice_rule1" class="dropdown ">
+                    <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <span class="btn-text"> 逾期燈號, 訊息通知, Mail, 單筆通知</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col ml-3">
+                      <label>通知對象（正本）
+                        <span class="markRed">*</span>
+                      </label>
+                      <select disabled class="selectpicker" data-live-search="true">
+                        <option data-tokens="ketchup mustard">行銷經辦</option>
+                        <option data-tokens="mustard">科四海</option>
+                        <option data-tokens="frosting">林熟分</option>
+                        <option data-tokens="ketchup mustard">陳美琳</option>
+                        <option data-tokens="mustard">理完稅</option>
+                        <option data-tokens="frosting">陳沼澤</option>
+                      </select>
+                    </div>
+                    <div class="col mr-3">
+                      <label>通知對象（副本）
+                        <span class="markRed">*</span>
+                      </label>
+                      <select disabled class="selectpicker" data-live-search="true">
+                        <option data-tokens="ketchup mustard">行銷經辦</option>
+                        <option data-tokens="mustard">科四海</option>
+                        <option data-tokens="frosting">林熟分</option>
+                        <option data-tokens="ketchup mustard">陳美琳</option>
+                        <option data-tokens="mustard">理完稅</option>
+                        <option data-tokens="frosting">陳沼澤</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>通知主旨
+                    <span class="markRed">*</span>
+                  </label>
+                  <input readonly id="custID" type="text" class="form-control inputstyle " value=" 轉介商機已分派通知" maxlength="10">
+
+                </div>
+                <div class="form-group">
+                  <label class="note">通知內容
+                    <span class="markRed">*</span>
+                  </label>
+                  <label class="float-right ps_note">(0/100)</label>
+                  <textarea disabled class="form-control inputstyletextArea" rows="3">您轉介的網路商機(顧客姓名+ID )，已分派至”XXX”名下進行後續處理，如需知案件處理進度，可點選系統連結。
+                    <系統連結>
+                  </textarea>
+                </div>
+                <div class="form-group">
+                  <label>通知時機
+                    <span class="markRed">*</span>
+                  </label>
+                  <div id="loan-rate_1_inputs" class=" form-inline">
+                    <label>依
+                      <span class="blueText">分派日期</span>
+                    </label>
+                    <input readonly type="number" class="form-control iconspace inputstyle col-2 pl-2" value="2">
+                    <select class="selectpicker inputstyleSelect col-3">
+
+                      <option>日</option>
+                      <option>月</option>
+
+
+                    </select>
+                    <label>發出提醒通知</label>
+                  </div>
+
+
+                </div>
+                <div class="form-group">
+                  <label>通知頻率
+                    <span class="markRed">*</span>
+                  </label>
+                  <div class="form-row">
+                    <div class="form-check">
+                      <input disabled id="notice_freq1_0" type="radio" name="notice_freq1">
+                      <label for="notice_freq1_0" style="cursor: pointer;">一次性提醒</label>
+                    </div>
+                    <div class="form-check">
+                      <input disabled id="notice_freq1_1" type="radio" name="notice_freq1">
+                      <label for="notice_freq1_1" style="cursor: pointer;">每月</label>
+                    </div>
+                    <div class="form-check">
+                      <input disabled id="notice_freq1_2" type="radio" name="notice_freq1">
+                      <label for="notice_freq1_2" style="cursor: pointer;">每週</label>
+                    </div>
+                    <div class="form-check">
+                      <input disabled id="notice_freq1_3" type="radio" name="notice_freq1" checked>
+                      <label for="notice_freq1_3" style="cursor: pointer;">每日</label>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+            <div class="dropdown-divider mb-4"></div>
+
+            <form class="mb-4">
+              <h4>規則二：<a href="#role4" data-toggle="collapse" class="greenLink float-right" onclick="$(this).hasClass('collapsed') ? $(this).html('<i class=\'ion-ios-arrow-up\'></i>&nbsp;收闔') : $(this).html('<i class=\'ion-ios-arrow-down\'></i>&nbsp;展開')"><i class="ion-ios-arrow-up"></i>&nbsp;收闔</a></h4>
+              <div id="role4" class="collapse show">
+                <div class="form-group">
+                  <label>通知方式
+                    <span class="markRed">*</span>
+                  </label>
+                  <div id="edit_notice_rule2" class="dropdown ">
+                    <button disabled class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <span class="btn-text"> 逾期燈號、訊息通知、Mail、單筆通知</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col ml-3">
+                      <label>通知對象（正本）
+                        <span class="markRed">*</span>
+                      </label>
+                      <select disabled class="selectpicker" data-live-search="true">
+                        <option data-tokens="ketchup mustard">行銷經辦</option>
+                        <option data-tokens="mustard">科四海</option>
+                        <option data-tokens="frosting">林熟分</option>
+                        <option data-tokens="ketchup mustard">陳美琳</option>
+                        <option data-tokens="mustard">理完稅</option>
+                        <option data-tokens="frosting">陳沼澤</option>
+                      </select>
+                    </div>
+                    <div class="col mr-3">
+                      <label>通知對象（副本）
+                        <span class="markRed">*</span>
+                      </label>
+                      <select class="selectpicker" data-live-search="true">
+                        <option data-tokens="ketchup mustard">行銷經辦</option>
+                        <option data-tokens="mustard">科四海</option>
+                        <option data-tokens="frosting">林熟分</option>
+                        <option data-tokens="ketchup mustard">陳美琳</option>
+                        <option data-tokens="mustard">理完稅</option>
+                        <option data-tokens="frosting">陳沼澤</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>通知主旨
+                    <span class="markRed">*</span>
+                  </label>
+                  <input id="custID" type="text" class="form-control inputstyle " value=" 轉介商機已分派通知" maxlength="10">
+
+                </div>
+                <div class="form-group">
+                  <label class="note">通知內容
+                    <span class="markRed">*</span>
+                  </label>
+                  <label class="float-right ps_note">(0/100)</label>
+                  <textarea class="form-control inputstyletextArea" rows="3">您轉介的網路商機(顧客姓名+ID )，已分派至”XXX”名下進行後續處理，如需知案件處理進度，可點選系統連結。
+                    <系統連結>
+                  </textarea>
+                </div>
+                <div class="form-group">
+                  <label>通知時機
+                    <span class="markRed">*</span>
+                  </label>
+                  <div id="loan-rate_1_inputs" class=" form-inline">
+                    <label>依
+                      <span class="blueText">分派日期</span>
+                    </label>
+                    <input type="number" class="form-control iconspace inputstyle col-2 pl-2" value="2">
+                    <select class="selectpicker inputstyleSelect col-3">
+
+                      <option>日</option>
+                      <option>月</option>
+
+
+                    </select>
+                    <label>發出提醒通知</label>
+                  </div>
+
+
+                </div>
+                <div class="form-group">
+                  <label>通知頻率
+                    <span class="markRed">*</span>
+                  </label>
+                  <div class="form-row">
+                    <div class="form-check">
+                      <input id="notice_freq2_0" type="radio" name="notice_freq2">
+                      <label for="notice_freq2_0" style="cursor: pointer;">一次性提醒</label>
+                    </div>
+                    <div class="form-check">
+                      <input id="notice_freq2_1" type="radio" name="notice_freq2">
+                      <label for="notice_freq2_1" style="cursor: pointer;">每月</label>
+                    </div>
+                    <div class="form-check">
+                      <input id="notice_freq2_2" type="radio" name="notice_freq2">
+                      <label for="notice_freq2_2" style="cursor: pointer;">每週</label>
+                    </div>
+                    <div class="form-check">
+                      <input id="notice_freq2_3" type="radio" name="notice_freq2" checked>
+                      <label for="notice_freq2_3" style="cursor: pointer;">每日</label>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+            <div class="modal-under-review-show">
+              <button type="button" class="btn btn-outline-danger" data-dismiss="modal"  aria-label="Close" onclick="$('#modalSysBack').modal('show');">退回</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close" onclick="$('#modalAgree').modal('show');">放行</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 未分派 -->
+    <div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="view" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="view">未分派
+              <span class="tag square blue ml-2">生效</span>
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="mb-4">
+              <div class="col-12 pl-0 mt-2">
+                <h5 class="topform-tit">案件來源</h5>
+                <h5 class="form-bodyall">EBM, 網路進件,系統轉介, 自建名單,總行指派案案件</h5>
+              </div>
+              <div class="col-12 pl-0 mt-2">
+                <h5 class="topform-tit">產品別</h5>
+                <h5 class="form-bodyall">信貸, 房貸, 副擔保, SB</h5>
+              </div>
+            </form>
+            <div class="dropdown-divider mb-4"></div>
+            <form class="mb-4">
+              <h4>規則一：<a href="#role1" data-toggle="collapse" class="greenLink float-right" onclick="$(this).hasClass('collapsed') ? $(this).html('<i class=\'ion-ios-arrow-up\'></i>&nbsp;收闔') : $(this).html('<i class=\'ion-ios-arrow-down\'></i>&nbsp;展開')"><i class="ion-ios-arrow-up"></i>&nbsp;收闔</a></h4>
+              <div id="role1" class="collapse show">
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知方式</h5>
+                  <h5 class="form-bodyall">逾期燈號、訊息通知、Mail 單筆通知</h5>
+                </div>
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知對象</h5>
+                  <h5 class="form-bodyall">
+                    <p>
+                      <span class="bloder">正本｜</span>
+                      <span>行銷經辦(名單持有者/受理者)、行銷主管(名單持有者主管)、總行經辦、總行主管</span>
+                    </p>
+                    <p>
+                      <span class="bloder">副本｜</span>
+                      <span>行銷經辦(名單持有者/受理者)、行銷主管(名單持有者主管)、總行經辦、總行主管</span>
+                    </p>
+                  </h5>
+                </div>
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知主旨</h5>
+                  <h5 class="form-bodyall">轉介商機已分派通知</h5>
+                </div>
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知內容</h5>
+                  <h5 class="form-bodyall">您轉介的網路商機(顧客姓名+ID )，已分派至”XXX”名下進行後續處理，如需知案件處理進度，可點選系統連結。
+                    <系統連結>
+                  </h5>
+                </div>
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知時機</h5>
+                  <h5 class="form-bodyall">依分派日期起算第
+                    <span class="bloder">2 日</span>發出通知</h5>
+                </div>
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知方式</h5>
+                  <h5 class="form-bodyall">逾期燈號、訊息通知、Mail 單筆通知</h5>
+                </div>
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知頻率</h5>
+                  <h5 class="form-bodyall">每日</h5>
+                </div>
+              </div>
+            </form>
+            <div class="dropdown-divider mb-4"></div>
+            <form class="mb-4">
+              <h4>規則二：<a href="#role2" data-toggle="collapse" class="greenLink float-right" onclick="$(this).hasClass('collapsed') ? $(this).html('<i class=\'ion-ios-arrow-up\'></i>&nbsp;收闔') : $(this).html('<i class=\'ion-ios-arrow-down\'></i>&nbsp;展開')"><i class="ion-ios-arrow-up"></i>&nbsp;收闔</a></h4>
+              <div id="role2" class="collapse show">
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知方式</h5>
+                  <h5 class="form-bodyall">逾期燈號、訊息通知、Mail 單筆通知</h5>
+                </div>
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知對象</h5>
+                  <h5 class="form-bodyall">
+                    <p>
+                      <span class="bloder">正本｜</span>
+                      <span>行銷經辦(名單持有者/受理者)、行銷主管(名單持有者主管)、總行經辦、總行主管</span>
+                    </p>
+                    <p>
+                      <span class="bloder">副本｜</span>
+                      <span>行銷經辦(名單持有者/受理者)、行銷主管(名單持有者主管)、總行經辦、總行主管</span>
+                    </p>
+                  </h5>
+                </div>
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知主旨</h5>
+                  <h5 class="form-bodyall">轉介商機已分派通知</h5>
+                </div>
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知內容</h5>
+                  <h5 class="form-bodyall">您轉介的網路商機(顧客姓名+ID )，已分派至”XXX”名下進行後續處理，如需知案件處理進度，可點選系統連結。
+                    <系統連結>
+                  </h5>
+                </div>
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知時機</h5>
+                  <h5 class="form-bodyall">依分派日期起算第
+                    <span class="bloder">2 日</span>發出通知</h5>
+                </div>
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知方式</h5>
+                  <h5 class="form-bodyall">逾期燈號、訊息通知、Mail 單筆通知</h5>
+                </div>
+                <div class="col-12 pl-0 mt-2">
+                  <h5 class="topform-tit">通知頻率</h5>
+                  <h5 class="form-bodyall">每日</h5>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-gry" data-dismiss="modal">取消</button>
+            <div class="modal-under-review-show">
+              <button type="button" class="btn btn-outline-danger" data-dismiss="modal"  aria-label="Close" onclick="$('#modalSysBack').modal('show');">退回</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close" onclick="$('#modalAgree').modal('show');">放行</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  @@include('./components/footer.html')
+  <script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+    $(document).ready(function () {
+
+      /**/
+
+      // dropdown-menu-stop 
+      $(document).on('click', '.dropdown-menu-stop', function (e) {
+        e.stopPropagation();
+      });
+      $('input[type=checkbox].form-check-input').on('change', function () {
+        var id = '#' + $(this).closest('.form-check').closest(
+          '.dropdown-menu.dropdown-menu-stop').closest('.dropdown')[0].id;
+        var strings = [];
+        $(id).find('.dropdown-menu.dropdown-menu-stop').children().each(function () {
+          var checked = $(this).find('input').prop('checked')
+          if (checked) {
+            strings.push($(this).find('input').val())
+          }
+        })
+        var buttonTitle = strings.length == 0 ? '請選擇' : strings.join(', ');
+        $(id).find('.btn-text').text(buttonTitle)
+      })
+
+      //$('input[name=custtype]').filter('[value=' + custType + ']').prop('checked', true);
+      $('input[name=custtype]').on('change', function () {
+        custType = $(this).val();
+        $('input[name=custtype]').each(function () {
+          var id = $(this).val();
+          $('#search-section-' + id).removeClass('show');
+        })
+
+        $('#search-section-' + custType).addClass('show');
+      });
+
+      $('#custID').on('focus', function (e) {
+        if (e.target.value == '') {
+          $('div[name=custID]').removeClass('error')
+          return;
+        }
+        var reg = new RegExp(/^[A-Z][12][0-9]{8}$/)
+        custIDIValid = reg.test(e.target.value);
+        custIDIValid ? $('#search-section-0 div[name=custID]').removeClass('error') : $(
+          '#search-section-0 div[name=custID]').addClass('error');
+      })
+      $('#custID').on('blur', function (e) {
+        if (e.target.value == '') {
+          $('#search-section-0 div[name=custID]').removeClass('error')
+          return;
+        }
+        var reg = new RegExp(/^[A-Z][12][0-9]{8}$/)
+        custIDIValid = reg.test(e.target.value);
+        custIDIValid ? $('#search-section-0 div[name=custID]').removeClass('error') : $(
+          '#search-section-0 div[name=custID]').addClass('error');
+      })
+
+      $('#custID').on('keyup', function (e) {
+        var reg = new RegExp(/^[A-Z][12][0-9]{8}$/)
+        custIDIValid = reg.test(e.target.value);
+        custIDIValid ? $('#search-section-0 div[name=custID]').removeClass('error') : $(
+          '#search-section-0 div[name=custID]').addClass('error');
+      })
+
+      $('#search-section-0').on('keyup', function () {
+        var disabled = true;
+        $("#search-section-0 :input[type=text]").each(function () {
+          if ($(this).attr('id') == 'custID') {
+            disabled = !custIDIValid
+          } else {
+            disabled = ($(this).val() == '');
+          }
+          if (!disabled) {
+            return false;
+          } // break out of loop
+        });
+
+        $('#searchBtn-0').prop('disabled', disabled);
+      })
+
+      $('#search-section-1').on('keyup', function () {
+        var disabled = true;
+        $("#search-section-1 :input[type=text]").each(function () {
+          if ($(this).attr('id') == 'custID') {
+            disabled = !custIDIValid
+          } else {
+            disabled = ($(this).val() == '');
+          }
+          if (!disabled) {
+            return false;
+          } // break out of loop
+        });
+
+        $('#searchBtn-1').prop('disabled', disabled);
+      })
+    });
+
+    function openDatePicker(id) {
+      console.log('aaa')
+      var did = "#" + id
+      $(did).datepicker('show');
+    }
+
+    function onSearchCust() {
+      // show table
+      $('input[name=custtype]').each(function () {
+        var id = $(this).val();
+        $('#data-list-' + id).removeClass('show');
+      })
+
+      $('#data-list-' + custType).addClass('show');
+
+      var text = $('#custNum').val();
+      if (text == 'error') {
+        var htmlString = $('#search_error').html();
+        $('#data-list-0').html(htmlString)
+      }
+
+    }
+
+    function onClearSearchParam() {
+      var string = '#search-section-' + custType + ' :input[type=text]'
+      $(string).each(function () {
+        $(this).val('')
+      });
+      $('div[name=custID]').removeClass('error');
+      $('#searchBtn-' + custType).prop('disabled', true);
+    }
+
+    function cancel() {
+      $('#confirm').modal('toggle');
+    }
+
+    function confirm() {
+      var page = parseInt(custType) + 1
+      location.href = 'data_' + page + '.html'
+    }
+  </script>
+
+  <script id="search_error" type="text/template">
+    <div class="nodata">
+      <div>
+        <img src="img/img_empty.png" class="d-inline-block align-top" alt="">
+      </div>
+      <h6>查無資料</h6>
+      <button type="button " class="btn btn-outline-primary my-2 my-sm-0 " data-toggle="modal" data-target="#seedata" data-whatever="@mdo">新增潛在顧客</button>
+    </div>
+  </script>
+</body>
+
+</html>

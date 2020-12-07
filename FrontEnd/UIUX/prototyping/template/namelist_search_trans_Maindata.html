@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+<body>
+    <div class="container-fluid pl-0 pr-0">
+        @@include('./components/sidebar.html', {
+            "sidebarCollapseFirst": "namelistManage",
+            "sidebar": "namelistAssign"
+        })
+        <div id="main-content" class="main-content">
+            @@include('./components/navbar.html', { "navbarType": "" })
+
+            <!-- 麵包削 -->
+            <nav class="clearfix nav-top">
+                <ol class="breadcrumb float-sm-left float-xs-none mb-xs-0">
+                    <li class="breadcrumb-item">
+                        <a href="namelist_search_trans.html">名單分派</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">總行指派案件</li>
+                </ol>
+
+            </nav>
+            <section>
+
+                <div class="info-area">
+                    <div class="wrap-box-l">
+                        <h4 class="name">
+                            <span>日本東京來回機票資格審核名單</span>
+                        </h4>
+                        <div class="listinfoarea collapse show" id="collapseInfo" aria-labelledby="headingInfo" data-parent="#Infoaccordion">
+                            <div class="row">
+                                <div class="col-lg-4  col-sm-12 col-md-12">
+                                    <ul class="listinfo">
+
+                                        <li>
+
+                                            <span class="topform-tit">建立者</span>陳先生</li>
+                                        <li>
+
+                                            <span class="topform-tit">類別</span>貸後追蹤・新聞事件・其他</li>
+                                        <li>
+
+                                            <span class="topform-tit">指定回覆日期</span>2018/01/07</li>
+                                        <li>
+
+                                            <span class="topform-tit">附件</span>
+                                            <a href="#" class="alink">
+                                                <i class="fa fa-paperclip iconspace" aria-hidden="true"></i>日本東京機票</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-lg-5  col-sm-12 col-md-12">
+                                    <ul class="listinfo">
+
+
+
+
+                                        <li>
+
+                                            <span class="topform-tit">內容</span>
+                                            <span class="form-body">急里為精實動較一小夜心所主分遠出條快展在處住要們種一城海馬再正品利動候子天人看一回這士反內之建：有兒！會不響品前有現水得面常。喜了說校，人得東自……依說成果、小考士明票的。</span>
+                                        </li>
+
+
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collapseInfoTit">
+                            <a class="close-area" href="javascript:void(0)" onclick="collapse(this, 'fa-angle-double-up', 'fa-angle-double-down')" name="collapseInfo">收闔案件資訊
+                                <i id="collapseInfo_icon" class="fa fa-angle-double-up iconspace" aria-hidden="true"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </section>
+
+
+            <!-- Customer 表單 -->
+            <div id="data-list-0" class="table-responsive data-list">
+                <table class="table tableinfo">
+                    <thead>
+                        <tr>
+
+
+                            <th scope="col ">名單狀態
+                                <i class="fa fa-question-circle-o iconspace" aria-hidden="true" data-toggle="modal" data-target="#stateInfo" data-whatever="@mdo "></i>
+                            </th>
+
+                            <th scope="col ">戶名</th>
+                            <th scope="col ">統一編號</th>
+                            <th scope="col ">處理經辦</th>
+                            <th scope="col " class="text-center">處理紀錄</th>
+                            <th scope="col "></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+
+                            <td>
+
+                                <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                                </span>未執行</td>
+
+                            <td>
+                                <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                            </td>
+                            <td>A1212121212</td>
+                            <td>理大吉</td>
+                            <td class="text-center">
+                                <a data-toggle="collapse" data-target="#dolist-data" aria-expanded="false" aria-controls="dolist-data">
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </td>
+                            <td class="money-right">
+                                <div class="btn-group">
+                                    <button class="btn btn-outline-primary btn-sm " type="button" data-toggle="modal" data-target="#addnote" data-whatever="@mdo">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                                <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                                    aria-haspopup="true " aria-expanded="fals">
+                                    <span class="sr-only ">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu ">
+                                    <a class="dropdown-item " href="# " data-toggle="modal" data-target="#addselflist" data-whatever="@mdo ">新增自建名單</a>
+                                </div>
+                                </div>
+
+
+                            </td>
+
+                        </tr>
+                        <tr aria-expanded="false" class="hiddenRow">
+                            <td colspan="11" class=" cardOpen" style="padding: 0 !important">
+                                <div class="accordian-body collapse dolist-data" id="dolist-data">
+                                    <div class="cardOpen-content">
+                                        <h4>處理紀錄
+                                        </h4>
+                                        <ul class="market-mark">
+                                            <li>
+                                                <span class="dot dot-main"></span>
+                                                <div class="warp shadow">
+                                                    <div class="date">2012/09/12</div>
+                                                    <div class="note">第三次處理結果</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span class="dot dot-main"></span>
+                                                <div class="warp shadow">
+                                                    <div class="date">2012/09/12</div>
+                                                    <div class="note">行銷顧客精彩歲月專案，顧客表達高度興趣，預計 2018/01/27 再度拜訪
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span class="dot dot-main"></span>
+                                                <div class="warp shadow">
+                                                    <div class="date">2012/09/12</div>
+                                                    <div class="note">行銷顧客精彩歲月專案，顧客表達高度興趣，預計 2018/01/27 再度拜訪
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+
+
+                            <td>
+
+                                <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                                </span>未執行</td>
+
+                            <td>
+                                <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                            </td>
+                            <td>A1212121212</td>
+                            <td>理大吉</td>
+                            <td class="text-center">
+                                <a data-toggle="collapse" data-target="#dolist-data" aria-expanded="false" aria-controls="dolist-data">
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </td>
+                            <td class="money-right">
+                                <div class="btn-group ">
+                                    <button class="btn btn-outline-primary btn-sm " type="button" data-toggle="modal" data-target="#addnote" data-whatever="@mdo">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                                        aria-haspopup="true " aria-expanded="fals">
+                                        <span class="sr-only ">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu ">
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#addselflist" data-whatever="@mdo ">新增自建名單</a>
+                                    </div>
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+
+
+                            <td>
+
+                                <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                                </span>未執行</td>
+
+                            <td>
+                                <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                            </td>
+                            <td>A1212121212</td>
+                            <td>理大吉</td>
+                            <td class="text-center">
+                                <a data-toggle="collapse" data-target="#dolist-data" aria-expanded="false" aria-controls="dolist-data">
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </td>
+                            <td class="money-right">
+                                <div class="btn-group">
+                                    <button class="btn btn-outline-primary btn-sm " type="button" data-toggle="modal" data-target="#addnote" data-whatever="@mdo">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                                        aria-haspopup="true " aria-expanded="fals">
+                                        <span class="sr-only ">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu ">
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#addselflist" data-whatever="@mdo ">新增自建名單</a>
+                                    </div>
+                                </div>
+
+                            </td>
+
+                        </tr>
+                        <tr>
+
+
+                            <td>
+
+                                <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                                </span>未執行</td>
+
+                            <td>
+                                <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                            </td>
+                            <td>A1212121212</td>
+                            <td>理大吉</td>
+                            <td class="text-center">
+                                <a data-toggle="collapse" data-target="#dolist-data" aria-expanded="false" aria-controls="dolist-data">
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </td>
+                            <td class="money-right">
+                                <div class="btn-group">
+                                    <button class="btn btn-outline-primary btn-sm " type="button" data-toggle="modal" data-target="#addnote" data-whatever="@mdo">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                                <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                                    aria-haspopup="true " aria-expanded="fals">
+                                    <span class="sr-only ">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu ">
+                                    <a class="dropdown-item " href="# " data-toggle="modal" data-target="#addselflist" data-whatever="@mdo ">新增自建名單</a>
+                                </div>
+                                </div>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- pageNum -->
+            <nav class="navNum navbar-light">
+                <form class="form-inline">
+                    <div>
+                        <button class=" btn-sm pageNum">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </button>
+                        <button class=" btn-sm pageNum">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </button>
+                        <span class="loanChartNote">1 of 1</span>
+                    </div>
+                    <div>
+                        <span class="loanChartNote">Items per page:
+                            <select class="form-control inputstyle">
+                                <option>50</option>
+                            </select>
+                        </span>
+                    </div>
+                </form>
+            </nav>
+            <!-- 編輯備註 -->
+            <div class="modal fade" id="addnote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">編輯備註</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="note">備註
+                                    <span class="markRed">*</span>
+                                </label>
+                                <label class="float-right ps_note">(0/250)</label>
+                                <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+                            </div>
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">暫存</button>
+                            <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                            <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">結案</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- 撤回總行 -->
+            <div class="modal fade" id="backToBank" tabindex="-1" role="dialog" aria-labelledby="backToBank" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">撤回名單（3)</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>你確定要撤回這 3 筆名單嗎？請告知我們撤回的原因，謝謝！</p>
+                            <div class="form-group">
+                                <label>原因
+                                    <span class="markRed">*</span>
+
+                                </label>
+                                <span class="float-right ps_note">(0/300)</span>
+                                <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                            <button type="button" class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">撤回
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@@include('./components/footer.html')
+<script>
+    var myChart;
+    var modalChart;
+
+    $(document).ready(function () {
+
+        /**/
+        var wrap = $(".content");
+        scrollEvent($(window))
+
+        $('#nav-dropdown a').click(function (e) {
+            e.preventDefault()
+            //console.log($('#pills-bank'))
+            //$('#pills-bank').tab('show');
+            $(this).tab('show');
+        })
+    })
+
+    // function openDatePicker(id) {
+    //     console.log('aaa')
+    //     var did = "#" + id
+    //     $(did).datepicker('show');
+    // }
+
+    function smoothscroll() {
+        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+
+        if (currentScroll > 0) {
+            window.requestAnimationFrame(smoothscroll);
+            window.scrollTo(0, currentScroll - (currentScroll / 5));
+        }
+    }
+
+</script>
+</body>
+</html>

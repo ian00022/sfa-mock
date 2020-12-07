@@ -1,0 +1,191 @@
+<!-- 編輯行銷團隊 (第 1/2 步：填寫團隊資訊) / 編輯團隊資訊 -->
+<div id="modalEditMarketingTeam1" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title">編輯團隊資訊</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <div class="row">
+              <div class="col ml-3">
+                <label>團隊類型</label>
+                <select class="selectpicker inputstyleSelect">
+                  <option>空中 AO</option>
+                  <option>SBC</option>
+                  <option>消金中心</option>
+                </select>
+              </div>
+              <div class="col ml-3">
+                <label>團隊編號</label>
+                <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col mr-3">
+                <label>團隊名稱</label>
+                <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+              </div>
+              <div class="col ml-3">
+                <label>組織代碼
+                  <span class="markRed">*</span>
+                </label>
+                <select class="selectpicker inputstyleSelect">
+                  <option value="" class="displayno">請選擇...</option>
+                  <option>請選擇</option>
+                  <option>請選擇</option>
+                  <option>請選擇</option>
+                  <option>請選擇</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col ml-3">
+                <label>名單上限</label>
+                <div class="input-group mb-3">
+                  <input type="number" class="form-control inputstyle" placeholder="請填數字" value="10">
+                  <div class="input-group-append ">
+                    <span class="input-group-text inputstyle">筆</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col mr-3">
+                <label>可承作商品</label>
+                <select class="selectpicker inputstyleSelect">
+                  <option value="" class="displayno">請選擇...</option>
+                  <option>請選擇</option>
+                  <option>請選擇</option>
+                  <option>請選擇</option>
+                  <option>請選擇</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>
+              可接受名單來源
+            </label>
+            <div id="normalModalEditMarketingTeam1" class="dropdown ">
+              <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="btn-text">EBM</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#normalModalEditMarketingTeam1')">全選</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#normalModalEditMarketingTeam1')">取消全選</a>
+                <div class="dropdown-divider"></div>
+                <div class="form-check form-check-inline dropdown-item">
+                  <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam1_none" value="未執行">
+                  <label class="form-check-label" for="normalModalEditMarketingTeam1_none">信貸</label>
+                </div>
+                <div class="form-check form-check-inline dropdown-item">
+                  <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam1_tracked" value="追蹤中">
+                  <label class="form-check-label" for="normalModalEditMarketingTeam1_tracked">副擔保</label>
+                </div>
+                <div class="form-check form-check-inline dropdown-item">
+                  <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam1_reject" value="婉拒">
+                  <label class="form-check-label" for="normalModalEditMarketingTeam1_reject">房貸</label>
+                </div>
+                <div class="form-check form-check-inline dropdown-item">
+                  <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam1_accepted" value="已受理">
+                  <label class="form-check-label" for="normalModalEditMarketingTeam1_accepted">小型事業(SB)</label>
+                </div>
+                <div class="form-check form-check-inline dropdown-item">
+                  <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam1_reject" value="婉拒">
+                  <label class="form-check-label" for="normalModalEditMarketingTeam1_reject">卡友貸</label>
+                </div>
+                <div class="form-check form-check-inline dropdown-item">
+                  <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam1_reject2" value="婉拒">
+                  <label class="form-check-label" for="normalModalEditMarketingTeam1_reject2">保險(儲蓄險、房貸壽險)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="note">描述</label>
+            <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+        <button type="button" data-dismiss="modal" class="btn btn-ylw">確定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 編輯行銷團隊 (第 2/2 步：加入成員) / 新增團隊成員 -->
+<div id="modalEditMarketingTeam2" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title">新增團隊成員</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>
+            團隊成員
+            <span class="markRed">*</span>
+          </label>
+          <div id="normalModalEditMarketingTeam2" class="dropdown ">
+            <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span class="btn-text">馬力歐、永盟凱...+10</span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#normalModalEditMarketingTeam2')">全選</a>
+              <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#normalModalEditMarketingTeam2')">取消全選</a>
+              <div class="dropdown-divider"></div>
+              <div class="form-check form-check-inline dropdown-item">
+                <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam2_none" value="未執行">
+                <label class="form-check-label" for="normalModalEditMarketingTeam2_none">馬力歐</label>
+              </div>
+              <div class="form-check form-check-inline dropdown-item">
+                <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam2_tracked" value="追蹤中">
+                <label class="form-check-label" for="normalModalEditMarketingTeam2_tracked">馬力歐</label>
+              </div>
+              <div class="form-check form-check-inline dropdown-item">
+                <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam2_reject" value="婉拒">
+                <label class="form-check-label" for="normalModalEditMarketingTeam2_reject">馬力歐</label>
+              </div>
+              <div class="form-check form-check-inline dropdown-item">
+                <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam2_accepted" value="已受理">
+                <label class="form-check-label" for="normalModalEditMarketingTeam2_accepted">馬力歐</label>
+              </div>
+              <div class="form-check form-check-inline dropdown-item">
+                <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam2_reject" value="婉拒">
+                <label class="form-check-label" for="normalModalEditMarketingTeam2_reject">馬力歐</label>
+              </div>
+              <div class="form-check form-check-inline dropdown-item">
+                <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam2_reject1" value="婉拒">
+                <label class="form-check-label" for="normalModalEditMarketingTeam2_reject1"></label>
+              </div>
+            </div>
+          </div>
+          <div id="detail_result" class="mt-4 row no-gutters ">
+            <div class="dropdown-divider col-12"></div>
+            <div class="col-12 ps_note">細項類別 (0)</div>
+            <p class="col-12 mt-2 choosen"></p>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+        <button type="button" class="btn btn-ylw" data-dismiss="modal" aria-label="Close">確定新增團隊成員</button>
+      </div>
+    </div>
+  </div>
+</div>

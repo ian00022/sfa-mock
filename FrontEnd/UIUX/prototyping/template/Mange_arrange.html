@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+
+<body>
+  <div class="container-fluid pl-0 pr-0">
+    @@include('./components/sidebar.html', { "sidebarCollapseFirst": "mange", "sidebar": "mangeArrange" })
+    <div id="main-content" class="main-content">
+      @@include('./components/navbar.html', { "navbarType": "" })
+
+      <!-- 顧客查詢 -->
+      <section>
+        <nav class="navbar justify-content-between panel-head ">
+          <span class="navbar-brand ">總行指派案件設定
+
+          </span>
+
+          <ul class="nav float-lg-right float-sm-none nav-function-btn">
+            <li>
+
+              <div class="nav-link " href="#">
+                <span class="textGary">排序</span>
+
+                <button class="btn dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  最近
+                </button>
+                <div class="dropdown-menu dropdown-menu-right-sorting">
+                  <a class="dropdown-item " href="# ">名單狀態</a>
+                  <a class="dropdown-item " href="# ">分派/建立日期</a>
+                  <a class="dropdown-item " href="# ">統一編號</a>
+                  <a class="dropdown-item " href="# ">戶名</a>
+                  <a class="dropdown-item " href="# ">行銷單位</a>
+                  <a class="dropdown-item " href="# ">行銷人員</a>
+                  <a class="dropdown-item " href="# ">產品</a>
+                  <a class="dropdown-item " href="# ">名單來源</a>
+                  <a class="dropdown-item " href="# ">名單類型</a>
+                </div>
+
+              </div>
+
+
+            </li>
+            <li>
+              <button type="button" class="nav-link btn" data-toggle="modal" data-target="#addNewTask" data-whatever="@mdo ">
+                <i class="fa fa-plus iconspace" aria-hidden="true">
+                </i>新增案件</button>
+            </li>
+
+          </ul>
+
+        </nav>
+
+
+        <div id="search-section-0" class="form-row mr-0 info-area area ">
+
+          <div class="form-group col-12 col-md-4 col-lg-3">
+            <label>名單狀態
+
+            </label>
+            <select class="selectpicker inputstyleSelect">
+              <option>全部</option>
+            </select>
+          </div>
+          <div class="form-group col-12 col-md-4 col-lg-3">
+            <label>單號</label>
+
+            <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+
+          </div>
+          <div class="form-group col-12 col-md-4 col-lg-3">
+            <label>主旨</label>
+
+            <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+
+          </div>
+          <div class="form-group col-12 col-md-4 col-lg-3">
+            <label>建立者
+
+            </label>
+            <input type="text" class="form-control inputstyle" placeholder="e.g. 王大明">
+          </div>
+
+          <div class="form-group col-12 col-md-8 col-lg-6">
+            <label>日期類型</label>
+            <div class="form-row">
+              <div class="form-group col-6">
+                <select class="selectpicker inputstyleSelect">
+                  <option>建立日期</option>
+                </select>
+              </div>
+              <div class="form-group col-6">
+                @@include('./components/input/date.html')
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-12 col-md-4 col-lg-3">@@include('./components/input/searh-btn-group.html')</div>
+        </div>
+
+      </section>
+      <!--  表單 -->
+      <div id="data-list-0" class="table-responsive data-list">
+
+        <table class="table table-striped tableinfo">
+          <thead>
+            <tr>
+              <th scope="col ">單號</th>
+              <th scope="col ">主旨</th>
+              <th scope="col ">建立者</th>
+              <th scope="col ">建立日期</th>
+              <th scope="col ">目前處理者</th>
+              <th scope="col ">指定回覆日期</th>
+              <th scope="col ">結案日</th>
+              <th scope="col ">狀態
+                <i class="fa fa-question-circle-o iconspace" aria-hidden="true" data-toggle="modal" data-target="#stateInfo" data-whatever="@mdo "></i>
+              </th>
+              <th scope="col "></th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AA0012356789</td>
+              <td>日本東京來回機票資格審核名單</td>
+              <td>陳先生</td>
+              <td>2018/03/23</td>
+              <td>陳先生</td>
+              <td>2018/01/07</td>
+              <td>-</td>
+              <td>生效</td>
+              <td class="money-right">
+                <div class="btn-group ">
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./Mange_arrange_data.html' } ">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true " aria-expanded="fals">
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+
+
+                    <a class="dropdown-item " href="# " data-toggle="modal" data-target="#edit">編輯</a>
+                    <!-- <a class="dropdown-item " href="# " data-toggle="modal" data-target="#marketTrans" data-whatever="@mdo ">複製</a> -->
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr class="markgary">
+              <td>AA0012356789</td>
+              <td>地溝油廠商來訪名單</td>
+              <td>陳先生</td>
+              <td>2018/03/23</td>
+              <td>陳先生</td>
+              <td>2018/01/07</td>
+              <td>2018/03/09</td>
+              <td>停用</td>
+              <td class="money-right">
+                <div class="btn-group ">
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./Mange_arrange_data.html' } " disabled>
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true " aria-expanded="fals" disabled>
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+
+
+                    <a class="dropdown-item " href="# " data-toggle="modal" data-target="#edit">編輯</a>
+                    <!-- <a class="dropdown-item " href="# " data-toggle="modal" data-target="#marketTrans" data-whatever="@mdo ">複製</a> -->
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>AA0012356789</td>
+              <td>日本東京來回機票資格審核名單</td>
+              <td>陳先生</td>
+              <td>2018/03/23</td>
+              <td>陳先生</td>
+              <td>2018/01/07</td>
+              <td>-</td>
+              <td>生效</td>
+              <td class="money-right">
+                <div class="btn-group ">
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./Mange_arrange_data.html' } ">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true " aria-expanded="fals">
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+
+
+                    <a class="dropdown-item " href="# " data-toggle="modal" data-target="#edit">編輯</a>
+                    <!-- <a class="dropdown-item " href="# " data-toggle="modal" data-target="#marketTrans" data-whatever="@mdo ">複製</a> -->
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="markRed">
+              <td>AA0012356789</td>
+              <td>日本東京來回機票資格審核名單</td>
+              <td>陳先生</td>
+              <td>2018/03/23</td>
+              <td>陳先生</td>
+              <td>2018/01/07</td>
+              <td>-</td>
+              <td>待覆核</td>
+              <td class="money-right">
+                <div class="btn-group ">
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./Mange_arrange_data.html' } ">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true " aria-expanded="fals">
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+
+
+                    <a class="dropdown-item " href="# " data-toggle="modal" data-target="#edit">編輯</a>
+                    <!-- <a class="dropdown-item " href="# " data-toggle="modal" data-target="#marketTrans" data-whatever="@mdo ">複製</a> -->
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>AA0012356789</td>
+              <td>日本東京來回機票資格審核名單</td>
+              <td>陳先生</td>
+              <td>2018/03/23</td>
+              <td>陳先生</td>
+              <td>2018/01/07</td>
+              <td>-</td>
+              <td>暫存</td>
+              <td class="money-right">
+                <div class="btn-group ">
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./Mange_arrange_data.html' } ">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true " aria-expanded="fals">
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+
+
+                    <a class="dropdown-item " href="# " data-toggle="modal" data-target="#edit">編輯</a>
+                    <!-- <a class="dropdown-item " href="# " data-toggle="modal" data-target="#marketTrans" data-whatever="@mdo ">複製</a> -->
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>AA0012356789</td>
+              <td>日本東京來回機票資格審核名單</td>
+              <td>陳先生</td>
+              <td>2018/03/23</td>
+              <td>陳先生</td>
+              <td>2018/01/07</td>
+              <td>-</td>
+              <td>主管退回&nbsp;
+                <i data-toggle="popover" data-target="#t1528763431100" class="fa fa-ban markRed pop-hover-stay" aria-hidden="true"></i>
+              </td>
+              <td class="money-right">
+                <div class="btn-group ">
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./Mange_arrange_data.html' } ">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true " aria-expanded="fals">
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+
+
+                    <a class="dropdown-item " href="# " data-toggle="modal" data-target="#edit">編輯</a>
+                    <!-- <a class="dropdown-item " href="# " data-toggle="modal" data-target="#marketTrans" data-whatever="@mdo ">複製</a> -->
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+
+          </tbody>
+        </table>
+      </div>
+      <!-- pageNum -->
+      <!--<nav class="navNum navbar-light">
+                    <form class="form-inline">
+                        <div>
+                            <button class=" btn-sm pageNum">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            </button>
+                            <button class=" btn-sm pageNum">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </button>
+                            <span class="loanChartNote">1-1 of 1</span>
+                        </div>
+                        <div>
+                            <span class="loanChartNote">Items per page:
+                                <select class="selectpicker inputstyleSelect">
+                                    <option>1</option>
+                                </select>
+                            </span>
+                        </div>
+                    </form>
+                </nav> -->
+    </div>
+    <!-- 編輯案件內容 -->
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content ">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">編輯總行指派案件</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>主旨
+
+              </label>
+              <label class="float-right ps_note">(14/20)</label>
+              <input type="text" class="form-control inputstyle" value="日本東京來回機票資格審核名單">
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col ml-3">
+                  <label>類別</label>
+                  <select class="selectpicker inputstyleSelect">
+
+                    <option>貸後追蹤</option>
+                    <option>新聞事件</option>
+                    <option>行銷商機</option>
+                    <option>其他</option>
+
+                  </select>
+
+                </div>
+                <div class="col ml-3">
+                  <label>建立者</label>
+                  <select class="selectpicker" data-live-search="true">
+                    <option data-tokens="ketchup mustard">傅哲人</option>
+                    <option data-tokens="mustard">科四海</option>
+                    <option data-tokens="frosting">林熟分</option>
+                    <option data-tokens="ketchup mustard">陳美琳</option>
+                    <option data-tokens="mustard">理完稅</option>
+                    <option data-tokens="frosting">陳沼澤</option>
+                  </select>
+
+                </div>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col ml-3">
+                  <label>指定回覆日期</label>
+                  @@include('./components/input/date.html', {"daterange": false})
+
+                </div>
+                <div class="col ml-3">
+
+
+                </div>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="note">內文
+
+              </label>
+
+              <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入...">急里為精實動較一小夜心所主分遠出條快展在處住要們種一城海馬再正品利動候子天人看一回這士反內之建：有兒！會不響品前有現水得面常。喜了說校，人得東自……依說成果、小考士明票的。</textarea>
+            </div>
+            <form>
+              <h5 class="mt-2 mb-3">附件
+                <span class="float-right">
+
+                  <a href="#" class="greenLink pl-4">
+                    <i class="fa fa-upload" aria-hidden="true"></i>上傳附件</a>
+                </span>
+              </h5>
+              <div>
+                <a href="#" class="alink pr-3">日本東京機票名單.scv</a>
+                <a href="javascript:void(0)" class="markRed " data-toggle="modal" data-target="#deletphoto" data-whatever="@mdo ">
+                  <i class="fa fa-trash-o icons e" aria-hidden="true"></i>
+
+                </a>
+              </div>
+              <div class="mt-3">
+                <a href="#" class="alink pr-3">購買意願登記表.pdf</a>
+                <a href="javascript:void(0)" class="markRed " data-toggle="modal" data-target="#deletphoto" data-whatever="@mdo ">
+                  <i class="fa fa-trash-o icons e" aria-hidden="true"></i>
+
+                </a>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">撤回案件</button>
+            <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+            <button type="button" class="btn btn-ylw" onclick="step2()">確認</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- 新增總行指派案件 (第 1/2 步：填寫案件資訊) -->
+    <div id="addNewTask" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content ">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">新增總行指派案件 (第 1/2 步：填寫案件資訊)</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>主旨
+
+              </label>
+              <label class="float-right ps_note">(0/20)</label>
+              <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col ml-3">
+                  <label>類別</label>
+                  <select class="selectpicker inputstyleSelect">
+                    <option value="" class="displayno">請選擇...</option>
+                    <option>貸後追蹤</option>
+                    <option>新聞事件</option>
+                    <option>行銷商機</option>
+                    <option>其他</option>
+                  </select>
+
+                </div>
+                <div class="col ml-3">
+                  <label>建立者</label>
+                  <select class="selectpicker" data-live-search="true">
+                    <option data-tokens="ketchup mustard">馬力歐</option>
+                    <option data-tokens="mustard">科四海</option>
+                    <option data-tokens="frosting">林熟分</option>
+                    <option data-tokens="ketchup mustard">陳美琳</option>
+                    <option data-tokens="mustard">理完稅</option>
+                    <option data-tokens="frosting">陳沼澤</option>
+                  </select>
+
+                </div>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col ml-3">
+                  <label>指定回覆日期</label>
+                  <input class="form-control inputstyle" type="text" name="singledate" placeholder="請選擇...">
+
+                </div>
+                <div class="col ml-3"></div>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="note">內文</label>
+
+              <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+            </div>
+            <form>
+              <label>附件</label>
+              <div class="col-12">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="customFile">
+                  <label class="custom-file-label" for="customFile" type="file" class="custom-file-input" id="customFile">
+                    <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+            <button type="button" class="btn btn-ylw" onclick="step2()">下一步：加入名單</button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <!-- 查找群組名單2 -->
+  <div id="addNewTaskTwo" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">新增總行指派案件 (第 2/2 步：加入名單)</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>加入名單方式
+              <span class="markRed">*</span>
+            </label>
+            <div class="form-row">
+              <div class="form-check" style="cursor: pointer;">
+                <input id="customer" name="client" checked="true" type="radio" value="0">
+                <label for="customer" style="cursor: pointer;">手動輸入名單</label>
+              </div>
+              <div class="form-check" style="cursor: pointer;">
+                <input id="company" name="client" type="radio" value="1">
+                <label for="company" style="cursor: pointer;">整批匯入 Ecxel</label>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <form id="upload_one">
+            <h5 class="mt-2 mb-3">名單筆數 (1)</h5>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label>顧客統一編號</label>
+                  <input type="text" class="form-control inputstyle" placeholder="e.g. A1234567">
+                </div>
+                <div class="col">
+                  <label>顧客姓名</label>
+                  <input type="text" class="form-control inputstyle" placeholder="e.g. 陳大明">
+                </div>
+                <div class="col">
+                  <label>指派單位</label>
+                  <select class="selectpicker" data-live-search="true">
+                    <option data-tokens="ketchup mustard">01234 板橋分行</option>
+                    <option data-tokens="mustard">01235 林口分行</option>
+                    <option data-tokens="frosting">01236 新竹分行</option>
+                  </select>
+
+                </div>
+                <div class="">
+                  <a href="javascript:void(0)" class="markRed deletNum" data-toggle="modal" data-target="#deletphoto" data-whatever="@mdo ">
+                    <i class="fa fa-trash-o icons e" aria-hidden="true"></i>
+
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <a href="#" class="greenLink">
+                <i class="fa fa-plus iconspace" aria-hidden="true"></i>新增名單筆數</a>
+            </div>
+          </form>
+          <form id="upload_together" class="displayno">
+            <h5 class="mt-2 mb-3">批次上傳 (名單筆數：10)
+              <span class="float-right">
+                <a href="#" class="greenLink">下載 Excel 範本</a>
+                <a href="#" class="greenLink pl-4">
+                  <i class="fa fa-upload" aria-hidden="true"></i>匯入 Excel</a>
+              </span>
+            </h5>
+            <div>
+              <a href="#" class="alink pr-3">日本東京機票名單.scv</a>
+              <a href="javascript:void(0)" class="markRed " data-toggle="modal" data-target="#deletphoto" data-whatever="@mdo ">
+                <i class="fa fa-trash-o icons e" aria-hidden="true"></i>
+
+              </a>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">返回上一步</button>
+          <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+          <button type="button" class="btn btn-ylw" data-dismiss="modal" aria-label="Close">確定新增案件</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @@include('./components/footer.html')
+  <script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+    $(document).ready(function () {
+      /**/
+
+      // 總行指派案件 switch
+      $('input[type=radio][name=client]').change(function () {
+        if (this.value == 0) {
+          $('#upload_one').removeClass('displayno');
+          $('#upload_together').addClass('displayno');
+        } else if (this.value == 1) {
+          $('#upload_one').addClass('displayno');
+          $('#upload_together').removeClass('displayno');
+        }
+      });
+    });
+
+    // function openDatePicker(id) {
+    //     console.log('aaa')
+    //     var did = "#" + id
+    //     $(did).datepicker('show');
+    // }
+
+    function openDatePicker(id) {
+      var did = "#" + id
+      $(did).focus();
+    }
+
+    function step1() {
+      this.modalOpen('addNewTask');
+      this.close('addNewTaskTwo');
+    }
+
+    function step2() {
+      this.close('addNewTask');
+      this.modalOpen('addNewTaskTwo');
+    }
+
+    function close(id) {
+      var vid = '#' + id;
+      $(vid).modal('hide');
+    }
+
+    function modalOpen(id) {
+      var vid = '#' + id;
+      $(vid).modal('show');
+    }
+
+    function closeModal(id) {
+      this.close(id)
+    }
+  </script>
+
+  <script id="search_error" type="text/template">
+    <div class="nodata">
+      <div>
+        <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+      </div>
+      <h6>查無資料</h6>
+
+    </div>
+  </script>
+</body>
+
+</html>

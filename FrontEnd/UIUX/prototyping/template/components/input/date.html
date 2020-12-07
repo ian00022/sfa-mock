@@ -1,0 +1,10 @@
+<div class="input-group">
+  @@if(typeof daterange !== 'undefined' && daterange) {
+  <input class="form-control inputstyle" type="text" name="daterange" placeholder="請選擇日期...">
+  } @@if(typeof daterange === 'undefined' || !daterange ) {
+  <input class="form-control inputstyle" type="text" name="singledate" placeholder="請選擇日期...">
+  }
+  <div class="input-group-append">
+    <span class="input-group-text inputstyle"><i class="fa fa-calendar"></i></span>
+  </div>
+</div>

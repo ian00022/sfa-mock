@@ -1,0 +1,209 @@
+<!-- 新增行程1 -->
+<div id="addmeeone" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">新增行程(第 1/2 步：選擇名單)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>是否綁定名單?</label>
+          <div class="">
+            <div class="form-check form-check-inline">
+              <input id="yes" class="form-check-input" name="wrap-name" type="radio" style="cursor: pointer;" value="true" checked>
+              <label for="yes" class="form-check-label" style="cursor: pointer;">是</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="no" class="form-check-input" name="wrap-name" type="radio" value="false">
+              <label for="no" class="form-check-label" style="cursor: pointer;">否</label>
+            </div>
+          </div>
+        </div>
+        <p>請選擇您要設定行程的名單：</p>
+        <div class="table-responsive">
+          <table class="table tableinfo">
+            <thead>
+              <tr>
+                <th scope="col "></th>
+                <th scope="col ">名單狀態
+
+                </th>
+
+                <th scope="col ">統一編號</th>
+                <th scope="col ">戶名</th>
+                <th scope="col ">產品</th>
+                <th scope="col ">名單來源</th>
+                <th scope="col ">名單類型</th>
+                <th scope="col "></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios0" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios0" style="cursor: pointer;">
+
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+                <td>107/02/10</td>
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                    <label class="form-check-label" for="exampleRadios1" style="cursor: pointer;">
+
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+                <td>107/02/10</td>
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1">
+                    <label class="form-check-label" for="exampleRadios2" style="cursor: pointer;">
+
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>追蹤中</td>
+                <td>107/02/10</td>
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gry" onclick="closeModal('addmeeone')">取消</button>
+        <button type="button" class="btn btn-ylw" onclick="step2()">下一步：創建行程</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 新增行程2 -->
+<div class="modal fade" id="addmeettwo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">新增行程(第 2/2 步：創建行程)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label>續訪日期
+              <span class="markRed">*</span>
+            </label>
+            <div class="input-group date">
+              <input class="form-control inputstyle" type="text" name="singledate" placeholder="請選擇日期...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>續訪時間
+              <span class="markRed">*</span>
+            </label>
+            <div class="input-group date">
+              <input class="form-control inputstyle" type="text" name="clockpicker" placeholder="請選擇時間...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>主旨</label>
+            <input type="text" class="form-control inputstyle" placeholder="e.g. 初訪顧客-王大明">
+          </div>
+          <div class="form-group">
+            <label>約訪地址</label>
+            <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+          </div>
+          <div class="form-group">
+            <label>聯絡電話</label>
+            <input type="text" class="form-control inputstyle" placeholder="e.g. 0988123456">
+          </div>
+          <div class="form-group">
+            <label class="note">備註
+
+            </label>
+            <label class="float-right ps_note">(0/250)</label>
+            <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gry btnLeft" onclick="step1()">返回上一步</button>
+        <button type="button" class="btn btn-gry" onclick="closeModal('addmeettwo')">取消</button>
+        <button type="button" class="btn btn-ylw" onclick="closeModal('addmeettwo')">確定</button>
+      </div>
+    </div>
+  </div>
+</div>

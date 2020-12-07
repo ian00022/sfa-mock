@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+
+<body>
+  <div class="container-fluid pl-0 pr-0">
+    @@include('./components/sidebar.html', { "sidebarCollapseFirst": "mange", "sidebar": "mangeProductNum" })
+    <div id="main-content" class="main-content">
+      @@include('./components/navbar.html', { "navbarType": "manager" })
+
+      <!-- 顧客查詢 -->
+      <section>
+        <nav class="navbar justify-content-between panel-head info-area ">
+          <span class="navbar-brand ">產品參數設定</span>
+          <ul class="nav float-lg-right float-sm-none nav-function-btn">
+            <li>
+
+              <div class="nav-link " href="#">
+                <span class="textGary">排序</span>
+
+                <button class="btn dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  最近
+                </button>
+                <div class="dropdown-menu dropdown-menu-right-sorting">
+                  <a class="dropdown-item " href="# ">名單狀態</a>
+                  <a class="dropdown-item " href="# ">分派/建立日期</a>
+                  <a class="dropdown-item " href="# ">統一編號</a>
+                  <a class="dropdown-item " href="# ">戶名</a>
+                  <a class="dropdown-item " href="# ">行銷單位</a>
+                  <a class="dropdown-item " href="# ">行銷人員</a>
+                  <a class="dropdown-item " href="# ">產品</a>
+                  <a class="dropdown-item " href="# ">名單來源</a>
+                  <a class="dropdown-item " href="# ">名單類型</a>
+                </div>
+
+              </div>
+
+            </li>
+            <li>
+              <a class="nav-link disabled btn" href="#modalSysBack" data-toggle="modal" role="button">
+                <i class="fa fa-ban iconspace" aria-hidden="true"></i> 退回</a>
+            </li>
+            <li>
+              <a class="nav-link disabled btn" href="#modalAgree" data-toggle="modal" role="button">
+                <i class="fa fa-exchange iconspace" aria-hidden="true"></i> 放行</a>
+            </li>
+          </ul>
+        </nav>
+
+      </section>
+
+      <!-- Customer 表單 -->
+      <div id="data-list-0" class="table-responsive data-list">
+        <table class="table table-striped tableinfo">
+          <thead>
+            <tr>
+              <th>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_01">
+                <label for="table-checkbox_01" onclick="{
+                  var _this = this;
+                  setTimeout(function(){
+                    var chooseAll = $(_this).siblings('input[type=\'checkbox\']').prop('checked');
+
+                    $(_this).closest('table').find('tbody .markRed input[type=\'checkbox\']').prop('checked', chooseAll);
+                  }, 0);
+                }"></label>
+              </th>
+              <th scope="col ">代碼</th>
+              <th scope="col ">產品名</th>
+              <th scope="col ">產品效期</th>
+              <th scope="col ">延期效期</th>
+              <th scope="col " class="text-center">可受理產品</th>
+              <th scope="col " class="text-center">轉介產品</th>
+              <th scope="col ">建立日期</th>
+              <th scope="col ">狀態</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_02" disabled>
+                <label for="table-checkbox_02"></label>
+              </td>
+              <td>offr001</td>
+              <td>房貸</td>
+              <td>1 個月</td>
+              <td>1 個月</td>
+              <td class="text-center">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </td>
+              <td class="text-center">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </td>
+              <td>2018/02/01</td>
+              <td>生效</td>
+              <td class="text-right">
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editPN" data-whatever="@mdo" onclick="$('#editPN').addClass('modal-active')">
+                  檢視
+                </button>
+              </td>
+            </tr>
+            <tr class="markgary">
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_03" disabled>
+                <label for="table-checkbox_03"></label>
+              </td>
+              <td>offr001</td>
+              <td>SB</td>
+              <td>3 個月</td>
+              <td>-</td>
+              <td class="text-center">
+
+              </td>
+              <td class="text-center">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </td>
+              <td>2018/02/01</td>
+              <td>停用</td>
+              <td class="text-right">
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editPN" data-whatever="@mdo" onclick="$('#editPN').addClass('modal-inactive')">
+                  檢視
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_04" disabled>
+                <label for="table-checkbox_04"></label>
+              </td>
+              <td>offr001</td>
+              <td>信貸</td>
+              <td>1 個月</td>
+              <td>-</td>
+              <td class="text-center">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </td>
+              <td class="text-center">
+
+              </td>
+              <td>2018/02/01</td>
+              <td>暫存</td>
+              <td class="text-right">
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editPN" data-whatever="@mdo" onclick="$('#editPN').addClass('modal-temp')">
+                  檢視
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_05" disabled>
+                <label for="table-checkbox_05"></label>
+              </td>
+              <td>offr001</td>
+              <td>信貸</td>
+              <td>1 個月</td>
+              <td>-</td>
+              <td class="text-center">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </td>
+              <td class="text-center">
+
+              </td>
+              <td>2018/02/01</td>
+              <td>主管退回&nbsp;<i class="fa fa-ban markRed pop-hover-stay" data-toggle="popover" href="#t1528763431100" aria-hidden="true"></i></td>
+              <td class="text-right">
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editPN" data-whatever="@mdo" onclick="$('#editPN').addClass('modal-active')">
+                  檢視
+                </button>
+              </td>
+            </tr>
+            <tr class="markRed">
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_06">
+                <label for="table-checkbox_06"></label>
+              </td>
+              <td>offr001</td>
+              <td>信貸</td>
+              <td>1 個月</td>
+              <td>-</td>
+              <td class="text-center">
+
+              </td>
+              <td class="text-center">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </td>
+              <td>2018/02/01</td>
+              <td>待覆核</td>
+              <td class="text-right">
+                <div class="btn-group">
+                  <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editPN" data-whatever="@mdo" onclick="$('#editPN').addClass('modal-under-review')">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true " aria-expanded="false"> 
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+                    <a class="dropdown-item " href="#modalAgree" data-toggle="modal" data-whatever="@mdo">放行</a>
+                    <a class="dropdown-item " href="#modalSysBack" data-toggle="modal" data-whatever="@mdo">退回</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- 編輯標籤 -->
+      <div class="modal fade" id="editTag" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-toggle="modal"
+        data-target="#editTag" data-whatever="@mdo">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">編輯推薦產品標籤</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label class="note">編輯標籤
+
+                </label>
+
+                <input type="text" class="form-control inputstyle" placeholder="請輸入">
+              </div>
+              <div class="form-group">
+                <label class="note">描述
+
+                </label>
+                <label class="float-right note">(0/100)</label>
+                <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  敏感標籤
+                </label>
+              </div>
+
+
+            </div>
+            <div class="modal-footer">
+
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- pageNum -->
+      <nav class="navNum navbar-light">
+        <form class="form-inline">
+          <div>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
+            <span class="loanChartNote">1 of 1</span>
+          </div>
+          <div>
+            <span class="loanChartNote">Items per page:
+              <select class="form-control inputstyle">
+                <option>50</option>
+              </select>
+            </span>
+          </div>
+        </form>
+      </nav>
+    </div>
+
+
+    <!-- 編輯產品 -->
+    <div class="modal fade" id="editPN" tabindex="-1" role="dialog" aria-labelledby="editPN" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editPN">編輯產品
+              <span class="modal-under-review-show">
+                <span class="tag square red ml-2">待覆核</span>
+              </span> 
+              <span class="modal-temp-show">
+                <span class="tag square orange ml-2">暫存</span>
+              </span>
+              <span class="modal-inactive-show">
+                <span class="tag square red ml-2">停用</span>
+              </span>
+              <span class="modal-active-show">
+                <span class="tag square blue ml-2 ">生效</span>
+              </span>
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="form-row">
+              <div class="form-group col-6">
+                <label>產品代碼</label>
+                <input type="text" class="form-control inputstyle" value="offr001" readonly>
+                </div>
+              <div class="form-group col-6">
+                <label>產品名&nbsp;<a class="modal-under-review-show under-review-notice pop-hover-stay" data-toggle="popover" href="#1529384888066"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
+                </label>
+                <div id="1529384888066" class="displayno">
+                  <b>產品名</b>
+                  <div class="dropdown-divider"></div>
+                  <span class="textGary">異動前：房屋貸款</span>
+                  <br />
+                  <span class="textGary">異動後：</span><span class="text-highlight">房貸</span>
+                  
+                  <div class="dropdown-divider"></div>
+                  <div>申請人：Vivan Chen <small class="text-black-50">2018/6/6</small></div>
+                </div>
+                <input type="text" readonly class="form-control inputstyle" value="房貸">
+              </div>
+              <div class="form-group col-6">
+                <label>產品效期</label>
+                <div class="input-group">
+                  <input type="number" readonly class="form-control inputstyle" value="1" aria-label="120" aria-describedby="basic-addon2">
+                  <div class="input-group-append ">
+                    <span class="input-group-text inputstyle" id="basic-addon2">個月</span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-6">
+                  <label>延期效期</label>
+                  <div class="input-group">
+                    <input readonly type="number" class="form-control inputstyle" value="1" aria-label="120" aria-describedby="basic-addon2">
+                    <div class="input-group-append ">
+                      <span class="input-group-text inputstyle" id="basic-addon2">個月</span>
+                    </div>
+                  </div>
+              </div>
+              <div class="form-group col-6">
+                <div class="form-check">
+                  <input type="checkbox" checked disabled  class="form-check-input" id="editPNCheck1">
+                  <label class="form-check-label" for="editPNCheck1">可受理產品</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" disabled class="form-check-input" id="editPNCheck2">
+                  <label class="form-check-label" for="editPNCheck2">轉介產品</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <!-- <div class="modal-active-show mr-auto">
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">停用</button>
+            </div>
+            <div class="modal-inactive-show mr-auto">
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">啟用</button>
+            </div> -->
+            <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+            <div class="modal-under-review-hide modal-inactive-hide">
+              <!-- <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">暫存</button> -->
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+            </div>
+            <div class="modal-under-review-show">
+              <button type="button" class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close" onclick="$('#modalSysBack').modal('show');">退回</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close" onclick="$('#modalAgree').modal('show');">放行</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  @@include('./components/footer.html')
+  <script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+
+    // function openDatePicker(id) {
+    //     console.log('aaa')
+    //     var did = "#" + id
+    //     $(did).datepicker('show');
+    // }
+  </script>
+
+  <script id="search_error" type="text/template">
+    <div class="nodata">
+      <div>
+        <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+      </div>
+      <h6>查無資料</h6>
+
+    </div>
+  </script>
+
+</body>
+
+</html>

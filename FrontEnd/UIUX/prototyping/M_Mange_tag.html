@@ -1,0 +1,2978 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>SFA | 平台</title>
+
+  <!-- Bootstrap CSS -->
+  <!-- <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"> -->
+  <!-- Ionicon 2.0.1 -->
+  <!-- <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
+  <!-- select -->
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap-select.min.css">
+  <!-- dateRangePicker -->
+  <link rel="stylesheet" type="text/css" href="./css/daterangepicker.css" />
+  <!-- googleApi -->
+  <link rel="stylesheet" type="text/css" href="./css/googleapi.css">
+  <!-- clockpicker -->
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap-clockpicker.min.css" />
+ 
+  <!-- main style -->
+  <link rel="stylesheet" type="text/css" href="./css/styles.css?v=1531663004840">
+
+  <!-- jquery -->
+  <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+  <!-- popper -->
+  <script type="text/javascript" src="./js/popper.min.js"></script>
+  <!-- bootstrap -->
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+
+  <!-- moment -->
+  <script type="text/javascript" src="./js/moment-2.18.1.min.js"></script>
+  <!-- fontawesome -->
+  <!-- <script src="./js/fontawesome.js"></script> -->
+  <!-- chart.js & plugin -->
+  <script src="./js/Chart.min-2.7.1.js"></script>
+  <script src="./js/chartjs-pieceLabel-plugin.js"></script>
+  <!-- dateRangePicker -->
+  <script type="text/javascript" src="./js/daterangepicker.js"></script>
+  <!-- clockpicker -->
+  <script src="./js/bootstrap-clockpicker.min.js"></script>
+  <!-- select -->
+  <script type="text/javascript" src="./js/bootstrap-select.min.js"></script>
+  <script type="text/javascript" src="./js/bootstrap-select-zh_TW.js"></script>
+ 
+ 
+ 
+
+  <script type="text/javascript" src="./js/demo.js?v=1531663004840"></script>
+</head>
+
+<body>
+  <div class="container-fluid pl-0 pr-0">
+    
+		<!-- sidebar -->
+		<div id="agent_sidebar" class="sidebar maingreen">
+			<ul class="nav">
+				<li class="nav-item ">
+					<a class="nav-link " href="Dashboard.html">Dashboard</a>
+				</li>
+				<li class="nav-item  ">
+					<a class="nav-link " href="customer_search.html">顧客查詢</a>
+				</li>
+				
+				<li class="nav-item ">
+					<a class="nav-link collapsed" data-toggle="collapse" href="#agent_listinfo">名單管理
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+
+					<ul id="agent_listinfo" class="ullistno panel-collapse collapse " role="menu">
+						<li class="nav-item ">
+							<a class="nav-link " href="namelist_search.html">
+								名單查詢
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="namelist_search_myfavorite.html">
+								我的最愛
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="namelist_search_todaytodo.html">
+								今日行程
+							</a>
+						</li>
+						
+            
+            
+					</ul>
+				</li>
+				<li class="nav-item  ">
+					<a class="nav-link" href="Refferal_search.html">商機轉介查詢</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link collapsed " data-toggle="collapse" href="#agent_listinfoTwo">行銷專區
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+
+					<ul id="agent_listinfoTwo" class="ullistno panel-collapse collapse " role="menu">
+						<li class="nav-item ">
+							<a class="nav-link " href="marketing_search_loan.html">
+								貸款試算
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="marketing_search_EDM.html">
+								電子 DM
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="marketing_search_Map.html">
+								行銷地圖
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="marketing_search_valuation.html">
+								估價查詢
+							</a>
+						</li>
+
+
+					</ul>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link " data-toggle="collapse" href="#agent_listinfoThree">後台管理
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+
+					<ul id="agent_listinfoThree" class="ullistno panel-collapse collapse show" role="menu">
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_character.html">
+								角色權限
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_marketing.html">
+								行銷團隊
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_email.html">
+								E-mail 樣板
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_notification.html">
+								推播通知
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_arrange.html">
+								總行指派案件
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_lateNotice.html">
+								名單/案件逾期通知
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link active" href="Mange_tag.html">
+								推薦產品標籤
+							</a>
+						</li>
+						
+						
+					</ul>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link " href="report_search.html">成效報表</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- sidebar -->
+		<div id="manager_sidebar" class="sidebar maingreen">
+			<ul class="nav">
+				<li class="nav-item ">
+					<a class="nav-link " href="Dashboard.html">Dashboard</a>
+				</li>
+				<li class="nav-item  ">
+					<a class="nav-link " href="M_customer_search.html">顧客查詢</a>
+				</li>
+				
+				<li class="nav-item ">
+					<a class="nav-link collapsed" data-toggle="collapse" href="#manager_listinfo">名單管理
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+
+					<ul id="manager_listinfo" class="ullistno panel-collapse collapse " role="menu">
+						<li class="nav-item ">
+							<a class="nav-link " href="M_namelist_search.html">
+								名單查詢
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_namelist_search_myfavorite.html">
+								我的最愛
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_namelist_search_todaytodo.html">
+								今日行程
+							</a>
+						</li>
+						
+            
+						<li class="nav-item ">
+							<a class="nav-link " href="M_namelist_search_recheck.html">
+								名單覆核
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="M_namelist_search_trans.html">
+								名單分派
+							</a>
+						</li>
+						
+            
+					</ul>
+				</li>
+				<li class="nav-item  ">
+					<a class="nav-link" href="Refferal_search.html">商機轉介查詢</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link collapsed " data-toggle="collapse" href="#manager_listinfoTwo">行銷專區
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+
+					<ul id="manager_listinfoTwo" class="ullistno panel-collapse collapse " role="menu">
+						<li class="nav-item ">
+							<a class="nav-link " href="marketing_search_loan.html">
+								貸款試算
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="marketing_search_EDM.html">
+								電子 DM
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="marketing_search_Map.html">
+								行銷地圖
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="marketing_search_valuation.html">
+								估價查詢
+							</a>
+						</li>
+
+
+					</ul>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link " data-toggle="collapse" href="#manager_listinfoThree">後台管理
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+
+					<ul id="manager_listinfoThree" class="ullistno panel-collapse collapse show" role="menu">
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_character.html">
+								角色權限
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_Mange_marketing.html">
+								行銷團隊
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_email.html">
+								E-mail 樣板
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_Mange_notification.html">
+								推播通知
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_arrange.html">
+								總行指派案件
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_lateNotice.html">
+								名單/案件逾期通知
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link active" href="M_Mange_tag.html">
+								推薦產品標籤
+							</a>
+						</li>
+						
+						
+					</ul>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link " href="report_search.html">成效報表</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- sidebar -->
+		<div id="admin_sidebar" class="sidebar maingreen">
+			<ul class="nav">
+				<li class="nav-item ">
+					<a class="nav-link " href="Dashboard.html">Dashboard</a>
+				</li>
+				<li class="nav-item  ">
+					<a class="nav-link " href="customer_search.html">顧客查詢</a>
+				</li>
+				
+				<li class="nav-item  ">
+					<a class="nav-link " href="M_customer_search.html">M_顧客查詢</a>
+				</li>	
+				
+				<li class="nav-item ">
+					<a class="nav-link collapsed" data-toggle="collapse" href="#admin_listinfo">名單管理
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+
+					<ul id="admin_listinfo" class="ullistno panel-collapse collapse " role="menu">
+						<li class="nav-item ">
+							<a class="nav-link " href="namelist_search.html">
+								名單查詢
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_namelist_search.html">
+								M_名單查詢
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="namelist_search_myfavorite.html">
+								我的最愛
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_namelist_search_myfavorite.html">
+								M_我的最愛
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="namelist_search_todaytodo.html">
+								今日行程
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_namelist_search_todaytodo.html">
+								M_今日行程
+							</a>
+						</li>
+						
+            
+            
+						<li class="nav-item ">
+							<a class="nav-link " href="M_namelist_search_recheck.html">
+								名單覆核
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="M_namelist_search_trans.html">
+								名單分派
+							</a>
+						</li>
+            
+					</ul>
+				</li>
+				<li class="nav-item  ">
+					<a class="nav-link" href="Refferal_search.html">商機轉介查詢</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link collapsed " data-toggle="collapse" href="#admin_listinfoTwo">行銷專區
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+
+					<ul id="admin_listinfoTwo" class="ullistno panel-collapse collapse " role="menu">
+						<li class="nav-item ">
+							<a class="nav-link " href="marketing_search_loan.html">
+								貸款試算
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="marketing_search_EDM.html">
+								電子 DM
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="marketing_search_Map.html">
+								行銷地圖
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="marketing_search_valuation.html">
+								估價查詢
+							</a>
+						</li>
+
+
+					</ul>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link " data-toggle="collapse" href="#admin_listinfoThree">後台管理
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+
+					<ul id="admin_listinfoThree" class="ullistno panel-collapse collapse show" role="menu">
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_character.html">
+								角色權限
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_Mange_character.html">
+								M_角色權限
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_marketing.html">
+								行銷團隊
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_Mange_marketing.html">
+								M_行銷團隊
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_email.html">
+								E-mail 樣板
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_Mange_email.html">
+								M_E-mail 樣板
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_notification.html">
+								推播通知
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_Mange_notification.html">
+								M_推播通知
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_arrange.html">
+								總行指派案件
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_Mange_arrange.html">
+								M_總行指派案件
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_lateNotice.html">
+								名單/案件逾期通知
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="M_Mange_lateNotice.html">
+								M_名單/案件逾期通知
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link active" href="Mange_tag.html">
+								推薦產品標籤
+							</a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link active" href="M_Mange_tag.html">
+								M_推薦產品標籤
+							</a>
+						</li>
+						
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_productNum.html">
+								產品參數
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="M_Mange_productNum.html">
+								M_產品參數
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="Mange_systemNum.html">
+								系統參數
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="M_Mange_systemNum.html">
+								M_系統參數
+							</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link " href="report_search.html">成效報表</a>
+				</li>
+			</ul>
+		</div>
+    <div id="main-content" class="main-content">
+      
+				<!-- navbar -->
+				<nav class="navbar navbar-light shadow sticky-top">
+					<form class="form-inline">
+						<button type="button" onclick="toggle()" class="btn">
+							<i class="fa fa-bars greenLink" aria-hidden="true"></i>
+						</button>
+						<h2 class="greenLink pr-3 pl-3">SFA | 平台</h2>
+						<div class="input-group global-search">
+							<span class="input-group-addon inputstyle" id="basic-addon1">
+								<i style="vertical-align: bottom;" class="fa fa-search iconspace" aria-hidden="true"></i>
+							</span>
+							<input id="globalSearchText" type="text" class="form-control inputstyle" placeholder="搜尋整站..." autocomplete="off"  aria-describedby="basic-addon1" onkeyup="gSearch.keyup(event, this)">
+							<div class="global-search-select dropdown-menu">
+								<a class="dropdown-item" href="#">Regular link <small class="text-muted">small text</small></a>
+							</div>
+						</div>
+					</form>
+					<form class="form-inline">
+						<div id="salesJob" class="btn-group displayno">
+								<button type="button" class="btn greenLink" onclick="openNav()">
+										<i class="fa fa-line-chart" aria-hidden="true"></i>
+								</button>
+            </div>
+						<div class="btn-group">
+							<button type="button" class="btn notic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-bell iconspace fa-lg" aria-hidden="true"></i>
+							</button>
+							<div class="dropdown-menu dropdown-menu-right-bell shadow">
+
+
+								<div class="container no-gutters">
+
+									<div class="row">
+										<div class="col-12 pr-0 pl-0">
+											<div class="notice-board">
+												<div class="panel panel-default">
+													<div class="panel-heading pr-3 pl-3">
+														我的通知
+														<a class="greenLink float-right" onclick="noticeRead()">標示全部為已讀</a>
+													</div>
+													<div class="panel-body">
+
+														<ul>
+															<li>
+																<a onclick="noticeRead(this)" data-toggle="modal" href="#modalAssignNotification">已分派名單3筆
+																	<br />
+																	<span class="loanChartNote">2018/01/29</span>
+																</a>
+															</li>
+															<li>
+																<a onclick="noticeRead(this)" data-toggle="modal" href="#modalAssignNotification">未分派名單3筆
+																	<br />
+																	<span class="loanChartNote">2018/01/29</span>
+																</a>
+															</li>
+															<li class="read">
+																<a onclick="noticeRead(this)" data-toggle="modal" href="#modalAssignNotification">未分派名單3筆
+																	<br />
+																	<span class="loanChartNote">2018/01/29</span>
+																</a>
+															</li>
+															<li>
+																<a onclick="noticeRead(this)" data-toggle="modal" href="#modalAssignNotification">未分派名單3筆
+																	<br />
+																	<span class="loanChartNote">2018/01/29</span>
+																</a>
+															</li>
+
+														</ul>
+													</div>
+													<div class="panel-footer text-center">
+														<a class="greenLink ">查看歷史通知</a>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="btn-group">
+							<button type="button" class="btn dropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<img src="img/person.png" class="rounded-circle " alt="Cinque Terre " style="width:40px; height:40px; ">
+								<i class="fa fa-angle-down iconspace" aria-hidden="true"></i>
+							</button>
+							<div class="dropdown-menu dropdown-menu-right-person">
+
+
+								<div class="container no-gutters">
+
+									<div class="row">
+										<div class="col-12 pr-0 pl-0">
+											<div class="notice-board">
+												<div class="panel panel-default">
+													<div class="panel-heading pr-3 pl-3 pt-3 pb-4">
+														<div class="row">
+															<div class="col-4 ">
+
+
+																<img src="img/person.png" class="rounded-circle " alt="Cinque Terre" style="width: 80px;height: 80px; position:absolute;">
+
+
+
+
+															</div>
+															<div class="col-6 pt-4">
+																<span>你好，王小圖</span>
+																<br />
+																<span class="sub-tit">123123@bank.com</span>
+															</div>
+														</div>
+													</div>
+													<div class="panel-body pt-3">
+
+
+														<a class="dropdown-item" href="#">切換代理人</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModalREST" data-whatever="@mdo">休假代理</a>
+														<a class="dropdown-item" href="#" onclick="{location.href='./login.html' }">登出</a>
+
+													</div>
+
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						
+					</form>
+				</nav>
+				<div class="navbar-height"></div>
+        
+
+          <!-- 滿版畫面 -->
+<div id="mySidenav" class="TopChartNav">
+  <div class=" col-8 float-right sidepanel pr-0 pl-0">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <h2 class="card-title Toptit shadow">行銷人員工作一覽</h2>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-6">
+          <div id="switch_0" class="card ">
+            <h5 class="card-title ">
+              <div class="row">
+                <div class="col-7 disablecolor">
+                  <div class="row no-gutters subtit">A123122313</div>
+                  <div class="row no-gutters tit">張美美</div>
+                </div>
+                <div class="col-5 float-right">
+                  <div class="row">
+                    <div class="col-8 ">
+                      <div class="row disablecolor">
+                        <div class="col-5 pl-0 pr-0">
+                          <span class="greenLink ps_note">20/30</span>
+                        </div>
+                        <div class="col-5 pr-0 pl-0 border-right">
+                          <div class="circle">
+
+
+                            <div class="p270"></div>
+                            <div class="p180"></div>
+                            <div class="p90"></div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-right">
+
+                      </div>
+                    </div>
+                    <div class="col-4 pr-0 pl-0">
+                      <label class="switch">
+                        <input type="checkbox" name="switch_0">
+                        <span class="slider round" data-toggle="tooltip" title="開啟分派"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h5>
+            <div class="card-body pt-0 disablecolor">
+              <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2 pr-0 pl-0">已追蹤</div>
+                <div class="col-2 pr-0 pl-0">未追蹤</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">網路進件</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">EBM</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">轉介</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+
+
+            </div>
+            <div class="maturity">
+              <h6>到期日 2018/04/23</h6>
+            </div>
+          </div>
+          <div id="switch_1" class="card">
+            <h5 class="card-title">
+              <div class="row">
+                <div class="col-7">
+                  <div class="row no-gutters subtit">A123122313</div>
+                  <div class="row no-gutters tit">張美美</div>
+                </div>
+                <div class="col-5 float-right">
+                  <div class="row">
+                    <div class="col-8 ">
+                      <div class="row">
+                        <div class="col-5 pl-0 pr-0">
+                          <span class="greenLink ps_note">20/30</span>
+                        </div>
+                        <div class="col-5 pr-0 pl-0 border-right">
+                          <div class="circle">
+
+
+                            <div class="p270"></div>
+                            <div class="p180"></div>
+                            <div class="p90"></div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-right">
+
+                      </div>
+                    </div>
+                    <div class="col-4 pr-0 pl-0">
+                      <label class="switch">
+                        <input name="switch_1" type="checkbox" checked>
+                        <span class="slider round" data-toggle="tooltip" title="關閉分派"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h5>
+            <div class="card-body pt-0 ">
+              <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2 pr-0 pl-0">已追蹤</div>
+                <div class="col-2 pr-0 pl-0">未追蹤</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">網路進件</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">EBM</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">轉介</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+
+            </div>
+            <div class="maturity displayno">
+              <h6>到期日 2018/04/23</h6>
+            </div>
+          </div>
+          <div id="switch_2" class="card">
+            <h5 class="card-title">
+              <div class="row">
+                <div class="col-7">
+                  <div class="row no-gutters subtit">A123122313</div>
+                  <div class="row no-gutters tit">張美美</div>
+                </div>
+                <div class="col-5 float-right">
+                  <div class="row">
+                    <div class="col-8 ">
+                      <div class="row">
+                        <div class="col-5 pl-0 pr-0">
+                          <span class="greenLink ps_note">20/30</span>
+                        </div>
+                        <div class="col-5 pr-0 pl-0 border-right">
+                          <div class="circle">
+
+
+                            <div class="p270"></div>
+                            <div class="p180"></div>
+                            <div class="p90"></div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-right">
+
+                      </div>
+                    </div>
+                    <div class="col-4 pr-0 pl-0">
+                      <label class="switch">
+                        <input name="switch_2" type="checkbox" checked>
+                        <span class="slider round" data-toggle="tooltip" title="關閉分派"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h5>
+            <div class="card-body pt-0 ">
+              <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2 pr-0 pl-0">已追蹤</div>
+                <div class="col-2 pr-0 pl-0">未追蹤</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">網路進件</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">EBM</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">轉介</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+
+            </div>
+            <div class="maturity displayno">
+              <h6>到期日 2018/04/23</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div id="switch_3" class="card">
+            <h5 class="card-title">
+              <div class="row">
+                <div class="col-7">
+                  <div class="row no-gutters subtit">A123122313</div>
+                  <div class="row no-gutters tit">張美美</div>
+                </div>
+                <div class="col-5 float-right">
+                  <div class="row">
+                    <div class="col-8 ">
+                      <div class="row">
+                        <div class="col-5 pl-0 pr-0">
+                          <span class="greenLink ps_note">20/30</span>
+                        </div>
+                        <div class="col-5 pr-0 pl-0 border-right">
+                          <div class="circle">
+
+
+                            <div class="p270"></div>
+                            <div class="p180"></div>
+                            <div class="p90"></div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-right">
+
+                      </div>
+                    </div>
+                    <div class="col-4 pr-0 pl-0">
+                      <label class="switch">
+                        <input name="switch_3" type="checkbox" checked>
+                        <span class="slider round" data-toggle="tooltip" title="關閉分派"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h5>
+            <div class="card-body pt-0 ">
+              <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2 pr-0 pl-0">已追蹤</div>
+                <div class="col-2 pr-0 pl-0">未追蹤</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">網路進件</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">EBM</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">轉介</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+
+            </div>
+            <div class="maturity displayno">
+              <h6>到期日 2018/04/23</h6>
+            </div>
+          </div>
+          <div id="switch_4" class="card">
+            <h5 class="card-title">
+              <div class="row">
+                <div class="col-7">
+                  <div class="row no-gutters subtit">A123122313</div>
+                  <div class="row no-gutters tit">張美美</div>
+                </div>
+                <div class="col-5 float-right">
+                  <div class="row">
+                    <div class="col-8 ">
+                      <div class="row">
+                        <div class="col-5 pl-0 pr-0">
+                          <span class="greenLink ps_note">20/30</span>
+                        </div>
+                        <div class="col-5 pr-0 pl-0 border-right">
+                          <div class="circle">
+
+
+                            <div class="p270"></div>
+                            <div class="p180"></div>
+                            <div class="p90"></div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-right">
+
+                      </div>
+                    </div>
+                    <div class="col-4 pr-0 pl-0">
+                      <label class="switch">
+                        <input name="switch_4" type="checkbox" checked>
+                        <span class="slider round" data-toggle="tooltip" title="關閉分派"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h5>
+            <div class="card-body pt-0 ">
+              <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2 pr-0 pl-0">已追蹤</div>
+                <div class="col-2 pr-0 pl-0">未追蹤</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">網路進件</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">EBM</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">轉介</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+
+            </div>
+            <div class="maturity displayno">
+              <h6>到期日 2018/04/23</h6>
+            </div>
+          </div>
+          <div id="switch_5" class="card">
+            <h5 class="card-title">
+              <div class="row">
+                <div class="col-7">
+                  <div class="row no-gutters subtit">A123122313</div>
+                  <div class="row no-gutters tit">張美美</div>
+                </div>
+                <div class="col-5 float-right">
+                  <div class="row">
+                    <div class="col-8 ">
+                      <div class="row">
+                        <div class="col-5 pl-0 pr-0">
+                          <span class="greenLink ps_note">20/30</span>
+                        </div>
+                        <div class="col-5 pr-0 pl-0 border-right">
+                          <div class="circle">
+
+
+                            <div class="p270"></div>
+                            <div class="p180"></div>
+                            <div class="p90"></div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-right">
+
+                      </div>
+                    </div>
+                    <div class="col-4 pr-0 pl-0">
+                      <label class="switch">
+                        <input name="switch_5" type="checkbox" checked>
+                        <span class="slider round" data-toggle="tooltip" title="關閉分派"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h5>
+            <div class="card-body pt-0 ">
+              <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2 pr-0 pl-0">已追蹤</div>
+                <div class="col-2 pr-0 pl-0">未追蹤</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">網路進件</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">EBM</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">轉介</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+
+            </div>
+            <div class="maturity displayno">
+              <h6>到期日 2018/04/23</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+					<!-- 		 -->
+					<!-- 我的通知 -->
+<div class="modal fade" id="modalAssignNotification" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">已分派名單3筆</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        名單/案件已分派3筆，請儘速處理。
+        <p class="text-right"><a class="greenLink" href="./namelist_search.html?recordCount=3">前往處理</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- 顧客查詢 -->
+      <section>
+        <nav class="navbar justify-content-between panel-head ">
+          <span class="navbar-brand ">推薦產品標籤管理</span>
+          <ul class="nav float-lg-right float-sm-none nav-function-btn">
+            <li>
+
+              <div class="nav-link " href="#">
+                <span class="textGary">排序</span>
+
+                <button class="btn dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  最近
+                </button>
+                <div class="dropdown-menu dropdown-menu-right-sorting">
+                  <a class="dropdown-item " href="# ">名單狀態</a>
+                  <a class="dropdown-item " href="# ">分派/建立日期</a>
+                  <a class="dropdown-item " href="# ">統一編號</a>
+                  <a class="dropdown-item " href="# ">戶名</a>
+                  <a class="dropdown-item " href="# ">行銷單位</a>
+                  <a class="dropdown-item " href="# ">行銷人員</a>
+                  <a class="dropdown-item " href="# ">產品</a>
+                  <a class="dropdown-item " href="# ">名單來源</a>
+                  <a class="dropdown-item " href="# ">名單類型</a>
+                </div>
+
+              </div>
+
+            </li>
+            <li>
+              <a class="nav-link disabled btn" href="#modalSysBack" data-toggle="modal" role="button">
+                <i class="fa fa-ban iconspace" aria-hidden="true"></i> 退回</a>
+            </li>
+            <li>
+              <a class="nav-link disabled btn" href="#modalAgree" data-toggle="modal" role="button">
+                <i class="fa fa-exchange iconspace" aria-hidden="true"></i> 放行</a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+
+
+        <div class="area shadow">
+          <div id="search-section-0" class="form-row mr-0">
+            <div class="form-group col-12 col-md-4 col-lg-3">
+              <label>標籤名稱</label>
+              <input type="text" class="form-control inputstyle" placeholder="以關鍵字搜尋...">
+            </div>
+
+            <div class="form-group col-12 col-md-4 col-lg-3"> <div class="form-bottom">
+   
+    <button id="searchBtn-0" type="button " class="btn btn-ylw mr-1 " onclick="search('result_1')">
+  
+    <i class="fa fa-search" aria-hidden="true"></i>&nbsp;搜尋</button>
+  
+</div>
+
+</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Customer 表單 -->
+      <div id="data-list-0" class="table-responsive data-list">
+        <table class="table table-striped tableinfo">
+          <thead>
+            <tr>
+              <th>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_01">
+                <label for="table-checkbox_01" onclick="{
+                  var _this = this;
+                  setTimeout(function(){
+                    var chooseAll = $(_this).siblings('input[type=\'checkbox\']').prop('checked');
+
+                    $(_this).closest('table').find('tbody .markRed input[type=\'checkbox\']').prop('checked', chooseAll);
+                  }, 0);
+                }"></label>
+              </th>
+              <th scope="col ">代碼</th>
+              <th scope="col ">名稱</th>
+              <th scope="col ">名稱</th>
+              <th scope="col " class="text-center">敏感標籤</th>
+              <th scope="col ">修改日期</th>
+              <th scope="col ">狀態</th>
+              <th></th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_02" disabled>
+                <label for="table-checkbox_02"></label>
+              </td>
+              <td>tg001</td>
+              <td>結婚</td>
+              <td>顧客近期結婚了</td>
+              <td class="text-center">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </td>
+              <td>2017/12/30</td>
+              <td>生效</td>
+              <td class="text-right">
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editTag" data-whatever="@mdo" onclick="$('#editTag').addClass('modal-active');">
+                  檢視
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_03" disabled>
+                <label for="table-checkbox_03"></label>
+              </td>
+              <td>tg001</td>
+              <td>結婚</td>
+              <td>顧客近期結婚了</td>
+              <td class="text-center">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </td>
+              <td>2017/12/30</td>
+              <td>暫存</td>
+              <td class="text-right">
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editTag" data-whatever="@mdo" onclick="$('#editTag').addClass('modal-temp');">
+                  檢視
+                </button>
+              </td>
+            </tr>
+            <tr class="markgary">
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_04" disabled>
+                <label for="table-checkbox_04"></label>
+              </td>
+              <td>tg001</td>
+              <td>結婚</td>
+              <td>顧客近期結婚了</td>
+              <td class="text-center">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </td>
+              <td>2017/12/30</td>
+              <td>停用</td>
+              <td class="text-right">
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editTag" data-whatever="@mdo" onclick="$('#editTag').addClass('modal-inactive');">
+                  檢視
+                </button>
+              </td>
+            </tr>
+            <tr class="markRed">
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_05">
+                <label for="table-checkbox_05"></label>
+              </td>
+              <td>tg001</td>
+              <td>貸款</td>
+              <td>顧客近期有資金需求</td>
+              <td class="text-center">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </td>
+              <td>2017/12/30</td>
+              <td>待覆核</td>
+              <td class="text-right">
+                <div class="btn-group">
+                  <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editTag" data-whatever="@mdo" onclick="$('#editTag').addClass('modal-under-review');">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true " aria-expanded="false"> 
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+                    <a class="dropdown-item " href="#modalAgree" data-toggle="modal" data-whatever="@mdo">放行</a>
+                    <a class="dropdown-item " href="#modalSysBack" data-toggle="modal" data-whatever="@mdo">退回</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_06" disabled>
+                <label for="table-checkbox_06"></label>
+              </td>
+              <td>tg001</td>
+              <td>貸款</td>
+              <td>顧客近期有資金需求</td>
+              <td class="text-center">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </td>
+              <td>2017/12/30</td>
+              <td>主管退回
+                <i class="fa fa-ban markRed pop-hover-stay" data-toggle="popover" href="#t1528763431100" aria-hidden="true"></i>
+              </td>
+              <td class="text-right">
+                <button class="btn btn-outline-primary btn-sm" style="padding: 5px 15px;" data-toggle="modal" data-target="#editTag" data-whatever="@mdo" onclick="$('#editTag').addClass('modal-active');">
+                  檢視
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- 編輯標籤 -->
+      <div class="modal fade" id="editTag" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-whatever="@mdo">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">編輯推薦產品標籤 
+                <span class="modal-under-review-show">
+                  <span class="tag square red ml-2 ">待覆核</span>
+                </span> 
+                <span class="modal-temp-show">
+                  <span class="tag square orange ml-2 ">暫存</span>
+                </span>
+                <span class="modal-inactive-show">
+                  <span class="tag square red ml-2 ">停用</span>
+                </span>
+                <span class="modal-active-show">
+                  <span class="tag square blue ml-2 ">生效</span>
+                </span>
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form-row">
+                <div class="form-group col-12">
+                  <label class="note">編輯標籤&nbsp;<a class="modal-under-review-show under-review-notice pop-hover-stay" data-toggle="popover" href="#1529370070305"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a></label>
+                  <div id="1529370070305" class="displayno">
+                    <b>編輯標籤</b>
+                    <div class="dropdown-divider"></div>
+                    <span class="textGary">婚</span>
+                    <br />
+                    <span class="textGary">異動後：</span><span class="text-highlight">結婚</span>
+                    
+                    <div class="dropdown-divider"></div>
+                    <div>申請人：Vivan Chen <small class="text-black-50">2018/6/6</small></div>
+                  </div>
+                  <input readonly type="text" value="結婚" class="form-control inputstyle" placeholder="請輸入">
+                </div>
+                <div class="form-group col-12">
+                  <label class="note">描述</label>
+                  <label class="float-right note">(0/100)</label>
+                  <textarea readonly class="form-control inputstyletextArea" rows="5" placeholder="請輸入...">顧客近期結婚了</textarea>
+                </div>
+                <div class="form-group col-12">
+                  <div class="form-check">
+                    <input disabled checked class="form-check-input" type="checkbox" value="" id="senseTag1">
+                    <label class="form-check-label" for="senseTag1">
+                      敏感標籤
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <div class="modal-under-review-hide modal-inactive-hide">
+                <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">暫存</button>
+                <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+              </div>
+              <div class="modal-under-review-show">
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close" onclick="$('#modalSysBack').modal('show');">退回</button>
+                <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close" onclick="$('#modalAgree').modal('show');">放行</button> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      
+      <!-- pageNum -->
+      <nav class="navNum navbar-light">
+        <form class="form-inline">
+          <div>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
+            <span class="loanChartNote">1 of 1</span>
+          </div>
+          <div>
+            <span class="loanChartNote">Items per page:
+              <select class="form-control inputstyle">
+                <option>50</option>
+              </select>
+            </span>
+          </div>
+        </form>
+      </nav>
+    </div>
+
+  </div>
+
+
+  		<!-- 休假代理 -->
+		<div class="modal fade" id="exampleModalREST" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">休假代理</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<div class="row">
+									<div class="col ml-3">
+										<label>請假起始日
+											<span class="markRed">*</span>
+										</label>
+										<input class="form-control inputstyle" type="text" name="singledate" placeholder="請選擇...">
+									</div>
+									<div class="col mr-3">
+										<label>請假起始時間
+											<span class="markRed">*</span>
+										</label>
+										<input class="form-control inputstyle" type="text" name="clockpicker" placeholder="請選擇...">
+									</div>
+
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col ml-3">
+										<label>請假結束日
+											<span class="markRed">*</span>
+										</label>
+										<input class="form-control inputstyle" type="text" name="singledate" placeholder="請選擇...">
+									</div>
+									<div class="col mr-3">
+										<label>請假結束時間
+											<span class="markRed">*</span>
+										</label>
+										<input class="form-control inputstyle" type="text" name="clockpicker" placeholder="請選擇...">
+									</div>
+
+								</div>
+							</div>
+
+
+
+							<div class="form-group">
+								<label>代理人
+									<span class="markRed">*</span>
+								</label>
+								<select class="selectpicker inputstyleSelect">
+									<option value="" class="displayno">請選擇...</option>
+								</select>
+							</div>
+
+						</form>
+					</div>
+					<div class="modal-footer">
+
+						<button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+						<button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- 新增自自建名單 -->
+<div class="modal fade" id="addselflist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">新增自建名單</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+                <label>顧客姓名
+                  <span class="markRed">*</span>
+                </label>
+                <input type="text" class="form-control inputstyle" value="陳大發">
+
+              </div>
+              <div class="col">
+                <label>統一編號
+                  <span class="markRed">*</span>
+                </label>
+                <input type="text" class="form-control inputstyle" value="A123456789">
+
+              </div>
+
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+                <label>產品別
+                  <span class="markRed">*</span>
+                </label>
+                <select class="selectpicker inputstyleSelect">
+                  <option value="" class="displayno">請選擇...</option>
+                  <option>信貸</option>
+                  <option>副擔保</option>
+                  <option>房貸</option>
+                  <option>小型事業(SB)</option>
+                  <option>卡友貸</option>
+                  <option>保險(儲蓄險、房貸壽險)</option>
+                </select>
+              </div>
+              <div class="col">
+                <label>來源說明
+                  <span class="markRed">*</span>
+                </label>
+                <select id="source" class="selectpicker inputstyleSelect">
+                  <option value="" class="displayno">請選擇...</option>
+                  <option value="">主動進線</option>
+                  <option value="">自來件(既有顧客)</option>
+                  <option value="">自來件(非既有顧客)</option>
+                  <option value="">聯行轉介</option>
+                  <option value="">客服轉介</option>
+                  <option value="">總行指派</option>
+                  <option value="">推薦產品</option>
+                  <option value="customerIntro">顧客介紹</option>
+                  <option value="">代書或房仲轉介</option>
+                  <option value="">ISMS雙向簡訊</option>
+                  <option value="">EDM行銷</option>
+                  <option value="other">其他</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div data-select-from='{"source": "customerIntro"}' class="form-group displayno">
+            <div class="row">
+              <div class="col">
+                <label>介紹人姓名
+                  <span class="markRed">(擇一必填)</span>
+                </label>
+                <input type="text" class="form-control inputstyle" value="" placeholder="e.g. 王大明">
+              </div>
+              <div class="col">
+                <label>介紹人統一編號
+                  <span class="markRed">(擇一必填)</span>
+                </label>
+                <input type="text" class="form-control inputstyle" value="" placeholder="e.g. A123456789">
+
+              </div>
+            </div>
+          </div>
+          <div class="form-group displayno" data-select-from='{"source": "other"}'>
+            <label class="note">備註
+
+            </label>
+            <label class="float-right ps_note"> (0/250)</label>
+            <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="isFromTrans" value="是否為轉貸名單">
+                  <label class="form-check-label" for="isFromTrans">是否為轉貸名單</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+        <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 新增行程1 -->
+<div id="addmeeone" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">新增行程(第 1/2 步：選擇名單)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>是否綁定名單?</label>
+          <div class="">
+            <div class="form-check form-check-inline">
+              <input id="yes" class="form-check-input" name="wrap-name" type="radio" style="cursor: pointer;" value="true" checked>
+              <label for="yes" class="form-check-label" style="cursor: pointer;">是</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="no" class="form-check-input" name="wrap-name" type="radio" value="false">
+              <label for="no" class="form-check-label" style="cursor: pointer;">否</label>
+            </div>
+          </div>
+        </div>
+        <p>請選擇您要設定行程的名單：</p>
+        <div class="table-responsive">
+          <table class="table tableinfo">
+            <thead>
+              <tr>
+                <th scope="col "></th>
+                <th scope="col ">名單狀態
+
+                </th>
+
+                <th scope="col ">統一編號</th>
+                <th scope="col ">戶名</th>
+                <th scope="col ">產品</th>
+                <th scope="col ">名單來源</th>
+                <th scope="col ">名單類型</th>
+                <th scope="col "></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios0" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios0" style="cursor: pointer;">
+
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+                <td>107/02/10</td>
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                    <label class="form-check-label" for="exampleRadios1" style="cursor: pointer;">
+
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+                <td>107/02/10</td>
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1">
+                    <label class="form-check-label" for="exampleRadios2" style="cursor: pointer;">
+
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>追蹤中</td>
+                <td>107/02/10</td>
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gry" onclick="closeModal('addmeeone')">取消</button>
+        <button type="button" class="btn btn-ylw" onclick="step2()">下一步：創建行程</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 新增行程2 -->
+<div class="modal fade" id="addmeettwo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">新增行程(第 2/2 步：創建行程)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label>續訪日期
+              <span class="markRed">*</span>
+            </label>
+            <div class="input-group date">
+              <input class="form-control inputstyle" type="text" name="singledate" placeholder="請選擇日期...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>續訪時間
+              <span class="markRed">*</span>
+            </label>
+            <div class="input-group date">
+              <input class="form-control inputstyle" type="text" name="clockpicker" placeholder="請選擇時間...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>主旨</label>
+            <input type="text" class="form-control inputstyle" placeholder="e.g. 初訪顧客-王大明">
+          </div>
+          <div class="form-group">
+            <label>約訪地址</label>
+            <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+          </div>
+          <div class="form-group">
+            <label>聯絡電話</label>
+            <input type="text" class="form-control inputstyle" placeholder="e.g. 0988123456">
+          </div>
+          <div class="form-group">
+            <label class="note">備註
+
+            </label>
+            <label class="float-right ps_note">(0/250)</label>
+            <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gry btnLeft" onclick="step1()">返回上一步</button>
+        <button type="button" class="btn btn-gry" onclick="closeModal('addmeettwo')">取消</button>
+        <button type="button" class="btn btn-ylw" onclick="closeModal('addmeettwo')">確定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 查找群組名單1 -->
+<div id="addgroupone" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <ul class="nav nav-tabs displayno" id="addGroupNamelist" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#addgrouponeStep1" role="tab">addgrouponeStep1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#addgrouponeStep2" role="tab">addgrouponeStep2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#addgrouponeStep3" role="tab">addgrouponeStep3</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="modal-content tab-pane fade show active" id="addgrouponeStep1">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">群組名單(3)</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>請選擇您要的主名單：
+            <br />
+            <span class="markRed">
+              <i class="fa fa-info-circle iconspace" aria-hidden="true"></i>設定為主要名單後，其餘名單將不可再編輯，且無法恢復。</span>
+          </p>
+
+          <table class="table tableinfo">
+            <thead>
+              <tr>
+                <th scope="col "></th>
+                <th scope="col ">名單狀態
+
+                </th>
+
+                <th scope="col ">統一編號</th>
+                <th scope="col ">戶名</th>
+                <th scope="col ">產品</th>
+                <th scope="col ">名單來源</th>
+                <th scope="col ">名單類型</th>
+                <th scope="col "></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check" >
+                    <input class="form-check-input" type="radio" name="addGroupNamelistRadio" id="addGroupNamelistRadio1" checked>
+                    <label class="form-check-label" for="addGroupNamelistRadio1">
+
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check" >
+                    <input class="form-check-input" type="radio" name="addGroupNamelistRadio" id="addGroupNamelistRadio2">
+                    <label class="form-check-label" for="addGroupNamelistRadio2">
+
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check" >
+                    <input class="form-check-input" type="radio" name="addGroupNamelistRadio" id="addGroupNamelistRadio3">
+                    <label class="form-check-label" for="addGroupNamelistRadio3">
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>追蹤中</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+          <button type="button" class="btn btn-ylw" onclick="$('#addGroupNamelist a[href=\'#addgrouponeStep2\']').tab('show');">設為主要名單</button>
+        </div>
+      </div>
+      <div class="modal-content tab-pane fade" id="addgrouponeStep2">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">群組名單(3)</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>主名單設定完成！
+
+          </p>
+
+          <table class="table tableinfo">
+            <thead>
+              <tr>
+                <th scope="col "></th>
+                <th scope="col ">名單狀態
+
+                </th>
+
+                <th scope="col ">統一編號</th>
+                <th scope="col ">戶名</th>
+                <th scope="col ">產品</th>
+                <th scope="col ">名單來源</th>
+                <th scope="col ">名單類型</th>
+                <th scope="col "></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr class="table-light">
+                <td>
+
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr class="table-light">
+                <td>
+
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>追蹤中</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr class="table-light">
+                <td style="position: relative;"></td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-ylw" data-dismiss="modal" aria-label="Close"  onclick="$('#addGroupNamelist a[href=\'#addgrouponeStep1\']').tab('show');">知道了</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 查找群組名單1 位於列表的會有三個步驟 -->
+<div id="addgroupone_detail" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <ul class="nav nav-tabs displayno" id="addGroupNamelist_detail" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#addgroupone_detail_Step1" role="tab">addgroupone_detail_Step1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#addgroupone_detail_Step2" role="tab">addgroupone_detail_Step2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#addgroupone_detail_Step3" role="tab">addgroupone_detail_Step3</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="modal-content tab-pane fade show active" id="addgroupone_detail_Step1">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">群組名單(3)</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>請選擇您要的主名單：
+            <br />
+            <span class="markRed">
+              <i class="fa fa-info-circle iconspace" aria-hidden="true"></i>設定為主要名單後，其餘名單將不可再編輯，且無法恢復。</span>
+          </p>
+
+          <table class="table tableinfo">
+            <thead>
+              <tr>
+                <th scope="col "></th>
+                <th scope="col ">名單狀態</th>
+                <th scope="col ">統一編號</th>
+                <th scope="col ">戶名</th>
+                <th scope="col ">產品</th>
+                <th scope="col ">名單來源</th>
+                <th scope="col ">名單類型</th>
+                <th scope="col "></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check" >
+                    <input class="form-check-input" type="radio" name="addGroupNamelist_detailRadio" id="addGroupNamelist_detailRadio1" checked>
+                    <label class="form-check-label" for="addGroupNamelist_detailRadio1"></label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check" >
+                    <input class="form-check-input" type="radio" name="addGroupNamelist_detailRadio" id="addGroupNamelist_detailRadio2">
+                    <label class="form-check-label" for="addGroupNamelist_detailRadio2">
+
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check" >
+                    <input class="form-check-input" type="radio" name="addGroupNamelist_detailRadio" id="addGroupNamelist_detailRadio3">
+                    <label class="form-check-label" for="addGroupNamelist_detailRadio3">
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>追蹤中</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+          <button type="button" class="btn btn-ylw" onclick="$('#addGroupNamelist_detail a[href=\'#addgroupone_detail_Step2\']').tab('show');">設為主要名單</button>
+        </div>
+      </div>
+      <div class="modal-content tab-pane fade" id="addgroupone_detail_Step2">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">群組名單(3)</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>是否須將前筆主名單的「洽談重點摘要」移轉至新名單？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close"  onclick="$('#addGroupNamelist_detail a[href=\'#addgroupone_detail_Step1\']').tab('show');">取消</button>
+          <button type="button" class="btn btn-gry" aria-label="Close" onclick="$('#addGroupNamelist_detail a[href=\'#addgroupone_detail_Step3\']').tab('show');">否</button>
+          <button type="button" class="btn btn-ylw" aria-label="Close"  onclick="$('#addGroupNamelist_detail a[href=\'#addgroupone_detail_Step3\']').tab('show');">是</button>
+        </div>
+      </div>
+      <div class="modal-content tab-pane fade" id="addgroupone_detail_Step3">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">群組名單(3)</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>主名單設定完成！</p>
+  
+            <table class="table tableinfo">
+              <thead>
+                <tr>
+                  <th scope="col "></th>
+                  <th scope="col ">名單狀態</th>
+  
+                  <th scope="col ">統一編號</th>
+                  <th scope="col ">戶名</th>
+                  <th scope="col ">產品</th>
+                  <th scope="col ">名單來源</th>
+                  <th scope="col ">名單類型</th>
+                  <th scope="col "></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                  </td>
+  
+                  <td>
+  
+                    <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+  
+                    </span>未執行</td>
+  
+                  <td>A128940184</td>
+                  <td>
+                    陳先生
+                  </td>
+                  <td>房貸</td>
+                  <td>網路進件</td>
+                  <td>網路留言板</td>
+                  <td class="money-right">
+  
+                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                      檢視
+                    </button>
+  
+  
+                  </td>
+                </tr>
+                <tr class="table-light">
+                  <td>
+  
+                  </td>
+  
+                  <td>
+  
+                    <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+  
+                    </span>未執行</td>
+  
+                  <td>A128940184</td>
+                  <td>
+                    陳先生
+                  </td>
+                  <td>房貸</td>
+                  <td>網路進件</td>
+                  <td>網路留言板</td>
+                  <td class="money-right">
+  
+                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                      檢視
+                    </button>
+  
+  
+                  </td>
+                </tr>
+                <tr class="table-light">
+                  <td>
+  
+                  </td>
+  
+                  <td>
+  
+                    <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+  
+                    </span>追蹤中</td>
+  
+                  <td>A128940184</td>
+                  <td>
+                    陳先生
+                  </td>
+                  <td>房貸</td>
+                  <td>網路進件</td>
+                  <td>網路留言板</td>
+                  <td class="money-right">
+  
+                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                      檢視
+                    </button>
+  
+  
+                  </td>
+                </tr>
+                <tr class="table-light">
+                  <td style="position: relative;"></td>
+  
+                  <td>
+  
+                    <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+  
+                    </span>未執行</td>
+  
+                  <td>A128940184</td>
+                  <td>
+                    陳先生
+                  </td>
+                  <td>房貸</td>
+                  <td>網路進件</td>
+                  <td>網路留言板</td>
+                  <td class="money-right">
+  
+                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                      檢視
+                    </button>
+  
+  
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+  
+            <button type="button" class="btn btn-ylw" data-dismiss="modal" aria-label="Close"  onclick="$('#addGroupNamelist_detail a[href=\'#addgroupone_detail_Step1\']').tab('show');">知道了</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div id="t1528763431100" class="displayno">
+  <b>主管退回原因</b>
+  <div class="dropdown-divider"></div>
+  系統測試。
+  <div class="dropdown-divider"></div>
+  <div>覆核主管：Vivan Chen <small class="text-black-50">2018/6/6</small></div>
+</div>
+
+<div id="t1528764414084" class="displayno">
+  <b>角色設定變更</b>
+  <div class="dropdown-divider"></div>
+  <span class="textGary">異動前：行銷職系經辦</span>
+  <br />
+  <span class="textGary">異動後：</span><span class="text-highlight">後台管理主管、總行管理主管、行銷職系經辦</span>
+  
+  <!-- <div class="dropdown-divider"></div>
+  <div>覆核主管：Vivan Chen <small class="text-black-50">2018/6/6</small></div> -->
+</div>
+<!-- 上傳文件 -->
+<div class="modal fade" id="modalUpload" tabindex="-1" role="dialog" aria-labelledby="modalUpload" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalUpload">上傳文件</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <select class="selectpicker inputstyleSelect" onchange="{
+              $(this).closest('.modal').find('[data-id=\'modalUploadInput\']').removeClass('displayno');
+            }">
+              <option value="" class="displayno">請選擇...</option>
+              <option value="1">身分證</option>
+              <option value="2">財力證明</option>
+              <option value="3">其他</option>
+            </select>
+        </div>
+        <div class="form-group displayno" data-id="modalUploadInput">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile" onchange="{$(this).siblings('label[for=\'customFile\']').html('範例檔案'+ parseInt(Math.random() * 100) +'.jpg'); console.log(1)}">
+            <label class="custom-file-label" for="customFile" type="file">
+              <i class="fa fa-plus fa-" aria-hidden="true"></i>
+            </label>
+          </div>
+        </div>
+        <div class="text-right displayno" data-id="modalUploadInput">
+          <input type="checkbox" value="true" name="modalUploadHasNext" id="modalUploadHasNext">
+          <label for="modalUploadHasNext">繼續上傳檔案</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+          <button type="button" class="btn btn-ylw" aria-label="Close" onclick="{
+            var checked = $(this).closest('.modal').find('[name=\'modalUploadHasNext\']').prop('checked');
+            if(!checked) {
+              $('#' + $(this).closest('.modal').attr('id')).modal('hide');
+            }
+            $(this).closest('.modal').find('select').val('').selectpicker('refresh');
+            $(this).closest('.modal').find('[name=\'modalUploadHasNext\']').prop('checked', false);
+            $(this).closest('.modal').find('[data-id=\'modalUploadInput\']').addClass('displayno');
+            $(this).closest('.modal').find('label[for=\'customFile\']').html('<i class=\'fa fa-plus\' aria-hidden=\'true\'></i>');
+          }">確定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 上傳文件 -->
+<div class="modal fade" id="modalUploadEdit" tabindex="-1" role="dialog" aria-labelledby="modalUpload" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalUpload">上傳文件</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+              <select class="selectpicker inputstyleSelect">
+                <option value="" class="displayno">請選擇...</option>
+                <option value="1" selected>身分證</option>
+                <option value="2">財力證明</option>
+                <option value="3">其他</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <div class="custom-file">
+              <label class="custom-file-label" style="cursor: default;">
+                身分證.jpg
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+            <button type="button" class="btn btn-ylw" data-dismiss="modal"  aria-label="Close">確定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 放行 -->
+<div class="modal fade" id="release" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">放行</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>確認放行？</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+        <button type="submit" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確認</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    $('#release [type="submit"]').on('click', function (e) {
+      e.preventDefault();
+      $('tabel input[type="checkbox"]').each(function (idx, e) {
+        $(this).prop('checked', false);
+      })
+    });
+  });
+</script>
+<div class="modal fade" id="modalSysBack" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">退回</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <div class="row col-12">
+              <label>請確認是否將此設定退回原申請人，並填寫退回原因。</label>
+            </div>
+            <div class="mb-2"></div>
+            <label>說明<span class="text-danger">*</span></label>
+            <label class="float-right ps_note">(0/250)</label>
+            <textarea class="form-control inputstyletextArea" rows="5" placeholder="請簡述退回原因"></textarea>
+            <input type="hidden" name="sysItemFrom" value=""/>
+          </div>
+          <div class="dropdown-divider mb-3"></div>
+          <div class="row">
+            <h6 class="col-3 text-black-50">申請人</h6>
+            <h6 class="col-9">李維維&nbsp;00325&nbsp;<small class="text-black-50">2018/03/23</small></h6>
+
+            <!-- <h6 class="col-3 text-black-50">覆核主管</h6>
+            <h6 class="col-9">Vivian Chen&nbsp;<small class="text-black-50">2018/03/29</small></h6> -->
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal" onclick="modalSysBack.submit.call(this, true)">退回</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalAgree" tabindex="-1" role="dialog" aria-labelledby="modalAgree" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">放行</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="row col-12">
+              <label>放行後此筆即刻生效，請詳加確認。</label>
+            </div>
+            <div class="dropdown-divider mb-3"></div>
+            <div class="row">
+              <h6 class="col-3 text-black-50">申請人</h6>
+              <h6 class="col-9">李維維&nbsp;00325&nbsp;<small class="text-black-50">2018/03/23</small></h6>
+
+              <!-- <h6 class="col-3 text-black-50">覆核主管</h6>
+              <h6 class="col-9">Vivian Chen&nbsp;<small class="text-black-50">2018/03/29</small></h6> -->
+            </div>            
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+          <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 編輯行銷團隊 (第 1/2 步：填寫團隊資訊) / 編輯團隊資訊 -->
+<div id="modalEditMarketingTeam1" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title">編輯團隊資訊</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <div class="row">
+              <div class="col ml-3">
+                <label>團隊類型</label>
+                <select class="selectpicker inputstyleSelect">
+                  <option>空中 AO</option>
+                  <option>SBC</option>
+                  <option>消金中心</option>
+                </select>
+              </div>
+              <div class="col ml-3">
+                <label>團隊編號</label>
+                <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col mr-3">
+                <label>團隊名稱</label>
+                <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+              </div>
+              <div class="col ml-3">
+                <label>組織代碼
+                  <span class="markRed">*</span>
+                </label>
+                <select class="selectpicker inputstyleSelect">
+                  <option value="" class="displayno">請選擇...</option>
+                  <option>請選擇</option>
+                  <option>請選擇</option>
+                  <option>請選擇</option>
+                  <option>請選擇</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col ml-3">
+                <label>名單上限</label>
+                <div class="input-group mb-3">
+                  <input type="number" class="form-control inputstyle" placeholder="請填數字" value="10">
+                  <div class="input-group-append ">
+                    <span class="input-group-text inputstyle">筆</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col mr-3">
+                <label>可承作商品</label>
+                <select class="selectpicker inputstyleSelect">
+                  <option value="" class="displayno">請選擇...</option>
+                  <option>請選擇</option>
+                  <option>請選擇</option>
+                  <option>請選擇</option>
+                  <option>請選擇</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>
+              可接受名單來源
+            </label>
+            <div id="normalModalEditMarketingTeam1" class="dropdown ">
+              <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="btn-text">EBM</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#normalModalEditMarketingTeam1')">全選</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#normalModalEditMarketingTeam1')">取消全選</a>
+                <div class="dropdown-divider"></div>
+                <div class="form-check form-check-inline dropdown-item">
+                  <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam1_none" value="未執行">
+                  <label class="form-check-label" for="normalModalEditMarketingTeam1_none">信貸</label>
+                </div>
+                <div class="form-check form-check-inline dropdown-item">
+                  <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam1_tracked" value="追蹤中">
+                  <label class="form-check-label" for="normalModalEditMarketingTeam1_tracked">副擔保</label>
+                </div>
+                <div class="form-check form-check-inline dropdown-item">
+                  <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam1_reject" value="婉拒">
+                  <label class="form-check-label" for="normalModalEditMarketingTeam1_reject">房貸</label>
+                </div>
+                <div class="form-check form-check-inline dropdown-item">
+                  <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam1_accepted" value="已受理">
+                  <label class="form-check-label" for="normalModalEditMarketingTeam1_accepted">小型事業(SB)</label>
+                </div>
+                <div class="form-check form-check-inline dropdown-item">
+                  <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam1_reject" value="婉拒">
+                  <label class="form-check-label" for="normalModalEditMarketingTeam1_reject">卡友貸</label>
+                </div>
+                <div class="form-check form-check-inline dropdown-item">
+                  <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam1_reject2" value="婉拒">
+                  <label class="form-check-label" for="normalModalEditMarketingTeam1_reject2">保險(儲蓄險、房貸壽險)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="note">描述</label>
+            <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+        <button type="button" data-dismiss="modal" class="btn btn-ylw">確定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 編輯行銷團隊 (第 2/2 步：加入成員) / 新增團隊成員 -->
+<div id="modalEditMarketingTeam2" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title">新增團隊成員</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>
+            團隊成員
+            <span class="markRed">*</span>
+          </label>
+          <div id="normalModalEditMarketingTeam2" class="dropdown ">
+            <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span class="btn-text">馬力歐、永盟凱...+10</span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#normalModalEditMarketingTeam2')">全選</a>
+              <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#normalModalEditMarketingTeam2')">取消全選</a>
+              <div class="dropdown-divider"></div>
+              <div class="form-check form-check-inline dropdown-item">
+                <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam2_none" value="未執行">
+                <label class="form-check-label" for="normalModalEditMarketingTeam2_none">馬力歐</label>
+              </div>
+              <div class="form-check form-check-inline dropdown-item">
+                <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam2_tracked" value="追蹤中">
+                <label class="form-check-label" for="normalModalEditMarketingTeam2_tracked">馬力歐</label>
+              </div>
+              <div class="form-check form-check-inline dropdown-item">
+                <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam2_reject" value="婉拒">
+                <label class="form-check-label" for="normalModalEditMarketingTeam2_reject">馬力歐</label>
+              </div>
+              <div class="form-check form-check-inline dropdown-item">
+                <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam2_accepted" value="已受理">
+                <label class="form-check-label" for="normalModalEditMarketingTeam2_accepted">馬力歐</label>
+              </div>
+              <div class="form-check form-check-inline dropdown-item">
+                <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam2_reject" value="婉拒">
+                <label class="form-check-label" for="normalModalEditMarketingTeam2_reject">馬力歐</label>
+              </div>
+              <div class="form-check form-check-inline dropdown-item">
+                <input class="form-check-input" type="checkbox" id="normalModalEditMarketingTeam2_reject1" value="婉拒">
+                <label class="form-check-label" for="normalModalEditMarketingTeam2_reject1"></label>
+              </div>
+            </div>
+          </div>
+          <div id="detail_result" class="mt-4 row no-gutters ">
+            <div class="dropdown-divider col-12"></div>
+            <div class="col-12 ps_note">細項類別 (0)</div>
+            <p class="col-12 mt-2 choosen"></p>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+        <button type="button" class="btn btn-ylw" data-dismiss="modal" aria-label="Close">確定新增團隊成員</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+
+    // function openDatePicker(id) {
+    //     console.log('aaa')
+    //     var did = "#" + id
+    //     $(did).datepicker('show');
+    // }
+  </script>
+
+  <script id="search_error" type="text/template">
+    <div class="nodata">
+      <div>
+        <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+      </div>
+      <h6>查無資料</h6>
+
+    </div>
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<div class="form-bottom">
+  @@if(typeof specialSearchTarget !== 'undefined' && specialSearchTarget !== '') {
+    <button id="searchBtn-0" type="button " class="btn btn-ylw mr-1 " onclick="search('@@specialSearchTarget')">
+  } @@if(typeof specialSearchTarget === 'undefined') {
+    <button id="searchBtn-0" type="button " class="btn btn-ylw mr-1 " onclick="search('result_1')">
+  }
+    <i class="fa fa-search" aria-hidden="true"></i>&nbsp;搜尋</button>
+  @@if(typeof btnClear !== 'undefined' && btnClear) {
+    <button type="button " class="btn btn-gry " onclick="onClearSearchParam()">清除</button>
+  }
+</div>
+

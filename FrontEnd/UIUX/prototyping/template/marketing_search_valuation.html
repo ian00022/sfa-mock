@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+<body>
+    <div class="container-fluid pl-0 pr-0">
+        @@include('./components/sidebar.html', {
+            "sidebarCollapseFirst": "saleArea",
+            "sidebar": "marketingValuation"
+        })
+        <div id="main-content" class="main-content">
+            @@include('./components/navbar.html', { "navbarType": "" })
+
+            <!-- 顧客查詢 -->
+            <section>
+                <nav class="navbar justify-content-between panel-head ">
+                    <span class="navbar-brand ">估價查詢</span>
+
+                </nav>
+
+
+                <div id="search-section-0" class="form-row mr-0 area">
+                    <div class="form-group col-12 col-md-4 col-lg-3">
+                        <label>查詢項目
+                            <span class="markRed">*</span>
+                        </label>
+                        <div class="form-row">
+                            <div class="form-check">
+                                <input id="woman" name="gender" checked="true" type="radio">
+                                <label for="woman" style="cursor: pointer;">建物</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="man" name="gender" type="radio">
+                                <label for="man" style="cursor: pointer;">土地</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group col-12 col-md-4 col-lg-3">
+                        <label>鑑價日期</label>
+                        @@include('./components/input/date.html', {"daterange": true})
+                    </div>
+                    <div class="form-group col-12 col-md-12 col-lg-6">
+                        <label>所在地</label>
+                        <div class="form-row">
+                            <div class="form-group col-3">
+                                <select class="selectpicker inputstyleSelect">
+                                    <option selected>縣市</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-3">
+                                <select class="selectpicker inputstyleSelect">
+                                    <option selected>行政區</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-6">
+                                <input type="password" class="form-control inputstyle " placeholder="請輸入地址">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="search-section-1" class="form-row mr-0 area">
+                    <div class="form-group col-12 col-md-4 col-lg-3">
+                        <label>授信戶
+
+                        </label>
+                        <div class="input-group">
+                            <input type="text" class="form-control inputstyle" placeholder="請輸入">
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group col-12 col-md-4 col-lg-3">
+                        <label>統一編號</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control inputstyle" placeholder="e.g. A992883771">
+                        </div>
+                    </div>
+                    <div class="form-group col-12 col-md-4 col-lg-3">
+                        <label>不動產類型</label>
+                        <div id="house" class="dropdown ">
+                            <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="btn-text">請選擇</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#house')">全選</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#house')">取消全選</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="form-check form-check-inline dropdown-item">
+                                    <input class="form-check-input" type="checkbox" id="house_1" value="華廈">
+                                    <label class="form-check-label" for="house_1">華廈</label>
+                                </div>
+                                <div class="form-check form-check-inline dropdown-item">
+                                    <input class="form-check-input" type="checkbox" id="house_2" value="店面">
+                                    <label class="form-check-label" for="house_2">店面</label>
+                                </div>
+                                <div class="form-check form-check-inline dropdown-item">
+                                    <input class="form-check-input" type="checkbox" id="house_3" value="套房">
+                                    <label class="form-check-label" for="house_3">套房</label>
+                                </div>
+                                <div class="form-check form-check-inline dropdown-item">
+                                    <input class="form-check-input" type="checkbox" id="house_4" value="公寓">
+                                    <label class="form-check-label" for="house_4">公寓</label>
+                                </div>
+                                <div class="form-check form-check-inline dropdown-item">
+                                    <input class="form-check-input" type="checkbox" id="house_5" value="車位">
+                                    <label class="form-check-label" for="house_5">車位</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-12 col-md-4 col-lg-3">
+                        <label>社區名稱</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control inputstyle" placeholder="請輸入">
+                        </div>
+
+                    </div>
+                    <div class="form-group col-12 col-md-4 col-lg-3">
+                        @@include('./components/input/searh-btn-group.html')
+                    </div>
+                </div>
+                <div id="search-section-2" class="form-row mr-0 info-area area">
+                    <div id="house_result" class="col-12 border-top pt-3 pb-3 displayno">
+                        <span class="ps_note">不動產類型 (5)</span>
+                        <span class="choosen">華廈、店面、套房、公寓、車位</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Customer 表單 -->
+            <div id="result_1" class="table-responsive data-list displayno">
+                <table class="table table-striped tableinfo">
+                    <thead>
+                        <tr>
+                            <th scope="col ">資訊來源</th>
+                            <th scope="col ">鑑價日期</th>
+                            <th scope="col ">建物門牌/土地地段</th>
+                            <th scope="col " class="money-right">總價(萬元)</th>
+                            <th scope="col " class="money-right">土地坪數</th>
+                            <th scope="col " class="money-right">建物坪數</th>
+                            <th scope="col " class="money-right">單坪價(萬元)</th>
+                            <th scope="col ">樓層/總樓層</th>
+                            <th scope="col ">完工日期</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>本行鑑估</td>
+                            <td>0106/12/27</td>
+                            <td class="alink">台北市松山區民生東路三段 115 號及117 號</td>
+                            <td class="money-right">80,000</td>
+                            <td class="money-right">9</td>
+                            <td class="money-right">26.04</td>
+                            <td class="money-right">44.2</td>
+                            <td>3/005</td>
+                            <td>0106/12/27</td>
+                        </tr>
+                        <tr>
+                            <td>實價登錄</td>
+                            <td>0106/12/27</td>
+                            <td class="alink">台北市松山區民生東路三段 115 號及117 號</td>
+                            <td class="money-right">236,700</td>
+                            <td class="money-right">3.54</td>
+                            <td class="money-right">26.04</td>
+                            <td class="money-right">44.2</td>
+                            <td>3/005</td>
+                            <td>0106/12/27</td>
+                        </tr>
+                        <tr>
+                            <td>本行鑑估</td>
+                            <td>0106/12/27</td>
+                            <td class="alink">台北市松山區民生東路三段 115 號及117 號</td>
+                            <td class="money-right">80,000</td>
+                            <td class="money-right">9.54</td>
+                            <td class="money-right">16.</td>
+                            <td class="money-right">44.2</td>
+                            <td>5/005</td>
+                            <td>0106/12/27</td>
+                        </tr>
+                        <tr>
+                            <td>實價登錄</td>
+                            <td>0106/12/27</td>
+                            <td class="alink">台北市松山區民生東路三段 115 號及117 號</td>
+                            <td class="money-right">236,700</td>
+                            <td class="money-right">9.54</td>
+                            <td class="money-right">26.04</td>
+                            <td class="money-right">44.2</td>
+                            <td>3/005</td>
+                            <td>0106/12/27</td>
+                        </tr>
+                        <tr>
+                            <td>本行鑑估</td>
+                            <td>0106/12/27</td>
+                            <td class="alink">台北市松山區民生東路三段 115 號及117 號</td>
+                            <td class="money-right">80,000</td>
+                            <td class="money-right">9.54</td>
+                            <td class="money-right">26.04</td>
+                            <td class="money-right">44.2</td>
+                            <td>3/005</td>
+                            <td>0106/12/27</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- pageNum -->
+                <nav class="navNum navbar-light">
+                    <form class="form-inline">
+                        <div>
+                            <button class=" btn-sm pageNum">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            </button>
+                            <button class=" btn-sm pageNum">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </button>
+                            <span class="loanChartNote">1 of 1</span>
+                        </div>
+                        <div>
+                            <span class="loanChartNote">Items per page:
+                                <select class="form-control inputstyle">
+                                    <option>50</option>
+                                </select>
+                            </span>
+                        </div>
+                    </form>
+                </nav>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+@@include('./components/footer.html')
+<script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+    $(document).ready(function () {
+        /**/
+        // dropdown-menu-stop 
+        $(document).on('click', '.dropdown-menu-stop', function (e) {
+            e.stopPropagation();
+        });
+        $('input[type=checkbox].form-check-input').on('change', function () {
+            var id = '#' + $(this).closest('.form-check').closest(
+                '.dropdown-menu.dropdown-menu-stop').closest('.dropdown')[0].id;
+            var strings = [];
+            $(id).find('.dropdown-menu.dropdown-menu-stop').children().each(function () {
+                var checked = $(this).find('input').prop('checked')
+                if (checked) {
+                    strings.push($(this).find('input').val())
+                }
+            })
+            var buttonTitle = strings.length == 0 ? '請選擇' : strings.join(', ');
+            $(id).find('.btn-text').text(buttonTitle)
+        })
+    });
+
+    // function openDatePicker(id) {
+    //     console.log('aaa')
+    //     var did = "#" + id
+    //     $(did).datepicker('show');
+    // }
+
+    function search(dropdown_id) {
+        setChooseResult(dropdown_id)
+        this.showElement('result_1');
+        this.showElement('house_result')
+    }
+
+    function showElement(id) {
+        $('#' + id).removeClass('displayno');
+    }
+
+    // dropdown choose set result
+    function setChooseResult(id) {
+        var choose = [];
+        $('#' + id).find('.dropdown-menu.dropdown-menu-stop').children().each(function () {
+            var checked = $(this).find('input').prop('checked')
+            if (checked) {
+                choose.push($(this).find('input').val())
+            }
+        })
+        var count = choose ? choose.length : 0;
+        var countString = '不動產類型 (' + count + ')';
+        var chooseString = choose.join(', ');
+
+        var result_id = '#' + id + '_result';
+        var noteSelector = result_id + ' span.ps_note';
+        var choosenSelector = result_id + ' span.choosen';
+        $(noteSelector).text(countString);
+        $(choosenSelector).text(chooseString);
+    }
+</script>
+
+<script id="search_error" type="text/template">
+    <div class="nodata">
+        <div>
+            <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+        </div>
+        <h6>查無資料</h6>
+
+    </div>
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+				<!-- 麵包屑 -->
+				<nav class="clearfix nav-top">
+					<ol class="breadcrumb float-sm-left float-xs-none mb-xs-0">
+          @@if( typeof breadcrumb !== "undefined" ) {
+            @@for (var i=0; i< breadcrumb.length - 1; i++) {
+              <li class="breadcrumb-item"><a href="`+breadcrumb[i].href+`">`+breadcrumb[i].name+`</a></li>
+            }
+            @@for (var i=breadcrumb.length - 1; i< breadcrumb.length; i++) {
+              <li class="breadcrumb-item active" aria-current="page">`+breadcrumb[i].name+`</li>
+            }
+          }
+          </ol>
+          <!-- 右側功能列 -->
+					<ul class="nav float-sm-right float-xs-none nav-function-btn">
+            @@if( typeof rightTool !== "undefined" && rightTool === "companyData" ) {
+            <!-- company data -->
+            <li>
+							<button type="button" class="nav-link btn" onclick="{location.href='marketing_search_EDM.html'}">
+								<i class="fa fa-paper-plane-o iconspace" aria-hidden="true"></i>寄送電子 DM</button>
+						</li>
+						<li>
+							<button type="button" class="nav-link btn" data-toggle="modal" data-target="#addselflist" data-whatever="@mdo ">
+								<i class="fa fa-plus iconspace"></i>新增自建名單</button>
+						</li>
+						<li>
+							<div class="btn-group">
+								<button type="button" class="nav-link btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									更多…
+								</button>
+								<div class="dropdown-menu dropdown-menu-right">
+									<a class="dropdown-item" href="javascript: void(0);" data-toggle="modal" data-target="#addmeeone" data-whatever="@mdo">新增行程</a>
+									<a class="dropdown-item" href="javascript: void(0);" data-toggle="modal" data-target="#marketTrans" data-whatever="@mdo">商機轉介</a>
+								</div>
+							</div>
+						</li>
+						}
+						@@if( typeof rightTool !== "undefined" && rightTool === "nameListData" ) {
+							
+						}
+					</ul>
+				</nav>

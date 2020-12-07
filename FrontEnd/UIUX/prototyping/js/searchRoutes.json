@@ -1,0 +1,118 @@
+[
+  {
+    "path": "dashboard.html?taTo=autocomplete",
+    "title": "Dashboard",
+    "breadcrumb": ""
+  },
+  {
+    "path": "customer_search.html?taTo=autocomplete",
+    "title": "顧客查詢",
+    "breadcrumb": ""
+  },
+  {
+    "path": "customer_search.html?taTo=autocomplete&modal=exampleModal",
+    "title": "新增潛在顧客",
+    "breadcrumb": "顧客查詢"
+  },
+  {
+    "path": "namelist_search.html?taTo=autocomplete&tab=pills-base-info",
+    "title": "一般名單",
+    "breadcrumb": "名單管理>名單查詢"
+  },
+  {
+    "path": "namelist_search.html?taTo=autocomplete&tab=pills-notice",
+    "title": "總行指派案件",
+    "breadcrumb": "名單管理>名單查詢"
+  },
+  {
+    "path": "namelist_search.html?taTo=autocomplete&modal=exampleModal",
+    "title": "新增潛在顧客",
+    "breadcrumb": "名單管理>名單查詢"
+  },
+  {
+    "path": "namelist_search_myfavorite.html?taTo=autocomplete",
+    "title": "我的最愛",
+    "breadcrumb": "名單管理"
+  },
+  {
+    "path": "namelist_search_todaytodo.html?taTo=autocomplete",
+    "title": "今日行程",
+    "breadcrumb": "名單管理"
+  }, {
+    "path": "Refferal_search.html?taTo=autocomplete",
+    "title": "商機轉介查詢",
+    "breadcrumb": ""
+  }, {
+    "path": "Refferal_search.html?taTo=autocomplete&modal=exampleModal",
+    "title": "新增商機轉介",
+    "breadcrumb": "商機轉介查詢"
+  }, {
+    "path": "marketing_search_loan.html?taTo=autocomplete",
+    "title": "貸款試算",
+    "breadcrumb": "行銷專區"
+  }, {
+    "path": "marketing_search_EDM.html?taTo=autocomplete",
+    "title": "電子DM",
+    "breadcrumb": "行銷專區"
+  }, {
+    "path": "marketing_search_Map.html?taTo=autocomplete",
+    "title": "行銷地圖",
+    "breadcrumb": "行銷專區"
+  }, {
+    "path": "marketing_search_valuation.html?taTo=autocomplete",
+    "title": "估價查詢",
+    "breadcrumb": "行銷專區"
+  }, {
+    "path": "Mange_character.html?taTo=autocomplete",
+    "title": "角色權限",
+    "breadcrumb": "後台管理"
+  }, {
+    "path": "Mange_marketing.html?taTo=autocomplete",
+    "title": "行銷團隊",
+    "breadcrumb": "後台管理"
+  }, {
+    "path": "Mange_marketing.html?taTo=autocomplete&modal=addgroupone",
+    "title": "新增行銷團隊",
+    "breadcrumb": "後台管理>行銷團隊"
+  }, {
+    "path": "Mange_email.html?taTo=autocomplete",
+    "title": "E-mail 樣板",
+    "breadcrumb": "後台管理"
+  }, {
+    "path": "Mange_email.html?taTo=autocomplete&modal=addMail",
+    "title": "新增E-mail 樣板",
+    "breadcrumb": "後台管理>E-mail 樣板"
+  }, {
+    "path": "Mange_notification.html?taTo=autocomplete",
+    "title": "推播通知",
+    "breadcrumb": "後台管理"
+  }, {
+    "path": "Mange_notification.html?taTo=autocomplete&modal=Addnotic",
+    "title": "新增推播通知",
+    "breadcrumb": "後台管理>推播通知"
+  }, {
+    "path": "Mange_arrange.html?taTo=autocomplete",
+    "title": "總行指派案件",
+    "breadcrumb": "後台管理"
+  }, {
+    "path": "Mange_arrange.html?taTo=autocomplete&modal=addgroupone",
+    "title": "新增案件",
+    "breadcrumb": "後台管理>總行指派案件"
+  }, {
+    "path": "Mange_lateNotice.html?taTo=autocomplete",
+    "title": "名單/案件逾期通知",
+    "breadcrumb": "後台管理"
+  }, {
+    "path": "Mange_lateNotice.html?taTo=autocomplete&modal=addlate",
+    "title": "新增逾期設定",
+    "breadcrumb": "後台管理>名單/案件逾期通知"
+  }, {
+    "path": "Mange_tag.html?taTo=autocomplete",
+    "title": "推薦產品標籤",
+    "breadcrumb": "後台管理"
+  }, {
+    "path": "report_search.html?taTo=autocomplete",
+    "title": "成效報表",
+    "breadcrumb": ""
+  }
+]

@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html', {
+ "hasGoogleMapClusterJs": true, 
+ "hasGoogleMapJs": true
+})
+<body>
+    <div class="container-fluid pl-0 pr-0">
+        @@include('./components/sidebar.html', {
+            "sidebarCollapseFirst": "saleArea",
+            "sidebar": "marketingMap"
+        })
+        <div id="main-content" class="main-content" style="height:100vh;">
+
+            @@include('./components/navbar.html', { "navbarType": "", "marketingMap": true })
+
+            <div style="height: 100%;" id="map">
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+@@include('./components/footer.html')
+<script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+    $(document).ready(function () {
+
+        // $('.selectpicker').selectpicker({
+        //     style: 'mapbtn'
+        // });
+        $('.selectpicker').selectpicker('setStyle', 'mapbtn')
+
+        /**/
+
+        // dropdown-menu-stop 
+        $(document).on('click', '.dropdown-menu-stop', function (e) {
+            e.stopPropagation();
+        });
+
+        $('input[type=checkbox].form-check-input').on('change', function () {
+            var id = '#' + $(this).closest('.form-check').closest(
+                '.dropdown-menu.dropdown-menu-stop').closest('.dropdown')[0].id;
+            var strings = [];
+            $(id).find('.dropdown-menu.dropdown-menu-stop').children().each(function () {
+                var checked = $(this).find('input').prop('checked')
+                if (checked) {
+                    strings.push($(this).find('input').val())
+                }
+            })
+            var buttonTitle = strings.length == 0 ? '請選擇' : strings.join(', ');
+            $(id).find('.btn-text').text(buttonTitle)
+
+            // 額外條件 展示細項類別使用
+            if (id === '#detail') {
+                setChooseResult('detail', '細項類別')
+            }
+        })
+    });
+
+    function chooseAll(toggle, id) {
+        $(id).find('.dropdown-menu.dropdown-menu-stop').children().each(function () {
+            $(this).find('input').prop('checked', toggle);
+            $(this).find('input').trigger('change');
+        })
+    }
+
+    function toggleSplitContent(self, toggle) {
+        var parent = $(self).closest('.dropdown-split-btn');
+        var content = $(parent).find('.dropdown-split-btn-content');
+        var current_status = $(content).hasClass('show');
+
+        var trigger = toggle ? toggle === 'true' : !current_status;
+        if (trigger) {
+            $(content).addClass('show');
+        } else {
+            $(content).removeClass('show');
+        }
+    }
+
+    function confirmSplit(self, id) {
+        $('#' + id).prop('checked', true);
+        $('#' + id).trigger('change');
+        toggleSplitContent(self, 'false');
+    }
+
+    function cancelSplit(self, id) {
+        $('#' + id).prop('checked', false);
+        $('#' + id).trigger('change');
+        toggleSplitContent(self, 'false');
+    }
+
+    function showMapData(self, toggle) {
+        var id = $(self).attr('name');
+
+        if (toggle === 'true') {
+            $('#' + id).removeClass('displayno')
+        } else {
+            $('#' + id).addClass('displayno')
+        }
+    }
+</script>
+<script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: {
+                lat: 25.057892,
+                lng: 121.546913
+            }
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        for (let location of locations) {
+            // Add some markers to the map.
+            // Note: The code uses the JavaScript Array.prototype.map() method to
+            // create an array of markers based on a given "locations" array.
+            // The map() method here has nothing to do with the Google Maps API.
+            var markers = location.map(function (location, i) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                });
+                return marker
+            });
+            // Add a marker clusterer to manage the markers.
+            var markerCluster = new MarkerClusterer(map, markers, {
+                imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+                //maxZoom: 5,
+                averageCenter: true,
+                minimumClusterSize: 1
+            });
+        }
+    }
+
+    // function openDatePicker(id) {
+    //     console.log('aaa')
+    //     var did = "#" + id
+    //     $(did).datepicker('show');
+    // }
+
+    function getLocatuon() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function showPosition(position) {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        console.log(lat, lng)
+        //map.setCenter(new google.maps.LatLng(lat, lng));
+    }
+    var locations = [
+        [{
+                lat: 25.0505871,
+                lng: 121.53559
+            },
+            {
+                lat: 25.0450229,
+                lng: 121.5285236
+            },
+            {
+                lat: 25.057892,
+                lng: 121.546913
+            },
+            {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }, {
+                lat: 25.057892,
+                lng: 121.546913
+            }
+        ],
+        [{
+                lat: 25.0299283,
+                lng: 121.5350361
+            },
+            {
+                lat: 25.0299283,
+                lng: 121.5350361
+            },
+            {
+                lat: 25.0299283,
+                lng: 121.5350361
+            },
+            {
+                lat: 25.0299283,
+                lng: 121.5350361
+            },
+            {
+                lat: 25.0299283,
+                lng: 121.5350361
+            },
+            {
+                lat: 25.0299283,
+                lng: 121.5350361
+            },
+            {
+                lat: 25.0299283,
+                lng: 121.5350361
+            },
+            {
+                lat: 25.0299283,
+                lng: 121.5350361
+            },
+        ]
+    ]
+    ClusterIcon.prototype.triggerClusterClick = function () {
+        console.log(this.cluster_)
+        var markerClusterer = this.cluster_.getMarkerClusterer();
+
+        // Trigger the clusterclick event.
+        google.maps.event.trigger(markerClusterer, 'clusterclick', this.cluster_);
+
+        if (markerClusterer.isZoomOnClick()) {
+            var array = this.cluster_.getMarkers().slice();
+            console.log(array)
+            this.map_.setCenter(array[0].position);
+            // Zoom into the cluster.
+            // this.map_.fitBounds(this.cluster_.getBounds());
+            // modified zoom in function
+            var zoom = this.map_.getZoom();
+            if (zoom < 16) {
+                this.map_.setZoom(zoom + 2);
+            }
+        }
+    };
+</script>
+
+<script id="search_error" type="text/template">
+    <div class="nodata">
+        <div>
+            <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+        </div>
+        <h6>查無資料</h6>
+
+    </div>
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKmiZy648RG-TmRDxVuU_paFbixn4QfKQ&callback=initMap"></script>
+</body>
+</html>

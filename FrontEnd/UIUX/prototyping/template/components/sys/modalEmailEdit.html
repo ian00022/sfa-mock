@@ -1,0 +1,256 @@
+<div id="modalEmailEdit" class="TopChartNav">
+  <div class="col-8 float-right sidepanel pr-0 pl-0">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav('#modalEmailEdit')">&times;</a>
+
+    <div class="card-body Emailbgc">
+      <h5 class="text-center mt-2 mb-2">即時預覽</h5>
+      <div class="row">
+        <div class="col-12 text-center">
+          <iframe src="./components/sys/modalMockEmail.html"></iframe>
+        </div>
+
+      </div>
+      <div id="accordion" class="row">
+        <div class="card openToUp col-12">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0 float-right">
+              <span class="tag square orange ml-2 ">暫存</span>
+              <a class="btn-link ml-1 mr-1" href=""><small><i class="fa fa-exclamation-triangle"></i>&nbsp;還原至最後生效狀態</small></a>
+              <button class="btn greenLink" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                展開編輯區
+                <i class="fa fa-angle-double-up iconspace" aria-hidden="true"></i>
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="col ml-3 ">
+                        <div class="form-group">
+                          <label>樣板類型
+                            <span class="markRed">*</span>
+                          </label>
+                          <select class="selectpicker inputstyleSelect">
+                            <option>電子ＤM</option>
+                            <option>感謝信</option>
+
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col ml-3">
+                        <div class="form-group">
+                          <label>產品類型
+                            <span class="markRed">*</span>
+                          </label>
+                          <select class="selectpicker inputstyleSelect">
+                            <option>信貸</option>
+
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col ml-3">
+                        <div class="form-group">
+                          <label>有效期限
+
+                          </label>
+                          <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-6">
+                      <div class="col ml-3">
+                        <div class="form-group">
+                          <label>名稱
+
+                          </label>
+                          <input type="text" class="form-control inputstyle" value="SFA平台公教人員信貸專案">
+                        </div>
+                      </div>
+
+
+                      <div class="col ml-3">
+                        <div class="form-group">
+                          <label>HTML</label>
+                          <textarea class="form-control inputstyletextArea" rows="8">
+                            font-face{font-family:'FontAwesome';src:url('/common/font/fontawesome-webfont.eot?v=3.2.1');src:url('/common/font/fontawesome-webfont.eot?#iefix&v=3.2.1')
+                            format('embedded-opentype'),url('/common/font/fontawesome-webfont.woff?v=3.2.1') format('woff'),url('/common/font/fontawesome-webfont.ttf?v=3.2.1')
+                            format('truetype'),url('/common/font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');font-weight:normal;font-style:normal;}[class^="icon-"],[class*="
+                            icon-"]{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;*margin-right:.3em;}
+                            [class^="icon-"]:before,[class*=" icon-"]:before{text-decoration:inherit;display:inline-block;speak:none;}
+                            .icon-large:before{vertical-align:-10%;font-size:1.3333333333333333em;} a [class^="icon-"],a
+                            [class*=" icon-"]{display:inline;} [class^="icon-"].icon-fixed-width,[class*=" icon-"].icon-fixed-width{display:inline-block;width:1.1428571428571428em;text-align:right;padding-right:0.2857142857142857em;}[class^="icon-"].icon-fixed-width.icon-large,[class*="
+                            icon-"].icon-fixed-width.icon-large{width:1.4285714285714286em;} .icons-ul{margin-left:2.142857142857143em;list-style-type:none;}.icons-ul>li{position:relative;}
+                            .icons-ul .icon-li{position:absolute;left:-2.142857142857143em;width:2.142857142857143em;text-align:center;line-height:inherit;}
+                            [class^="icon-"].hide,[class*=" icon-"].hide{display:none;} .icon-muted{color:#eeeeee;} .icon-light{color:#ffffff;}
+                            .icon-dark{color:#333333;} .icon-border{border:solid 1px #eeeeee;padding:.2em .25em .15em;-webkit-border-radius:3px;-moz-b
+                          </textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">寄送測試信</button>
+                <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close" onclick="closeNav('#modalEmailEdit')">取消</button>
+                <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close" onclick="closeNav('#modalEmailEdit')">暫存</button>
+                <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close" onclick="closeNav('#modalEmailEdit')">送出</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="modalEmailEditUnderReview" class="TopChartNav">
+  <div class="col-8 float-right sidepanel pr-0 pl-0">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav('#modalEmailEditUnderReview')">&times;</a>
+
+    <div class="card-body Emailbgc">
+      <h5 class="text-center mt-2 mb-2">即時預覽</h5>
+      <div class="row">
+        <div class="col-12 text-center">
+          <iframe src="./components/sys/modalMockEmail.html"></iframe>
+        </div>
+
+      </div>
+      <div id="accordion" class="row">
+        <div class="card openToUp col-12">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0 float-right">
+              <span class="modal-under-review-show"><span class="tag square red ml-2">待覆核</span></span>
+              <button class="btn greenLink collapsed" data-toggle="collapse" data-target="#modalEmailEditUnderReviewCollapse" aria-expanded="true" aria-controls="modalEmailEditUnderReviewCollapse">
+                展開編輯區
+                <i class="fa fa-angle-double-down iconspace" aria-hidden="true"></i>
+              </button>
+            </h5>
+          </div>
+
+          <div id="modalEmailEditUnderReviewCollapse" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="col ml-3 ">
+                        <div class="form-group">
+                          <label>樣板類型
+                            <span class="markRed">*</span>
+                          </label>
+                          <select class="selectpicker inputstyleSelect" disabled>
+                            <option>電子DM</option>
+                            <option>感謝信</option>
+
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col ml-3">
+                        <div class="form-group">
+                          <label>產品類型
+                            <span class="markRed">*</span>
+                          </label>
+                          <select class="selectpicker inputstyleSelect" disabled>
+                            <option>信貸</option>
+
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col ml-3">
+                        <div class="form-group">
+                          <label>有效期限
+
+                          </label>
+                          <input type="text" class="form-control inputstyle" placeholder="請輸入..." readonly>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-6">
+                      <div class="col ml-3">
+                        <div class="form-group">
+                          <label>名稱&nbsp;<span class="modal-under-review-show"><a class="under-review-notice pop-hover-stay" data-toggle="popover" href="#t1529228611695"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a></span></label>
+                          <input type="text" class="form-control inputstyle" value="SFA平台公教人員信貸專案" readonly>
+                          <div id="t1529228611695" class="displayno">
+                            <b>名稱</b>
+                            <div class="dropdown-divider"></div>
+                            <span class="textGary">異動前：公教人員信貸專案</span>
+                            <br />
+                            <span class="textGary">異動後：</span><span class="text-highlight">SFA平台公教人員信貸專案</span>
+                            
+                            <div class="dropdown-divider"></div>
+                            <div>申請人：Vivan Chen <small class="text-black-50">2018/6/6</small></div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col ml-3">
+                        <div class="form-group">
+                          <label>HTML</label>
+                          <textarea class="form-control inputstyletextArea" rows="8" disabled>
+                            font-face{font-family:'FontAwesome';src:url('/common/font/fontawesome-webfont.eot?v=3.2.1');src:url('/common/font/fontawesome-webfont.eot?#iefix&v=3.2.1')
+                            format('embedded-opentype'),url('/common/font/fontawesome-webfont.woff?v=3.2.1') format('woff'),url('/common/font/fontawesome-webfont.ttf?v=3.2.1')
+                            format('truetype'),url('/common/font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');font-weight:normal;font-style:normal;}[class^="icon-"],[class*="
+                            icon-"]{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;*margin-right:.3em;}
+                            [class^="icon-"]:before,[class*=" icon-"]:before{text-decoration:inherit;display:inline-block;speak:none;}
+                            .icon-large:before{vertical-align:-10%;font-size:1.3333333333333333em;} a [class^="icon-"],a
+                            [class*=" icon-"]{display:inline;} [class^="icon-"].icon-fixed-width,[class*=" icon-"].icon-fixed-width{display:inline-block;width:1.1428571428571428em;text-align:right;padding-right:0.2857142857142857em;}[class^="icon-"].icon-fixed-width.icon-large,[class*="
+                            icon-"].icon-fixed-width.icon-large{width:1.4285714285714286em;} .icons-ul{margin-left:2.142857142857143em;list-style-type:none;}.icons-ul>li{position:relative;}
+                            .icons-ul .icon-li{position:absolute;left:-2.142857142857143em;width:2.142857142857143em;text-align:center;line-height:inherit;}
+                            [class^="icon-"].hide,[class*=" icon-"].hide{display:none;} .icon-muted{color:#eeeeee;} .icon-light{color:#ffffff;}
+                            .icon-dark{color:#333333;} .icon-border{border:solid 1px #eeeeee;padding:.2em .25em .15em;-webkit-border-radius:3px;-moz-b
+                          </textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-under-review-show">
+                <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">寄送測試信</button>
+              </div>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close" onclick="closeNav('#modalEmailEditUnderReview')">取消</button>
+              <div class="modal-under-review-show">
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal"  aria-label="Close" onclick="closeNav('#modalEmailEditUnderReview'); $('#modalSysBack').modal('show');">退回</button>
+                <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close" onclick="closeNav('#modalEmailEditUnderReview'); $('#modalAgree').modal('show');">放行</button>                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  $(function(){
+
+    $('iframe').on('load', function() {
+        this.style.height =
+        this.contentWindow.document.body.scrollHeight + 'px';
+        this.style.width = 
+        this.contentWindow.document.body.scrollWidth + 40 + 'px';
+        console.log(this.style.width, this.style.height, $(this.contentWindow.document.body));
+    });
+
+    $('#modalEmailEditUnderReview').on('hidden.bs.modal', function(){
+      $(this)
+        .removeClass('modal-m-review')  
+        .removeClass('modal-under-review')
+        .removeClass('modal-edit');
+    });
+  });
+</script>

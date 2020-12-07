@@ -1,0 +1,180 @@
+@@if(typeof shTemplate === 'undefined' || (typeof shTemplate !== 'undefined' && shTemplate === 'common')) {
+<!--  一般名單 -->
+<div class="tab-pane fade show active" id="pills-base-info" role="tabpanel" aria-labelledby="pills-base-info-tab">
+  <div id="search-section-0" class="form-row area info-area mr-0">
+    <div class="form-group col-12 col-md-4 col-lg-3">
+      <label>名單狀態</label>
+      <div id="normal" class="dropdown ">
+        <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+
+          <span class="btn-text">未執行、追蹤中</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#normal')">全選</a>
+          <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#normal')">取消全選</a>
+          <div class="dropdown-divider"></div>
+          <div class="form-check form-check-inline dropdown-item">
+            <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+            <label class="form-check-label" for="normal_none">未執行</label>
+          </div>
+          <div class="form-check form-check-inline dropdown-item">
+            <input class="form-check-input" type="checkbox" id="normal_tracked" value="追蹤中">
+            <label class="form-check-label" for="normal_tracked">追蹤中</label>
+          </div>
+          <div class="form-check form-check-inline dropdown-item">
+            <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+            <label class="form-check-label" for="normal_reject">婉拒</label>
+          </div>
+          <div class="form-check form-check-inline dropdown-item">
+            <input class="form-check-input" type="checkbox" id="normal_accepted" value="已受理">
+            <label class="form-check-label" for="normal_accepted">已受理</label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-12 col-md-4 col-lg-3">
+      <label>名單來源</label>
+      <div id="namelist_source" class="dropdown ">
+        <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <span class="btn-text">EBM</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#namelist_source')">全選</a>
+          <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#namelist_source')">取消全選</a>
+          <div class="dropdown-divider"></div>
+          <div class="form-check form-check-inline dropdown-item">
+            <input class="form-check-input" type="checkbox" id="namelist_source_0" value="EBM">
+            <label class="form-check-label" for="namelist_source_0">EBM</label>
+          </div>
+          <div class="form-check form-check-inline dropdown-item">
+            <input class="form-check-input" type="checkbox" id="namelist_source_1" value="網路進件">
+            <label class="form-check-label" for="namelist_source_1">網路進件</label>
+          </div>
+          <div class="form-check form-check-inline dropdown-item">
+            <input class="form-check-input" type="checkbox" id="namelist_source_2" value="自建名單">
+            <label class="form-check-label" for="namelist_source_2">自建名單</label>
+          </div>
+          <div class="form-check form-check-inline dropdown-item">
+            <input class="form-check-input" type="checkbox" id="namelist_source_3" value="轉介">
+            <label class="form-check-label" for="namelist_source_3">轉介</label>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="form-group col-12 col-md-4 col-lg-3">
+      <label>統一編號
+        <span class="loanChartNote">(擇一必填)</span>
+      </label>
+      <input id="custID" type="text" class="form-control inputstyle " placeholder="e.g. A123456789 " maxlength="10">
+      <div class="error-msg">
+        <span>請輸入正確身分證字號</span>
+      </div>
+    </div>
+    <div class="form-group col-12 col-md-4 col-lg-3">
+      <label>分派/建立日期
+        <span class="loanChartNote">(擇一必填)</span>
+      </label>
+      @@include('../input/date.html')
+
+    </div>
+    <div class="form-group col-12 col-md-4 col-lg-3">
+      <label>行銷單位</label>
+      <select class="selectpicker" data-live-search="true">
+        <option data-tokens="ketchup mustard">01234 板橋分行</option>
+        <option data-tokens="mustard">01235 林口分行</option>
+        <option data-tokens="frosting">01236 新竹分行</option>
+      </select>
+    </div>
+    <div class="form-group col-12 col-md-4 col-lg-3">
+      <label>行銷人員</label>
+      <select class="selectpicker" data-live-search="true">
+        <option data-tokens="ketchup mustard">王大明</option>
+        <option data-tokens="mustard">林慧如</option>
+        <option data-tokens="frosting">陳欣欣</option>
+      </select>
+    </div>
+    <div class="form-group col-12 col-md-4 col-lg-3">
+      @@include('../input/searh-btn-group.html')
+    </div>
+  </div>
+  <!-- Customer 表單 -->
+  @@include('./search_common.html', {"navbarType": "@@navbarType", "shPage": "@@shPage"})
+</div>
+}
+
+@@if(typeof shTemplate !== 'undefined' && shTemplate === 'head') {
+<div class="tab-pane fade" id="pills-notice" role="tabpanel" aria-labelledby="pills-notice-tab">
+  <div id="search-section-0" class="form-row mr-0 area info-area">
+
+    <div class="form-group col-12 col-md-4 col-lg-3">
+      <label>名單狀態</label>
+      <div id="headoffice" class="dropdown">
+        <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <span class="btn-text">未執行</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#headoffice')">全選</a>
+          <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#headoffice')">取消全選</a>
+          <div class="dropdown-divider"></div>
+          <div class="form-check form-check-inline dropdown-item">
+            <input class="form-check-input" type="checkbox" id="none" value="未執行">
+            <label class="form-check-label" for="none">未執行</label>
+          </div>
+          <div class="form-check form-check-inline dropdown-item">
+            <input class="form-check-input" type="checkbox" id="tracked" value="已結案">
+            <label class="form-check-label" for="tracked">已結案</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="form-group col-12 col-md-4 col-lg-3">
+      <label>單號</label>
+      <input id="custID" type="search" class="form-control inputstyle " placeholder="請輸入..." maxlength="10">
+    </div>
+    <div class="form-group col-12 col-md-4 col-lg-3">
+      <label>主旨
+
+      </label>
+      <input id="custID" type="text" class="form-control inputstyle " placeholder="請輸入..." maxlength="10">
+
+    </div>
+    <div class="form-group col-12 col-md-4 col-lg-3">
+      <label>建立者
+
+      </label>
+      <input id="custID" type="text" class="form-control inputstyle " placeholder="請輸入..." maxlength="10">
+
+    </div>
+    <div class="form-group col-12 col-md-8 col-lg-6">
+      <label>日期類型</label>
+
+      <div class="form-row">
+        <div class="form-group col-6">
+          <select class="selectpicker inputstyleSelect">
+            <option value="" class="displayno">請選擇...</option>
+            <option value="1">建立日期</option>
+          </select>
+        </div>
+        <div class="form-group col-6">
+          @@include('../input/date.html', {"daterange": true})
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-12 col-md-4 col-lg-3">
+      @@include('../input/searh-btn-group.html', {"specialSearchTarget": "result_2"})
+    </div>
+
+
+  </div>
+  <!-- Customer 表單 -->
+  @@include('./search_head.html', {"navbarType": "@@navbarType", "shPage": "@@shPage"})
+</div>
+}

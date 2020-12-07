@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+
+<body>
+  <div class="container-fluid pl-0 pr-0">
+    @@include('./components/sidebar.html', { "sidebarCollapseFirst": "mange", "sidebar": "mangeSystemNum" })
+    <div id="main-content" class="main-content">
+      @@include('./components/navbar.html', { "navbarType": "mananger" })
+
+      <!-- 顧客查詢 -->
+			<section>
+        <nav class="navbar justify-content-between panel-head ">
+          <span class="navbar-brand ">系統參數設定</span>
+          <ul class="nav float-lg-right float-sm-none nav-function-btn">
+            <li>
+              <div class="nav-link " href="#">
+                <span class="textGary">排序</span>
+                <button class="btn dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  修改日期（最近）
+                </button>
+                <div class="dropdown-menu dropdown-menu-right-sorting">
+                  <a class="dropdown-item " href="#">名單狀態</a>
+                  <a class="dropdown-item " href="#">分派/建立日期</a>
+                  <a class="dropdown-item " href="#">統一編號</a>
+                  <a class="dropdown-item " href="#">戶名</a>
+                  <a class="dropdown-item " href="#">行銷單位</a>
+                  <a class="dropdown-item " href="#">行銷人員</a>
+                  <a class="dropdown-item " href="#">產品</a>
+                  <a class="dropdown-item " href="#">名單來源</a>
+                  <a class="dropdown-item " href="#">名單類型</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <div class="pills-tab-container shadow">
+          <ul class="nav nav-pills tab" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a id="pills-home-tab" class="nav-link active" data-toggle="tab" href="#pills-base-info" role="tab" aria-controls="pills-base-info"
+                aria-selected="true">基本參數</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-notice-tab" data-toggle="pill" href="#pills-notice" role="tab" aria-controls="pills-notice"
+                aria-selected="false">
+                下拉選單設定</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-edit-tab" data-toggle="pill" href="#pills-edit" role="tab" aria-controls="pills-edit" aria-selected="false">
+                檔案上傳</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+          <!--  基本參數 -->
+          <div class="tab-pane fade show active left" id="pills-base-info" role="tabpanel" aria-labelledby="pills-base-info-tab">
+            <div class="wrap-box-l">
+              <div class="row">
+                <div class="col-3 col-sm-4">
+                  <ul class="cardLeft list-group" id="sysSidebar" role="tablist">
+                    <li>
+                      <a role="tab" data-toggle="list" class="list-title under-review-title active" href="#sysSidebar_1">成效報表匯出筆數上限</a>
+                    </li>
+                    <li>
+                      <a role="tab" data-toggle="list" class="list-title" href="#sysSidebar_2">信件發送權限設定</a> 
+                    </li>
+                    <li>
+                      <a role="tab" data-toggle="list" class="list-title" href="#sysSidebar_3">相關專區連結</a>
+                      <a title="審核標題" class="edit-title under-review-edit" href="javascript: void(0);" onclick="modalCreateSysSettingEditUnderReview('#sysSidebar_3', 'associateLink', '相關專區連結', '相關專區連結Ori', 'review')"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    </li>
+                  </ul>
+                  <div id="t1528642568053" class="displayno">
+                    <b>主管退回原因</b>
+                    <div class="dropdown-divider"></div>
+                    系統測試。
+                    <div class="dropdown-divider"></div>
+                    <div>覆核主管：Vivan Chen <small class="text-black-50">2018/6/6</small></div>
+                  </div>
+                </div>
+                <div class="col-9 col-sm-8">
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="sysSidebar_1" role="tabpanel">
+                      <form class="">
+                        <div class="form-group row">
+                          <div class="col-4">
+                            <label class="col-form-label">成效報表匯出筆數上限</label>
+                          </div>
+                          <div class="col-4">
+                            <input class="form-control inputstyle" value="1000" readonly="readonly">
+                          </div>
+                          <div class="col-4">
+                            <div id="sysSidebar1_1_0_item_1">
+                              <label class="col-form-label"><span class="tag square red ml-2">待覆核</span></label>
+                              <div class="btn-group">
+                                <button class="btn btn-outline-primary btn-sm" type="button" data-toggle="modal" data-target="#modalCreateSysItemSettingEdit" onclick="
+                                  $('#modalCreateSysItemSettingEdit')
+                                    .addClass('modal-under-review')
+                                    .addClass('modal-m-review')
+                                    .find('input').each(function() {
+                                      $(this).prop('readonly', true);
+                                      if($(this).attr('name') === 'sysItemFrom') {
+                                        $(this).val('sysSidebar_1');
+                                      }
+                                    });">
+                                    檢視
+                                </button>
+                                <button type="button" class=" btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <span class="sr-only ">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a class="dropdown-item" href="#" onclick="{
+                                    $('#modalAgree').modal('show');
+                                    $('#sysSidebar1_1_0_item_1').html('<button class=\'btn btn-outline-primary btn-sm mt-2\' onclick=\'modalCreateSysItemSetting.edit(this, String(123))\' type=\'button\'>檢視</button>');
+                                    $('[href=\'#sysSidebar_1\']').removeClass('under-review-title');}">放行</a>
+                                  <a class="dropdown-item" href="#" onclick="
+                                    $('#modalSysBack')
+                                      .find('[name=\'sysItemFrom\']:first')
+                                      .val('sysSidebar_1');
+                                    $('#modalSysBack').modal('show');
+                                  "data-whatever="@mdo">退回</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </form>
+                    </div>
+                    <div class="tab-pane" id="sysSidebar_2" role="tabpanel">
+                      <form action=""></form>
+                    </div>
+                    <div class="tab-pane" id="sysSidebar_3" role="tabpanel">
+                      <form action=""></form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  下拉選單設定 -->
+          <div class="tab-pane fade left" id="pills-notice" role="tabpanel" aria-labelledby="pills-notice-tab">
+            <div class="wrap-box-l">
+              <div class="row">
+                <div class="col-3 col-sm-4">
+                  <ul class="cardLeft list-group" id="sysSidebar1" role="tablist">
+                    <li>
+                      <a role="tab" data-toggle="list" data-list-collapse-target="#listCollapse_sysSidebar1_1" class="list-collapse list-title active under-review-title" href="#sysSidebar1_1">名單狀態</a>
+                      <ul id="listCollapse_sysSidebar1_1" class="collapse show">
+                        <li>
+                          <a role="tab" data-toggle="list" class="list-title" href="#sysSidebar1_1_1">未執行</a>
+                        </li>
+                        <li>
+                          <a role="tab" data-toggle="list" class="list-title" href="#sysSidebar1_1_2">追蹤中</a>
+                        </li>
+                        <li>
+                          <a role="tab" data-toggle="list" class="list-title" href="#sysSidebar1_1_3">已完成</a>
+                        </li>
+                        <li>
+                          <a role="tab" data-toggle="list" class="list-title" href="#sysSidebar1_1_4">???</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a role="tab" data-toggle="list" class="list-title" href="#sysSidebar1_2">總行案件狀態</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-9 col-sm-8">
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="sysSidebar1_1" role="tabpanel">
+                      <form class="">
+                        <div class="form-group row" style="margin-bottom: 0;">
+                          <div class="col-4">
+                            <label class="col-form-label">項目名稱</label>
+                          </div>
+                          <div class="col-4">
+                            <label class="col-form-label">項目系統代碼</label>
+                          </div>
+                          <div class="col-4"></div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-4">
+                            <input class="form-control inputstyle" value="未執行" readonly="readonly">
+                          </div>
+                          <div class="col-4">
+                            <input class="form-control inputstyle" value="0" readonly="readonly">
+                          </div>
+                          <div class="col-4">
+                            <div id="sysSidebar1_1_item_1">
+                              <button class="btn btn-outline-primary btn-sm mt-2" onclick="{ modalCreateSysDrop.edit.call(this, '123'); }" type="button">檢視</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-4">
+                            <input class="form-control inputstyle" value="追蹤中" readonly="readonly">
+                          </div><div class="col-4">
+                            <input class="form-control inputstyle" value="1" readonly="readonly">
+                          </div>
+                          <div class="col-4">
+                            <div id="sysSidebar1_1_item_2">
+                              <label class="col-form-label"><span class="tag square red mr-1">待覆核</span></label>
+                              <div class="btn-group">
+                                <button class="btn btn-outline-primary btn-sm" type="button" onclick="modalCreateSysDrop.edit.call(this, 'reveiew')">
+                                    檢視
+                                </button>
+                                <button type="button" class=" btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                  <span class="sr-only ">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a class="dropdown-item" href="#" onclick="drop1Click.call(this)">放行</a>
+                                  <a class="dropdown-item" href="#" onclick="
+                                    $('#modalSysBack')
+                                      .find('[name=\'sysItemFrom\']:first')
+                                      .val('modalCreateSysDropDSettingEdit');
+                                    $('#modalSysBack').modal('show');
+                                  "data-whatever="@mdo">退回</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-4">
+                            <input class="form-control inputstyle" value="已完成" readonly="readonly">
+                          </div>
+                          <div class="col-4">
+                            <input class="form-control inputstyle" value="2" readonly="readonly">
+                          </div>
+                          <div class="col-4">
+                            <div id="sysSidebar1_1_item_3">
+                              <button class="btn btn-outline-primary btn-sm mt-2" onclick="{ modalCreateSysDrop.edit.call(this, '123'); }" type="button">檢視</button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="tab-pane" id="sysSidebar1_1_1" role="tabpanel">
+                      <form class="">
+                        <div class="form-group row" style="margin-bottom: 0;">
+                          <div class="col-4">
+                            <label class="col-form-label">項目名稱</label>
+                          </div>
+                          <div class="col-4">
+                            <label class="col-form-label">項目系統代碼</label>
+                          </div>
+                          <div class="col-4"></div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-4">
+                            <input class="form-control inputstyle" value="有意願、待捕文件" readonly="readonly">
+                          </div>
+                          <div class="col-4">
+                            <input class="form-control inputstyle" value="0" readonly="readonly">
+                          </div>
+                          <div class="col-4">
+                            <div id="sysSidebar1_1_1_item_1">
+                              <button class="btn btn-outline-primary btn-sm mt-2" onclick="{ modalCreateSysDrop.edit.call(this, '123'); }" type="button">檢視</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-4">
+                            <input class="form-control inputstyle" value="尚在考慮" readonly="readonly">
+                          </div><div class="col-4">
+                            <input class="form-control inputstyle" value="1" readonly="readonly">
+                          </div>
+                          <div class="col-4">
+                            <div id="sysSidebar1_1_1_item_2">
+                              <button class="btn btn-outline-primary btn-sm mt-2" onclick="{ modalCreateSysDrop.edit.call(this, '123'); }" type="button">檢視</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-4">
+                            <input class="form-control inputstyle" value="興趣缺缺" readonly="readonly">
+                          </div>
+                          <div class="col-4">
+                            <input class="form-control inputstyle" value="2" readonly="readonly">
+                          </div>
+                          <div class="col-4">
+                            <div id="sysSidebar1_1_1_item_3">
+                              <button class="btn btn-outline-primary btn-sm mt-2" onclick="{modalCreateSysDrop.edit.call(this, '123'); }" type="button">檢視</button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="tab-pane" id="sysSidebar1_1_2" role="tabpanel">
+                      <form>
+                          <div class="form-group row" style="margin-bottom: 0;">
+                            <div class="col-4">
+                              <label class="col-form-label">項目名稱</label>
+                            </div>
+                            <div class="col-4">
+                              <label class="col-form-label">項目系統代碼</label>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="sysSidebar1_1_3" role="tabpanel">
+                      <form>
+                          <div class="form-group row" style="margin-bottom: 0;">
+                            <div class="col-4">
+                              <label class="col-form-label">項目名稱</label>
+                            </div>
+                            <div class="col-4">
+                              <label class="col-form-label">項目系統代碼</label>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  檔案上傳 -->
+          <div class="tab-pane fade left" id="pills-edit" role="tabpanel" aria-labelledby="pills-edit-tab">
+            <div class="wrap-box-l">
+              <div class="row">
+                <div class="col-3 col-sm-4">
+                  <ul class="cardLeft list-group" id="sysSidebar3" role="tablist">
+                    <li>
+                      <a role="tab" data-toggle="list" class="list-title under-review-title active" href="#sysSidebar3_1">房貸壽險試算表</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-9 col-sm-8">
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="sysSidebar3_1" role="tabpanel">
+                      <form class="">
+                        <div class="form-group row" style="margin-bottom: 0;">
+                          <div class="col-4">
+                            <label class="col-form-label">檔案管理&nbsp;<a class="under-review-notice pop-hover-stay" data-toggle="popover" href="#t7221550611328"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a></label>
+                            <div class="displayno" id="t7221550611328">
+                              <p><b>檔案管理：</b></p>
+                              <div class="text-black-50">
+                                異動前：試算表.pdf&nbsp;&nbsp;
+                                <a href="#">
+                                  <small><i class="fa fa-download" aria-hidden="true"></i>&nbsp;下載檔案</small>
+                                </a>
+                              </div>
+                              <div class="">異動後：試算表v1.pdf&nbsp;&nbsp;
+                                <a href="#">
+                                  <small><i class="fa fa-download" aria-hidden="true"></i>&nbsp;下載檔案</small>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4"></div>
+                          <div class="col-4"></div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-4">
+                            <input type="text" name="uploadFileName" class="form-control inputstyle" readonly value="試算表.pdf">
+                          </div>
+                          <div class="col-4">
+                            <div id="sysSidebar3_1_items_1">
+                              <label class="col-form-label"><span class="tag square red ml-2">待覆核</span></label>
+                              <div class="btn-group" style="padding-left: 5px;">
+                                <button class="btn btn-outline-primary btn-sm" type="button" onclick="{
+                                  $('#modalAgree').modal('show');
+                                  $(this).closest('.btn-group').addClass('displayno').siblings().addClass('displayno');
+                                  $(this).closest('form').find('.under-review-notice').addClass('displayno');
+                                  $('[href=\'#sysSidebar3_1\']').removeClass('under-review-title');}
+                                  $('[data-id=\'upload-log-reviewer0\']').addClass('displayno');
+                                  ">
+                                  放行
+                                </button>
+                                <button type="button" class=" btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                  <span class="sr-only ">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a class="dropdown-item" href="#" onclick="
+                                    $('#modalSysBack')
+                                      .find('[name=\'sysItemFrom\']:first')
+                                      .val('modalCreateSysUploadSetting');
+                                    $('#modalSysBack').modal('show');
+                                  "data-whatever="@mdo">退回</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4"></div>
+                        </div>
+                      </form>
+                      <div data-id="upload-log-reviewer0" class="">
+                        <div class="dropdown-divider mb-3"></div>
+                        <form class="row">
+              
+                          <h6 class="col-4 col-lg-2 text-black-50">申請人</h6>
+                          <h6 class="col-8 col-lg-10">李維維&nbsp;<small class="text-black-50">2018/03/23</small></h6>
+
+                          <h6 data-id="upload-log-reviewer1" class="col-4 col-lg-2 text-black-50 displayno">覆核主管</h6>
+                          <h6 data-id="upload-log-reviewer1" class="col-8 col-lg-10 displayno">Vivian Chen&nbsp;<small class="text-black-50">2018/03/29</small></h6>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+	@@include('./components/sys/modalCreateSysSetting.html')
+	@@include('./components/sys/modalCreateSysItemSetting.html')
+	@@include('./components/sys/modalCreateSysItemSetting_edit.html')
+	@@include('./components/sys/modalCreateSysDropDSetting.html')
+	@@include('./components/sys/modalCreateSysDropDSetting_edit.html')
+  @@include('./components/sys/modalCreateSysUploadSetting.html')
+  @@include('./components/footer.html')
+  <script>
+    function drop1Click(e) {
+      // e.preventDefault();
+      console.log(111);
+      var btnClick = '{ $(\'#modalCreateSysDropDSettingEdit input\').prop(\'disabled\', true); modalCreateSysDrop.edit.call(this, \'123\'); }';
+      $('#modalAgree').modal('show');
+      
+      $('#sysSidebar1_1_item_2').html('<button class="btn btn-outline-primary btn-sm mt-2" onclick="'+ btnClick +'" type="button">檢視</button>');
+
+      $("[href='#sysSidebar1_1']").removeClass('under-review-title');
+    }
+  </script>
+</body>
+
+</html>

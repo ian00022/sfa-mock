@@ -1,0 +1,65 @@
+<!-- 參數設定 -->
+<div class="modal fade" id="modalCreateSysUploadSetting" tabindex="-1" role="dialog" aria-labelledby="modalCreateSysUploadSetting" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <span class="modal-edit-hide modal-under-review-hide">新增檔案上傳項目</span>
+          <span class="modal-edit-show modal-under-review-show">編輯檔案上傳項目</span>
+          <span class="modal-under-review-show"><span class="tag square red ml-2 ">待覆核</span></span>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label>項目名稱
+              <span class="markRed">*</span>
+              <a class="modal-under-review-notice pop-hover-stay" data-toggle="popover" href="#noticeSysUpItemName1"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
+            </label>
+            <input class="form-control inputstyle" type="text" name="sysItemName" placeholder="請輸入...">
+            <input type="hidden" name="sysItemNameOri">
+          </div>
+          <div class="form-group">
+            <label>項目系統代碼
+              <span class="markRed">*</span>
+            </label>
+            <input class="form-control inputstyle" type="text" name="sysItemCode" placeholder="請輸入...">
+            <input type="hidden" name="sysItemFrom" value=""/>
+          </div>
+        </form>
+        <div class="modal-edit-show">
+          <div class="dropdown-divider mb-3"></div>
+          <form class="row">
+            <h6 class="col-3 text-black-50">申請人</h6>
+            <h6 class="col-9">李維維&nbsp;<small class="text-black-50">2018/03/23</small></h6>
+
+            <h6 class="col-3 text-black-50">覆核主管</h6>
+            <h6 class="col-9">Vivian Chen&nbsp;<small class="text-black-50">2018/03/29</small></h6>
+          </form>
+        </div>
+        <div class="modal-under-review-show">
+          <div class="dropdown-divider mb-3"></div>
+          <div class="row">
+
+            <h6 class="col-3 text-black-50">申請人</h6>
+            <h6 class="col-9">李維維&nbsp;<small class="text-black-50">2018/03/23</small></h6>
+          </div>
+        </div>
+      </div>
+      <div class="displayno" id="noticeSysUpItemName1">
+        <b>項目名稱：</b>
+        <div class="dropdown-divider"></div>
+        <div class="text-black-50">異動前：房貸壽險試算表</div>
+        <div class="">異動後：房貸/壽險試算表</div>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+        <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close" onclick="modalCreateSysUpload.submit.call(this)">確定</button>
+      </div>
+    </div>
+  </div>
+</div>

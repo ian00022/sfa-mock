@@ -1,0 +1,304 @@
+<!-- 查找群組名單1 位於列表的會有三個步驟 -->
+<div id="addgroupone_detail" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <ul class="nav nav-tabs displayno" id="addGroupNamelist_detail" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#addgroupone_detail_Step1" role="tab">addgroupone_detail_Step1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#addgroupone_detail_Step2" role="tab">addgroupone_detail_Step2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#addgroupone_detail_Step3" role="tab">addgroupone_detail_Step3</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="modal-content tab-pane fade show active" id="addgroupone_detail_Step1">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">群組名單(3)</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>請選擇您要的主名單：
+            <br />
+            <span class="markRed">
+              <i class="fa fa-info-circle iconspace" aria-hidden="true"></i>設定為主要名單後，其餘名單將不可再編輯，且無法恢復。</span>
+          </p>
+
+          <table class="table tableinfo">
+            <thead>
+              <tr>
+                <th scope="col "></th>
+                <th scope="col ">名單狀態</th>
+                <th scope="col ">統一編號</th>
+                <th scope="col ">戶名</th>
+                <th scope="col ">產品</th>
+                <th scope="col ">名單來源</th>
+                <th scope="col ">名單類型</th>
+                <th scope="col "></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check" >
+                    <input class="form-check-input" type="radio" name="addGroupNamelist_detailRadio" id="addGroupNamelist_detailRadio1" checked>
+                    <label class="form-check-label" for="addGroupNamelist_detailRadio1"></label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check" >
+                    <input class="form-check-input" type="radio" name="addGroupNamelist_detailRadio" id="addGroupNamelist_detailRadio2">
+                    <label class="form-check-label" for="addGroupNamelist_detailRadio2">
+
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>未執行</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td style="position: relative;">
+                  <div class="form-check" >
+                    <input class="form-check-input" type="radio" name="addGroupNamelist_detailRadio" id="addGroupNamelist_detailRadio3">
+                    <label class="form-check-label" for="addGroupNamelist_detailRadio3">
+                    </label>
+                  </div>
+                </td>
+
+                <td>
+
+                  <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                  </span>追蹤中</td>
+
+                <td>A128940184</td>
+                <td>
+                  陳先生
+                </td>
+                <td>房貸</td>
+                <td>網路進件</td>
+                <td>網路留言板</td>
+                <td class="money-right">
+
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                    檢視
+                  </button>
+
+
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+          <button type="button" class="btn btn-ylw" onclick="$('#addGroupNamelist_detail a[href=\'#addgroupone_detail_Step2\']').tab('show');">設為主要名單</button>
+        </div>
+      </div>
+      <div class="modal-content tab-pane fade" id="addgroupone_detail_Step2">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">群組名單(3)</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>是否須將前筆主名單的「洽談重點摘要」移轉至新名單？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close"  onclick="$('#addGroupNamelist_detail a[href=\'#addgroupone_detail_Step1\']').tab('show');">取消</button>
+          <button type="button" class="btn btn-gry" aria-label="Close" onclick="$('#addGroupNamelist_detail a[href=\'#addgroupone_detail_Step3\']').tab('show');">否</button>
+          <button type="button" class="btn btn-ylw" aria-label="Close"  onclick="$('#addGroupNamelist_detail a[href=\'#addgroupone_detail_Step3\']').tab('show');">是</button>
+        </div>
+      </div>
+      <div class="modal-content tab-pane fade" id="addgroupone_detail_Step3">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">群組名單(3)</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>主名單設定完成！</p>
+  
+            <table class="table tableinfo">
+              <thead>
+                <tr>
+                  <th scope="col "></th>
+                  <th scope="col ">名單狀態</th>
+  
+                  <th scope="col ">統一編號</th>
+                  <th scope="col ">戶名</th>
+                  <th scope="col ">產品</th>
+                  <th scope="col ">名單來源</th>
+                  <th scope="col ">名單類型</th>
+                  <th scope="col "></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                  </td>
+  
+                  <td>
+  
+                    <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+  
+                    </span>未執行</td>
+  
+                  <td>A128940184</td>
+                  <td>
+                    陳先生
+                  </td>
+                  <td>房貸</td>
+                  <td>網路進件</td>
+                  <td>網路留言板</td>
+                  <td class="money-right">
+  
+                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                      檢視
+                    </button>
+  
+  
+                  </td>
+                </tr>
+                <tr class="table-light">
+                  <td>
+  
+                  </td>
+  
+                  <td>
+  
+                    <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+  
+                    </span>未執行</td>
+  
+                  <td>A128940184</td>
+                  <td>
+                    陳先生
+                  </td>
+                  <td>房貸</td>
+                  <td>網路進件</td>
+                  <td>網路留言板</td>
+                  <td class="money-right">
+  
+                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                      檢視
+                    </button>
+  
+  
+                  </td>
+                </tr>
+                <tr class="table-light">
+                  <td>
+  
+                  </td>
+  
+                  <td>
+  
+                    <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+  
+                    </span>追蹤中</td>
+  
+                  <td>A128940184</td>
+                  <td>
+                    陳先生
+                  </td>
+                  <td>房貸</td>
+                  <td>網路進件</td>
+                  <td>網路留言板</td>
+                  <td class="money-right">
+  
+                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                      檢視
+                    </button>
+  
+  
+                  </td>
+                </tr>
+                <tr class="table-light">
+                  <td style="position: relative;"></td>
+  
+                  <td>
+  
+                    <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+  
+                    </span>未執行</td>
+  
+                  <td>A128940184</td>
+                  <td>
+                    陳先生
+                  </td>
+                  <td>房貸</td>
+                  <td>網路進件</td>
+                  <td>網路留言板</td>
+                  <td class="money-right">
+  
+                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                      檢視
+                    </button>
+  
+  
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+  
+            <button type="button" class="btn btn-ylw" data-dismiss="modal" aria-label="Close"  onclick="$('#addGroupNamelist_detail a[href=\'#addgroupone_detail_Step1\']').tab('show');">知道了</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

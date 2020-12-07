@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+
+<body>
+  <div class="container-fluid pl-0 pr-0">
+    @@include('./components/sidebar.html', { "sidebarCollapseFirst": "mange", "sidebar": "mangeMarketing" })
+    <div id="main-content" class="main-content">
+      @@include('./components/navbar.html', { "navbarType": "mananger" })
+
+      <!-- 顧客查詢 -->
+      <section>
+        <nav class="navbar justify-content-between panel-head ">
+          <span class="navbar-brand ">行銷團隊設定</span>
+
+          <ul class="nav float-lg-right float-sm-none nav-function-btn">
+            <li>
+              <div class="nav-link " href="#">
+                <span class="textGary">排序</span>
+
+                <button class="btn dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  最近
+                </button>
+                <div class="dropdown-menu dropdown-menu-right-sorting">
+                  <a class="dropdown-item " href="# ">名單狀態</a>
+                  <a class="dropdown-item " href="# ">分派/建立日期</a>
+                  <a class="dropdown-item " href="# ">統一編號</a>
+                  <a class="dropdown-item " href="# ">戶名</a>
+                  <a class="dropdown-item " href="# ">行銷單位</a>
+                  <a class="dropdown-item " href="# ">行銷人員</a>
+                  <a class="dropdown-item " href="# ">產品</a>
+                  <a class="dropdown-item " href="# ">名單來源</a>
+                  <a class="dropdown-item " href="# ">名單類型</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a class="nav-link disabled btn" href="#modalSysBack" data-toggle="modal" role="button">
+                <i class="fa fa-ban iconspace" aria-hidden="true"></i> 退回
+              </a>
+            </li>
+            <li>
+              <a class="nav-link disabled btn" href="#modalAgree" data-toggle="modal" role="button">
+                <i class="fa fa-exchange iconspace" aria-hidden="true"></i> 放行
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+
+
+        <div class="area shadow">
+          <div id="search-section-0" class="form-row mr-0">
+            <div class="form-group col-12 col-md-4 col-lg-3">
+              <label>團隊類型</label>
+              <select class="selectpicker inputstyleSelect">
+                <option value="" class="displayno">請選擇...</option>
+              </select>
+
+
+            </div>
+            <div class="form-group col-12 col-md-4 col-lg-3">
+              <label>團隊名稱</label>
+
+              <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+
+            </div>
+
+            <div class="form-group col-12 col-md-4 col-lg-3">
+              @@include('./components/input/searh-btn-group.html', {"btnClear": false})
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Customer 表單 -->
+      <div id="data-list-0" class="table-responsive data-list">
+        <table class="table table-striped tableinfo">
+          <thead>
+            <tr>
+            <th>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_01">
+                <label for="table-checkbox_01" onclick="{
+                  var _this = this;
+                  setTimeout(function(){
+                    var chooseAll = $(_this).siblings('input[type=\'checkbox\']').prop('checked');
+
+                    $(_this).closest('table').find('tbody .markRed input[type=\'checkbox\']').prop('checked', chooseAll);
+                  }, 0);
+                }"></label>
+              </th>
+              <th scope="col ">團隊編號</th>
+              <th scope="col ">類型</th>
+              <th scope="col ">名稱</th>
+              <th scope="col ">組織代碼</th>
+              <th scope="col ">描述</th>
+              <th scope="col ">狀態
+
+              </th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_03" disabled>
+                <label for="table-checkbox_03"></label>
+              </td>
+              <td>01234</td>
+              <td>一般組</td>
+              <td>團隊名稱 1</td>
+              <td>
+                9133
+              </td>
+              <td class="normal-wrap">行銷團隊描述，至多兩行。過長以刪節號表示，如此範例行銷團隊描述，至多兩行。過長以刪節號表示，如此範例...</td>
+              <td>生效</td>
+              <td class="money-right fixed-side">
+                <div class="btn-group">
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="location.href='M_Mange_marketing_data.html'">
+                    檢視
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr class="markRed">
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_04">
+                <label for="table-checkbox_04"></label>
+              </td>
+              <td>01235</td>
+              <td>消金中心</td>
+              <td>團隊名稱 2</td>
+              <td>
+                C307
+              </td>
+              <td class="normal-wrap">行銷團隊描述，至多兩行。過長以刪節號表示，如此範例行銷團隊描述，至多兩行。過長以刪節號表示，如此範例...</td>
+              <td>待覆核</td>
+              <td class="money-right fixed-side">
+                <div class="btn-group">
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="location.href='M_Mange_marketing_data.html'">
+                    檢視
+                  </button>
+                  <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true " aria-expanded="false">
+                    <span class="sr-only ">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu ">
+                    <a class="dropdown-item " href="#modalAgree" data-toggle="modal"  data-whatever="@mdo">放行</a>
+                    <a class="dropdown-item " href="#modalSysBack" data-toggle="modal" data-whatever="@mdo">退回</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="table-checkbox" value="1" id="table-checkbox_02" disabled>
+                <label for="table-checkbox_02"></label>
+              </td>
+              <td>01236</td>
+              <td>消金中心</td>
+              <td>團隊名稱 3</td>
+              <td>
+                B807
+              </td>
+              <td class="normal-wrap">行銷團隊描述，至多兩行。過長以刪節號表示，如此範例行銷團隊描述，至多兩行。過長以刪節號表示，如此範例...</td>
+              <td>生效</td>
+              <td class="money-right fixed-side">
+                <div class="btn-group">
+                  <button class="btn btn-outline-primary btn-sm " type="button" onclick="location.href='M_Mange_marketing_data.html'">
+                    檢視
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- 新增行銷團隊 (第 1/2 步：填寫團隊資訊) -->
+      <div id="addMarketingTeam" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content ">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">新增行銷團隊 (第 1/2 步：填寫團隊資訊)</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col ml-3">
+                      <label>團隊編號
+
+                      </label>
+                      <input type="text" class="form-control inputstyle" placeholder="cow013">
+
+                    </div>
+                    <div class="col mr-3">
+                      <label>團隊名稱
+
+                      </label>
+                      <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+
+                    </div>
+
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col ml-3">
+                      <label>組織代碼
+                        <span class="markRed">*</span>
+                      </label>
+                      <select class="selectpicker inputstyleSelect">
+                        <option value="" class="displayno">請選擇...</option>
+                        <option>請選擇</option>
+                        <option>請選擇</option>
+                        <option>請選擇</option>
+                        <option>請選擇</option>
+
+                      </select>
+
+                    </div>
+                    <div class="col mr-3">
+                      <label>名單上限
+
+                      </label>
+                      <div class="input-group mb-3">
+                        <input type="number" class="form-control inputstyle" placeholder="請填數字" aria-label="120" aria-describedby="basic-addon2">
+                        <div class="input-group-append ">
+                          <span class="input-group-text inputstyle" id="basic-addon2">筆</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>可承作商品
+
+                  </label>
+                  <select class="selectpicker inputstyleSelect">
+                    <option value="" class="displayno">請選擇...</option>
+                    <option>請選擇</option>
+                    <option>請選擇</option>
+                    <option>請選擇</option>
+                    <option>請選擇</option>
+
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>
+                    可接受名單來源
+                  </label>
+                  <div id="normal" class="dropdown ">
+                    <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <span class="btn-text">EBM</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#normal')">全選</a>
+                      <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#normal')">取消全選</a>
+                      <div class="dropdown-divider"></div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                        <label class="form-check-label" for="normal_none">信貸</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_tracked" value="追蹤中">
+                        <label class="form-check-label" for="normal_tracked">副擔保</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                        <label class="form-check-label" for="normal_reject">房貸</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_accepted" value="已受理">
+                        <label class="form-check-label" for="normal_accepted">小型事業(SB)</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                        <label class="form-check-label" for="normal_reject">卡友貸</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                        <label class="form-check-label" for="normal_reject">保險(儲蓄險、房貸壽險)</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="note">描述
+
+                  </label>
+
+                  <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+                </div>
+
+
+
+
+
+              </form>
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-ylw" onclick="step2()">下一步：加入成員</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 新增行銷團隊 (第 2/2 步：加入成員) -->
+      <div id="addMarketingTeamTwo" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+          <div class="modal-content ">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">新增行銷團隊 (第 2/2 步：加入成員)</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>
+                  團隊成員
+                  <span class="markRed">*</span>
+                </label>
+                <div id="normal" class="dropdown ">
+                  <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="btn-text">馬力歐、永盟凱...+10
+
+                    </span>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#normal')">全選</a>
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#normal')">取消全選</a>
+                    <div class="dropdown-divider"></div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_none" value="未執行">
+                      <label class="form-check-label" for="normal_none">馬力歐</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_tracked" value="追蹤中">
+                      <label class="form-check-label" for="normal_tracked">馬力歐</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">馬力歐</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_accepted" value="已受理">
+                      <label class="form-check-label" for="normal_accepted">馬力歐</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject">馬力歐</label>
+                    </div>
+                    <div class="form-check form-check-inline dropdown-item">
+                      <input class="form-check-input" type="checkbox" id="normal_reject" value="婉拒">
+                      <label class="form-check-label" for="normal_reject"></label>
+                    </div>
+                  </div>
+                </div>
+                <div id="detail_result" class="mt-4 row no-gutters ">
+                  <div class="dropdown-divider col-12"></div>
+                  <div class="col-12 ps_note">細項類別 (0)</div>
+                  <p class="col-12 mt-2 choosen"></p>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">返回上一步</button>
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-ylw" data-dismiss="modal" aria-label="Close">確定新增團隊</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- pageNum -->
+      <nav class="navNum navbar-light">
+        <form class="form-inline">
+          <div>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
+            <span class="loanChartNote">1 of 1</span>
+          </div>
+          <div>
+            <span class="loanChartNote">Items per page:
+              <select class="form-control inputstyle">
+                <option>50</option>
+              </select>
+            </span>
+          </div>
+        </form>
+      </nav>
+    </div>
+
+    <!-- 狀態說明 -->
+    <div class="modal fade" id="stateInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">狀態說明</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="table statusInfo">
+              <thead>
+                <tr>
+                  <th scope="col">標示</th>
+                  <th scope="col">說明</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+
+                  <td>
+                    <span class="light light-red">
+                    </span>
+                  </td>
+                  <td>紅色燈號，當此燈亮起閃爍時代表該名單即將逾期，原因包含如下：(1)未分派(限主管) (2)未執行 (3)追蹤逾期 (4)到期通知</td>
+
+                </tr>
+                <tr>
+
+                  <td>
+                    <span class="light light-gary">
+                    </span>
+                  </td>
+                  <td>灰色燈號，該名單尚未逾期</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="iconyellow">
+                      <i class="fa fa-clock-o " aria-hidden="true"></i>
+                    </span>
+                  </td>
+                  <td>當顯示此標示時，即代表該名單待主管放行</td>
+
+                </tr>
+                <tr>
+                  <td>
+                    <span class="markRed">
+                      <i class="fa fa-ban" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                  <td>當顯示此標示時，即代表該名單遭主管退回</td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- 調閱行內帳務資訊 -->
+    <div class="modal fade" id="bankInfo" tabindex="-1" role="dialog" aria-labelledby="bankInfo" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">行銷警示註記</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>此顧客
+              <span class="markRed">不接受電話行銷</span>，請留意！</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+            <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">新增行程</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 上傳文件 -->
+    <div class="modal fade" id="uplateInfo" tabindex="-1" role="dialog" aria-labelledby="uplateInfo" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="uplateInfo">上傳文件</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="uplatearea">
+              <div>
+                <a href="#">
+                  <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                </a>
+                <span>申請書</span>
+              </div>
+              <div>
+                <a href="#">
+                  <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                </a>
+                <span>身分證</span>
+              </div>
+
+              <div>
+                <a href="#">
+                  <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                </a>
+                <span>所得文件</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  @@include('./components/footer.html')
+  <script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+
+    // function openDatePicker(id) {
+    //     console.log('aaa')
+    //     var did = "#" + id
+    //     $(did).datepicker('show');
+    // }
+
+    function step1() {
+      this.modalOpen('addMarketingTeam');
+      this.close('addMarketingTeamTwo');
+    }
+
+    function step2() {
+      this.close('addMarketingTeam');
+      this.modalOpen('addMarketingTeamTwo');
+    }
+
+    function close(id) {
+      var vid = '#' + id;
+      $(vid).modal('hide');
+    }
+
+    function modalOpen(id) {
+      var vid = '#' + id;
+      $(vid).modal('show');
+    }
+
+    function closeModal(id) {
+      this.close(id)
+    }
+  </script>
+
+  <script id="search_error" type="text/template">
+    <div class="nodata">
+      <div>
+        <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+      </div>
+      <h6>查無資料</h6>
+
+    </div>
+  </script>
+</body>
+
+</html>

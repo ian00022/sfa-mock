@@ -1,0 +1,725 @@
+
+				<!-- navbar -->
+				<nav class="navbar navbar-light shadow sticky-top">
+					<form class="form-inline">
+						<button type="button" onclick="toggle()" class="btn">
+							<i class="fa fa-bars greenLink" aria-hidden="true"></i>
+						</button>
+						<h2 class="greenLink pr-3 pl-3">SFA | 平台</h2>
+						<div class="input-group global-search">
+							<span class="input-group-addon inputstyle" id="basic-addon1">
+								<i style="vertical-align: bottom;" class="fa fa-search iconspace" aria-hidden="true"></i>
+							</span>
+							<input id="globalSearchText" type="text" class="form-control inputstyle" placeholder="搜尋整站..." autocomplete="off"  aria-describedby="basic-addon1" onkeyup="gSearch.keyup(event, this)">
+							<div class="global-search-select dropdown-menu">
+								<a class="dropdown-item" href="#">Regular link <small class="text-muted">small text</small></a>
+							</div>
+						</div>
+					</form>
+					<form class="form-inline">
+						<div id="salesJob" class="btn-group displayno">
+								<button type="button" class="btn greenLink" onclick="openNav()">
+										<i class="fa fa-line-chart" aria-hidden="true"></i>
+								</button>
+            </div>
+						<div class="btn-group">
+							<button type="button" class="btn notic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-bell iconspace fa-lg" aria-hidden="true"></i>
+							</button>
+							<div class="dropdown-menu dropdown-menu-right-bell shadow">
+
+
+								<div class="container no-gutters">
+
+									<div class="row">
+										<div class="col-12 pr-0 pl-0">
+											<div class="notice-board">
+												<div class="panel panel-default">
+													<div class="panel-heading pr-3 pl-3">
+														我的通知
+														<a class="greenLink float-right" onclick="noticeRead()">標示全部為已讀</a>
+													</div>
+													<div class="panel-body">
+
+														<ul>
+															<li>
+																<a onclick="noticeRead(this)" data-toggle="modal" href="#modalAssignNotification">已分派名單3筆
+																	<br />
+																	<span class="loanChartNote">2018/01/29</span>
+																</a>
+															</li>
+															<li>
+																<a onclick="noticeRead(this)" data-toggle="modal" href="#modalAssignNotification">未分派名單3筆
+																	<br />
+																	<span class="loanChartNote">2018/01/29</span>
+																</a>
+															</li>
+															<li class="read">
+																<a onclick="noticeRead(this)" data-toggle="modal" href="#modalAssignNotification">未分派名單3筆
+																	<br />
+																	<span class="loanChartNote">2018/01/29</span>
+																</a>
+															</li>
+															<li>
+																<a onclick="noticeRead(this)" data-toggle="modal" href="#modalAssignNotification">未分派名單3筆
+																	<br />
+																	<span class="loanChartNote">2018/01/29</span>
+																</a>
+															</li>
+
+														</ul>
+													</div>
+													<div class="panel-footer text-center">
+														<a class="greenLink ">查看歷史通知</a>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="btn-group">
+							<button type="button" class="btn dropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<img src="img/person.png" class="rounded-circle " alt="Cinque Terre " style="width:40px; height:40px; ">
+								<i class="fa fa-angle-down iconspace" aria-hidden="true"></i>
+							</button>
+							<div class="dropdown-menu dropdown-menu-right-person">
+
+
+								<div class="container no-gutters">
+
+									<div class="row">
+										<div class="col-12 pr-0 pl-0">
+											<div class="notice-board">
+												<div class="panel panel-default">
+													<div class="panel-heading pr-3 pl-3 pt-3 pb-4">
+														<div class="row">
+															<div class="col-4 ">
+
+
+																<img src="img/person.png" class="rounded-circle " alt="Cinque Terre" style="width: 80px;height: 80px; position:absolute;">
+
+
+
+
+															</div>
+															<div class="col-6 pt-4">
+																<span>你好，王小圖</span>
+																<br />
+																<span class="sub-tit">123123@bank.com</span>
+															</div>
+														</div>
+													</div>
+													<div class="panel-body pt-3">
+
+
+														<a class="dropdown-item" href="#">切換代理人</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModalREST" data-whatever="@mdo">休假代理</a>
+														<a class="dropdown-item" href="#" onclick="{location.href='./login.html' }">登出</a>
+
+													</div>
+
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						
+					</form>
+				</nav>
+				<div class="navbar-height"></div>
+        
+
+          <!-- 滿版畫面 -->
+<div id="mySidenav" class="TopChartNav">
+  <div class=" col-8 float-right sidepanel pr-0 pl-0">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <h2 class="card-title Toptit shadow">行銷人員工作一覽</h2>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-6">
+          <div id="switch_0" class="card ">
+            <h5 class="card-title ">
+              <div class="row">
+                <div class="col-7 disablecolor">
+                  <div class="row no-gutters subtit">A123122313</div>
+                  <div class="row no-gutters tit">張美美</div>
+                </div>
+                <div class="col-5 float-right">
+                  <div class="row">
+                    <div class="col-8 ">
+                      <div class="row disablecolor">
+                        <div class="col-5 pl-0 pr-0">
+                          <span class="greenLink ps_note">20/30</span>
+                        </div>
+                        <div class="col-5 pr-0 pl-0 border-right">
+                          <div class="circle">
+
+
+                            <div class="p270"></div>
+                            <div class="p180"></div>
+                            <div class="p90"></div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-right">
+
+                      </div>
+                    </div>
+                    <div class="col-4 pr-0 pl-0">
+                      <label class="switch">
+                        <input type="checkbox" name="switch_0">
+                        <span class="slider round" data-toggle="tooltip" title="開啟分派"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h5>
+            <div class="card-body pt-0 disablecolor">
+              <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2 pr-0 pl-0">已追蹤</div>
+                <div class="col-2 pr-0 pl-0">未追蹤</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">網路進件</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">EBM</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">轉介</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+
+
+            </div>
+            <div class="maturity">
+              <h6>到期日 2018/04/23</h6>
+            </div>
+          </div>
+          <div id="switch_1" class="card">
+            <h5 class="card-title">
+              <div class="row">
+                <div class="col-7">
+                  <div class="row no-gutters subtit">A123122313</div>
+                  <div class="row no-gutters tit">張美美</div>
+                </div>
+                <div class="col-5 float-right">
+                  <div class="row">
+                    <div class="col-8 ">
+                      <div class="row">
+                        <div class="col-5 pl-0 pr-0">
+                          <span class="greenLink ps_note">20/30</span>
+                        </div>
+                        <div class="col-5 pr-0 pl-0 border-right">
+                          <div class="circle">
+
+
+                            <div class="p270"></div>
+                            <div class="p180"></div>
+                            <div class="p90"></div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-right">
+
+                      </div>
+                    </div>
+                    <div class="col-4 pr-0 pl-0">
+                      <label class="switch">
+                        <input name="switch_1" type="checkbox" checked>
+                        <span class="slider round" data-toggle="tooltip" title="關閉分派"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h5>
+            <div class="card-body pt-0 ">
+              <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2 pr-0 pl-0">已追蹤</div>
+                <div class="col-2 pr-0 pl-0">未追蹤</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">網路進件</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">EBM</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">轉介</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+
+            </div>
+            <div class="maturity displayno">
+              <h6>到期日 2018/04/23</h6>
+            </div>
+          </div>
+          <div id="switch_2" class="card">
+            <h5 class="card-title">
+              <div class="row">
+                <div class="col-7">
+                  <div class="row no-gutters subtit">A123122313</div>
+                  <div class="row no-gutters tit">張美美</div>
+                </div>
+                <div class="col-5 float-right">
+                  <div class="row">
+                    <div class="col-8 ">
+                      <div class="row">
+                        <div class="col-5 pl-0 pr-0">
+                          <span class="greenLink ps_note">20/30</span>
+                        </div>
+                        <div class="col-5 pr-0 pl-0 border-right">
+                          <div class="circle">
+
+
+                            <div class="p270"></div>
+                            <div class="p180"></div>
+                            <div class="p90"></div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-right">
+
+                      </div>
+                    </div>
+                    <div class="col-4 pr-0 pl-0">
+                      <label class="switch">
+                        <input name="switch_2" type="checkbox" checked>
+                        <span class="slider round" data-toggle="tooltip" title="關閉分派"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h5>
+            <div class="card-body pt-0 ">
+              <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2 pr-0 pl-0">已追蹤</div>
+                <div class="col-2 pr-0 pl-0">未追蹤</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">網路進件</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">EBM</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">轉介</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+
+            </div>
+            <div class="maturity displayno">
+              <h6>到期日 2018/04/23</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div id="switch_3" class="card">
+            <h5 class="card-title">
+              <div class="row">
+                <div class="col-7">
+                  <div class="row no-gutters subtit">A123122313</div>
+                  <div class="row no-gutters tit">張美美</div>
+                </div>
+                <div class="col-5 float-right">
+                  <div class="row">
+                    <div class="col-8 ">
+                      <div class="row">
+                        <div class="col-5 pl-0 pr-0">
+                          <span class="greenLink ps_note">20/30</span>
+                        </div>
+                        <div class="col-5 pr-0 pl-0 border-right">
+                          <div class="circle">
+
+
+                            <div class="p270"></div>
+                            <div class="p180"></div>
+                            <div class="p90"></div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-right">
+
+                      </div>
+                    </div>
+                    <div class="col-4 pr-0 pl-0">
+                      <label class="switch">
+                        <input name="switch_3" type="checkbox" checked>
+                        <span class="slider round" data-toggle="tooltip" title="關閉分派"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h5>
+            <div class="card-body pt-0 ">
+              <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2 pr-0 pl-0">已追蹤</div>
+                <div class="col-2 pr-0 pl-0">未追蹤</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">網路進件</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">EBM</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">轉介</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+
+            </div>
+            <div class="maturity displayno">
+              <h6>到期日 2018/04/23</h6>
+            </div>
+          </div>
+          <div id="switch_4" class="card">
+            <h5 class="card-title">
+              <div class="row">
+                <div class="col-7">
+                  <div class="row no-gutters subtit">A123122313</div>
+                  <div class="row no-gutters tit">張美美</div>
+                </div>
+                <div class="col-5 float-right">
+                  <div class="row">
+                    <div class="col-8 ">
+                      <div class="row">
+                        <div class="col-5 pl-0 pr-0">
+                          <span class="greenLink ps_note">20/30</span>
+                        </div>
+                        <div class="col-5 pr-0 pl-0 border-right">
+                          <div class="circle">
+
+
+                            <div class="p270"></div>
+                            <div class="p180"></div>
+                            <div class="p90"></div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-right">
+
+                      </div>
+                    </div>
+                    <div class="col-4 pr-0 pl-0">
+                      <label class="switch">
+                        <input name="switch_4" type="checkbox" checked>
+                        <span class="slider round" data-toggle="tooltip" title="關閉分派"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h5>
+            <div class="card-body pt-0 ">
+              <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2 pr-0 pl-0">已追蹤</div>
+                <div class="col-2 pr-0 pl-0">未追蹤</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">網路進件</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">EBM</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">轉介</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+
+            </div>
+            <div class="maturity displayno">
+              <h6>到期日 2018/04/23</h6>
+            </div>
+          </div>
+          <div id="switch_5" class="card">
+            <h5 class="card-title">
+              <div class="row">
+                <div class="col-7">
+                  <div class="row no-gutters subtit">A123122313</div>
+                  <div class="row no-gutters tit">張美美</div>
+                </div>
+                <div class="col-5 float-right">
+                  <div class="row">
+                    <div class="col-8 ">
+                      <div class="row">
+                        <div class="col-5 pl-0 pr-0">
+                          <span class="greenLink ps_note">20/30</span>
+                        </div>
+                        <div class="col-5 pr-0 pl-0 border-right">
+                          <div class="circle">
+
+
+                            <div class="p270"></div>
+                            <div class="p180"></div>
+                            <div class="p90"></div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-right">
+
+                      </div>
+                    </div>
+                    <div class="col-4 pr-0 pl-0">
+                      <label class="switch">
+                        <input name="switch_5" type="checkbox" checked>
+                        <span class="slider round" data-toggle="tooltip" title="關閉分派"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h5>
+            <div class="card-body pt-0 ">
+              <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2 pr-0 pl-0">已追蹤</div>
+                <div class="col-2 pr-0 pl-0">未追蹤</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">網路進件</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">EBM</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="Longchartarea">
+                    <span class="loanChartNote">轉介</span>
+                    <span class="loanChartNote float-right sidepanel">60%</span>
+                    <div class="Longchart sidepanel">
+                      <div class="value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 pt-3">2</div>
+                <div class="col-2 pt-3">2</div>
+              </div>
+
+            </div>
+            <div class="maturity displayno">
+              <h6>到期日 2018/04/23</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+					<!-- 		 -->
+					<!-- 我的通知 -->
+<div class="modal fade" id="modalAssignNotification" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">已分派名單3筆</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        名單/案件已分派3筆，請儘速處理。
+        <p class="text-right"><a class="greenLink" href="./namelist_search.html?recordCount=3">前往處理</a></p>
+      </div>
+    </div>
+  </div>
+</div>

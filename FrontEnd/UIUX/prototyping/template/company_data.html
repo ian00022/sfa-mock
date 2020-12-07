@@ -1,0 +1,3435 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+<body>
+	<div class="container-fluid pl-0 pr-0">
+		@@include('./components/sidebar.html', {
+			"sidebar": "customerSearch"
+		})
+		<div id="main-content" class="main-content">
+			<div class="top-container">
+				@@include('./components/navbar.html')
+				@@include('./components/breadcrumb.html', {
+					"breadcrumb": [
+						{ "name": "顧客查詢", "href": "customer_search.html" },
+						{ "name": "陳美科技股份有限公司" }
+					],
+					"rightTool": "companyData"
+				})
+				<section>
+
+					<div class="info-area">
+						<div class="wrap-box-l">
+							<h4 class="name">
+								<span>陳美科技股份有限公司</span>
+
+								<a href="javascript:void(0)" class="chart" data-toggle="modal" data-target="#doughnut" data-whatever="@mdo ">
+									<i class="fa fa-pie-chart iconspace" aria-hidden="true"></i>資產負債分配圖</a>
+
+							</h4>
+							<div class="row no-gutters listinfoarea collapse show" id="collapseInfo">
+
+								<div class="col-lg-4  col-sm-12 col-md-12">
+									<ul class="listinfo">
+										<li>
+
+											<i class="fa fa-id-card-o iconspace" aria-hidden="true"></i>
+											<span class="sub-tit"></span>徐京晶
+										</li>
+										<li>
+											<i class="fa fa-phone iconspace" aria-hidden="true"></i>
+											<span class="sub-tit"></span>0988-123-123</li>
+										<li>
+											<i class="fa fa-envelope-o iconspace" aria-hidden="true"></i>
+											<span class="sub-tit"></span>yaya3132@gmail.com</li>
+										<li>
+											<i class="fa fa-home iconspace" aria-hidden="true"></i>
+											<span class="sub-tit">實際營運地址</span>台北市松山區南京東路四段 76 號 5F</li>
+									</ul>
+								</div>
+								<div class="col-lg-6 col-sm-12 col-md-12">
+									<div class="row no-gutters">
+										<div class="col-6 pl-1 pr-1">
+											<mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
+												<mat-basic-chip class="text-success mark-tag">
+													<i class="fa fa-check iconspace"></i>接受實體 DM 行銷</mat-basic-chip>
+												<mat-basic-chip class="text-success mark-tag">
+													<i class="fa fa-check iconspace"></i>接受電子郵件行銷</mat-basic-chip>
+												<mat-basic-chip class="text-danger mark-tag">
+													<i class="fa fa-ban iconspace"></i>停止蒐集利用個人資料</mat-basic-chip>
+
+											</mat-chip-list>
+										</div>
+										<div class="col-6 pl-1 pr-1">
+											<mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
+												<mat-basic-chip class="text-success mark-tag">
+													<i class="fa fa-check iconspace"></i>接受簡訊行銷</mat-basic-chip>
+												<mat-basic-chip class="text-success mark-tag">
+													<i class="fa fa-check iconspace"></i>接受電話行銷</mat-basic-chip>
+												<mat-basic-chip class="text-danger mark-tag">
+													<i class="fa fa-ban iconspace"></i>不同意運用顧客基本資料</mat-basic-chip>
+
+											</mat-chip-list>
+										</div>
+
+
+									</div>
+								</div>
+							</div>
+
+							<div class="collapseInfoTit">
+								<a class="close-area" href="javascript:void(0)" onclick="collapse(this, 'fa-angle-double-up', 'fa-angle-double-down')" name="collapseInfo">收闔顧客360資訊
+									<i id="collapseInfo_icon" class="fa fa-angle-double-up iconspace" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="pills-tab-container shadow">
+						<ul class="nav nav-pills tab" id="pills-tab" role="tablist">
+							<li class="nav-item">
+								<a id="pills-home-tab" class="nav-link active" data-toggle="tab" href="#pills-base-info" role="tab" aria-controls="pills-base-info"
+								  aria-selected="true">基本資料</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="pills-notice-tab" data-toggle="pill" href="#pills-notice" role="tab" aria-controls="pills-notice"
+								  aria-selected="false">
+									<i class="fa fa-file-text-o iconspace markRed" aria-hidden="true"></i>註記與注意事項</a>
+							</li>
+
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">資產類</a>
+								<a id="toggle-asset-tab" class="displayno" data-toggle="tab" href="#pills-bank"></a>
+								<div class="dropdown-menu nav-dropdown">
+									<a class="dropdown-item" name="pills-bank-section" href="#pills-bank">台幣活存</a>
+									<a class="dropdown-item" name="pills-banksave-section" href="#pills-bank">台幣定存</a>
+									<a class="dropdown-item" name="pills-foreignbank-section" href="#pills-bank">外幣活存</a>
+									<a class="dropdown-item" name="pills-foreigsave-section" href="#pills-bank">外幣定存</a>
+									<a class="dropdown-item" name="pills-insurance-section" href="#pills-bank">保險</a>
+									<a class="dropdown-item" name="pills-fund-section" href="#pills-bank">基金</a>
+								</div>
+							</li>
+
+							<li class="nav-item dropdown">
+								<a a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true"
+								  aria-expanded="false">
+									負債類
+								</a>
+								<a id="toggle-liability-tab" class="displayno" data-toggle="tab" href="#pills-loan"></a>
+								<ul class="dropdown-menu multi-level nav-dropdown" role="menu" aria-labelledby="dropdownMenu">
+
+									<li class="dropdown-submenu">
+										<a tabindex="-1" class="dropdown-item hasdrop" href="javascript:void(0)">貸款
+											<i class="fa fa-caret-right float-right" aria-hidden="true"></i>
+										</a>
+										<ul class="dropdown-menu nav-dropdown">
+											<li>
+												<a class="dropdown-item" name="pills-loan-acct" href="#pills-loan">帳戶資料</a>
+											</li>
+											<li>
+												<a class="dropdown-item" name="pills-loan-creditinfo" href="#pills-loan">授信資訊</a>
+											</li>
+											<li>
+												<a class="dropdown-item" name="pills-loan-promise" href="#pills-loan">保證資訊</a>
+											</li>
+
+										</ul>
+									</li>
+
+									<li>
+										<a class="dropdown-item" name="pills-loan-record" href="#pills-loan">退票紀錄</a>
+									</li>
+									<li>
+										<a class="dropdown-item" name="pills-loan-accident" href="#pills-loan">未解除之存摺事故</a>
+									</li>
+									<li>
+										<a class="dropdown-item" name="pills-loan-creditcard" href="#pills-loan">信用卡</a>
+									</li>
+									<li>
+										<a class="dropdown-item" name="pills-loan-comp" href="#pills-loan">同業綜合授信</a>
+									</li>
+									<li>
+										<a class="dropdown-item" name="pills-loan-info" href="#pills-loan">全國動產擔保交易公示資訊</a>
+									</li>
+								</ul>
+
+							</li>
+
+
+							<li class="nav-item">
+								<a class="nav-link" id="pills-marketData-tab" data-toggle="pill" href="#pills-marketData" role="tab" aria-controls="pills-marketData"
+								  aria-selected="false">專屬行銷專案</a>
+							</li>
+
+
+
+
+
+
+						</ul>
+					</div>
+
+				</section>	
+			</div>
+			<!--  內容 -->
+			<div class="">
+				<div class="tab-content" id="pills-tabContent">
+					<!--  基本資料 -->
+					<div class="tab-pane fade show active" id="pills-base-info" role="tabpanel" aria-labelledby="pills-base-info-tab">
+						<div class="wrap-box-l">
+							<div class="card-row">
+								<div class="card-wrap col-12 col-md-12 col-lg-8">
+									<div class="card shadow ">
+										<h5 class="card-title card-head">顧客資訊</h5>
+										<div class="card-body">
+
+											<div class="row">
+												<div class="col-lg-6 col-sm-12">
+													<h6 class="cardInside-sub-tit">
+														<i class="fa fa-info-circle iconspace" aria-hidden="true"></i>基本資訊</h6>
+													<div class="card-form">
+														<div class="form-tit">負責人</div>
+														<div class="form-body">徐晶京</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">負責人統編</div>
+														<div class="form-body">A123456789</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">負責人生日</div>
+														<div class="form-body">68/08/15</div>
+													</div>
+													<div class="form-tit">實質受益人</div>
+													<div class="form-body">傅哲人(2017/08/01)</div>
+												</div>
+												<div class="card-form">
+													<div class="card-form">
+														<div class="form-tit">公司資本額</div>
+														<div class="form-body">32,000,000</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">註冊國別代碼</div>
+														<div class="form-body">TW</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">外商分公司註記</div>
+														<div class="form-body">US</div>
+													</div>
+												</div>
+												<div class="col-lg-6 col-sm-12">
+													<div class="form-group">
+														<h6 class="cardInside-sub-tit">
+															<i class="fa fa-user iconspace" aria-hidden="true"></i>顧客身份別</h6>
+
+
+														<div class="card-form">
+															<div class="form-tit">專業投資人代碼-財富</div>
+															<div class="form-body">自然人提供 NTD 3000 萬元（含）以上之財力證明。</div>
+														</div>
+														<div class="card-form">
+															<div class="form-tit">專業投資人有效期限-財富</div>
+															<div class="form-body">2017/12/31</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<h6 class="cardInside-sub-tit">
+															<i class="fa fa-thumb-tack iconspace" aria-hidden="true"></i>維護註記</h6>
+
+														<div class="card-form">
+															<div class="form-tit">主經營行</div>
+															<div class="form-body">0015 營業部</div>
+														</div>
+														<div class="card-form">
+															<div class="form-tit">所屬理專</div>
+															<div class="form-body">00819 邱淑亞</div>
+														</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">維護RM</div>
+														<div class="form-body">00819 邱淑亞</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">SB 利潤撥補分行</div>
+														<div class="form-body">-</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">負責企金中心及組別</div>
+														<div class="form-body">C554 板橋企金中小</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">近一年營收</div>
+														<div class="form-body">$100,000,000 (2016/10/31)</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">法金顧客往來 屬性</div>
+														<div class="form-body">有效戶</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">法金顧客身分 屬性</div>
+														<div class="form-body">民營企業</div>
+													</div>
+
+												</div>
+											</div>
+											<div class="dropdown-divider"></div>
+											<div class="row">
+												<div class="col-12">
+													<h6 class="cardInside-sub-tit">
+														<i class="fa fa-address-book-o iconspace" aria-hidden="true"></i>通訊資料</h6>
+													<div class="card-form">
+														<div class="form-tit">聯繫用手機</div>
+														<div class="form-body">0987654321</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">OTP 約定手機</div>
+														<div class="form-body">0987654321</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">E-mail</div>
+														<div class="form-body">yaya3132@gmail.com</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">公司電話</div>
+														<div class="form-body">(02)2715-3132</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">公司住址</div>
+														<div class="form-body">105 台北市松山區民生東路三段 113 號</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">註冊電話</div>
+														<div class="form-body">(02)2715-3132</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">註冊地址</div>
+														<div class="form-body">105 台北市松山區民生東路三段 113 號</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">通訊電話</div>
+														<div class="form-body">(02)2715-3132</div>
+													</div>
+													<div class="card-form">
+														<div class="form-tit">實際地址</div>
+														<div class="form-body">105 台北市松山區民生東路三段 113 號</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="card shadow ">
+										<h5 class="card-title card-head">行銷接觸紀錄</h5>
+
+
+										<div class="card-body">
+
+											<div class="row">
+												<div class="table-responsive ">
+													<table class="table">
+														<thead>
+															<tr>
+																<th scope="col ">名單狀態
+																	<a href="#" data-toggle="modal" data-target="#stateInfo" data-whatever="@mdo ">
+																		<i class="fa fa-question-circle-o iconspace" aria-hidden="true"></i>
+																	</a>
+																</th>
+																<th scope="col ">分派/建立日期</th>
+																<th scope="col ">行銷單位</th>
+																<th scope="col ">行銷人員</th>
+																<th scope="col ">名單來源</th>
+																<th scope="col ">產品別</th>
+																<th scope="col " class="text-center">備註</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>
+																	<span class="light light-gary"></span>追蹤中</td>
+																<td>2017/10/28</td>
+																<td>消金營運部</td>
+																<td>傅哲仁</td>
+																<td>
+																	<a class="alink" href="namelist_data_IntMessage.html" target=_blank>網路進件</a>
+																</td>
+
+																<td>房貸</td>
+
+
+																<td class="text-center">
+																	<a onclick="collapse(this, ' fa-chevron-down', 'fa-chevron-up')" name="dolist-data">
+																		<i id="dolist-data_icon" class="fa fa-chevron-down" aria-hidden="true"></i>
+																</td>
+
+															</tr>
+															<tr aria-expanded="false" class="hiddenRow">
+																<td colspan="11" class=" cardOpen" style="padding: 0 !important">
+																	<div class="accordian-body collapse dolist-data" id="dolist-data">
+																		<div class="cardOpen-content">
+																			<h4>備註
+																				<a class="float-right greenLink" data-toggle="modal" data-target="#addnote" data-whatever="@mdo ">
+																					<i class="fa fa-plus iconspace" aria-hidden="true"></i>新增備註</a>
+																				<ul class="market-mark">
+																					<li>
+																						<span class="dot dot-main"></span>
+																						<div class="warp shadow">
+																							<div class="date">2012/09/12</div>
+																							<div class="note">行銷顧客精彩歲月專案，顧客表達高度興趣，預計 2018/01/27 再度拜訪
+																							</div>
+																						</div>
+																					</li>
+
+																				</ul>
+																		</div>
+																	</div>
+																</td>
+															</tr>
+
+															<tr>
+																<td class="iconyellow">
+																	<span class="light light-gary"></span>已受理
+																	<i class="fa fa-clock-o iconspace " aria-hidden="true"></i>
+																</td>
+																<td>2017/10/28</td>
+																<td>消金營運部</td>
+																<td>傅哲仁</td>
+																<td>
+																	<a class="alink" href="namelist_data_IntMessage.html" target=_blank>網路進件</a>
+																</td>
+
+																<td>房貸</td>
+
+
+																<td class="text-center">
+																	<a href="javascript:void(0)">
+																		<i class="fa fa-chevron-down" aria-hidden="true"></i>
+																	</a>
+																</td>
+
+															</tr>
+
+
+															<tr>
+																<td>
+																	<span class="light light-red"></span>婉拒</td>
+																<td>2017/10/28</td>
+																<td>消金營運部</td>
+																<td>傅哲仁</td>
+																<td>
+																	<a class="alink" href="namelist_data_EBM.html" target=_blank>EBM</a>
+																</td>
+
+																<td>房貸</td>
+
+
+																<td class="text-center">
+																	<a href="javascript:void(0)">
+																		<i class="fa fa-chevron-down" aria-hidden="true"></i>
+																	</a>
+																</td>
+
+															</tr>
+
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="card shadow ">
+										<h5 class="card-title card-head">
+											<i class="fa fa-thumb-tack iconspace" aria-hidden="true"></i>商工登記</h5>
+										<div class="card-body">
+											<div class="card-form">
+												<div class="form-tit">資料調閱日期</div>
+												<div class="form-body">2018/01/30</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">登記機關</div>
+												<div class="form-body">銀行</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">公司狀況</div>
+												<div class="form-body">2017/09/13</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">公司名稱</div>
+												<div class="form-body">陳美科技有限公司</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">統一編號</div>
+												<div class="form-body">陳美科技有限公司</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">資本總額(元)</div>
+												<div class="form-body">Y</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">實收資本額(元)</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">代表人姓名</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">公司所在地</div>
+												<div class="form-body">3</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">核准設立日</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">最後核准變更日</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">公司撤銷日</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">停業核准日</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">停復業狀況</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">停復業狀況描述</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">停業/延展日(起)</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">停業/延展日(迄)</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+
+
+										</div>
+									</div>
+								</div>
+								<div class="card-wrap col-12 col-md-12 col-lg-4">
+									<div class="card shadow ">
+										<h5 class="card-title card-head">公司戶 AUM</h5>
+										<div class="card-body">
+											<div class="card-form mt-0">
+												<div class="form-tit">顧客月底綜合AUM</div>
+												<div class="form-body">NTD 33,193</div>
+											</div>
+											<div class="canvas-con">
+												<div id="my-legend-con" class="legend-con"></div>
+												<div class="canvas-con-inner ">
+													<canvas id="proverty-doughnut" height="300px"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card shadow ">
+										<h5 class="card-title card-head">負債分配</h5>
+										<div class="card-body">
+											<div class="card-form">
+												<div class="loanTop">
+													其他個人授信
+													<p class="float-right">本金已償還
+														<span class="blackNote">86%</span>
+													</p>
+													<br />
+													<span class="loanNum">9991135001051</span>
+												</div>
+
+												<div class="Longchartarea">
+													<span class="loanChartNote">放款</span>
+													<div class="Longchart">
+														<div class="value"></div>
+													</div>
+													<span class="loanChartNote">初貸金額
+														<span class="value">$60,000</span>
+													</span>
+													<span class="float-right loanChartNote">尚餘
+														<span class="blackNote">$60,000</span>
+													</span>
+
+												</div>
+											</div>
+											<div class="dropdown-divider"></div>
+											<div class="card-form">
+												<div class="loanTop">
+													理財型透支
+													<p class="float-right">本金已償還
+														<span class="blackNote">86%</span>
+													</p>
+													<br />
+													<span class="loanNum">9991135001051</span>
+												</div>
+
+												<div class="Longchartarea">
+													<span class="loanChartNote">放款</span>
+													<div class="Longchart">
+														<div class="value"></div>
+													</div>
+													<span class="loanChartNote">初貸金額
+														<span class="value">$60,000</span>
+													</span>
+													<span class="float-right loanChartNote">尚餘
+														<span class="blackNote">$60,000</span>
+													</span>
+
+												</div>
+											</div>
+											<div class="dropdown-divider"></div>
+											<div class="card-form">
+												<div class="loanTop">
+													其他個人授信
+													<p class="float-right">本金已償還
+														<span class="blackNote">86%</span>
+													</p>
+													<br />
+													<span class="loanNum">9991135001051</span>
+												</div>
+
+												<div class="Longchartarea">
+													<span class="loanChartNote">放款</span>
+													<div class="Longchart">
+														<div class="value"></div>
+													</div>
+													<span class="loanChartNote">初貸金額
+														<span class="value">$60,000</span>
+													</span>
+													<span class="float-right loanChartNote">尚餘
+														<span class="blackNote">$60,000</span>
+													</span>
+
+												</div>
+											</div>
+
+
+
+										</div>
+									</div>
+									<div class="card shadow ">
+										<h5 class="card-title card-head">產品服務</h5>
+										<div class="card-body">
+											<div class="card-form">
+												<div class="form-tit">是否有外匯進口 承作量</div>
+												<div class="form-body">近一月 Y
+													<br />近一年 Y
+													<br />近二年 Y</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">是否有外匯出口 承作量</div>
+												<div class="form-body">近一月 Y
+													<br />近一年 Y
+													<br />近二年 Y</div>
+											</div>
+
+
+										</div>
+									</div>
+									<div class="card shadow ">
+										<h5 class="card-title card-head">
+											<i class="fa fa-thumb-tack iconspace" aria-hidden="true"></i>本行特店資料</h5>
+										<div class="card-body">
+											<div class="card-form">
+												<div class="form-tit">資料調閱日期</div>
+												<div class="form-body">2018/01/30</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">簽約日期</div>
+												<div class="form-body">銀行</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">解約日期</div>
+												<div class="form-body">2017/09/13</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">解約原因</div>
+												<div class="form-body">陳美科技有限公司</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">商店型態</div>
+												<div class="form-body">陳美科技有限公司</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">國旅卡特店</div>
+												<div class="form-body">Y</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">近一年收單總額(元)</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">近一年退款總額(元)</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">近一年有使用本行收單服務月數</div>
+												<div class="form-body">3</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">近一年平均月收單金額(元)</div>
+												<div class="form-body">18,300,500</div>
+											</div>
+
+
+										</div>
+									</div>
+									<!-- aum -->
+							</div>
+						</div>
+
+						</div>
+
+					</div>
+					<!--  註記注意事項 -->
+					<div class="tab-pane fade" id="pills-notice" role="tabpanel" aria-labelledby="pills-notice-tab">
+						<div class="wrap-box-l">
+							<div class="card-row">
+								<div class="card-wrap col-12 col-md-12 col-lg-8">
+									<div class="card shadow ">
+										<h5 class="card-title card-head">
+											<i class="fa fa-thumb-tack iconspace"></i>信用風險註記
+
+										</h5>
+										<div class="card-body">
+											<div class="col-12">
+												<div class="card-form">
+													<div class="form-tit">消金拒貸理由</div>
+													<div class="form-body">0 : 正常</div>
+												</div>
+												<div class="card-form">
+													<div class="form-tit">個金信評等級</div>
+													<div class="form-body">1 (2018/02/21)</div>
+												</div>
+												<div class="card-form">
+													<div class="form-tit">信用卡信評等級</div>
+													<div class="form-body">1 (2018/02/21)</div>
+												</div>
+												<div class="card-form">
+													<div class="form-tit">支票拒往日期</div>
+													<div class="form-body">-</div>
+												</div>
+												<div class="card-form">
+													<div class="form-tit">利害關係人註記</div>
+													<div class="form-body">利害關係人註記
+														<br />銀行法第 32、33 條 N
+														<br />金控法第 44 條 N
+														<br />金控法第 45 條 N</div>
+												</div>
+												<div class="card-form">
+													<div class="form-tit">債務協商</div>
+													<div class="form-body bodyLong markRed">協商申請中
+
+													</div>
+												</div>
+												<div class="card-form">
+													<div class="form-tit">債清註記</div>
+													<div class="form-body">上中溫面門軍果別說手時充上清方歡至直離源機。不了國樓上型親有作女今了人考候票定談變發傳想海中媽如叫經此步麼真正母向新外花不簡層的民計還條問</div>
+												</div>
+												<div class="card-form">
+													<div class="form-tit">債務展延</div>
+													<div class="form-body">00819 邱淑亞</div>
+												</div>
+												<div class="card-form">
+													<div class="form-tit">存單設質</div>
+													<div class="form-body">00819 邱淑亞</div>
+												</div>
+												<div class="card-form">
+													<div class="form-tit">事故</div>
+													<div class="form-body">00819 邱淑亞</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<!-- 行銷應注意事項 -->
+									<div class="card shadow ">
+										<h5 class="card-title card-head">
+											<i class="fa fa-thumb-tack iconspace"></i>行銷應注意事項
+											<button class="btn cardHead float-right" data-toggle="modal" data-target="#addmarknote" data-whatever="@mdo ">
+												<i class="fa fa-plus iconspace"></i>新增注意事項</button>
+										</h5>
+										<div class="card-body">
+											<div class="col-12">
+												<div class="notic-data">
+													<ul>
+														<li>
+															<span class="dot dot-red"></span>
+															<div class="card">
+																<div class="card-body p-3">
+
+																	<div class="col-12 pl-0 pb-3">
+																		<a href="javascript:void(0)" class="edit markgary">
+																			<i class="fa fa-pencil iconspace" aria-hidden="true"></i>
+																		</a>
+																		<h6>2018/01/05 | 田景雯 06528</h6>
+																		<span class="tag square red">刪除</span>
+																		<span class="markRed">顧客聯絡偏好，查詢資料需核對密碼xxxx。</span>
+																	</div>
+																	<div class="col-12 pl-0">
+																		<h6>2018/01/05 | 田景雯 06528</h6>
+
+																		<span>疑似代辦，提供貸款文件影本疑似偽造。</span>
+																	</div>
+																</div>
+															</div>
+														</li>
+														<li>
+															<span class="dot dot-main"></span>
+															<div class="card">
+																<div class="card-body p-3">
+
+																	<div class="col-12 pl-0">
+																		<a href="javascript:void(0)" class="edit" data-toggle="modal" data-target="#editmarknote" data-whatever="@mdo ">
+																			<i class="fa fa-pencil iconspace" aria-hidden="true"></i>
+																		</a>
+																		<a href="javascript:void(0)" class="delet" data-toggle="modal" data-target="#deletreason" data-whatever="@mdo ">
+																			<i class="fa fa-trash-o iconspace" aria-hidden="true"></i>
+																		</a>
+																		<h6>2018/01/05 | 田景雯 06528</h6>
+
+																		<span>顧客繁忙，擇日再深入拜訪。</span>
+																	</div>
+
+																</div>
+															</div>
+														</li>
+
+														<li>
+															<span class="dot dot-main"></span>
+															<div class="card">
+																<div class="card-body p-3">
+
+																	<div class="col-12 pl-0">
+																		<a href="javascript:void(0)" class="edit" data-toggle="modal" data-target="#editmarknote" data-whatever="@mdo ">
+																			<i class="fa fa-pencil iconspace" aria-hidden="true"></i>
+																		</a>
+																		<a href="javascript:void(0)" class="delet" data-toggle="modal" data-target="#deletreason" data-whatever="@mdo ">
+																			<i class="fa fa-trash-o iconspace" aria-hidden="true"></i>
+																		</a>
+																		<h6>2018/01/05 | 田景雯 06528</h6>
+
+																		<span>顧客繁忙，擇日再深入拜訪。</span>
+																	</div>
+
+																</div>
+															</div>
+														</li>
+
+													</ul>
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<div class="card-wrap col-12 col-md-12 col-lg-4">
+									<!-- 行銷警示註記 -->
+									<div class="card shadow">
+										<h5 class="card-title card-head">
+											<i class="fa fa-thumb-tack iconspace"></i>行銷警示註記</h5>
+										<div class="card-body">
+											<div class="card-form">
+												<div class="form-tit">特記對象</div>
+												<div class="form-body">0015 營業部</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">顧客特殊狀態</div>
+												<div class="form-body">00819 邱淑亞</div>
+											</div>
+											<div class="dropdown-divider"></div>
+											<div class="row no-gutters">
+												<div class=" pl-1 pr-1 col-sm-12 col-xl-6">
+													<mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
+														<mat-basic-chip class="text-success mark-tag">
+															<i class="fa fa-check iconspace"></i>接受實體 DM 行銷</mat-basic-chip>
+														<mat-basic-chip class="text-success mark-tag">
+															<i class="fa fa-check iconspace"></i>接受電子郵件行銷</mat-basic-chip>
+
+													</mat-chip-list>
+												</div>
+												<div class=" pl-1 pr-1 col-sm-12 col-xl-5">
+													<mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
+														<mat-basic-chip class="text-success mark-tag">
+															<i class="fa fa-check iconspace"></i>接受簡訊行銷</mat-basic-chip>
+														<mat-basic-chip class="text-success mark-tag">
+															<i class="fa fa-check iconspace"></i>接受電話行銷</mat-basic-chip>
+
+													</mat-chip-list>
+												</div>
+												<div class=" pl-1 pr-1 col-sm-12 col-xl-7">
+													<mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
+														<mat-basic-chip class="text-danger mark-tag">
+															<i class="fa fa-ban iconspace"></i>停止蒐集利用個人資料</mat-basic-chip>
+														<mat-basic-chip class="text-danger mark-tag">
+															<i class="fa fa-ban iconspace"></i>不同意運用顧客基本資料</mat-basic-chip>
+													</mat-chip-list>
+												</div>
+
+
+											</div>
+										</div>
+									</div>
+									<!-- 授信注意事項 -->
+									<div class="card shadow">
+										<h5 class="card-title card-head">
+											<i class="fa fa-thumb-tack iconspace"></i>授信注意事項</h5>
+										<div class="card-body">
+											<div class="card-form">
+												<p>上中溫面門軍果別說手時充上清方歡至直離源機。不了國樓上型親有作女今了人考候票定談變發傳想海中媽如叫經此步麼真正母向新外花不簡層的民計還條問</p>
+											</div>
+										</div>
+									</div>
+									<!-- AML 註記 -->
+									<div class="card shadow">
+										<h5 class="card-title card-head">
+											<i class="fa fa-thumb-tack iconspace"></i>AML 註記</h5>
+										<div class="card-body">
+											<div class="card-form">
+												<div class="form-tit">AML 制裁名單註記</div>
+												<div class="form-body">其他禁令之黑名單</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">AML 政治敏感人物</div>
+												<div class="form-body">立法委員</div>
+											</div>
+											<div class="card-form">
+												<div class="form-tit">AML PEB 關係人註記</div>
+												<div class="form-body">-</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--  資產類> -->
+					<div class="tab-pane fade bank" id="pills-bank" role="tabpanel" aria-labelledby="pills-bank-tab" style="position:relative;">
+						<div class="wrap-box-l">
+							<!--  資產類>台幣活存-->
+							<div class="section " id="pills-bank-section">
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">台幣活存</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+
+																	<th scope="col ">帳號</th>
+																	<th scope="col ">開戶日</th>
+																	<th scope="col " class="money-right">帳戶餘額</th>
+																	<th scope="col " class="money-right">近三個月每月存款積數</th>
+																	<th scope="col " class="money-right">近六個月每月存款積數</th>
+																	<th scope="col " class="text-center">展開</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+
+																	<td>9998-968-987987</td>
+																	<td>2013/02/04</td>
+																	<td class="money-right">12,210,000.00</td>
+																	<td class="money-right">982,032.00</td>
+																	<td class="money-right">32.00</td>
+																	<td class="text-center">
+																		<a onclick="collapse(this, ' fa-chevron-down', 'fa-chevron-up')" name="bank-data">
+																			<i id="bank-data_icon" class="fa fa-chevron-down" aria-hidden="true"></i>
+																	</td>
+
+
+																</tr>
+																<tr data-toggle="collapse" data-target="#bank-data" aria-expanded="false" aria-controls="bank-data" style="cursor: pointer">
+																	<td colspan="11" class="hiddenRow">
+																		<div class="accordian-body collapse bank-data" id="bank-data">
+																			<div class="row-collapse cardOpen">
+																				<div class="cardOpen-content">
+																					<h6>存摺近三個月交易紀錄</h6>
+																					<div class="row-collapse">
+																						<p>2017/03 (2)</p>
+																						<table class="table shadow">
+																							<thead class="thead-dark">
+																								<tr>
+																									<th scope="col">交易日</th>
+																									<th scope="col">摘要</th>
+																									<th scope="col">起息日</th>
+																									<th scope="col">訖息日</th>
+																									<th scope="col" class="money-right">利率</th>
+																									<th scope="col" class="money-right">本金</th>
+																									<th scope="col" class="money-right">利息</th>
+																									<th scope="col" class="money-right">違約息</th>
+																									<th scope="col">遲繳天數</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+
+																									<td>2018/02/13</td>
+																									<td>還本繳息</td>
+																									<td>092844</td>
+																									<td>090324</td>
+																									<td class="money-right">7.88</td>
+																									<td class="money-right">4,020</td>
+																									<td class="money-right">326</td>
+																									<td class="money-right">456</td>
+																									<td>4</td>
+
+																								</tr>
+																								<tr>
+
+																									<td>2018/02/13</td>
+																									<td>還本繳息</td>
+																									<td>092844</td>
+																									<td>090324</td>
+																									<td class="money-right">7.88</td>
+																									<td class="money-right">4,020</td>
+																									<td class="money-right">326</td>
+																									<td class="money-right">456</td>
+																									<td>4</td>
+
+																								</tr>
+
+																							</tbody>
+																						</table>
+																					</div>
+
+																					<div class="row-collapse">
+																						<p>2017/03 (8)</p>
+																						<table class="table shadow">
+																							<thead class="thead-dark">
+																								<tr>
+																									<th scope="col">交易日</th>
+																									<th scope="col">摘要</th>
+																									<th scope="col">起息日</th>
+																									<th scope="col">訖息日</th>
+																									<th scope="col" class="money-right">利率</th>
+																									<th scope="col" class="money-right">本金</th>
+																									<th scope="col" class="money-right">利息</th>
+																									<th scope="col" class="money-right">違約息</th>
+																									<th scope="col">遲繳天數</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+
+																									<td>2018/02/13</td>
+																									<td>還本繳息</td>
+																									<td>092844</td>
+																									<td>090324</td>
+																									<td class="money-right">7.88</td>
+																									<td class="money-right">4,020</td>
+																									<td class="money-right">326</td>
+																									<td class="money-right">456</td>
+																									<td>4</td>
+
+																								</tr>
+																								<tr>
+
+																									<td>2018/02/13</td>
+																									<td>還本繳息</td>
+																									<td>092844</td>
+																									<td>090324</td>
+																									<td class="money-right">7.88</td>
+																									<td class="money-right">4,020</td>
+																									<td class="money-right">326</td>
+																									<td class="money-right">456</td>
+																									<td>4</td>
+
+																								</tr>
+																								<tr>
+
+																									<td>2018/02/13</td>
+																									<td>還本繳息</td>
+																									<td>092844</td>
+																									<td>090324</td>
+																									<td class="money-right">7.88</td>
+																									<td class="money-right">4,020</td>
+																									<td class="money-right">326</td>
+																									<td class="money-right">456</td>
+																									<td>4</td>
+
+																								</tr>
+																								<tr>
+
+																									<td>2018/02/13</td>
+																									<td>還本繳息</td>
+																									<td>092844</td>
+																									<td>090324</td>
+																									<td class="money-right">7.88</td>
+																									<td class="money-right">4,020</td>
+																									<td class="money-right">326</td>
+																									<td class="money-right">456</td>
+																									<td>4</td>
+
+																								</tr>
+																								<tr>
+
+																									<td>2018/02/13</td>
+																									<td>還本繳息</td>
+																									<td>092844</td>
+																									<td>090324</td>
+																									<td class="money-right">7.88</td>
+																									<td class="money-right">4,020</td>
+																									<td class="money-right">326</td>
+																									<td class="money-right">456</td>
+																									<td>4</td>
+
+																								</tr>
+																								<tr>
+
+																									<td>2018/02/13</td>
+																									<td>還本繳息</td>
+																									<td>092844</td>
+																									<td>090324</td>
+																									<td class="money-right">7.88</td>
+																									<td class="money-right">4,020</td>
+																									<td class="money-right">326</td>
+																									<td class="money-right">456</td>
+																									<td>4</td>
+
+																								</tr>
+																								<tr>
+
+																									<td>2018/02/13</td>
+																									<td>還本繳息</td>
+																									<td>092844</td>
+																									<td>090324</td>
+																									<td class="money-right">7.88</td>
+																									<td class="money-right">4,020</td>
+																									<td class="money-right">326</td>
+																									<td class="money-right">456</td>
+																									<td>4</td>
+
+																								</tr>
+																								<tr>
+
+																									<td>2018/02/13</td>
+																									<td>還本繳息</td>
+																									<td>092844</td>
+																									<td>090324</td>
+																									<td class="money-right">7.88</td>
+																									<td class="money-right">4,020</td>
+																									<td class="money-right">326</td>
+																									<td class="money-right">456</td>
+																									<td>4</td>
+
+																								</tr>
+																							</tbody>
+																						</table>
+																					</div>
+																				</div>
+																			</div>
+
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+
+																	<td>9998-968-987987</td>
+																	<td>2013/02/04</td>
+																	<td class="money-right">210,000.00</td>
+																	<td class="money-right">9,032.00</td>
+																	<td class="money-right">32.00</td>
+																	<td class="text-center">
+																		<a>
+																			<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+																	</td>
+																</tr>
+																<tr>
+
+																	<td>9998-968-987987</td>
+																	<td>2013/02/04</td>
+																	<td class="money-right">10,210,000.00</td>
+																	<td class="money-right">339,032.00</td>
+																	<td class="money-right">32.00</td>
+																	<td class="text-center">
+																		<a>
+																			<i class="fa fa-chevron-down" aria-hidden="true"></i>
+																		</a>
+																	</td>
+																</tr>
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--  資產類>台幣定存-->
+							<div class="section" id="pills-banksave-section">
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">台幣定存</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+
+																	<th scope="col ">帳號</th>
+
+																	<th scope="col " class="money-right">存單面額</th>
+																	<th scope="col " class="money-right">利率</th>
+																	<th scope="col ">利率別</th>
+																	<th scope="col ">存期</th>
+																	<th scope="col ">到期日</th>
+																	<th scope="col ">到期續存</th>
+																	<th scope="col " class="text-center">存單設質</th>
+
+
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+
+																	<td>9998-968-987987</td>
+																	<td class="money-right">10,000.00</td>
+																	<td class="money-right">1.380%</td>
+																	<td>固定</td>
+																	<td>一年</td>
+																	<td>2014/02/13</td>
+																	<td>本期到期轉期</td>
+																	<td class="text-center">Y</td>
+																</tr>
+																<tr>
+
+																	<td>9998-968-987987</td>
+																	<td class="money-right">12,020.00</td>
+																	<td class="money-right">1.440%</td>
+																	<td>固定</td>
+																	<td>一年</td>
+																	<td>2014/02/13</td>
+																	<td>不自動轉期</td>
+																	<td class="text-center">N</td>
+																</tr>
+																<tr>
+
+																	<td>9998-968-987987</td>
+																	<td class="money-right">10,000.00</td>
+																	<td class="money-right">1.380%</td>
+																	<td>固定</td>
+																	<td>一年</td>
+																	<td>2014/02/13</td>
+																	<td>本期到期轉期</td>
+																	<td class="text-center">N</td>
+																</tr>
+
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--  資產類>外幣活存-->
+							<div class="section" id="pills-foreignbank-section">
+
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">外幣活存</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+
+																	<th scope="col ">帳號</th>
+																	<th scope="col ">開戶日</th>
+																	<th scope="col ">幣別</th>
+																	<th scope="col " class="money-right">帳戶餘額</th>
+																	<th scope="col " class="money-right">帳戶餘額(台幣)</th>
+																	<th scope="col " class="money-right">上月平均餘額</th>
+																	<th scope="col " class="money-right">上月平均餘額(台幣)</th>
+
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+
+																	<td>9998-968-987987</td>
+																	<td>2013/02/04</td>
+																	<td>USD</td>
+																	<td class="money-right">12,210,000.00</td>
+																	<td class="money-right">982,032.00</td>
+																	<td class="money-right">32.00</td>
+																	<td class="money-right">2.00</td>
+
+																</tr>
+																<tr>
+
+																	<td>9998-968-987987</td>
+																	<td>2013/02/04</td>
+																	<td>JPY</td>
+																	<td class="money-right">12,210,000.00</td>
+																	<td class="money-right">982,032.00</td>
+																	<td class="money-right">0</td>
+																	<td class="money-right">0</td>
+
+																</tr>
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--  資產類>外幣定存-->
+							<div class="section" id="pills-foreigsave-section">
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">外幣定存</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+
+																	<th scope="col ">帳號</th>
+
+																	<th scope="col " class="money-right">存單面額</th>
+																	<th scope="col " class="money-right">折合台幣現值</th>
+																	<th scope="col " class="money-right">利率</th>
+																	<th scope="col ">利率別</th>
+																	<th scope="col ">存期</th>
+																	<th scope="col ">到期日</th>
+																	<th scope="col ">到期續存</th>
+																	<th scope="col " class="text-center">存單設質</th>
+
+
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+
+																	<td>9998-968-987987</td>
+																	<td class="money-right">10,000.00</td>
+																	<td class="money-right">9,000.00</td>
+																	<td class="money-right">1.380%</td>
+																	<td>固定</td>
+																	<td>一年</td>
+																	<td>2014/02/13</td>
+																	<td>本期到期轉期</td>
+																	<td class="text-center">N</td>
+																</tr>
+																<tr>
+
+																	<td>9998-968-987987</td>
+																	<td class="money-right">12,020.00</td>
+																	<td class="money-right">9,000.00</td>
+																	<td class="money-right">1.440%</td>
+																	<td>固定</td>
+																	<td>一年</td>
+																	<td>2014/02/13</td>
+																	<td>不自動轉期</td>
+																	<td class="text-center">Y</td>
+																</tr>
+
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--  資產類>保險-->
+							<div class="section" id="pills-insurance-section">
+
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">保險</h5>
+											<div class="card-body">
+
+
+
+												<div id="accordion">
+													<div class="card">
+														<div class="card-header panel-tit shad" id="headingOne" onclick="collapse(this, ' fa-chevron-right', 'fa-chevron-down')"
+														  name="collapseInone">
+															<span class="dec-line"></span>
+															<h5 class="mb-0">
+																安聯(2)
+																<i id="collapseInone_icon" class="fa fa-chevron-right float-right" aria-hidden="true"></i>
+
+
+															</h5>
+														</div>
+
+														<div id="collapseInone" class="collapse" aria-labelledby="headingOne">
+															<div class="table-responsive ">
+																<table class="table">
+																	<thead>
+																		<tr>
+																			<th scope="col ">保單號碼</th>
+																			<th scope="col ">保單狀態</th>
+
+																			<th scope="col ">保單狀態</th>
+																			<th scope="col ">起保日</th>
+																			<th scope="col ">繳費終期</th>
+																			<th scope="col ">幣別</th>
+																			<th scope="col " class="money-right">保額/計畫/單位</th>
+																			<th scope="col " class="money-right">每期保費</th>
+																			<th scope="col " class="money-right">累計已繳保費</th>
+
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>QL115155558</td>
+																			<td>正常繳費件</td>
+																			<td>祥瑞滿載外幣變額年金保險</td>
+																			<td>2017/09/21</td>
+																			<td>2017/09/21</td>
+																			<td>USD</td>
+																			<td class="money-right">12,424,342.00</td>
+																			<td class="money-right">12,424,342.00</td>
+																			<td class="money-right">12,424,342.00</td>
+																		</tr>
+																		<tr>
+																			<td>QL115155558</td>
+																			<td>正常繳費件</td>
+																			<td>祥瑞滿載外幣變額年金保險</td>
+																			<td>2017/09/21</td>
+																			<td>2017/09/21</td>
+																			<td>USD</td>
+																			<td class="money-right">12,424,342.00</td>
+																			<td class="money-right">12,424,342.00</td>
+																			<td class="money-right">12,424,342.00</td>
+																		</tr>
+
+
+
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+													<div class="card">
+														<div class="card-header panel-tit shad" id="headingTwo" onclick="collapse(this, ' fa-chevron-right', 'fa-chevron-down')"
+														  name="collapseIntwo">
+															<span class="dec-line"></span>
+															<h5 class="mb-0 ">南山人壽(1)
+																<i id="collapseIntwo_icon" class="fa fa-chevron-right" aria-hidden="true"></i>
+
+															</h5>
+														</div>
+														<div id="collapseIntwo" class="collapse" aria-labelledby="headingTwo">
+															<div class="table-responsive ">
+																<table class="table">
+																	<thead>
+																		<tr>
+																			<th scope="col ">保單號碼</th>
+																			<th scope="col ">保單狀態</th>
+
+																			<th scope="col ">保單狀態</th>
+																			<th scope="col ">起保日</th>
+																			<th scope="col ">繳費終期</th>
+																			<th scope="col ">幣別</th>
+																			<th scope="col " class="money-right">保額/計畫/單位</th>
+																			<th scope="col " class="money-right">每期保費</th>
+																			<th scope="col " class="money-right">累計已繳保費</th>
+
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>QL115155558</td>
+																			<td>正常繳費件</td>
+																			<td>祥瑞滿載外幣變額年金保險</td>
+																			<td>2017/09/21</td>
+																			<td>2017/09/21</td>
+																			<td>USD</td>
+																			<td class="money-right">12,424,342.00</td>
+																			<td class="money-right">12,424,342.00</td>
+																			<td class="money-right">12,424,342.00</td>
+																		</tr>
+
+
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+													<div class="card">
+														<div class="card-header panel-tit shad" id="headingThree" onclick="collapse(this, ' fa-chevron-right', 'fa-chevron-down')"
+														  name="collapseInthree">
+															<span class="dec-line"></span>
+															<h5 class="mb-0">富邦人壽(3)
+																<i id="collapseInthree_icon" class="fa fa-chevron-right" aria-hidden="true"></i>
+
+															</h5>
+														</div>
+														<div id="collapseInthree" class="collapse" aria-labelledby="headingThree">
+															<div class="table-responsive ">
+																<table class="table">
+																	<thead>
+																		<tr>
+																			<th scope="col ">保單號碼</th>
+																			<th scope="col ">保單狀態</th>
+
+																			<th scope="col ">保單狀態</th>
+																			<th scope="col ">起保日</th>
+																			<th scope="col ">繳費終期</th>
+																			<th scope="col ">幣別</th>
+																			<th scope="col " class="money-right">保額/計畫/單位</th>
+																			<th scope="col " class="money-right">每期保費</th>
+																			<th scope="col " class="money-right">累計已繳保費</th>
+
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>QL115155558</td>
+																			<td>正常繳費件</td>
+																			<td>祥瑞滿載外幣變額年金保險</td>
+																			<td>2017/09/21</td>
+																			<td>2017/09/21</td>
+																			<td>USD</td>
+																			<td class="money-right">12,424,342.00</td>
+																			<td class="money-right">12,424,342.00</td>
+																			<td class="money-right">12,424,342.00</td>
+																		</tr>
+																		<tr>
+																			<td>QL115155558</td>
+																			<td>正常繳費件</td>
+																			<td>祥瑞滿載外幣變額年金保險</td>
+																			<td>2017/09/21</td>
+																			<td>2017/09/21</td>
+																			<td>USD</td>
+																			<td class="money-right">12,424,342.00</td>
+																			<td class="money-right">12,424,342.00</td>
+																			<td class="money-right">12,424,342.00</td>
+																		</tr>
+																		<tr>
+																			<td>QL115155558</td>
+																			<td>正常繳費件</td>
+																			<td>祥瑞滿載外幣變額年金保險</td>
+																			<td>2017/09/21</td>
+																			<td>2017/09/21</td>
+																			<td>USD</td>
+																			<td class="money-right">12,424,342.00</td>
+																			<td class="money-right">12,424,342.00</td>
+																			<td class="money-right">12,424,342.00</td>
+																		</tr>
+
+
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<!--  資產類>基金-->
+							<div class="section" id="pills-fund-section">
+
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">基金</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th scope="col ">信托編號</th>
+																	<th scope="col ">產品名稱</th>
+																	<th scope="col ">投資幣別</th>
+																	<th scope="col " class="money-right">投資金額(含手續費)</th>
+																	<th scope="col " class="money-right">投資現值</th>
+																	<th scope="col " class="money-right">投資損益(含累計配息)</th>
+																	<th scope="col " class="money-right">報酬率</th>
+
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+
+																	<td>9998-968-987987</td>
+																	<td>BB39安聯收益成長 AM 每月美元</td>
+																	<td>USD</td>
+																	<td class="money-right">12,210,000.00</td>
+
+																	<td class="money-right">12,903.00</td>
+
+																	<td class="money-right">123,245.00</td>
+																	<td class="money-right">3.9</td>
+																</tr>
+
+
+
+															</tbody>
+														</table>
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<!--  負債類 -->
+					<div class="tab-pane fade" id="pills-loan" role="tabpanel" aria-labelledby="pills-loan-tab">
+						<div class="wrap-box-l">
+							<!--  貸款類>貸款 | 帳戶資料 -->
+							<div class="section" id="pills-loan-acct">
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">貸款｜帳戶資料
+												<span class="float-right pr-5">結清帳號(關)
+
+												</span>
+												<label class="switch">
+													<input type="checkbox">
+													<span class="slider round"></span>
+												</label>
+											</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="tableHeader">
+
+														<h5 class="mb-2 ">
+															<span class="dec-line-intable"></span>批覆書編號:B294I9013</h5>
+													</div>
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th scope="col ">帳號</th>
+																	<th scope="col " class="money-right">實質餘額</th>
+																	<th scope="col " class="money-right">核貸金額</th>
+																	<th scope="col ">產品</th>
+																	<th scope="col ">狀態</th>
+																	<th scope="col ">貸放日</th>
+																	<th scope="col ">訖息日</th>
+																	<th scope="col ">違約期間</th>
+																	<th scope="col " class="money-right">目前利率</th>
+																	<th scope="col " class="money-right">遲繳次數</th>
+																	<th scope="col " class="text-center">展開</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>0509165123456</td>
+																	<td class="money-right">10,888,455</td>
+																	<td class="money-right">14,500,000</td>
+																	<td>房貸</td>
+																	<td>透支</td>
+																	<td>00940414</td>
+																	<td>00980205</td>
+																	<td>1-36</td>
+																	<td class="money-right">2.18</td>
+																	<td class="money-right markRed">2</td>
+																	<td class="text-center">
+																		<a onclick="collapse(this, ' fa-chevron-down', 'fa-chevron-up')" name="loan-data">
+																			<i id="loan-data_icon" class="fa fa-chevron-down" aria-hidden="true"></i>
+																	</td>
+																</tr>
+																<tr data-toggle="collapse" data-target="#loan-data" aria-expanded="false" aria-controls="loan-data">
+																	<td colspan="11" class="hiddenRow">
+																		<div class="accordian-body collapse loan-data cardOpen" id="loan-data">
+																			<div class="row-collapse cardOpen-content">
+																				<table class="table shad">
+																					<thead class="thead-dark">
+																						<tr>
+																							<th scope="col">交易日</th>
+																							<th scope="col">摘要</th>
+																							<th scope="col">起息日</th>
+																							<th scope="col">訖息日</th>
+																							<th scope="col" class="money-right">利率</th>
+																							<th scope="col" class="money-right">本金</th>
+																							<th scope="col" class="money-right">利息</th>
+																							<th scope="col" class="money-right">違約息</th>
+																							<th scope="col" class="money-right">遲繳天數</th>
+																						</tr>
+																					</thead>
+																					<tbody>
+																						<tr>
+
+																							<td>092844</td>
+																							<td>還本繳息</td>
+																							<td>092844</td>
+																							<td>090324</td>
+																							<td class="money-right">7.88</td>
+																							<td class="money-right">4,020</td>
+																							<td class="money-right">326</td>
+																							<td class="money-right">456</td>
+																							<td class="money-right">4</td>
+
+																						</tr>
+																						<tr>
+
+																							<td>092844</td>
+																							<td>還本繳息</td>
+																							<td>092844</td>
+																							<td>090324</td>
+																							<td class="money-right">7.88</td>
+																							<td class="money-right">4,020</td>
+																							<td class="money-right">326</td>
+																							<td class="money-right">456</td>
+																							<td class="money-right">4</td>
+
+																						</tr>
+
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>0509165123456</td>
+																	<td class="money-right">10,888,455</td>
+																	<td class="money-right">14,500,000</td>
+																	<td>房貸</td>
+																	<td>透支</td>
+																	<td>00940414</td>
+																	<td>00980205</td>
+																	<td>1-36</td>
+																	<td class="money-right">2.18</td>
+																	<td class="money-right markRed">2</td>
+																	<td class="text-center">
+																		<a>
+																			<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+																	</td>
+																</tr>
+
+																<tr>
+																	<td>0509165123456</td>
+																	<td class="money-right">10,888,455</td>
+																	<td class="money-right">14,500,000</td>
+																	<td>房貸</td>
+																	<td>透支</td>
+																	<td>00940414</td>
+																	<td>00980205</td>
+																	<td>1-36</td>
+																	<td class="money-right">2.18</td>
+																	<td class="money-right markRed">2</td>
+																	<td class="text-center">
+																		<a>
+																			<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+																	</td>
+																</tr>
+
+																<tr>
+																	<td>0509165123456</td>
+																	<td class="money-right">10,888,455</td>
+																	<td class="money-right">14,500,000</td>
+																	<td>房貸</td>
+																	<td>透支</td>
+																	<td>00940414</td>
+																	<td>00980205</td>
+																	<td>1-36</td>
+																	<td class="money-right">2.18</td>
+																	<td class="money-right markRed">2</td>
+																	<td class="text-center">
+																		<a>
+																			<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+																	</td>
+																</tr>
+
+
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+												<div class="row">
+													<div class="tableHeader">
+
+														<h5 class="mb-2 ">
+															<span class="dec-line-intable"></span>批覆書編號:B294I9013</h5>
+													</div>
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th scope="col ">帳號</th>
+																	<th scope="col " class="money-right">實質餘額</th>
+																	<th scope="col " class="money-right">核貸金額</th>
+																	<th scope="col ">產品</th>
+																	<th scope="col ">狀態</th>
+																	<th scope="col ">貸放日</th>
+																	<th scope="col ">訖息日</th>
+																	<th scope="col ">違約期間</th>
+																	<th scope="col " class="money-right">目前利率</th>
+																	<th scope="col " class="money-right">遲繳次數</th>
+																	<th scope="col " class="text-center">展開</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>0509165123456</td>
+																	<td class="money-right">10,888,455</td>
+																	<td class="money-right">14,500,000</td>
+																	<td>房貸</td>
+																	<td>透支</td>
+																	<td>00940414</td>
+																	<td>00980205</td>
+																	<td>1-36</td>
+																	<td class="money-right">2.18</td>
+																	<td class="money-right markRed">2</td>
+																	<td class="text-center">
+																		<a onclick="collapse(this, ' fa-chevron-down', 'fa-chevron-up')" name="loan-datatwo">
+																			<i id="loan-datatwo_icon" class="fa fa-chevron-down" aria-hidden="true"></i></a>
+																	</td>
+																</tr>
+																<tr data-toggle="collapse" data-target="#loan-datatwo" aria-expanded="false" aria-controls="loan-datatwo">
+																	<td colspan="11" class="hiddenRow">
+																		<div class="accordian-body collapse loan-datatwo cardOpen" id="loan-datatwo">
+																			<div class="row-collapse cardOpen-content">
+																				<table class="table shad">
+																					<thead class="thead-dark">
+																						<tr>
+																							<th scope="col">交易日</th>
+																							<th scope="col">摘要</th>
+																							<th scope="col">起息日</th>
+																							<th scope="col">訖息日</th>
+																							<th scope="col" class="money-right">利率</th>
+																							<th scope="col" class="money-right">本金</th>
+																							<th scope="col" class="money-right">利息</th>
+																							<th scope="col" class="money-right">違約息</th>
+																							<th scope="col" class="money-right">遲繳天數</th>
+																						</tr>
+																					</thead>
+																					<tbody>
+																						<tr>
+
+																							<td>092844</td>
+																							<td>還本繳息</td>
+																							<td>092844</td>
+																							<td>090324</td>
+																							<td class="money-right">7.88</td>
+																							<td class="money-right">4,020</td>
+																							<td class="money-right">326</td>
+																							<td class="money-right">456</td>
+																							<td class="money-right">4</td>
+
+																						</tr>
+																						<tr>
+
+																							<td>092844</td>
+																							<td>還本繳息</td>
+																							<td>092844</td>
+																							<td>090324</td>
+																							<td class="money-right">7.88</td>
+																							<td class="money-right">4,020</td>
+																							<td class="money-right">326</td>
+																							<td class="money-right">456</td>
+																							<td class="money-right">4</td>
+
+																						</tr>
+
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>0509165123456</td>
+																	<td class="money-right">10,888,455</td>
+																	<td class="money-right">14,500,000</td>
+																	<td>房貸</td>
+																	<td>透支</td>
+																	<td>00940414</td>
+																	<td>00980205</td>
+																	<td>1-36</td>
+																	<td class="money-right">2.18</td>
+																	<td class="money-right markRed">2</td>
+																	<td class="text-center">
+																		<a>
+																			<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+																	</td>
+																</tr>
+
+																<tr>
+																	<td>0509165123456</td>
+																	<td class="money-right">10,888,455</td>
+																	<td class="money-right">14,500,000</td>
+																	<td>房貸</td>
+																	<td>透支</td>
+																	<td>00940414</td>
+																	<td>00980205</td>
+																	<td>1-36</td>
+																	<td class="money-right">2.18</td>
+																	<td class="money-right markRed">2</td>
+																	<td class="text-center">
+																		<a>
+																			<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+																	</td>
+																</tr>
+
+																<tr>
+																	<td>0509165123456</td>
+																	<td class="money-right">10,888,455</td>
+																	<td class="money-right">14,500,000</td>
+																	<td>房貸</td>
+																	<td>透支</td>
+																	<td>00940414</td>
+																	<td>00980205</td>
+																	<td>1-36</td>
+																	<td class="money-right">2.18</td>
+																	<td class="money-right markRed">2</td>
+																	<td class="text-center">
+																		<a>
+																			<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+																	</td>
+																</tr>
+
+
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--  貸款類>貸款 | 授信資訊-->
+							<div class="section" id="pills-loan-creditinfo">
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">貸款｜授信資訊</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th scope="col ">批覆書編號</th>
+																	<th scope="col ">額度種類</th>
+																	<th scope="col ">批覆書狀態</th>
+																	<th scope="col ">過期</th>
+																	<th scope="col " class="money-right">總額度</th>
+																	<th scope="col " class="money-right">現欠</th>
+																	<th scope="col ">作業單位</th>
+																	<th scope="col ">擔保品地址</th>
+																	<th scope="col " class="money-right">評估總值</th>
+																	<th scope="col " class="money-right">擔保總值</th>
+
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>B09CC12345</td>
+																	<td>全部</td>
+																	<td>使用</td>
+																	<td>N</td>
+																	<td class="money-right">9,000,000</td>
+																	<td class="money-right">6,456,789</td>
+																	<td>205</td>
+																	<td>105 台北市松山區民生東路三段 113 號</td>
+																	<td class="money-right">135,000,000</td>
+																	<td class="money-right">135,000,000</td>
+
+																</tr>
+																<tr>
+																	<td>B09CC12345</td>
+																	<td>全部</td>
+																	<td>使用</td>
+																	<td>N</td>
+																	<td class="money-right">9,000,000</td>
+																	<td class="money-right">6,456,789</td>
+																	<td>205</td>
+																	<td>105 台北市松山區民生東路三段 113 號</td>
+																	<td class="money-right">135,000,000</td>
+																	<td class="money-right">135,000,000</td>
+
+																</tr>
+
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="section" id="pills-loan-promise">
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">貸款｜保證資訊</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th scope="col ">批覆書編號</th>
+
+																	<th scope="col ">額度種類</th>
+																	<th scope="col ">批覆書狀態</th>
+																	<th scope="col ">過期</th>
+																	<th scope="col ">借戶統編/姓名</th>
+
+																	<th scope="col " class="money-right">總額度</th>
+																	<th scope="col " class="money-right">現欠</th>
+																	<th scope="col ">作業單位</th>
+																	<th scope="col " class="money-right">目前利率</th>
+																	<th scope="col " class="money-right">遲繳次數</th>
+																	<th scope="col " class="text-center">展開</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>B091651234</td>
+
+																	<td>全部</td>
+																	<td>使用</td>
+																	<td>N</td>
+																	<td>F123456789 李大仁 </td>
+																	<td class="money-right">10,888,455</td>
+																	<td class="money-right">14,500,000</td>
+
+																	<td>0934</td>
+																	<td class="money-right">2.18</td>
+																	<td class="markRed">2</td>
+																	<td class="text-center">
+																		<a onclick="collapse(this, ' fa-chevron-down', 'fa-chevron-up')" name="loanTwo-data">
+																			<i id="loanTwo-data_icon" class="fa fa-chevron-down" aria-hidden="true"></i>
+																	</td>
+																</tr>
+																<tr data-toggle="collapse" data-target="#loanTwo-data" aria-expanded="false" aria-controls="loanTwo-data">
+																	<td colspan="11" class="hiddenRow">
+																		<div class="accordian-body collapse loanTwo-data cardOpen" id="loanTwo-data">
+																			<div class="row-collapse cardOpen-content">
+																				<table class="table shad">
+																					<thead class="thead-dark">
+																						<tr>
+																							<th scope="col">交易日</th>
+																							<th scope="col">摘要</th>
+																							<th scope="col">起息日</th>
+																							<th scope="col">訖息日</th>
+																							<th scope="col" class="money-right">利率</th>
+																							<th scope="col" class="money-right">本金</th>
+																							<th scope="col" class="money-right">利息</th>
+																							<th scope="col" class="money-right">違約息</th>
+																							<th scope="col" class="money-right">遲繳天數</th>
+																						</tr>
+																					</thead>
+																					<tbody>
+																						<tr>
+
+																							<td>092844</td>
+																							<td>還本繳息</td>
+																							<td>092844</td>
+																							<td>090324</td>
+																							<td class="money-right">7.88</td>
+																							<td class="money-right">4,020</td>
+																							<td class="money-right">326</td>
+																							<td class="money-right">456</td>
+																							<td class="money-right">4</td>
+
+																						</tr>
+																						<tr>
+
+																							<td>092844</td>
+																							<td>還本繳息</td>
+																							<td>092844</td>
+																							<td>090324</td>
+																							<td class="money-right">7.88</td>
+																							<td class="money-right">4,020</td>
+																							<td class="money-right">326</td>
+																							<td class="money-right">456</td>
+																							<td class="money-right">4</td>
+
+																						</tr>
+
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>B091651234</td>
+
+																	<td>全部</td>
+																	<td>使用</td>
+																	<td>N</td>
+																	<td>F123456789 李大仁 </td>
+																	<td class="money-right">10,888,455</td>
+																	<td class="money-right">14,500,000</td>
+
+																	<td>0934</td>
+																	<td class="money-right">2.18</td>
+																	<td class="markRed">2</td>
+																	<td class="text-center">
+																		<a onclick="collapse(this, ' fa-chevron-down', 'fa-chevron-up')" name="loanTwo-data">
+																			<i id="loanTwo-data_icon" class="fa fa-chevron-down" aria-hidden="true"></i>
+																	</td>
+																</tr>
+
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--  貸款類>貸款 | 退票紀錄-->
+							<div class="section" id="pills-loan-record">
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">退票紀錄</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th scope="col ">帳號</th>
+																	<th scope="col ">一年存款不足退票次數</th>
+																	<th scope="col ">一年簽單不符退票次數</th>
+																	<th scope="col ">半年退票清償註記次數</th>
+																	<th scope="col ">三年退票清償退票次數</th>
+																	<th scope="col ">拒往日期</th>
+
+
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>B09CC12345</td>
+																	<td>0</td>
+																	<td>0</td>
+																	<td>0</td>
+
+																	<td>9</td>
+
+																	<td>-</td>
+
+																</tr>
+																<tr>
+																	<td>B09CC12345</td>
+																	<td>0</td>
+																	<td>0</td>
+																	<td>0</td>
+
+																	<td>9</td>
+
+																	<td>-</td>
+
+																</tr>
+
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--  貸款類>貸款 | 未解除之存摺事故-->
+							<div class="section" id="pills-loan-accident">
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">未解除之存摺事故</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th scope="col ">帳號</th>
+																	<th scope="col ">序號</th>
+																	<th scope="col ">內容</th>
+																	<th scope="col ">櫃員</th>
+																	<th scope="col ">登錄日</th>
+																	<th scope="col ">備註</th>
+
+
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>9CC12345</td>
+																	<td>013</td>
+																	<td>靜止戶</td>
+																	<td>014理大壕</td>
+
+																	<td>1017/02/15</td>
+
+																	<td>-</td>
+
+																</tr>
+
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--  貸款類>信用卡-->
+							<div class="section" id="pills-loan-creditcard">
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">信用卡</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th scope="col ">卡片名稱</th>
+																	<th scope="col ">開卡日期</th>
+																	<th scope="col ">歸戶額度</th>
+																	<th scope="col ">正附卡</th>
+																	<th scope="col ">停卡日期</th>
+																	<th scope="col ">停卡原因</th>
+																	<th scope="col ">信用卡應繳總金額</th>
+																	<th scope="col ">信用卡最低應繳金額</th>
+
+
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>SFA平台精緻悠遊聯名卡</td>
+																	<td>2016/10/26</td>
+																	<td>200,000</td>
+																	<td>正</td>
+
+																	<td>-</td>
+
+																	<td>-</td>
+																	<td>3,523</td>
+																	<td>3,523</td>
+
+																</tr>
+																<tr>
+																	<td>家樂福悠遊聯名卡</td>
+																	<td>2016/10/26</td>
+																	<td>200,000</td>
+																	<td>正</td>
+
+																	<td>-</td>
+
+																	<td>-</td>
+																	<td>3,523</td>
+																	<td>3,523</td>
+																</tr>
+
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--  貸款類>同業綜合授信-->
+							<div class="section" id="pills-loan-comp">
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">同業綜合授信
+												<span class="float-right">資料日期：2018/04/16</span>
+											</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th scope="col ">行庫名稱</th>
+																	<th scope="col ">授信科目</th>
+																	<th scope="col ">用途</th>
+																	<th scope="col ">授信類別</th>
+																	<th scope="col ">擔保品所在地</th>
+																	<th scope="col " class="money-right">總額度</th>
+																	<th scope="col " class="money-right">授信未逾期</th>
+																	<th scope="col " class="money-right">逾期金額</th>
+
+
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>凱基商業銀行</td>
+																	<td>現金卡放款</td>
+																	<td>週轉金</td>
+																	<td>純信用</td>
+																	<td>-</td>
+																	<td class="money-right">300,000</td>
+																	<td class="money-right">300,000</td>
+																	<td class="money-right">0</td>
+																</tr>
+																<tr>
+																	<td>中國信託商業銀行</td>
+																	<td>中期擔保放款</td>
+																	<td>週轉金</td>
+																	<td>車輛</td>
+																	<td>台北市</td>
+																	<td class="money-right">300,000</td>
+																	<td class="money-right">400,000</td>
+																	<td class="money-right">0</td>
+																</tr>
+
+																<tr>
+																	<td>SFA平台商業銀行</td>
+																	<td>中期放款</td>
+																	<td>週轉金</td>
+																	<td>純信用</td>
+																	<td>-</td>
+																	<td class="money-right">180,000</td>
+																	<td class="money-right">300,000</td>
+																	<td class="money-right">0</td>
+																</tr>
+																<tr>
+																	<td></td>
+																	<td>長期擔保放款</td>
+																	<td>不動產</td>
+																	<td>純信用</td>
+																	<td>-</td>
+																	<td class="money-right">180,000</td>
+																	<td class="money-right">300,000</td>
+																	<td class="money-right">0</td>
+																</tr>
+																<tr>
+																	<td></td>
+																	<td>長期擔保放款</td>
+																	<td>不動產</td>
+																	<td>純信用</td>
+																	<td>-</td>
+																	<td class="money-right">180,000</td>
+																	<td class="money-right">300,000</td>
+																	<td class="money-right">0</td>
+																</tr>
+
+
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--  貸款類>全國動產擔保交易公示資訊-->
+							<div class="section" id="pills-loan-info">
+								<div class="card-row">
+									<div class="card-wrap col-12">
+										<div class="card shad ">
+											<h5 class="card-title card-head">全國動產擔保交易公示資訊
+												<span class="float-right">資料日期：2018/04/16</span>
+											</h5>
+											<div class="card-body">
+
+												<div class="row">
+													<div class="table-responsive ">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th scope="col ">抵押權人名稱</th>
+																	<th scope="col ">契約啟始日期</th>
+																	<th scope="col ">契約終止日期</th>
+																	<th scope="col ">標的物種類</th>
+
+																	<th scope="col " class="money-right">擔保債權金額</th>
+
+
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>遠東商銀台北忠孝分行</td>
+																	<td>2016/12/29</td>
+																	<td>2016/12/29</td>
+																	<td>汽車、大型重機器腳踏車及拖車</td>
+																	<td class="money-right">870,408</td>
+																</tr>
+																<tr>
+																	<td>裕隆企業(股)公司</td>
+																	<td>2016/12/29</td>
+																	<td>2016/12/29</td>
+																	<td>汽車、大型重機器腳踏車及拖車</td>
+																	<td class="money-right">870,408</td>
+																</tr>
+
+
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--  專屬行銷專案 -->
+					<div class="tab-pane fade" id="pills-marketData" role="tabpanel" aria-labelledby="pills-marketData-tab">
+						<div class="table-responsive ">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th scope="col ">產品</th>
+										<th scope="col ">專案名稱</th>
+										<th scope="col " class="money-right">額度</th>
+										<th scope="col " class="money-right">利率</th>
+										<th scope="col ">期數</th>
+										<th scope="col " class="money-right">費用</th>
+										<th scope="col ">優惠方案</th>
+										<th scope="col ">優惠到期日</th>
+										<th scope="col ">備註</th>
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>信貸</td>
+										<td>風險定價 (EDM)</td>
+										<td class="money-right">-</td>
+										<td class="money-right">3.28% 起</td>
+										<td>-</td>
+										<td class="money-right">6,000 元</td>
+										<td>早鳥顧客優惠制</td>
+										<td>2018/01/07</td>
+
+										<td>-</td>
+
+									</tr>
+									<tr>
+										<td>信貸</td>
+										<td>風險定價 (EDM)</td>
+										<td class="money-right">-</td>
+										<td class="money-right">3.28% 起</td>
+										<td>-</td>
+										<td class="money-right">6,000 元</td>
+										<td>早鳥顧客優惠制</td>
+										<td>2018/01/07</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>信貸</td>
+										<td>風險定價 (EDM)</td>
+										<td class="money-right">-</td>
+										<td class="money-right">3.28% 起</td>
+										<td>-</td>
+										<td class="money-right">6,000 元</td>
+										<td>早鳥顧客優惠制</td>
+
+										<td>2018/01/07</td>
+										<td>-</td>
+									</tr>
+
+								</tbody>
+							</table>
+							<!-- pageNum -->
+							<nav class="navNum navbar-light">
+								<form class="form-inline">
+									<div>
+										<button class=" btn-sm pageNum">
+											<i class="fa fa-angle-left" aria-hidden="true"></i>
+										</button>
+										<button class=" btn-sm pageNum">
+											<i class="fa fa-angle-right" aria-hidden="true"></i>
+										</button>
+										<span class="loanChartNote">1 of 1</span>
+									</div>
+									<div>
+										<span class="loanChartNote">Items per page:
+											<select class="form-control inputstyle">
+												<option>50</option>
+											</select>
+										</span>
+									</div>
+								</form>
+							</nav>
+						</div>
+					</div>
+
+					<div class="scroll-top " id="scroll-top" onclick="scrollToTop()">
+						<span>
+							<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 狀態說明 -->
+	<div class="modal fade" id="stateInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">狀態說明</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<table class="table statusInfo">
+						<thead>
+							<tr>
+								<th scope="col">標示</th>
+								<th scope="col">說明</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+
+								<td>
+									<span class="light light-red">
+									</span>
+								</td>
+								<td>紅色燈號，當此燈亮起閃爍時代表該名單即將逾期，原因包含如下：(1)未分派(限主管) (2)未執行 (3)追蹤逾期 (4)到期通知</td>
+							</tr>
+							<tr>
+
+								<td>
+									<span class="light light-gary">
+									</span>
+								</td>
+								<td>灰色燈號，該名單尚未逾期</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="iconyellow">
+										<i class="fa fa-clock-o " aria-hidden="true"></i>
+									</span>
+								</td>
+								<td>當顯示此標示時，即代表該名單待主管放行</td>
+
+							</tr>
+							<tr>
+								<td>
+									<span class="markRed">
+										<i class="fa fa-ban" aria-hidden="true"></i>
+									</span>
+								</td>
+								<td>當顯示此標示時，即代表該名單遭主管退回</td>
+
+							</tr>
+							<tr>
+								<td>
+
+									<i class="fa fa-clone " aria-hidden="true"></i>
+
+								</td>
+								<td>當顯示此標示時，即代表該名單為重複商機</td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- 新增備註 -->
+	<div class="modal fade" id="addnote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">新增備註</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="note">備註
+							<span class="markRed">*</span>
+						</label>
+						<label class="float-right ps_note">(0/250)</label>
+						<textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+					</div>
+
+
+
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+					<button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">儲存</button>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- 新增注意事項 -->
+	<div class="modal fade" id="addmarknote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">新增行銷應注意事項</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<div class="row">
+							<div class="col ml-3">
+								<label>顧客統一編號</label>
+								<input type="text" class="form-control inputstyle" placeholder="e.g. A1234567">
+							</div>
+							<div class="col mr-3">
+								<label>顧客姓名</label>
+								<input type="text" class="form-control inputstyle" placeholder="e.g. 陳大明">
+							</div>
+
+						</div>
+					</div>
+					<div class="form-group">
+						<label>注意事項內容</label>
+						<select class="selectpicker inputstyleSelect">
+							<option>疑似代辦</option>
+							<option>疑似人頭戶</option>
+
+							<option>聯絡偏好(例如: 聯絡時間/稱謂)</option>
+							<option>特殊要求</option>
+							<option>特殊身份/關係</option>
+							<option>其他</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label class="note">備註
+
+						</label>
+						<label class="float-right ps_note">(0/20)</label>
+						<textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+					</div>
+
+
+
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+					<button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">新增</button>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- 新增行程1 id="addmeone" -->
+
+	<!-- 新增商機轉介-->
+	<div class="modal fade" id="marketTrans" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">新增商機轉介</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label>統一編號</label>
+							<input type="text" class="form-control inputstyle" placeholder="e.g. A123456678" value="12333111123" disabled>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col ml-3">
+									<label>戶名
+
+									</label>
+									<input type="text" class="form-control inputstyle" placeholder="e.g. 李爸名" value="陳美科技股份有限公司" disabled>
+
+								</div>
+								<div class="col mr-3">
+									<label>電話
+
+									</label>
+									<input type="text" class="form-control inputstyle" placeholder="e.g. 09331114442" value="0988-123-123" disabled>
+
+								</div>
+
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col ml-3">
+									<label>轉介人員
+
+									</label>
+									<input type="text" class="form-control inputstyle" value="012344 李圓圓" disabled>
+
+								</div>
+								<div class="col mr-3">
+									<label>轉介產品
+
+									</label>
+									<select class="selectpicker inputstyleSelect">
+										<option value="" class="displayno">請選擇...</option>
+										<option>信貸</option>
+										<option>副擔保</option>
+										<option>房貸</option>
+										<option>小型事業(SB)</option>
+										<option>卡友貸</option>
+										<option>保險(儲蓄險、房貸壽險)</option>
+										<option>其他保險(非儲蓄險、房貸壽險)</option>
+									</select>
+
+								</div>
+
+							</div>
+						</div>
+						<div id="select_option" class="form-group displayno">
+							<div class="row">
+								<div class="col-12">
+									<label>轉介商品備註
+									</label>
+									<input type="text" class="form-control inputstyle" placeholder="請輸入保單流水編號">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col ml-3">
+									<label>受理轉介單位
+
+									</label>
+									<select class="selectpicker inputstyleSelect">
+										<option value="" class="displayno">請選擇...</option>
+
+									</select>
+								</div>
+								<div class="col mr-3">
+									<label>受理轉介人員
+
+									</label>
+									<select class="selectpicker inputstyleSelect">
+										<option value="" class="displayno">請選擇...</option>
+
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="note">備註
+
+							</label>
+							<label class="float-right ps_note">(0/250)</label>
+							<textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+						</div>
+					</form>
+				</div>
+
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+					<button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 刪除原因 -->
+	<div class="modal fade" id="deletreason" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">刪除原因</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="form-group">
+						<label class="note">原因
+							<span class="markRed">*</span>
+						</label>
+						<label class="float-right ps_note">(0/20)</label>
+						<textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+					</div>
+
+
+
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+					<button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確認</button>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- 編輯注意事項 -->
+	<div class="modal fade" id="editmarknote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">編輯行銷應注意事項</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<div class="row">
+							<div class="col ml-3">
+								<label>顧客統一編號</label>
+								<input type="text" class="form-control inputstyle" value="A12222222">
+							</div>
+							<div class="col mr-3">
+								<label>顧客姓名</label>
+								<input type="text" class="form-control inputstyle" value="里美美">
+							</div>
+
+						</div>
+					</div>
+					<div class="form-group">
+						<label>注意事項內容</label>
+						<select class="selectpicker inputstyleSelect">
+							<option>疑似代辦</option>
+							<option>疑似人頭戶</option>
+
+							<option>聯絡偏好(例如: 聯絡時間/稱謂)</option>
+							<option>特殊要求</option>
+							<option>特殊身份/關係</option>
+							<option>其他</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label class="note">備註
+
+						</label>
+						<label class="float-right ps_note">(0/20)</label>
+						<textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+					</div>
+
+
+
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+					<button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確認</button>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<div class="modal fade " id="doughnut" tabindex="-1 " role="dialog " aria-labelledby="exampleModalLabel" aria-hidden="true ">
+		<div class="modal-dialog modal-lg " role="document ">
+			<div class="modal-content ">
+				<div class="modal-header ">
+					<h5 class="modal-title " id="exampleModalLabel ">陳先生 ｜ 資產負債分配圖</h5>
+					<button type="button " class="close " data-dismiss="modal" aria-label="Close ">
+						<span aria-hidden="true ">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body ">
+					<div class="btn-group but-switch" data-toggle="buttons">
+						<label class="btn btn-primary active">
+							<input type="radio" name="charts" id="option2" autocomplete="off" value="0" checked> 資產類
+						</label>
+						<label class="btn btn-primary">
+							<input type="radio" name="charts" id="option3" autocomplete="off" value="1"> 負債類
+						</label>
+					</div>
+
+					<div id="asset_chart" class="canvas-con">
+						<div class="card-body">
+							<div class="canvas-con">
+								<div class="row">
+									<div id="modal-legend-con" class="legend-con col-4"></div>
+									<div class="canvas-con-inner col-8">
+										<canvas id="modal-doughnut" height="300px"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="liabilty_chart" class="card shadow mt-3" style="display: none">
+						<h5 class="card-title card-head ">負債分配</h5>
+						<div class="card-body">
+							<div class="card-form">
+								<div class="loanTop">
+									其他個人授信
+									<p class="float-right">本金已償還
+										<span class="blackNote">86%</span>
+									</p>
+									<br />
+									<span class="loanNum">9991135001051</span>
+								</div>
+
+								<div class="Longchartarea">
+									<span class="loanChartNote">放款</span>
+									<div class="Longchart">
+										<div class="value"></div>
+									</div>
+									<span class="loanChartNote">初貸金額
+										<span class="value">$60,000</span>
+									</span>
+									<span class="float-right loanChartNote">尚餘
+										<span class="blackNote">$60,000</span>
+									</span>
+
+								</div>
+							</div>
+							<div class="dropdown-divider"></div>
+							<div class="card-form">
+								<div class="loanTop">
+									理財型透支
+									<p class="float-right">本金已償還
+										<span class="blackNote">86%</span>
+									</p>
+									<br />
+									<span class="loanNum">9991135001051</span>
+								</div>
+
+								<div class="Longchartarea">
+									<span class="loanChartNote">放款</span>
+									<div class="Longchart">
+										<div class="value"></div>
+									</div>
+									<span class="loanChartNote">初貸金額
+										<span class="value">$60,000</span>
+									</span>
+									<span class="float-right loanChartNote">尚餘
+										<span class="blackNote">$60,000</span>
+									</span>
+
+								</div>
+							</div>
+							<div class="dropdown-divider"></div>
+							<div class="card-form">
+								<div class="loanTop">
+									其他個人授信
+									<p class="float-right">本金已償還
+										<span class="blackNote">86%</span>
+									</p>
+									<br />
+									<span class="loanNum">9991135001051</span>
+								</div>
+
+								<div class="Longchartarea">
+									<span class="loanChartNote">放款</span>
+									<div class="Longchart">
+										<div class="value"></div>
+									</div>
+									<span class="loanChartNote">初貸金額
+										<span class="value">$60,000</span>
+									</span>
+									<span class="float-right loanChartNote">尚餘
+										<span class="blackNote">$60,000</span>
+									</span>
+
+								</div>
+							</div>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+@@include('./components/footer.html')
+</body>
+<script>
+	var myChart;
+	var modalChart;
+
+	$(document).ready(function () {
+
+		/**/
+
+		/* dropdown click then scroll to section */
+		$('.nav-dropdown .dropdown-item').click(function (e) {
+			e.preventDefault()
+			$(this).tab('show');
+			var parent = $(this).closest('li.nav-item.dropdown');
+			var dropEl = $(parent).find('[data-toggle=dropdown]');
+			$(dropEl).addClass('active');
+		})
+
+		$('.dropdown-submenu .hasdrop').click(function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+		})
+
+		// dropdown click and show tab
+		$('.dropdown').on('show.bs.dropdown', function () {
+			var element = $(this).find('[data-toggle=tab]');
+			var parent = $(element).closest('li.nav-item.dropdown');
+			var dropEl = $(parent).find('[data-toggle=dropdown]');
+
+			$(element).tab('show');
+			$(dropEl).addClass('active');
+		})
+
+		/**
+		 *   1. add class 'select-change'
+		 *   2. view's id naming rule is 'selectID_option順序'
+		 */
+		$('select.select-change').each(function () {
+			var select_id = $(this).attr('id');
+			var childrenCount = $('#' + select_id).children().length;
+			$('#' + select_id).on('changed.bs.select', function (e, clickedIndex, isSelected,
+				previousValue) {
+				for (var i = 0; i < childrenCount; i++) {
+					var view_id = '#' + select_id + '_' + i;
+					$(view_id).addClass('displayno')
+				}
+				$('#' + select_id + '_' + clickedIndex).removeClass('displayno');
+
+
+				// 額外條件 展示細項類別使用
+				if (select_id === 'selectmore') {
+					if (clickedIndex === 1) {
+						$('#detail_result').removeClass('displayno')
+					} else {
+						$('#detail_result').addClass('displayno')
+					}
+				}
+			})
+		})
+		/**/
+
+		// modal switch chart
+		$('input[type=radio][name=charts]').change(function () {
+			if (this.value == 0) {
+				$('#asset_chart').css('display', 'block');
+				$('#liabilty_chart').css('display', 'none');
+			} else if (this.value == 1) {
+				$('#asset_chart').css('display', 'none');
+				$('#liabilty_chart').css('display', 'block');
+			}
+		});
+
+		// 新增行程控制 tableRow
+		$('input[type=radio][name=wrap-name]').on('change', function () {
+			setTableRowDisable($(this).val() === 'false')
+		})
+
+		createDoughnut();
+		setPaddingTop();
+	})
+
+	//** doughnut chart
+	$("#doughnut").on('shown.bs.modal', function () {
+		createModalDoughnut();
+	});
+	$("#doughnut").on('hidden.bs.modal', function () {
+		modalChart.destroy();
+	});
+
+
+	function createDoughnut() {
+		var ctx = document.getElementById('proverty-doughnut').getContext('2d');
+		updateDataset = function (e, dataIndex) {
+			var index = dataIndex;
+			var ci = myChart;
+			var meta = ci.getDatasetMeta(0).data[index];
+
+			// See controller.isDatasetVisible comment
+			if (meta.hidden === null || meta.hidden === undefined) {
+				meta.hidden = true;
+			} else {
+				meta.hidden = !meta.hidden;
+			}
+
+			// We hid a dataset ... rerender the chart
+			ci.update();
+		};
+
+		var dataSet = {
+			labels: ["台幣存款 ", "外幣存款 ", "保險 ", "其他理財 "],
+			datasets: [{
+				data: ['22.40', '422.40', '89.131', '180.13'],
+				backgroundColor: [
+					'rgb(81, 169, 222)',
+					'rgba(54, 162, 235, 0.2)',
+					'rgb(114, 222, 248)',
+					'rgb(42, 131, 186)'
+
+				],
+				borderWidth: 1
+			}]
+		}
+		var options = {
+			responsive: true,
+			legend: {
+				display: false
+			},
+			legendCallback: function (chart) {
+				var legendHtml = [];
+				legendHtml.push('<ul>');
+				var item = chart.data.datasets[0];
+				for (var i = 0; i < item.data.length; i++) {
+					legendHtml.push('<li style="margin-bottom: 10px; " onclick="updateDataset(event, ' + i +
+						')">');
+					legendHtml.push(
+						'<span class="chart-legend " style="background-color: ' +
+						item.backgroundColor[i] + ' "></span>');
+					legendHtml.push(
+						'<span class="chart-legend-label-text">' +
+						'<div>' + chart.data.labels[i] + '</div>' +
+						'<div>' + ' NTD ' + item.data[i] + '</div>' +
+						'</span>');
+					legendHtml.push('</li>');
+				}
+
+				legendHtml.push('</ul>');
+				return legendHtml.join(" ");
+			},
+			tooltips: {
+				enabled: true,
+				mode: 'label',
+				callbacks: {
+					label: function (tooltipItem, data) {
+						var indice = tooltipItem.index;
+						return ' ' + data.labels[indice]
+					},
+					afterLabel: function (tooltipItem, data) {
+						var indice = tooltipItem.index;
+						var text = ' NTD ' + data.datasets[0].data[indice] +
+							' 元整';
+						return [text];
+					}
+				},
+			},
+			pieceLabel: {
+				// render 'label', 'value', 'percentage', 'image' or custom function, default is 'percentage'
+				render: 'percentage',
+
+				// precision for percentage, default is 0
+				precision: 2,
+
+				// identifies whether or not labels of value 0 are displayed, default is false
+				showZero: false,
+
+				// font size, default is defaultFontSize
+				fontSize: 12,
+
+				// font color, can be color array for each data or function for dynamic color, default is defaultFontColor
+				fontColor: '#040404',
+
+				// font style, default is defaultFontStyle
+				fontStyle: 'normal',
+
+				// font family, default is defaultFontFamily
+				fontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+
+				// draw label in arc, default is false
+				arc: false,
+
+				// position to draw label, available value is 'default', 'border' and 'outside'
+				// default is 'default'
+				position: 'default',
+
+				// draw label even it's overlap, default is false
+				overlap: true,
+
+				// show the real calculated percentages from the values and don't apply the additional logic to fit the percentages to 100 in total, default is false
+				showActualPercentages: true,
+			}
+		}
+		myChart = new Chart(ctx, {
+			type: 'doughnut',
+			data: dataSet,
+			options: options
+		});
+		$('#my-legend-con').html(myChart.generateLegend())
+	}
+
+	function createModalDoughnut() {
+		var ctx = document.getElementById('modal-doughnut').getContext('2d');
+
+		updateModalDataset = function (e, dataIndex) {
+			var index = dataIndex;
+
+			var ci = modalChart;
+			var meta = ci.getDatasetMeta(0).data[index];
+
+			// See controller.isDatasetVisible comment
+			if (meta.hidden === null || meta.hidden === undefined) {
+				meta.hidden = true;
+			} else {
+				meta.hidden = !meta.hidden;
+			}
+
+			// We hid a dataset ... rerender the chart
+			ci.update();
+		};
+
+		var dataSet = {
+			labels: ["台幣存款 ", "外幣存款 ", "保險 ", "其他理財 "],
+			datasets: [{
+				data: ['22.40', '422.40', '89.131', '180.13'],
+				backgroundColor: [
+					'rgb(81, 169, 222)',
+					'rgba(54, 162, 235, 0.2)',
+					'rgb(114, 222, 248)',
+					'rgb(42, 131, 186)'
+
+				],
+				borderWidth: 1
+			}]
+		}
+		var options = {
+			responsive: true,
+			legend: {
+				display: false
+			},
+			legendCallback: function (chart) {
+				var legendHtml = [];
+				legendHtml.push('<ul>');
+				var item = chart.data.datasets[0];
+				for (var i = 0; i < item.data.length; i++) {
+					legendHtml.push('<li style="margin-bottom: 10px; " onclick="updateModalDataset(event, ' +
+						i + ')">');
+					legendHtml.push(
+						'<span class="chart-legend " style="background-color: ' +
+						item.backgroundColor[i] + ' "></span>');
+					legendHtml.push(
+						'<span class="chart-legend-label-text">' +
+						'<div>' + chart.data.labels[i] + '</div>' +
+						'<div>' + ' NTD ' + item.data[i] + '</div>' +
+						'</span>');
+					legendHtml.push('</li>');
+				}
+
+				legendHtml.push('</ul>');
+				return legendHtml.join(" ");
+			},
+			tooltips: {
+				enabled: true,
+				mode: 'label',
+				callbacks: {
+					label: function (tooltipItem, data) {
+						var indice = tooltipItem.index;
+						return ' ' + data.labels[indice]
+					},
+					afterLabel: function (tooltipItem, data) {
+						var indice = tooltipItem.index;
+						var text = ' NTD ' + data.datasets[0].data[indice] +
+							' 元整';
+						return [text];
+					}
+				},
+			},
+			pieceLabel: {
+				// render 'label', 'value', 'percentage', 'image' or custom function, default is 'percentage'
+				render: 'percentage',
+
+				// precision for percentage, default is 0
+				precision: 2,
+
+				// identifies whether or not labels of value 0 are displayed, default is false
+				showZero: false,
+
+				// font size, default is defaultFontSize
+				fontSize: 20,
+
+				// font color, can be color array for each data or function for dynamic color, default is defaultFontColor
+				fontColor: '#040404',
+
+				// font style, default is defaultFontStyle
+				fontStyle: 'normal',
+
+				// font family, default is defaultFontFamily
+				fontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+
+				// draw label in arc, default is false
+				arc: false,
+
+				// position to draw label, available value is 'default', 'border' and 'outside'
+				// default is 'default'
+				position: 'default',
+
+				// draw label even it's overlap, default is false
+				overlap: true,
+
+				// show the real calculated percentages from the values and don't apply the additional logic to fit the percentages to 100 in total, default is false
+				showActualPercentages: true,
+			}
+		}
+		modalChart = new Chart(ctx, {
+			type: 'doughnut',
+			data: dataSet,
+			options: options
+		});
+		$('#modal-legend-con').html(modalChart.generateLegend());
+	}
+	/**/
+
+	function smoothscroll() {
+		var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+
+		if (currentScroll > 0) {
+			window.requestAnimationFrame(smoothscroll);
+			window.scrollTo(0, currentScroll - (currentScroll / 5));
+		}
+	}
+
+	function step1() {
+		this.modalOpen('addmeeone');
+		this.close('addmeettwo');
+	}
+
+	function step2() {
+		this.close('addmeeone');
+		this.modalOpen('addmeettwo');
+	}
+
+	function close(id) {
+		var vid = '#' + id;
+		$(vid).modal('hide');
+	}
+
+	function modalOpen(id) {
+		var vid = '#' + id;
+		$(vid).modal('show');
+	}
+
+	function closeModal(id) {
+		this.close(id)
+	}
+
+	// 新增行程控制 tableRow
+	function setTableRowDisable(disabled) {
+		$('#addmeeone table tbody tr').each(function (index, el) {
+			var elemet = $(el)
+			if (disabled) {
+				elemet.addClass('table-light')
+				$(elemet.find('input')).prop('checked', !disabled).prop('disabled', disabled)
+			} else {
+				elemet.removeClass('table-light')
+				if (index === 0) {
+					$(elemet.find('input')).prop('checked', true).prop('disabled', disabled)
+				} else {
+					$(elemet.find('input')).prop('disabled', disabled)
+				}
+			}
+		})
+	}
+</script>
+
+<!-- shared function -->
+<script>
+	// page init
+	$(document).ready(function () {
+		setPaddingTop()
+
+		// listen scroll event
+		scrollEvent($(window))
+
+	})
+
+	//** element '.top-container' fixed
+	$('.top-container').on('hidden.bs.collapse', function () {
+		setPaddingTop()
+	})
+
+	$('.top-container').on('shown.bs.collapse', function () {
+		setPaddingTop()
+	})
+
+	/**/
+
+
+	// datePicker
+	// function openDatePicker(id) {
+	// 	var did = "#" + id
+	// 	$(did).datepicker('show');
+	// }
+</script>
+</body>
+</html>

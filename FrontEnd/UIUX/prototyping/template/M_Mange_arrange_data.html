@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+
+<body>
+  <div class="container-fluid pl-0 pr-0">
+    @@include('./components/sidebar.html', { "sidebarCollapseFirst": "mange", "sidebar": "mangeArrange" })
+    <div id="main-content" class="main-content">
+      @@include('./components/navbar.html', { "navbarType": "" })
+
+      <!-- 麵包削 -->
+      <nav class="clearfix nav-top">
+        <ol class="breadcrumb float-sm-left float-xs-none mb-xs-0">
+
+          <li class="breadcrumb-item active" aria-current="page">總行指派案件設定</li>
+        </ol>
+        <ul class="nav float-sm-right float-xs-none nav-function-btn">
+          
+          <li>
+            <button type="button" class="nav-link btn" data-toggle="modal" data-target="#edit" data-whatever="@mdo ">
+            <i class="fa fa-pencil iconspace" aria-hidden="true">
+            </i>檢視案件內容</button>
+          </li>
+          <li>
+            <a class="nav-link disabled btn" href="#modalSysBack" data-toggle="modal" role="button">
+              <i class="fa fa-ban iconspace" aria-hidden="true"></i> 退回
+            </a>
+          </li>
+          <li>
+            <a class="nav-link disabled btn" href="#modalAgree" data-toggle="modal" role="button">
+              <i class="fa fa-exchange iconspace" aria-hidden="true"></i> 放行
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+      <section>
+
+        <div class="info-area">
+          <div class="wrap-box-l">
+            <h4 class="name">
+              <span>日本東京來回機票資格審核名單</span>
+
+            </h4>
+            <div class="listinfoarea collapse show" id="collapseInfo" aria-labelledby="headingInfo" data-parent="#Infoaccordion">
+              <div class="row">
+                <div class="col-lg-4 col-sm-12 col-md-12">
+                  <ul class="listinfo">
+                    <li>
+
+                      <span class="topform-tit">建立者</span>陳先生</li>
+                    <li>
+
+                      <span class="topform-tit">類別</span>貸後追蹤・新聞事件・其他</li>
+                    <li>
+
+                      <span class="topform-tit">指定回覆日期</span>2018/01/07</li>
+                    <li>
+
+                      <span class="topform-tit">附件</span>
+                      <a href="#" class="alink">
+                        <i class="fa fa-paperclip iconspace" aria-hidden="true"></i>日本東京機票</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-lg-5 col-sm-12 col-md-12">
+                  <ul class="listinfo">
+
+
+
+
+                    <li>
+
+                      <span class="topform-tit">內容</span>
+                      <span class="form-body">急里為精實動較一小夜心所主分遠出條快展在處住要們種一城海馬再正品利動候子天人看一回這士反內之建：有兒！會不響品前有現水得面常。喜了說校，人得東自……依說成果、小考士明票的。</span>
+                    </li>
+
+
+
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-12 collapseInfoTit">
+              <a class="close-area" href="javascript:void(0)" onclick="collapse(this, 'fa-angle-double-up', 'fa-angle-double-down')" name="collapseInfo">收闔案件資訊
+                <i id="collapseInfo_icon" class="fa fa-angle-double-up iconspace" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+      <!-- Customer 表單 -->
+      <div id="data-list-0" class="table-responsive data-list">
+        <table class="table tableinfo">
+          <thead>
+            <tr>
+
+
+              <th scope="col ">名單狀態
+                <i class="fa fa-question-circle-o iconspace" aria-hidden="true" data-toggle="modal" data-target="#stateInfo" data-whatever="@mdo "></i>
+              </th>
+
+              <th scope="col ">戶名</th>
+              <th scope="col ">統一編號</th>
+              <th scope="col ">處理經辦</th>
+              <th scope="col " class="text-center">處理紀錄</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+
+              <td>
+
+                <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                </span>未執行</td>
+
+              <td>
+                <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+              </td>
+              <td>A1212121212</td>
+              <td>理大吉</td>
+              <td class="text-center">
+                <a data-toggle="collapse" data-target="#dolist-data" aria-expanded="false" aria-controls="dolist-data">
+                  <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </td>
+
+            </tr>
+            <tr aria-expanded="false" class="hiddenRow">
+              <td colspan="11" class=" cardOpen" style="padding: 0 !important">
+                <div class="accordian-body collapse dolist-data" id="dolist-data">
+                  <div class="cardOpen-content">
+                    <h4>處理紀錄
+                    </h4>
+                    <ul class="market-mark">
+                      <li>
+                        <span class="dot dot-main"></span>
+                        <div class="warp shadow">
+                          <div class="date">2012/09/12</div>
+                          <div class="note">第三次處理結果</div>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="dot dot-main"></span>
+                        <div class="warp shadow">
+                          <div class="date">2012/09/12</div>
+                          <div class="note">行銷顧客精彩歲月專案，顧客表達高度興趣，預計 2018/01/27 再度拜訪
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="dot dot-main"></span>
+                        <div class="warp shadow">
+                          <div class="date">2012/09/12</div>
+                          <div class="note">行銷顧客精彩歲月專案，顧客表達高度興趣，預計 2018/01/27 再度拜訪
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+
+
+              <td>
+
+                <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                </span>未執行</td>
+
+              <td>
+                <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+              </td>
+              <td>A1212121212</td>
+              <td>理大吉</td>
+              <td class="text-center">
+                <a data-toggle="collapse" data-target="#dolist-data" aria-expanded="false" aria-controls="dolist-data">
+                  <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </td>
+
+            </tr>
+            <tr>
+
+
+              <td>
+
+                <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                </span>未執行</td>
+
+              <td>
+                <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+              </td>
+              <td>A1212121212</td>
+              <td>理大吉</td>
+              <td class="text-center">
+                <a data-toggle="collapse" data-target="#dolist-data" aria-expanded="false" aria-controls="dolist-data">
+                  <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </td>
+
+
+            </tr>
+            <tr>
+
+
+              <td>
+
+                <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                </span>未執行</td>
+
+              <td>
+                <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+              </td>
+              <td>A1212121212</td>
+              <td>理大吉</td>
+              <td class="text-center">
+                <a data-toggle="collapse" data-target="#dolist-data" aria-expanded="false" aria-controls="dolist-data">
+                  <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- pageNum -->
+      <nav class="navNum navbar-light">
+        <form class="form-inline">
+          <div>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <button class=" btn-sm pageNum">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
+            <span class="loanChartNote">1 of 1</span>
+          </div>
+          <div>
+            <span class="loanChartNote">Items per page:
+              <select class="form-control inputstyle">
+                <option>50</option>
+              </select>
+            </span>
+          </div>
+        </form>
+      </nav>
+      <!-- 編輯案件內容 -->
+      <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content ">
+            <div class="modal-header">
+              <h5 class="modal-title">總行指派案件</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>主旨&nbsp;<a class="under-review-notice pop-hover-stay" data-toggle="popover" href="#1529282241437"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
+                </label>
+                <label class="float-right ps_note">(14/20)</label>
+                <input readonly type="text" class="form-control inputstyle" value="日本東京來回機票資格審核名單">
+                <div id="1529282241437" class="displayno">
+                    <b>主旨</b>
+                    <div class="dropdown-divider"></div>
+                    <span class="textGary">異動前：日本東京來回機票資格審核名單</span>
+                    <br />
+                    <span class="textGary">異動後：</span><span class="text-highlight">日本東京來回機票資格審核名單</span>
+                    
+                    <div class="dropdown-divider"></div>
+                    <div>申請人：Vivan Chen <small class="text-black-50">2018/6/6</small></div>
+                  </div>
+      
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col ml-3">
+                    <label>類別</label>
+                    <select disabled class="selectpicker inputstyleSelect">
+
+                      <option>貸後追蹤</option>
+                      <option>新聞事件</option>
+                      <option>行銷商機</option>
+                      <option>其他</option>
+
+                    </select>
+
+                  </div>
+                  <div class="col ml-3">
+                    <label>建立者</label>
+                    <select disabled class="selectpicker" data-live-search="true">
+                      <option data-tokens="ketchup mustard">傅哲人</option>
+                      <option data-tokens="mustard">科四海</option>
+                      <option data-tokens="frosting">林熟分</option>
+                      <option data-tokens="ketchup mustard">陳美琳</option>
+                      <option data-tokens="mustard">理完稅</option>
+                      <option data-tokens="frosting">陳沼澤</option>
+                    </select>
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col ml-3">
+                    <label>指定回覆日期</label>
+                    <select disabled class="selectpicker inputstyleSelect">
+                      <option value="" class="displayno">請選擇...</option>
+                      <option>追蹤中</option>
+                      <option>已受理</option>
+                      <option>婉拒</option>
+                      <option>轉介其他商品</option>
+
+                    </select>
+
+                  </div>
+                  <div class="col ml-3">
+
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="note">內文</label>
+
+                <textarea disabled class="form-control inputstyletextArea" rows="5" placeholder="請輸入...">急里為精實動較一小夜心所主分遠出條快展在處住要們種一城海馬再正品利動候子天人看一回這士反內之建：有兒！會不響品前有現水得面常。喜了說校，人得東自……依說成果、小考士明票的。</textarea>
+              </div>
+              <form>
+                <h5 class="mt-2 mb-3">附件
+                  <span class="float-right">
+
+                    <a href="#" class="disabled greenLink pl-4">
+                      <i class="fa fa-upload" aria-hidden="true"></i>上傳附件</a>
+                  </span>
+                </h5>
+                <div>
+                  <a href="#" class="alink pr-3">日本東京機票名單.scv</a>
+                </div>
+                <div class="mt-3">
+                  <a href="#" class="alink pr-3">購買意願登記表.pdf</a>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-outline-danger" data-dismiss="modal"  aria-label="Close" onclick="$('#modalSysBack').modal('show');">退回</button>
+              <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close" onclick="$('#modalAgree').modal('show');">放行</button> 
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- 撤回總行 -->
+      <div class="modal fade" id="backToBank" tabindex="-1" role="dialog" aria-labelledby="backToBank" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content ">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">新增總行指派案件 (第 1/2 步：填寫案件資訊)</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>主旨
+
+                </label>
+                <label class="float-right ps_note">(0/20)</label>
+                <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col ml-3">
+                    <label>類別</label>
+                    <select class="selectpicker inputstyleSelect">
+                      <option value="" class="displayno">請選擇...</option>
+                      <option>追蹤中</option>
+                      <option>已受理</option>
+                      <option>婉拒</option>
+                      <option>轉介其他商品</option>
+
+                    </select>
+
+                  </div>
+                  <div class="col ml-3">
+                    <label>建立者</label>
+                    <select class="selectpicker" data-live-search="true">
+                      <option data-tokens="ketchup mustard">馬力歐</option>
+                      <option data-tokens="mustard">科四海</option>
+                      <option data-tokens="frosting">林熟分</option>
+                      <option data-tokens="ketchup mustard">陳美琳</option>
+                      <option data-tokens="mustard">理完稅</option>
+                      <option data-tokens="frosting">陳沼澤</option>
+                    </select>
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col ml-3">
+                    <label>指定回覆日期</label>
+                    <select class="selectpicker inputstyleSelect">
+                      <option value="" class="displayno">請選擇...</option>
+                      <option>追蹤中</option>
+                      <option>已受理</option>
+                      <option>婉拒</option>
+                      <option>轉介其他商品</option>
+
+                    </select>
+
+                  </div>
+                  <div class="col ml-3">
+
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="note">內文
+
+                </label>
+
+                <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+              </div>
+              <form>
+                <label>附件</label>
+                <div class="col-12">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile" type="file" class="custom-file-input" id="customFile">
+                      <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+              <button type="button" class="btn btn-ylw" onclick="step2()">下一步：加入名單</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @@include('./components/footer.html')
+  <script>
+    var myChart;
+    var modalChart;
+
+    $(document).ready(function () {
+      // clockpicker
+      $('input[name=clockpicker]').clockpicker({
+        autoclose: true,
+      });
+      // fix two step modal problem
+      $(document).on('shown.bs.modal', '.modal', function () {
+        $(document.body).addClass('modal-open')
+      })
+      $(document).on('hidden.bs.modal', '.modal', function () {
+        $(document.body).removeClass('modal-open')
+      })
+
+      var wrap = $(".content");
+      scrollEvent($(window))
+
+      $('#nav-dropdown a').click(function (e) {
+        e.preventDefault()
+        //console.log($('#pills-bank'))
+        //$('#pills-bank').tab('show');
+        $(this).tab('show');
+      })
+
+    })
+
+    function openDatePicker(id) {
+      console.log('aaa')
+      var did = "#" + id
+      $(did).datepicker('show');
+    }
+
+    function smoothscroll() {
+      var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+
+      if (currentScroll > 0) {
+        window.requestAnimationFrame(smoothscroll);
+        window.scrollTo(0, currentScroll - (currentScroll / 5));
+      }
+    }
+  </script>
+</body>
+
+</html>

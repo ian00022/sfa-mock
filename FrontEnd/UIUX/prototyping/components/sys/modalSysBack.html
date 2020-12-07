@@ -1,0 +1,38 @@
+<div class="modal fade" id="modalSysBack" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">退回</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <div class="row col-12">
+              <label>請確認是否將此設定退回原申請人，並填寫退回原因。</label>
+            </div>
+            <div class="mb-2"></div>
+            <label>說明<span class="text-danger">*</span></label>
+            <label class="float-right ps_note">(0/250)</label>
+            <textarea class="form-control inputstyletextArea" rows="5" placeholder="請簡述退回原因"></textarea>
+            <input type="hidden" name="sysItemFrom" value=""/>
+          </div>
+          <div class="dropdown-divider mb-3"></div>
+          <div class="row">
+            <h6 class="col-3 text-black-50">申請人</h6>
+            <h6 class="col-9">李維維&nbsp;00325&nbsp;<small class="text-black-50">2018/03/23</small></h6>
+
+            <!-- <h6 class="col-3 text-black-50">覆核主管</h6>
+            <h6 class="col-9">Vivian Chen&nbsp;<small class="text-black-50">2018/03/29</small></h6> -->
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal" onclick="modalSysBack.submit.call(this, true)">退回</button>
+      </div>
+    </div>
+  </div>
+</div>

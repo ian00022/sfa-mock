@@ -1,0 +1,47 @@
+<!-- 參數設定 -->
+<div class="modal fade" id="modalCreateSysDropDSetting" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">新增參數設定</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label>項目名稱
+              <span class="markRed">*</span>
+              <a class="modal-under-review-notice pop-hover-stay" data-toggle="popover" href="#noticeSysItemNameDropD1"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
+            </label>
+            <input class="form-control inputstyle" type="text" name="sysItemName" placeholder="請輸入...">
+            <input type="hidden" name="sysItemNameOri">
+          </div>
+          <div class="form-group">
+            <label>項目系統代碼
+              <span class="markRed">*</span>
+            </label>
+            <input class="form-control inputstyle" type="text" name="sysItemCode" placeholder="請輸入...">
+            <input type="hidden" name="sysItemFrom" value=""/>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" value="true" name="hasNextLayer" id="hasNextLayerDropD">
+            <label for="hasNextLayerDropD">是否有下一層</label>
+          </div>
+        </form>
+      </div>
+      <div class="displayno" id="noticeSysItemNameDropD1">
+        <b>項目名稱</b>
+        <div class="dropdown-divider"></div>
+        <div class="text-black-50">異動前：<span class="before"></span></div>
+        <div class="">異動後：<span class="after"></span></div>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+        <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close" onclick="modalCreateSysDrop.createSubmit.call(this)">確定</button>
+      </div>
+    </div>
+  </div>
+</div>

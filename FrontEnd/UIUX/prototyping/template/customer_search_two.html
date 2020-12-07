@@ -1,0 +1,1056 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+<body>
+    <div class="container-fluid pl-0 pr-0">
+        <!-- navbar -->
+        <nav class="navbar navbar-light shadow sticky-top">
+            <form class="form-inline">
+                <button type="button" onclick="toggle()" class="btn ">
+                    <i class="fa fa-bars greenLink" aria-hidden="true"></i>
+                </button>
+                <h2 class="greenLink pr-3 pl-3">SFA | 平台</h2>
+                <div class="input-group">
+                    <span class="input-group-addon inputstyle" id="basic-addon1">
+                        <i class="fa fa-search " aria-hidden="true"></i>
+                    </span>
+                    <input type="text" class="form-control inputstyle" placeholder="搜尋整站..." aria-describedby="basic-addon1">
+                </div>
+            </form>
+            <form class="form-inline">
+                <div class="btn-group">
+                    <button type="button" class="btn notic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-bell iconspace fa-lg" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right-bell">
+
+
+                        <div class="container no-gutters">
+
+                            <div class="row">
+                                <div class="col-12 pr-0 pl-0">
+                                    <div class="notice-board">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading pr-3 pl-3">
+                                                我的通知
+                                                <a class="greenLink float-right">標示全部為已讀</a>
+                                            </div>
+                                            <div class="panel-body">
+
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">未分派名單3筆
+                                                            <br />
+                                                            <span class="loanChartNote">2018/01/29</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">未分派名單3筆
+                                                            <br />
+                                                            <span class="loanChartNote">2018/01/29</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="read">
+                                                        <a href="#">未分派名單3筆
+                                                            <br />
+                                                            <span class="loanChartNote">2018/01/29</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">未分派名單3筆
+                                                            <br />
+                                                            <span class="loanChartNote">2018/01/29</span>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="panel-footer text-center">
+                                                <a class="greenLink ">查看歷史通知</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn dropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="img/person.png" class="rounded-circle " alt="Cinque Terre " style="width:40px; height:40px; ">
+                        <i class="fa fa-angle-down iconspace" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right-person">
+
+
+                        <div class="container no-gutters">
+
+                            <div class="row">
+                                <div class="col-12 pr-0 pl-0">
+                                    <div class="notice-board">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading pr-3 pl-3 pt-3 pb-4">
+                                                <div class="row">
+                                                    <div class="col-4 ">
+
+
+                                                        <img src="img/person.png" class="rounded-circle " alt="Cinque Terre" style="width: 80px;height: 80px; position:absolute;">
+
+
+
+
+                                                    </div>
+                                                    <div class="col-6 pt-4">
+                                                        <span>你好，王小圖</span>
+                                                        <br />
+                                                        <span class="sub-tit">123123@bank.com</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body pt-3">
+
+                                                <a class="dropdown-item" href="#">切換代理人</a>
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModalREST" data-whatever="@mdo">休假代理</a>
+                                                <a class="dropdown-item" href="#" onclick="{location.href='./login.html' }">登出</a>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </nav>
+        <div id="main-content" class="main-content">
+            <!-- sidebar -->
+            <div id="sidebar" class="sidebar maingreen">
+                <ul class="nav">
+                    <li class="nav-item ">
+                        <a class="nav-link headtitle " href="# "> SFA | 平台</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="Dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a class="nav-link active" href="customer_search.html">顧客查詢</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link collapsed " data-toggle="collapse" href="#listinfo">名單管理
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </a>
+
+                        <ul id="listinfo" class="ullistno panel-collapse collapse " role="menu">
+                            <li class="nav-item ">
+                                <a class="nav-link " href="namelist_search.html">
+                                    名單查詢
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="namelist_search_myfavorite.html">
+                                    我的最愛
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="namelist_search_todaytodo.html">
+                                    今日行程
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="Refferal_search.html">商機轉介查詢</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link collapsed " data-toggle="collapse" href="#listinfoTwo">行銷專區
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </a>
+
+                        <ul id="listinfoTwo" class="ullistno panel-collapse collapse " role="menu">
+                            <li class="nav-item ">
+                                <a class="nav-link " href="marketing_search_loan.html">
+                                    貸款試算
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link  " href="marketing_search_EDM.html">
+                                    電子 DM
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="marketing_search_Map.html">
+                                    行銷地圖
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="marketing_search_valuation.html">
+                                    估價查詢
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link collapsed " data-toggle="collapse" href="#listinfoThree">後台管理
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </a>
+
+                        <ul id="listinfoThree" class="ullistno panel-collapse collapse " role="menu">
+                            <li class="nav-item ">
+                                <a class="nav-link " href="Mange_character.html">
+                                    角色權限
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="Mange_marketing.html">
+                                    行銷團隊
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="Mange_email.html ">
+                                    E-mail 樣板
+                                </a>
+                            </li>
+
+                            <li class="nav-item ">
+                                <a class="nav-link " href="Mange_notification.html">
+                                    推播通知
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="Mange_arrange.html">
+                                    總行指派案件
+                                </a>
+                            </li>
+
+                            <li class="nav-item ">
+                                <a class="nav-link " href="Mange_lateNotice.html">
+                                    名單/案件逾期通知
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="Mange_tag.html">
+                                    推薦產品標籤
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="Mange_productNum.html">
+                                    產品參數
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="Mange_systemNum.html">
+                                    系統參數
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="report_search.html">成效報表</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 顧客查詢 -->
+            <section>
+                <nav class="navbar justify-content-between panel-head ">
+                    <span class="navbar-brand ">顧客查詢</span>
+
+                    <ul class="nav float-lg-right float-sm-none nav-function-btn">
+
+                        <li>
+                            <button type="button" class="nav-link btn" data-target="#exampleModal" data-toggle="modal" data-whatever="@mdo ">
+                                <i class="fa fa-plus iconspace" aria-hidden="true"></i>新增潛在顧客</button>
+                        </li>
+
+                    </ul>
+                </nav>
+                <div class="area shadow">
+                    <div id="search-section-0" class="form-row mr-0">
+                        <div class="form-group" name="custID">
+                            <label>統一編號</label>
+                            <input id="custID" type="text" class="form-control inputstyle " placeholder="e.g. A123456789 " maxlength="10">
+                            <div class="error-msg">
+                                <span>請輸入正確統一編號</span>
+                            </div>
+                        </div>
+                        <div class="form-group" name="tel">
+                            <label>手機號碼</label>
+                            <input id="custNum" type="text" class="form-control inputstyle " placeholder="e.g. 0988123123 " maxlength="10">
+                        </div>
+                        <div class="form-group" name="name">
+                            <label>戶名</label>
+                            <input type="search" class="form-control inputstyle " placeholder="e.g. 王小明 ">
+                        </div>
+                        <div class=" col-md-4 col-lg-2 search-btn-pad">
+                            <button id="searchBtn-0" type="button " class="btn btn-ylw " onclick="search('result_1')">
+                                <i class="fa fa-search iconspace" aria-hidden="true"></i>搜尋</button>
+                            <button type="button " class="btn btn-gry " onclick="onClearSearchParam()">清除</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- Customer 表單 -->
+            <div id="result_1" class="table-responsive data-list displayno">
+                <table class="table table-striped tableinfo">
+                    <thead>
+                        <tr>
+                            <th scope="col ">顧客屬性</th>
+                            <th scope="col ">主經營行</th>
+                            <th scope="col ">統一編號</th>
+                            <th scope="col ">戶名</th>
+                            <th scope="col ">手機號碼</th>
+                            <th scope="col ">生日</th>
+
+                            <th scope="col "></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>個人戶</td>
+                            <td>01234 板橋分行</td>
+                            <td>A128940184</td>
+                            <td>
+                                陳大發
+                            </td>
+                            <td>0933887163</td>
+                            <td>107/02/10</td>
+                            <td class="money-right">
+                                <div class="btn-group ">
+                                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./customer_data.html' } ">
+                                        檢視
+                                    </button>
+                                    <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                                        aria-haspopup="true " aria-expanded="fals">
+                                        <span class="sr-only ">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu ">
+                                        <a class="dropdown-item " href="marketing_search_EDM.html">寄送電子 DM</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#addselflist" data-whatever="@mdo ">新增自建名單</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#addmeeone">新增行程</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#marketTrans" data-whatever="@mdo ">商機轉介</a>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>潛在顧客（系統）</td>
+                            <td></td>
+                            <td>A128940184</td>
+                            <td>
+                                吳先生
+                            </td>
+                            <td>0933887163</td>
+                            <td>107/02/10</td>
+                            <td class="money-right">
+                                <button type="button" class="btn btn-outline-primary btn-sm" type="button " onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                                    檢視
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>潛在顧客（李玩玩)</td>
+                            <td></td>
+                            <td>A128940184</td>
+                            <td>
+                                林小姐
+                            </td>
+                            <td>0933887163</td>
+                            <td>107/02/10</td>
+                            <td class="money-right">
+                                <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#maintain" data-whatever="@mdo ">
+                                    檢視
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>潛在顧客（李媛媛)</td>
+                            <td></td>
+                            <td>A128940184</td>
+                            <td>
+                                林小姐
+                            </td>
+                            <td>0933887163</td>
+                            <td>107/02/10</td>
+                            <td class="money-right">
+                                <button type="button" class="btn btn-outline-primary btn-sm" onclick="{location.href='./namelist_data_selflist.html' } ">
+                                    檢視
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>公司戶</td>
+                            <td>01234 板橋分行</td>
+                            <td>28940184</td>
+                            <td>
+                                陳美科技有限公司
+                            </td>
+                            <td>0933887163</td>
+                            <td></td>
+                            <td class="money-right">
+                                <div class="btn-group ">
+                                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./company_data.html' } ">
+                                        檢視
+                                    </button>
+                                    <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                                        aria-haspopup="true " aria-expanded="fals">
+                                        <span class="sr-only ">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu ">
+                                        <a class="dropdown-item " href="marketing_search_EDM.html">寄送電子 DM</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#addselflist" data-whatever="@mdo ">新增自建名單</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#addmeeone">新增行程</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#marketTrans" data-whatever="@mdo ">商機轉介</a>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>個人戶</td>
+                            <td>01234 板橋分行</td>
+                            <td>A128940184</td>
+                            <td>
+                                陳大發
+                            </td>
+                            <td>0933887163</td>
+                            <td>107/02/10</td>
+                            <td class="money-right">
+                                <div class="btn-group ">
+                                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./customer_data.html' } ">
+                                        檢視
+                                    </button>
+                                    <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                                        aria-haspopup="true " aria-expanded="fals">
+                                        <span class="sr-only ">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu ">
+                                        <a class="dropdown-item " href="marketing_search_EDM.html">寄送電子 DM</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#addselflist" data-whatever="@mdo ">新增自建名單</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#addmeeone">新增行程</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#marketTrans" data-whatever="@mdo ">商機轉介</a>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>個人戶</td>
+                            <td>01234 板橋分行</td>
+                            <td>A128940184</td>
+                            <td>
+                                無沒有
+                            </td>
+                            <td>0933887163</td>
+                            <td>107/02/10</td>
+                            <td class="money-right">
+                                <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#confirmCust" data-whatever="@mdo ">
+                                    <i class="fa fa-exclamation-triangle iconspace  color-danger"></i>確認查詢
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>個人戶</td>
+                            <td>01234 板橋分行</td>
+                            <td>A128940184</td>
+                            <td>
+                                白先簪
+                            </td>
+                            <td>0933887163</td>
+                            <td>107/02/10</td>
+                            <td class="money-right">
+                                <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#confirmCust" data-whatever="@mdo ">
+                                    <i class="fa fa-exclamation-triangle iconspace  color-danger"></i>確認查詢
+                                </button>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+                <!-- pageNum -->
+                <nav class="navNum navbar-light">
+                    <form class="form-inline">
+                        <div>
+                            <button class=" btn-sm pageNum">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            </button>
+                            <button class=" btn-sm pageNum">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </button>
+                            <span class="loanChartNote">1 of 1</span>
+                        </div>
+                        <div>
+                            <span class="loanChartNote">Items per page:
+                                <select class="form-control inputstyle">
+                                    <option>50</option>
+                                </select>
+                            </span>
+                        </div>
+                    </form>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- 新增潛在顧客 -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLabel">新增潛在顧客</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label>潛客類別
+                                <span class="markRed">*</span>
+                            </label>
+                            <div class="form-row">
+                                <div class="form-check">
+                                    <input id="customer" name="client" checked="true" type="radio" style="cursor: pointer;">
+                                    <label for="customer" style="cursor: pointer;">個人戶</label>
+                                </div>
+                                <div class="form-check">
+                                    <input id="company" name="client" type="radio">
+                                    <label for="company" style="cursor: pointer;">公司戶</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="customer_inputs">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col ml-3">
+                                        <label>姓名</label>
+                                        <input type="text" class="form-control inputstyle" placeholder="e.g. 陳大明">
+                                    </div>
+                                    <div class="col mr-3">
+                                        <label>身分證字號</label>
+                                        <input type="text" class="form-control inputstyle" placeholder="e.g. A1234567">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col ml-3">
+                                        <label>聯繫用手機
+                                            <span class="markRed">*</span>
+                                        </label>
+                                        <input type="text" class="form-control inputstyle" placeholder="e.g. 09341118888">
+                                    </div>
+                                    <div class="col mr-3">
+                                        <label>生日</label>
+                                        <input class="form-control inputstyle" type="text" name="singledate" placeholder="請選擇日期...">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>通訊地址</label>
+                                <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input type="text" class="form-control inputstyle" placeholder="e.g. 123123@eaun.banl.com">
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <p class="mb-2">
+                                <i class="fa fa-exclamation-triangle markRed" aria-hidden="true"></i>下列選項用於自建名單</p>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col ml-3">
+                                        <label>產品別
+                                            <span class="markRed">*</span>
+                                        </label>
+                                        <select class="selectpicker inputstyleSelect">
+                                            <option>信貸</option>
+                                            <option>副擔保</option>
+                                            <option>房貸</option>
+
+                                            <option>卡友貸</option>
+                                            <option>保險(儲蓄險、房貸壽險)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col mr-3">
+                                        <label>來源說明</label>
+                                        <select class="selectpicker inputstyleSelect">
+                                            <option>客服轉介</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="company_inputs" class="displayno">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col ml-3">
+                                        <label>公司名稱
+                                            <span class="markRed">*</span>
+                                        </label>
+                                        <input type="text" class="form-control inputstyle" placeholder="e.g. 陳大明">
+                                    </div>
+                                    <div class="col mr-3">
+                                        <label>公司統編</label>
+                                        <input type="text" class="form-control inputstyle" placeholder="e.g. A1234567">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>公司地址</label>
+                                <input type="text" class="form-control inputstyle">
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col ml-3">
+                                        <label>負責人姓名
+
+                                        </label>
+                                        <input type="text" class="form-control inputstyle" placeholder="e.g. 陳大明">
+                                    </div>
+                                    <div class="col mr-3">
+                                        <label>負責人統一編號</label>
+                                        <input type="text" class="form-control inputstyle" placeholder="e.g. A1234567">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col ml-3">
+                                        <label>聯繫用手機
+                                            <span class="markRed">*</span>
+                                        </label>
+                                        <input type="text" class="form-control inputstyle" placeholder="e.g. 09341118888">
+                                    </div>
+                                    <div class="col mr-3">
+                                        <label>生日</label>
+                                        <input class="form-control inputstyle" type="text" name="singledate" placeholder="請選擇日期...">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input type="text" class="form-control inputstyle" placeholder="e.g. 123123@eaun.banl.com">
+                            </div>
+
+
+                            <div class="dropdown-divider"></div>
+                            <p class="mb-2">
+                                <i class="fa fa-exclamation-triangle markRed" aria-hidden="true"></i>下列選項用於自建名單</p>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col ml-3">
+                                        <label>產品別
+                                            <span class="markRed">*</span>
+                                        </label>
+                                        <select class="selectpicker inputstyleSelect">
+                                            <option value="" class="displayno">請選擇...</option>
+                                            <option>信貸</option>
+                                            <option>副擔保</option>
+                                            <option>房貸</option>
+                                            <option>小型事業(SB)</option>
+                                            <option>卡友貸</option>
+                                            <option>保險(儲蓄險、房貸壽險)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col mr-3">
+                                        <label>來源說明</label>
+                                        <select class="selectpicker inputstyleSelect">
+                                            <option>客服轉介</option>
+                                            <option>顧客介紹</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                    <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新增行程1 id="addmeone" -->
+
+    <!-- 新增商機轉介-->
+    <div class="modal fade" id="marketTrans" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLabel">新增商機轉介</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label>統一編號</label>
+                            <input type="text" class="form-control inputstyle" placeholder="e.g. A123456678" value="A123456678" disabled>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col ml-3">
+                                    <label>戶名
+
+                                    </label>
+                                    <input type="text" class="form-control inputstyle" placeholder="e.g. 李爸名" value="陳大發" disabled>
+
+                                </div>
+                                <div class="col mr-3">
+                                    <label>電話
+
+                                    </label>
+                                    <input type="text" class="form-control inputstyle" placeholder="e.g. 09331114442" value="0988-123-123" disabled>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col ml-3">
+                                    <label>轉介人員
+
+                                    </label>
+                                    <input type="text" class="form-control inputstyle" value="012344 李圓圓" disabled>
+
+                                </div>
+                                <div class="col mr-3">
+                                    <label>轉介產品
+
+                                    </label>
+                                    <select class="selectpicker inputstyleSelect">
+                                        <option value="" class="displayno">請選擇...</option>
+                                        <option>信貸</option>
+                                        <option>副擔保</option>
+                                        <option>房貸</option>
+                                        <option>小型事業(SB)</option>
+                                        <option>卡友貸</option>
+                                        <option>保險(儲蓄險、房貸壽險)</option>
+                                        <option>其他保險(非儲蓄險、房貸壽險)</option>
+                                    </select>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="select_option" class="form-group displayno">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label>轉介商品備註
+                                    </label>
+                                    <input type="text" class="form-control inputstyle" placeholder="請輸入保單流水編號">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col ml-3">
+                                    <label>受理轉介單位
+
+                                    </label>
+                                    <select class="selectpicker inputstyleSelect">
+                                        <option value="" class="displayno">請選擇...</option>
+
+                                    </select>
+                                </div>
+                                <div class="col mr-3">
+                                    <label>受理轉介人員
+
+                                    </label>
+                                    <select class="selectpicker inputstyleSelect">
+                                        <option value="" class="displayno">請選擇...</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="note">備註
+
+                            </label>
+                            <label class="float-right ps_note">(0/250)</label>
+                            <textarea class="form-control inputstyletextArea" rows="5" placeholder="請輸入..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                    <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 潛在顧客維護中-->
+    <div class="modal fade" id="maintain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="2" id="exampleModalLabel">潛在顧客維護中</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <p>
+                        2018-04-16 / 信貸團隊 / 陳樂融 / 房貸，請與該經辦聯繫
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">知道了</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- 確認顯示內容 -->
+    <div class="modal fade" id="confirmCust" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLabel">確認顯示內容</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <p>
+                        <span class="markRed">本行(含金控事業群)經理人以上之主管</span> ，是否確認查詢？
+
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-gry " onclick="{location.href='./customer_data.html' }">確定</button>
+                    <button type="button" class="btn btn-ylw" data-dismiss="modal" aria-label="Close">取消</button>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+<script>
+    var custID = '';
+    var custIDIValid = true;
+    $(document).ready(function () {
+
+        /**
+         *   1. add class 'select-change'
+         *   2. view's id naming rule is 'selectID_option順序'
+         */
+        $('select.select-change').each(function () {
+            var select_id = $(this).attr('id');
+            var childrenCount = $('#' + select_id).children().length;
+            $('#' + select_id).on('changed.bs.select', function (e, clickedIndex, isSelected,
+                previousValue) {
+                for (var i = 0; i < childrenCount; i++) {
+                    var view_id = '#' + select_id + '_' + i;
+                    $(view_id).addClass('displayno')
+                }
+                $('#' + select_id + '_' + clickedIndex).removeClass('displayno');
+
+
+                // 額外條件 展示細項類別使用
+                if (select_id === 'selectmore') {
+                    if (clickedIndex === 1) {
+                        $('#detail_result').removeClass('displayno')
+                    } else {
+                        $('#detail_result').addClass('displayno')
+                    }
+                }
+            })
+        })
+        /**/
+
+        /**/
+
+        $('input[type=radio][name=client]').on('change', function () {
+            switch (this.id) {
+                case 'customer':
+                    $('#customer_inputs').removeClass('displayno')
+                    $('#company_inputs').addClass('displayno')
+                    break;
+                case 'company':
+                    $('#customer_inputs').addClass('displayno')
+                    $('#company_inputs').removeClass('displayno')
+                    break;
+                default:
+                    break;
+            }
+        });
+
+        $('#custID').on('focus', function (e) {
+            if (e.target.value == '') {
+                $('div[name=custID]').removeClass('error')
+                return;
+            }
+            var reg = new RegExp(/^[A-Z][12][0-9]{8}$/)
+            custIDIValid = reg.test(e.target.value);
+            custIDIValid ? $('#search-section-0 div[name=custID]').removeClass('error') : $(
+                '#search-section-0 div[name=custID]').addClass('error');
+        })
+        $('#custID').on('blur', function (e) {
+            if (e.target.value == '') {
+                $('#search-section-0 div[name=custID]').removeClass('error')
+                return;
+            }
+            var reg = new RegExp(/^[A-Z][12][0-9]{8}$/)
+            custIDIValid = reg.test(e.target.value);
+            custIDIValid ? $('#search-section-0 div[name=custID]').removeClass('error') : $(
+                '#search-section-0 div[name=custID]').addClass('error');
+        })
+
+        $('#custID').on('keyup', function (e) {
+            var reg = new RegExp(/^[A-Z][12][0-9]{8}$/)
+            custIDIValid = reg.test(e.target.value);
+            custIDIValid ? $('#search-section-0 div[name=custID]').removeClass('error') : $(
+                '#search-section-0 div[name=custID]').addClass('error');
+        })
+
+        $('#search-section-0').on('keyup', function () {
+            var disabled = true;
+            $("#search-section-0 :input[type=text]").each(function () {
+                if ($(this).attr('id') == 'custID') {
+                    disabled = !custIDIValid
+                } else {
+                    disabled = ($(this).val() == '');
+                }
+                if (!disabled) {
+                    return false;
+                } // break out of loop
+            });
+
+            $('#searchBtn-0').prop('disabled', disabled);
+        })
+
+        $('#search-section-1').on('keyup', function () {
+            var disabled = true;
+            $("#search-section-1 :input[type=text]").each(function () {
+                if ($(this).attr('id') == 'custID') {
+                    disabled = !custIDIValid
+                } else {
+                    disabled = ($(this).val() == '');
+                }
+                if (!disabled) {
+                    return false;
+                } // break out of loop
+            });
+
+            $('#searchBtn-1').prop('disabled', disabled);
+        })
+
+        // 新增行程控制 tableRow
+        $('input[type=radio][name=wrap-name]').on('change', function () {
+            setTableRowDisable($(this).val() === 'false')
+        })
+    });
+
+    function search(id) {
+        $('#' + id).removeClass('displayno');
+    }
+
+    function onSearchCust() {
+        // show table
+
+        var text = $('#custNum').val();
+        if (text == 'error') {
+            var htmlString = $('#search_error').html();
+            $('#data-list-0').html(htmlString)
+        }
+
+    }
+
+    function onClearSearchParam() {
+        $('div[name=custID]').removeClass('error');
+    }
+
+    function cancel() {
+        $('#confirm').modal('toggle');
+    }
+
+    function close(id) {
+        var vid = '#' + id;
+        $(vid).modal('hide');
+    }
+
+    function step1() {
+        this.modalOpen('addmeeone');
+        this.close('addmeettwo');
+    }
+
+    function step2() {
+        this.close('addmeeone');
+        this.modalOpen('addmeettwo');
+    }
+
+    function modalOpen(id) {
+        var vid = '#' + id;
+        $(vid).modal('show');
+    }
+
+    function closeModal(id) {
+        this.close(id)
+    }
+
+    function openDatePicker(id) {
+        console.log('aaa')
+        var did = "#" + id
+        $(did).datepicker('show');
+    }
+
+    // 新增行程控制 tableRow
+    function setTableRowDisable(disabled) {
+        $('#addmeeone table tbody tr').each(function (index, el) {
+            var elemet = $(el)
+            if (disabled) {
+                elemet.addClass('table-light')
+                $(elemet.find('input')).prop('checked', !disabled).prop('disabled', disabled)
+            } else {
+                elemet.removeClass('table-light')
+                if (index === 0) {
+                    $(elemet.find('input')).prop('checked', true).prop('disabled', disabled)
+                } else {
+                    $(elemet.find('input')).prop('disabled', disabled)
+                }
+            }
+        })
+    }
+</script>
+
+<script id="search_error" type="text/template">
+    <div class="nodata">
+        <div>
+            <img src="img/img_empty.png" class="d-inline-block align-top" alt="">
+        </div>
+        <h6>查無資料</h6>
+        <button type="button " class="btn btn-outline-primary my-2 my-sm-0 " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">新增潛在顧客</button>
+    </div>
+</script>
+
+</html>

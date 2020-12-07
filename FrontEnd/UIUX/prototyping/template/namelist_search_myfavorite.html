@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+<body>
+    <div class="container-fluid pl-0 pr-0">
+        @@include('./components/sidebar.html', {
+            "sidebarCollapseFirst": "namelistManage",
+            "sidebar": "namelistFavorite"
+        })
+        <div id="main-content" class="main-content">
+            @@include('./components/navbar.html', { "navbarType": "" })
+            <!-- 顧客查詢 -->
+            <section>
+                <nav class="navbar justify-content-between panel-head ">
+                    <span class="navbar-brand ">我的最愛</span>
+                    <ul class="nav float-lg-right float-sm-none nav-function-btn">
+                        <li>
+
+                            <div class="nav-link " href="#">
+                                <span class="textGary">排序</span>
+
+                                <button class="btn dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    最近
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right-sorting">
+                                    <a class="dropdown-item " href="# ">名單狀態</a>
+                                    <a class="dropdown-item " href="# ">分派/建立日期</a>
+                                    <a class="dropdown-item " href="# ">統一編號</a>
+                                    <a class="dropdown-item " href="# ">戶名</a>
+                                    <a class="dropdown-item " href="# ">行銷單位</a>
+                                    <a class="dropdown-item " href="# ">行銷人員</a>
+                                    <a class="dropdown-item " href="# ">產品</a>
+                                    <a class="dropdown-item " href="# ">名單來源</a>
+                                    <a class="dropdown-item " href="# ">名單類型</a>
+                                </div>
+
+                            </div>
+
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <div class="pills-tab-container shadow">
+                    <ul class="nav nav-pills tab" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a id="pills-home-tab" class="nav-link active" data-toggle="tab" href="#pills-base-info" role="tab" aria-controls="pills-base-info"
+                                aria-selected="true">一般名單</a>
+                        </li>
+
+
+
+
+
+
+                    </ul>
+                </div>
+                <div class="tab-content" id="pills-tabContent">
+                    <!--  一般名單 -->
+                    @@include('./components/namelist/search.html', {
+                        "shPage": "fav"
+                    })
+                </div>
+            </section>
+        </div>
+        <!-- 狀態說明 -->
+        <div class="modal fade" id="stateInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">狀態說明</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table statusInfo">
+                            <thead>
+                                <tr>
+                                    <th scope="col">標示</th>
+                                    <th scope="col">說明</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+                                    <td>
+                                        <span class="light light-red">
+                                        </span>
+                                    </td>
+                                    <td>紅色燈號，當此燈亮起閃爍時代表該名單即將逾期，原因包含如下：(1)未分派(限主管) (2)未執行 (3)追蹤逾期 (4)到期通知</td>
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                        <span class="light light-gary">
+                                        </span>
+                                    </td>
+                                    <td>灰色燈號，該名單尚未逾期</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="iconyellow">
+                                            <i class="fa fa-clock-o " aria-hidden="true"></i>
+                                        </span>
+                                    </td>
+                                    <td>當顯示此標示時，即代表該名單待主管放行</td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="markRed">
+                                            <i class="fa fa-ban" aria-hidden="true"></i>
+                                        </span>
+                                    </td>
+                                    <td>當顯示此標示時，即代表該名單遭主管退回</td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                        <i class="fa fa-clone " aria-hidden="true"></i>
+
+                                    </td>
+                                    <td>當顯示此標示時，即代表該名單為重複商機</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- 調閱行內帳務資訊 -->
+        <div class="modal fade" id="bankInfo" tabindex="-1" role="dialog" aria-labelledby="bankInfo" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">行銷警示註記</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>此顧客
+                            <span class="markRed">不接受電話行銷</span>，請留意！</p>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                        <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">新增行程</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 上傳文件 -->
+        <div class="modal fade" id="uplateInfo" tabindex="-1" role="dialog" aria-labelledby="uplateInfo" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="uplateInfo">上傳文件</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="uplatearea">
+                            <div>
+                                <a href="#">
+                                    <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                                </a>
+                                <span>申請書</span>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                                </a>
+                                <span>身分證</span>
+                            </div>
+
+                            <div>
+                                <a href="#">
+                                    <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                                </a>
+                                <span>所得文件</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+@@include('./components/footer.html')
+<script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+    $(document).ready(function () {
+
+        $('.addlove i').each(function () {
+            $(this).on('click', function () {
+                var love = $(this).hasClass('fa-star')
+                if (love) {
+                    $(this).removeClass('fa-star').addClass('fa-star-o');
+                } else {
+                    $(this).removeClass('fa-star-o').addClass('fa-star');
+                }
+            })
+        })
+
+        /**/
+        //$('input[name=custtype]').filter('[value=' + custType + ']').prop('checked', true);
+        $('input[name=custtype]').on('change', function () {
+            custType = $(this).val();
+            $('input[name=custtype]').each(function () {
+                var id = $(this).val();
+                $('#search-section-' + id).removeClass('show');
+            })
+
+            $('#search-section-' + custType).addClass('show');
+        });
+
+        $('#custID').on('focus', function (e) {
+            if (e.target.value == '') {
+                $('div[name=custID]').removeClass('error')
+                return;
+            }
+            var reg = new RegExp(/^[A-Z][12][0-9]{8}$/)
+            custIDIValid = reg.test(e.target.value);
+            custIDIValid ? $('#search-section-0 div[name=custID]').removeClass('error') : $(
+                '#search-section-0 div[name=custID]').addClass('error');
+        })
+        $('#custID').on('blur', function (e) {
+            if (e.target.value == '') {
+                $('#search-section-0 div[name=custID]').removeClass('error')
+                return;
+            }
+            var reg = new RegExp(/^[A-Z][12][0-9]{8}$/)
+            custIDIValid = reg.test(e.target.value);
+            custIDIValid ? $('#search-section-0 div[name=custID]').removeClass('error') : $(
+                '#search-section-0 div[name=custID]').addClass('error');
+        })
+
+        $('#custID').on('keyup', function (e) {
+            var reg = new RegExp(/^[A-Z][12][0-9]{8}$/)
+            custIDIValid = reg.test(e.target.value);
+            custIDIValid ? $('#search-section-0 div[name=custID]').removeClass('error') : $(
+                '#search-section-0 div[name=custID]').addClass('error');
+        })
+
+        $('#search-section-0').on('keyup', function () {
+            var disabled = true;
+            $("#search-section-0 :input[type=text]").each(function () {
+                if ($(this).attr('id') == 'custID') {
+                    disabled = !custIDIValid
+                } else {
+                    disabled = ($(this).val() == '');
+                }
+                if (!disabled) {
+                    return false;
+                } // break out of loop
+            });
+
+            $('#searchBtn-0').prop('disabled', disabled);
+        })
+
+        $('#search-section-1').on('keyup', function () {
+            var disabled = true;
+            $("#search-section-1 :input[type=text]").each(function () {
+                if ($(this).attr('id') == 'custID') {
+                    disabled = !custIDIValid
+                } else {
+                    disabled = ($(this).val() == '');
+                }
+                if (!disabled) {
+                    return false;
+                } // break out of loop
+            });
+
+            $('#searchBtn-1').prop('disabled', disabled);
+        });
+
+        // dropdown-menu-stop 
+        $(document).on('click', '.dropdown-menu-stop', function (e) {
+            e.stopPropagation();
+        });
+        $('input[type=checkbox].form-check-input').on('change', function () {
+            var id = '#' + $(this).closest('.form-check').closest(
+                '.dropdown-menu.dropdown-menu-stop').closest('.dropdown')[0].id;
+            var strings = [];
+            $(id).find('.dropdown-menu.dropdown-menu-stop').children().each(function () {
+                var checked = $(this).find('input').prop('checked')
+                if (checked) {
+                    strings.push($(this).find('input').val())
+                }
+            })
+            var buttonTitle = strings.length == 0 ? '請選擇' : strings.join(', ');
+            $(id).find('.btn-text').text(buttonTitle)
+        })
+    });
+
+    function search(id) {
+        $('#' + id).removeClass('displayno');
+    }
+
+    function onSearchCust() {
+        // show table
+        $('input[name=custtype]').each(function () {
+            var id = $(this).val();
+            $('#data-list-' + id).removeClass('show');
+        })
+
+        $('#data-list-' + custType).addClass('show');
+
+        var text = $('#custNum').val();
+        if (text == 'error') {
+            var htmlString = $('#search_error').html();
+            $('#data-list-0').html(htmlString)
+        }
+
+    }
+
+    function openDatePicker(id) {
+        console.log('aaa')
+        var did = "#" + id
+        $(did).datepicker('show');
+    }
+
+    function onClearSearchParam() {
+        var string = '#search-section-' + custType + ' :input[type=text]'
+        $(string).each(function () {
+            $(this).val('')
+        });
+        $('div[name=custID]').removeClass('error');
+        $('#searchBtn-' + custType).prop('disabled', true);
+    }
+
+    function cancel() {
+        $('#confirm').modal('toggle');
+    }
+
+    function confirm() {
+        var page = parseInt(custType) + 1
+        location.href = 'data_' + page + '.html'
+    }
+
+    function chooseAll(toggle, id) {
+        $(id).find('.dropdown-menu.dropdown-menu-stop').children().each(function () {
+            $(this).find('input').prop('checked', toggle);
+            $(this).find('input').trigger('change');
+        })
+    }
+</script>
+
+<script id="search_error" type="text/template">
+    <div class="nodata">
+        <div>
+            <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+        </div>
+        <h6>查無資料</h6>
+        <button type="button " class="btn btn-outline-primary my-2 my-sm-0 " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">新增潛在顧客</button>
+    </div>
+</script>
+</body>
+</html>

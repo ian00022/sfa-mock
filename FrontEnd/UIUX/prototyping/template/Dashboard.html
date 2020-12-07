@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html', {
+ "hasfullCalendarCss": true,
+ "hasfullCalendarJs": true
+})
+<body>
+    <div class="container-fluid pl-0 pr-0">
+        <!-- sidebar -->
+        @@include('./components/sidebar.html', {
+			"sidebar": "dashboard"
+		})
+        <div id="main-content" class="main-content">
+            @@include('./components/navbar.html')
+            <!--  內容 -->
+            <div class="col-12 pt-3">
+
+                <div class="row">
+
+
+                    <div class="col-lg-8 col-md-12 float-left pr-3 pl-3">
+                        <div id='calendar' class="mb-3">
+                            <span class="add shadow">
+                                <a data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo ">
+                                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-12 float-left pr-3">
+
+                        <div class="card shadow DashboardCard">
+                            <h5 class="card-title border-bottom">推播消息
+                                <div class="Toppage ps_note">
+                                    <ul class="pagination mb-0 pt-1">
+                                        <li class="page-item">
+                                            <a class="ps_note" href="#carousel" aria-label="Previous" data-slide="prev">
+                                                <span aria-hidden="true">&laquo;</span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                        </li>
+                                        <li id="carousel_page" class="page-item pr-2 pl-2">
+                                            1/5
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="ps_note" href="#carousel" aria-label="Next" data-slide="next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </h5>
+                            <div class="card-body pt-0">
+                                <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <span>2018/02/12</span>
+                                            <br />
+                                            <span>
+                                                <span class="tag square red mr-2 mt-1 mb-0">New</span>
+                                                <a class="alink" data-toggle="modal" href="#modalPushNotification">為反應市場利率水準，擬自本 2017 年 7 月 28 日起調整本行南非幣一般存款利率</a>
+                                            </span>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <span>2018/03/12</span>
+                                            <br />
+                                            <span>
+                                                <span class="tag square red mr-2 mt-1 mb-0">New</span>
+                                                <a class="alink" data-toggle="modal" href="#modalPushNotification">《美股》殖利率跌破3%、科技與生技財報猛！費半跳高</a>
+                                            </span>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <span>2018/04/12</span>
+                                            <br />
+                                            <span>
+                                                <span class="tag square red mr-2 mt-1 mb-0">New</span>
+                                                <a class="alink" data-toggle="modal" href="#modalPushNotification">迷你超任熱賣、任天堂財報優；Switch銷量目標2千萬台</a>
+                                            </span>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <span>2018/03/12</span>
+                                            <br />
+                                            <span>
+                                                <span class="tag square red mr-2 mt-1 mb-0">New</span>
+                                                <a class="alink" data-toggle="modal" href="#modalPushNotification">10年來首見、夏普年度4個季度全賺錢；今年營益估增2成</a>
+                                            </span>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <span>2018/04/12</span>
+                                            <br />
+                                            <span>
+                                                <span class="tag square red mr-2 mt-1 mb-0">New</span>
+                                                <a class="alink" data-toggle="modal" href="#modalPushNotification">三星電子：高階智慧機元件需求疲軟、挖礦晶片夯</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card shadow DashboardCard">
+                            <h5 class="card-title border-bottom">名單執行提醒</h5>
+                            <div class="card-body pt-0 pr-0 pl-0 table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>名單</th>
+                                            <th>未執行</th>
+                                            <th>追蹤中</th>
+                                            <th>追蹤逾期</th>
+                                            <th>當日續訪</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>EBM</th>
+                                            <td>
+                                                <a class="alink" href="namelist_search_remindDemo.html" target=_blank>1</a>
+                                            </td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <th>網路進件</th>
+                                            <td>
+                                                <a class="alink" href="namelist_search_remindDemoTwo.html" target=_blank>3</a>
+                                            </td>
+                                            <td>6</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <th>轉介</th>
+                                            <td>10</td>
+                                            <td>33</td>
+                                            <td>23</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <th>自建名單</th>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card shadow DashboardCard">
+                            <h5 class="card-title border-bottom">相關專區連結
+
+                            </h5>
+                            <div class="card-body pt-0 recommend">
+                                <button type="button " class="btn btn-outline-primary my-2 my-sm-0 active">
+                                    消金專區</button>
+                                <button type="button " class="btn btn-outline-primary my-2 my-sm-0 active">
+                                    分行行銷專區</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-12 float-left pr-3 pl-3 pt-3">
+                        <div class="card shadow ">
+                            <h5 class="card-title card-head">今日行程(3)</h5>
+
+
+                            <div class="card-body">
+
+                                <div class="row">
+                                    <div class="table-responsive ">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+
+                                                    <th scope="col ">名單狀態
+                                                        <a href="#" aria-hidden="true" data-toggle="modal" data-target="#stateInfo" data-whatever="@mdo ">
+                                                            <i class="fa fa-question-circle-o iconspace"></i>
+                                                        </a>
+                                                    </th>
+                                                    <th scope="col ">分派/建立日期</th>
+                                                    <th scope="col ">統一編號</th>
+                                                    <th scope="col ">戶名</th>
+                                                    <th scope="col ">產品</th>
+                                                    <th scope="col ">名單來源</th>
+                                                    <th scope="col ">名單類型</th>
+                                                    <th scope="col " class="text-center"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+
+                                                    <td>
+
+                                                        <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期">
+
+                                                        </span>未執行</td>
+                                                    <td>107/02/10</td>
+                                                    <td>A128940184</td>
+                                                    <td>
+                                                        <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                                                    </td>
+                                                    <td>房貸</td>
+                                                    <td>網路進件</td>
+                                                    <td>信貸線上申請</td>
+                                                    <td class="money-right">
+
+                                                        <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntLoan.html' } ">
+                                                            檢視
+                                                        </button>
+
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>
+                                                        <span class="light light-gary"></span>未執行</td>
+                                                    <td>107/02/10</td>
+                                                    <td>A128940184</td>
+                                                    <td>
+                                                        <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                                                    </td>
+                                                    <td>個人信貸</td>
+                                                    <td>網路進件</td>
+                                                    <td>額度利率評估</td>
+                                                    <td class="money-right">
+                                                        <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntEvaluate.html' } ">
+                                                            檢視
+                                                        </button>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期"></span>追蹤中</td>
+                                                    <td>107/02/10</td>
+                                                    <td>A128940184</td>
+                                                    <td>
+                                                        <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                                                    </td>
+                                                    <td>副擔保</td>
+                                                    <td>EBM</td>
+                                                    <td>精彩稅月</td>
+                                                    <td class="money-right">
+                                                        <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_EBM.html' } ">
+                                                            檢視
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>
+                                                        <span class="light light-red" tabindex="0" data-toggle="tooltip" title="追蹤逾期"></span>追蹤中</td>
+                                                    <td>107/02/10</td>
+                                                    <td>A128940184</td>
+                                                    <td>
+                                                        <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                                                    </td>
+                                                    <td>副擔保</td>
+                                                    <td>網路進件</td>
+                                                    <td>網路留言板</td>
+                                                    <td class="money-right">
+                                                        <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_IntMessage.html' } ">
+                                                            檢視
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 推播訊息 -->
+    <div class="modal fade" id="modalPushNotification" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">為反應市場利率水準，擬自本 2017 年 7 月 28 日起調整本行南非幣一般存款利率<small class="modal-title-addition"><i class="fa fa-calendar"></i>&nbsp;2018/02/12</small></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>為反應市場利率水準，擬自本 2017 年 7 月 28 日起調整本行南非幣一般存款利率。為反應市場利率水準，擬自本 2017 年 7 月 28 日起調整本行南非幣一般存款利率。</p>
+                    <p>內文段落二，內文段落二，內文段落二，內文段落二，內文段落二，內文段落二，內文段落二，內文段落二，內文段落二，內文段落二。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 狀態說明 -->
+    <div class="modal fade" id="stateInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">狀態說明</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table statusInfo">
+                        <thead>
+                            <tr>
+                                <th scope="col">標示</th>
+                                <th scope="col">說明</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td>
+                                    <span class="light light-red">
+                                    </span>
+                                </td>
+                                <td>紅色燈號，當此燈亮起閃爍時代表該名單即將逾期，原因包含如下：(1)未分派(限主管) (2)未執行 (3)追蹤逾期 (4)到期通知</td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <span class="light light-gary">
+                                    </span>
+                                </td>
+                                <td>灰色燈號，該名單尚未逾期</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="iconyellow">
+                                        <i class="fa fa-clock-o " aria-hidden="true"></i>
+                                    </span>
+                                </td>
+                                <td>當顯示此標示時，即代表該名單待主管放行</td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="markRed">
+                                        <i class="fa fa-ban" aria-hidden="true"></i>
+                                    </span>
+                                </td>
+                                <td>當顯示此標示時，即代表該名單遭主管退回</td>
+
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <i class="fa fa-clone " aria-hidden="true"></i>
+
+                                </td>
+                                <td>當顯示此標示時，即代表該名單為重複商機</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 新增行程 -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">新增行程</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+
+                        <div class="form-group">
+                            <label>名單</label>
+                            <select class="selectpicker inputstyleSelect">
+                                <option value="" class="displayno">請選擇...</option>
+                                <option>EBM - 精彩稅月 - 陳大發</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col ml-3">
+                                    <label>續訪日期
+                                        <span class="markRed">*</span>
+                                    </label>
+                                    <input class="form-control inputstyle" type="text" name="singledate" placeholder="請選擇日期...">
+                                </div>
+                                <div class="col mr-3">
+                                    <label>續訪時間
+                                        <span class="markRed">*</span>
+                                    </label>
+                                    <input class="form-control inputstyle" type="text" name="clockpicker" placeholder="請選擇時間...">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>主旨</label>
+                            <input type="text" class="form-control inputstyle" placeholder="e.g. 初訪顧客-王大明">
+                        </div>
+                        <div class="form-group">
+                            <label>約訪地址</label>
+                            <input type="text" class="form-control inputstyle" placeholder="請輸入...">
+                        </div>
+                        <div class="form-group">
+                            <label>聯絡電話</label>
+                            <input type="text" class="form-control inputstyle" placeholder="e.g. 0988123456">
+                        </div>
+                        <div class="form-group">
+                            <label class="note">備註
+
+                            </label>
+                            <label class="float-right ps_note">(0/250)</label>
+                            <textarea class="form-control inputstyletextArea  " rows="3" placeholder="請輸入..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                    <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">確定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 編輯行程 -->
+    <div class="modal fade" id="editschel" tabindex="-1" role="dialog" aria-labelledby="editschel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="stat_accept">編輯行程</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label>名單
+                                <span class="markRed">*</span>
+                            </label>
+                            <div class="dropdown ">
+                                <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" disabled>
+                                    EBM
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+
+                                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true)">全選</a>
+                                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false)">取消全選</a>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="form-check form-check-inline dropdown-item">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">未執行</label>
+                                    </div>
+                                    <div class="form-check form-check-inline dropdown-item">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">追蹤中</label>
+                                    </div>
+                                    <div class="form-check form-check-inline dropdown-item">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">婉拒</label>
+                                    </div>
+                                    <div class="form-check form-check-inline dropdown-item">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">已受理</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>續訪日期
+                                <span class="markRed">*</span>
+                            </label>
+                            <input class="form-control inputstyle" type="text" name="singledate" value="2018/04/12">
+                        </div>
+                        <div class="form-group">
+                            <label>續訪時間
+                                <span class="markRed">*</span>
+                            </label>
+                            <input class="form-control inputstyle" type="text" name="clockpicker" value="12:30">
+                        </div>
+                        <div class="form-group">
+                            <label>主旨
+
+                            </label>
+                            <input type="text" class="form-control inputstyle" value="初訪顧客-陳先生">
+                        </div>
+                        <div class="form-group">
+                            <label>約訪地址
+
+                            </label>
+                            <input type="text" class="form-control inputstyle" value="台北市南京東路四段 183 巷 52 號 12 樓之一">
+                        </div>
+                        <div class="form-group">
+                            <label>聯絡電話
+
+                            </label>
+                            <input type="text" class="form-control inputstyle" value="0923114232">
+                        </div>
+                        <div class="form-group">
+                            <label class="note">備註
+
+                            </label>
+                            <label class="float-right ps_note">(69/250)</label>
+                            <textarea class="form-control inputstyletextArea  " rows="5">行銷顧客精彩歲月專案，顧客表達高度興趣，預計 2018/01/27 再度拜訪</textarea>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-gry btnLeft" data-dismiss="modal" aria-label="Close">刪除</button>
+                    <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                    <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@@include('./components/footer.html')
+<script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+    $(document).ready(function () {
+        // 先註解 沒看到
+        // $('#sidebarCollapse').on('click', function () {
+        //     $('#sidebar, #content').toggleClass('active');
+        //     $('.collapse.in').toggleClass('in');
+        //     $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        // });
+
+        /**/
+
+        // carousel 
+        $('#carousel').on('slid.bs.carousel', function (e) {
+            var page = (e.to + 1) + '/' + $(this).find('.carousel-item').length
+            $('#carousel_page').text(page);
+        })
+
+
+        //$('input[name=custtype]').filter('[value=' + custType + ']').prop('checked', true);
+        $('input[name=custtype]').on('change', function () {
+            custType = $(this).val();
+            $('input[name=custtype]').each(function () {
+                var id = $(this).val();
+                $('#search-section-' + id).removeClass('show');
+            })
+
+            $('#search-section-' + custType).addClass('show');
+        });
+
+        $('#custID').on('focus', function (e) {
+            if (e.target.value == '') {
+                $('div[name=custID]').removeClass('error')
+                return;
+            }
+            var reg = new RegExp(/^[A-Z][12][0-9]{8}$/)
+            custIDIValid = reg.test(e.target.value);
+            custIDIValid ? $('#search-section-0 div[name=custID]').removeClass('error') : $(
+                '#search-section-0 div[name=custID]').addClass('error');
+        })
+        $('#custID').on('blur', function (e) {
+            if (e.target.value == '') {
+                $('#search-section-0 div[name=custID]').removeClass('error')
+                return;
+            }
+            var reg = new RegExp(/^[A-Z][12][0-9]{8}$/)
+            custIDIValid = reg.test(e.target.value);
+            custIDIValid ? $('#search-section-0 div[name=custID]').removeClass('error') : $(
+                '#search-section-0 div[name=custID]').addClass('error');
+        })
+
+        $('#custID').on('keyup', function (e) {
+            var reg = new RegExp(/^[A-Z][12][0-9]{8}$/)
+            custIDIValid = reg.test(e.target.value);
+            custIDIValid ? $('#search-section-0 div[name=custID]').removeClass('error') : $(
+                '#search-section-0 div[name=custID]').addClass('error');
+        })
+
+        $('#search-section-0').on('keyup', function () {
+            var disabled = true;
+            $("#search-section-0 :input[type=text]").each(function () {
+                if ($(this).attr('id') == 'custID') {
+                    disabled = !custIDIValid
+                } else {
+                    disabled = ($(this).val() == '');
+                }
+                if (!disabled) {
+                    return false;
+                } // break out of loop
+            });
+
+            $('#searchBtn-0').prop('disabled', disabled);
+        })
+
+        $('#search-section-1').on('keyup', function () {
+            var disabled = true;
+            $("#search-section-1 :input[type=text]").each(function () {
+                if ($(this).attr('id') == 'custID') {
+                    disabled = !custIDIValid
+                } else {
+                    disabled = ($(this).val() == '');
+                }
+                if (!disabled) {
+                    return false;
+                } // break out of loop
+            });
+
+            $('#searchBtn-1').prop('disabled', disabled);
+        })
+
+        $('#calendar').fullCalendar({
+            themeSystem: 'bootstrap4',
+
+            header: {
+                left: 'today prev title next',
+                center: '',
+                right: 'agendaDay,agendaWeek,month'
+            },
+            views: {
+                agenda: {
+                    titleFormat: 'YYYY年 MM月 DD日'
+                },
+                month: {
+                    titleFormat: 'YYYY年 MM月'
+                }
+            },
+            buttonText: {
+                today: '今天',
+                month: '月',
+                agendaWeek: '週',
+                agendaDay: '日'
+            },
+
+            defaultDate: '2018-03-12',
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+
+            eventBackgroundColor: '#009F96',
+            eventBorderColor: '#009F96',
+            eventTextColor: '#fff',
+            eventClick: function (event) {
+                $('#editschel').modal('show');
+            },
+            events: [{
+                    title: 'All Day Event',
+                    start: '2018-03-01'
+                },
+                {
+                    title: 'Long Event',
+                    start: '2018-03-07',
+                    end: '2018-03-10'
+                },
+                {
+                    id: 999,
+                    title: 'Repeating Event',
+                    start: '2018-03-09T16:00:00'
+                },
+                {
+                    id: 999,
+                    title: 'Repeating Event',
+                    start: '2018-03-16T16:00:00'
+                },
+                {
+                    title: 'Conference',
+                    start: '2018-03-11',
+                    end: '2018-03-13'
+                },
+                {
+                    title: 'Meeting',
+                    start: '2018-03-12T10:30:00',
+                    end: '2018-03-12T12:30:00'
+                },
+                {
+                    title: 'Lunch',
+                    start: '2018-03-12T12:00:00'
+                },
+                {
+                    title: 'Meeting',
+                    start: '2018-03-12T14:30:00'
+                },
+                {
+                    title: 'Happy Hour',
+                    start: '2018-03-12T17:30:00'
+                },
+                {
+                    title: 'Dinner',
+                    start: '2018-03-12T20:00:00'
+                },
+                {
+                    title: 'Birthday Party',
+                    start: '2018-03-13T07:00:00'
+                },
+                {
+                    title: 'Click for Google',
+                    url: 'http://google.com/',
+                    start: '2018-03-28'
+                }
+            ]
+        });
+
+    });
+
+    function onSearchCust() {
+        // show table
+        $('input[name=custtype]').each(function () {
+            var id = $(this).val();
+            $('#data-list-' + id).removeClass('show');
+        })
+
+        $('#data-list-' + custType).addClass('show');
+
+        var text = $('#custNum').val();
+        if (text == 'error') {
+            var htmlString = $('#search_error').html();
+            $('#data-list-0').html(htmlString)
+        }
+
+    }
+
+    function onClearSearchParam() {
+        var string = '#search-section-' + custType + ' :input[type=text]'
+        $(string).each(function () {
+            $(this).val('')
+        });
+        $('div[name=custID]').removeClass('error');
+        $('#searchBtn-' + custType).prop('disabled', true);
+    }
+
+    function cancel() {
+        $('#confirm').modal('toggle');
+    }
+
+    function confirm() {
+        var page = parseInt(custType) + 1
+        location.href = 'data_' + page + '.html'
+    }
+
+
+    // function openDatePicker(id) {
+    //     console.log('aaa')
+    //     var did = "#" + id
+    //     $(did).datepicker('show');
+    // }
+
+
+</script>
+<script id="search_error" type="text/template">
+    <div class="nodata">
+        <div>
+            <img src="img/img_empty.png" class="d-inline-block align-top" alt="">
+        </div>
+        <h6>查無資料</h6>
+        <button type="button " class="btn btn-outline-primary my-2 my-sm-0 " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">新增潛在顧客</button>
+    </div>
+</script>
+</body>
+</html>

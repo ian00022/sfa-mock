@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+
+<body>
+  <div class="container-fluid pl-0 pr-0">
+    @@include('./components/sidebar.html', { "sidebarCollapseFirst": "saleArea", "sidebar": "marketingLoan" })
+    <div id="main-content" class="main-content">
+      @@include('./components/navbar.html', { "navbarType": "" })
+
+      <!-- 顧客查詢 -->
+      <section>
+        <nav class="navbar justify-content-between panel-head ">
+          <span class="navbar-brand ">貸款試算
+            <a href="#" class="ps_note pl-3">
+              <i class="fa fa-download" aria-hidden="true"></i>下載房貸壽險試算表
+            </a>
+          </span>
+
+          <ul class="nav float-lg-right float-sm-none nav-function-btn">
+
+            <li>
+              <button type="button" class="nav-link btn" data-toggle="modal" data-target="#emailResult" data-whatever="@mdo">
+                <i class="fa fa-envelope-o iconspace" aria-hidden="true">
+                </i>E-mail 試算結果</button>
+            </li>
+            <li>
+              <button type="button" class="nav-link btn">
+                <i class="fa fa-print iconspace" aria-hidden="true"></i>列印試算結果</button>
+            </li>
+          </ul>
+
+        </nav>
+
+
+        <div id="search-section-0" class="form-row mr-0 area ">
+
+          <div class="form-group col-12 col-md-4 col-lg-3">
+            <label>貸款金額
+              <small class="ps_note">(10~500萬)</small>
+            </label>
+            <div class="input-group">
+              <input type="number" class="form-control inputstyle" placeholder="請填數字" aria-label="120" aria-describedby="basic-addon2">
+              <div class="input-group-append ">
+                <span class="input-group-text inputstyle" id="basic-addon2">萬元</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-12 col-md-4 col-lg-3">
+            <label>貸款期間
+              <small class="ps_note"> (1~84個月)</small>
+
+            </label>
+            <div class="input-group">
+              <input type="number" class="form-control inputstyle" placeholder="請填數字" aria-label="120" aria-describedby="basic-addon2">
+              <div class="input-group-append ">
+                <span class="input-group-text inputstyle" id="basic-addon2">月</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group col-12 col-md-4 col-lg-3">
+            <label>貸款費用
+
+            </label>
+            <div class="input-group">
+              <input type="number" class="form-control inputstyle" placeholder="請填數字" aria-label="120" aria-describedby="basic-addon2">
+              <div class="input-group-append ">
+                <span class="input-group-text inputstyle" id="basic-addon2">元</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group col-12 col-md-4 col-lg-3">
+            <label>寬限期間
+
+            </label>
+            <div class="input-group">
+              <input type="number" class="form-control inputstyle" placeholder="請填數字" aria-label="120" aria-describedby="basic-addon2">
+              <div class="input-group-append ">
+                <span class="input-group-text inputstyle" id="basic-addon2">月</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div id="search-section-0" class="form-row mr-0 area shadow">
+          <label>貸款利率
+            <span class="markRed">*</span>
+          </label>
+          <div class="form-row" style="width: 100%;">
+            <div class="form-group col-12 col-lg-4 border-right">
+              <div class="form-row">
+                <div class="form-check">
+                  <input id="loan-rate_1" name="loan-rate" checked="true" type="radio">
+                  <label for="loan-rate_1" style="cursor: pointer;">一段式</label>
+                </div>
+                <div class="form-check">
+                  <input id="loan-rate_2" name="loan-rate" type="radio">
+                  <label for="loan-rate_2" style="cursor: pointer;">二段式</label>
+                </div>
+                <div class="form-check">
+                  <input id="loan-rate_3" name="loan-rate" type="radio">
+                  <label for="loan-rate_3" style="cursor: pointer;">三段式</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-10 col-lg-6">
+              <form class="pl-2 form-inline" style="width: 100%;"> 
+                <div id="loan-rate_1_inputs" class="form-group">
+                  <label>期間一：第</label>
+                  <input type="number" class="form-control iconspace inputstyle col-1" style="padding-right: 5px; max-width: 50px;">
+                  <label>個月至第</label>
+                  <input type="number" class="form-control iconspace inputstyle col-1" style="padding-right: 5px; max-width: 50px;">
+                  <label>個月</label>
+                  <input type="number" class="form-control iconspace inputstyle col-1" style="padding-right: 5px; max-width: 60px;">
+                  <label>%</label>
+                </div>
+                <div id="loan-rate_2_inputs" class="form-group displayno">
+                  <label>期間二：第</label>
+                  <input type="number" class="form-control iconspace inputstyle col-1" style="padding-right: 5px; max-width: 50px;">
+                  <label>個月至第</label>
+                  <input type="number" class="form-control iconspace inputstyle col-1" style="padding-right: 5px; max-width: 50px;">
+                  <label>個月</label>
+                  <input type="number" class="form-control iconspace inputstyle col-1" style="padding-right: 5px; max-width: 60px;">
+                  <label>%</label>
+                </div>
+                <div id="loan-rate_3_inputs" class="form-group displayno">
+                  <label>期間三：第</label>
+                  <input type="number" class="form-control iconspace inputstyle col-1" style="padding-right: 5px; max-width: 50px;">
+                  <label>個月至第</label>
+                  <input type="number" class="form-control iconspace inputstyle col-1" style="padding-right: 5px; max-width: 50px;">
+                  <label>個月</label>
+                  <input type="number" class="form-control iconspace inputstyle col-1" style="padding-right: 5px; max-width: 60px;">
+                  <label>%</label>
+                </div>
+              </form>
+            </div>
+
+            <div class="form-group col-2 col-lg-2">
+              <div class="form-bottom">
+                <button id="searchBtn-0" type="button " class="btn btn-ylw " onclick="search('result_1')">開始試算</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!--  表單 -->
+      <div id="result_1" class="table-responsive data-list displayno">
+        <div class="info-area  ">
+          <div class="wrap-box-l">
+            <h4 class="name">
+              <span>總費用年利率</span>
+              <span class="blueText">4.99%</span>
+            </h4>
+            <div class=" listinfoarea row no-gutters collapse show" id="collapseInfo" aria-labelledby="headingInfo" data-parent="#Infoaccordion">
+              <div class="col-lg-5  col-sm-12 col-md-12">
+                <ul class="listinfo">
+                  <li>
+                    第 1 ~ 12 期 每期應還本利和
+                    <span class="blueText">21,464</span>元
+                    <span class="sub-tit">(第一期)</span>
+                  </li>
+                  <li>
+                    第 13 ~ 24 期 每期應還本利和
+                    <span class="blueText">21,464</span>元
+                    <span class="sub-tit">(第一期)</span>
+                  </li>
+                  <li>
+                    <span class="sub-tit">* 本試算為利率不變之條件下，採本息均攤計算推估之近似值，僅供您參考。</span>
+                  </li>
+
+                </ul>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped tableinfo">
+          <thead>
+            <tr>
+              <th scope="col ">期別</th>
+              <th scope="col " class="money-right">應還本金</th>
+              <th scope="col " class="money-right">應付利息</th>
+              <th scope="col " class="money-right">應付本息金額</th>
+              <th scope="col " class="money-right">貸款金額</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2</td>
+              <td class="money-right">2,533</td>
+              <td class="money-right">323</td>
+              <td class="money-right">4,200</td>
+              <td class="money-right">13,244</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td class="money-right">2,533</td>
+              <td class="money-right">323</td>
+              <td class="money-right">4,200</td>
+              <td class="money-right">13,244</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td class="money-right">2,533</td>
+              <td class="money-right">323</td>
+              <td class="money-right">4,200</td>
+              <td class="money-right">13,244</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td class="money-right">2,533</td>
+              <td class="money-right">323</td>
+              <td class="money-right">4,200</td>
+              <td class="money-right">13,244</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <!-- pageNum -->
+      <!--<nav class="navNum navbar-light">
+                    <form class="form-inline">
+                        <div>
+                            <button class=" btn-sm pageNum">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            </button>
+                            <button class=" btn-sm pageNum">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </button>
+                            <span class="loanChartNote">1-1 of 1</span>
+                        </div>
+                        <div>
+                            <span class="loanChartNote">Items per page:
+                                <select class="selectpicker inputstyleSelect">
+                                    <option>1</option>
+                                </select>
+                            </span>
+                        </div>
+                    </form>
+                </nav> -->
+    </div>
+
+
+    <!-- email試算結果 -->
+    <div class="modal fade" id="emailResult" tabindex="-1" role="dialog" aria-labelledby="bankInfo" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Email 試算結果</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>收信人
+                <span class="markRed">*</span>
+              </label>
+              <input type="text" class="form-control inputstyle" placeholder="以“，”區隔多個收件人">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+            <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">寄出</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  @@include('./components/footer.html')
+  <script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+    $(document).ready(function () {
+      /**/
+      $('input[type=radio][name=loan-rate]').on('change', function () {
+        switch (this.id) {
+          case 'loan-rate_1':
+            $('#loan-rate_2_inputs').addClass('displayno');
+            $('#loan-rate_3_inputs').addClass('displayno');
+            break;
+          case 'loan-rate_2':
+            $('#loan-rate_2_inputs').removeClass('displayno');
+            $('#loan-rate_3_inputs').addClass('displayno');
+            break;
+          case 'loan-rate_3':
+            $('#loan-rate_2_inputs').removeClass('displayno');
+            $('#loan-rate_3_inputs').removeClass('displayno');
+            break;
+          default:
+            break;
+
+        }
+      });
+    });
+
+    function search(id) {
+      $('#' + id).removeClass('displayno');
+    }
+
+    // function openDatePicker(id) {
+    //     console.log('aaa')
+    //     var did = "#" + id
+    //     $(did).datepicker('show');
+    // }
+  </script>
+
+  <script id="search_error" type="text/template">
+    <div class="nodata">
+      <div>
+        <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+      </div>
+      <h6>查無資料</h6>
+
+    </div>
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+
+		<!-- sidebar -->
+		<div id="@@sbCharacter_sidebar" class="sidebar maingreen">
+			<ul class="nav">
+				<li class="nav-item ">
+					<a class="nav-link @@if(sidebar === 'dashboard') {active}" href="Dashboard.html">Dashboard</a>
+				</li>
+				<li class="nav-item  ">
+					<a class="nav-link @@if(sidebar === 'customerSearch') {active}" href="@@sbCharAssigncustomer_search.html">顧客查詢</a>
+				</li>
+				@@if(sbCharacter==='admin') {
+				<li class="nav-item  ">
+					<a class="nav-link @@if(sidebar === 'customerSearch') {active}" href="@@sbCharAsgnAdmincustomer_search.html">M_顧客查詢</a>
+				</li>	
+				}
+				<li class="nav-item ">
+					<a class="nav-link @@if(sidebarCollapseFirst !== 'namelistManage') {collapsed}" data-toggle="collapse" href="#@@sbCharacter_listinfo">名單管理
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+
+					<ul id="@@sbCharacter_listinfo" class="ullistno panel-collapse collapse @@if(sidebarCollapseFirst === 'namelistManage') {show}" role="menu">
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'namelistSearch') {active}" href="@@sbCharAssignnamelist_search.html">
+								名單查詢
+							</a>
+						</li>
+						@@if(sbCharacter==='admin') {
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'namelistSearch') {active}" href="@@sbCharAsgnAdminnamelist_search.html">
+								M_名單查詢
+							</a>
+						</li>
+						}
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'namelistFavorite') {active}" href="@@sbCharAssignnamelist_search_myfavorite.html">
+								我的最愛
+							</a>
+						</li>
+						@@if(sbCharacter==='admin') {
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'namelistFavorite') {active}" href="@@sbCharAsgnAdminnamelist_search_myfavorite.html">
+								M_我的最愛
+							</a>
+						</li>
+						}
+						<li class="nav-item @@if(sidebar === 'namelistTodayTodo') {active}">
+							<a class="nav-link " href="@@sbCharAssignnamelist_search_todaytodo.html">
+								今日行程
+							</a>
+						</li>
+						@@if(sbCharacter==='admin') {
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'namelistTodayTodo') {active}" href="@@sbCharAsgnAdminnamelist_search_todaytodo.html">
+								M_今日行程
+							</a>
+						</li>
+						}
+            @@if(sbCharacter==='manager') {
+						<li class="nav-item @@if(sidebar === 'namelistRecheck') {active}">
+							<a class="nav-link " href="@@sbCharAssignnamelist_search_recheck.html">
+								名單覆核
+							</a>
+						</li>
+						<li class="nav-item @@if(sidebar === 'namelistAssign') {active}">
+							<a class="nav-link " href="@@sbCharAssignnamelist_search_trans.html">
+								名單分派
+							</a>
+						</li>
+						}
+            @@if(sbCharacter==='admin') {
+						<li class="nav-item @@if(sidebar === 'namelistRecheck') {active}">
+							<a class="nav-link " href="@@sbCharAsgnAdminnamelist_search_recheck.html">
+								名單覆核
+							</a>
+						</li>
+						<li class="nav-item @@if(sidebar === 'namelistAssign') {active}">
+							<a class="nav-link " href="@@sbCharAsgnAdminnamelist_search_trans.html">
+								名單分派
+							</a>
+						</li>
+            }
+					</ul>
+				</li>
+				<li class="nav-item  @@if(sidebar === 'refferalSearch') {active}">
+					<a class="nav-link" href="Refferal_search.html">商機轉介查詢</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link @@if(sidebarCollapseFirst !== 'saleArea') {collapsed} " data-toggle="collapse" href="#@@sbCharacter_listinfoTwo">行銷專區
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+
+					<ul id="@@sbCharacter_listinfoTwo" class="ullistno panel-collapse collapse @@if(sidebarCollapseFirst === 'saleArea') {show}" role="menu">
+						<li class="nav-item @@if(sidebar === 'marketingLoan') {active}">
+							<a class="nav-link " href="marketing_search_loan.html">
+								貸款試算
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'marketingEdm') {active}" href="marketing_search_EDM.html">
+								電子 DM
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'marketingMap') {active}" href="marketing_search_Map.html">
+								行銷地圖
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'marketingValuation') {active}" href="marketing_search_valuation.html">
+								估價查詢
+							</a>
+						</li>
+
+
+					</ul>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link @@if(sidebarCollapseFirst !== 'mange') {collapsed}" data-toggle="collapse" href="#@@sbCharacter_listinfoThree">後台管理
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+
+					<ul id="@@sbCharacter_listinfoThree" class="ullistno panel-collapse collapse @@if(sidebarCollapseFirst === 'mange') {show}" role="menu">
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeCharacter') {active}" href="Mange_character.html">
+								角色權限
+							</a>
+						</li>
+						@@if(sbCharacter==='admin') {
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeCharacter') {active}" href="@@sbCharAsgnAdminMange_character.html">
+								M_角色權限
+							</a>
+						</li>
+						}
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeMarketing') {active}" href="@@sbCharAssignMange_marketing.html">
+								行銷團隊
+							</a>
+						</li>
+						@@if(sbCharacter==='admin') {
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeMarketing') {active}" href="@@sbCharAsgnAdminMange_marketing.html">
+								M_行銷團隊
+							</a>
+						</li>
+						}
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeEmail') {active}" href="Mange_email.html">
+								E-mail 樣板
+							</a>
+						</li>
+						@@if(sbCharacter==='admin') {
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeEmail') {active}" href="@@sbCharAsgnAdminMange_email.html">
+								M_E-mail 樣板
+							</a>
+						</li>
+						}
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeNotification') {active}" href="@@sbCharAssignMange_notification.html">
+								推播通知
+							</a>
+						</li>
+						@@if(sbCharacter==='admin') {
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeNotification') {active}" href="@@sbCharAsgnAdminMange_notification.html">
+								M_推播通知
+							</a>
+						</li>
+						}
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeArrange') {active}" href="Mange_arrange.html">
+								總行指派案件
+							</a>
+						</li>
+						@@if(sbCharacter==='admin') {
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeArrange') {active}" href="@@sbCharAsgnAdminMange_arrange.html">
+								M_總行指派案件
+							</a>
+						</li>
+						}
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeLateNotice') {active}" href="Mange_lateNotice.html">
+								名單/案件逾期通知
+							</a>
+						</li>
+						@@if(sbCharacter==='admin') {
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeLateNotice') {active}" href="@@sbCharAsgnAdminMange_lateNotice.html">
+								M_名單/案件逾期通知
+							</a>
+						</li>
+						}
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeTag') {active}" href="@@sbCharAssignMange_tag.html">
+								推薦產品標籤
+							</a>
+						</li>
+						@@if(sbCharacter==='admin') {
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeTag') {active}" href="@@sbCharAsgnAdminMange_tag.html">
+								M_推薦產品標籤
+							</a>
+						</li>
+						}
+						@@if(sbCharacter==='admin') {
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeProductNum') {active}" href="Mange_productNum.html">
+								產品參數
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeProductNum') {active}" href="@@sbCharAsgnAdminMange_productNum.html">
+								M_產品參數
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeSystemNum') {active}" href="Mange_systemNum.html">
+								系統參數
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link @@if(sidebar === 'mangeSystemNum') {active}" href="@@sbCharAsgnAdminMange_systemNum.html">
+								M_系統參數
+							</a>
+						</li>
+						}
+					</ul>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link @@if(sidebar === 'reportSearch') {active}" href="report_search.html">成效報表</a>
+				</li>
+			</ul>
+		</div>

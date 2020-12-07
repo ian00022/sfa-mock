@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="zh-Hant">
+@@include('./components/head.html')
+<body>
+    <div class="container-fluid pl-0 pr-0">
+        @@include('./components/sidebar.html', {
+            "sidebarCollapseFirst": "namelistManage",
+            "sidebar": "namelistTodayTodo"
+        })
+        <div id="main-content" class="main-content">
+            @@include('./components/navbar.html', { "navbarType": "" })
+            <!-- 顧客查詢 -->
+            <section>
+                <nav class="navbar justify-content-between panel-head ">
+                    <span class="navbar-brand ">今日行程
+                        <span class="ps_note">2018/04/09</span>
+                    </span>
+                    <ul class="nav float-lg-right float-sm-none nav-function-btn">
+                        <li>
+
+                            <div class="nav-link " href="#">
+                                <span class="textGary">排序</span>
+
+                                <button class="btn dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    最近
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right-sorting">
+                                    <a class="dropdown-item " href="# ">名單狀態</a>
+                                    <a class="dropdown-item " href="# ">分派/建立日期</a>
+                                    <a class="dropdown-item " href="# ">統一編號</a>
+                                    <a class="dropdown-item " href="# ">戶名</a>
+                                    <a class="dropdown-item " href="# ">行銷單位</a>
+                                    <a class="dropdown-item " href="# ">行銷人員</a>
+                                    <a class="dropdown-item " href="# ">產品</a>
+                                    <a class="dropdown-item " href="# ">名單來源</a>
+                                    <a class="dropdown-item " href="# ">名單類型</a>
+                                </div>
+
+                            </div>
+
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <div class="pills-tab-container shadow">
+                    <ul class="nav nav-pills tab" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a id="pills-home-tab" class="nav-link active" data-toggle="tab" href="#pills-base-info" role="tab" aria-controls="pills-base-info"
+                                aria-selected="true">一般名單</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-notice-tab" data-toggle="pill" href="#pills-notice" role="tab" aria-controls="pills-notice"
+                                aria-selected="false">
+                                總行指派案件</a>
+                        </li>
+
+
+
+
+
+                    </ul>
+                </div>
+                <div class="area shadow pt-3">
+                    <div id="search-section-0" class="form-row mr-0">
+                        <div class="form-group col-md-2 ">
+                            <label>名單狀態</label>
+                            <div id="name-status" class="dropdown">
+                                <button class="btn inputstyle dropdown-toggle col-12 dropchoose" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <span class="btn-text">未執行、追蹤中</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-stop" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(true, '#name-status')">全選</a>
+                                    <a class="dropdown-item" href="javascript:void(0)" onclick="chooseAll(false, '#name-status')">取消全選</a>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="form-check form-check-inline dropdown-item">
+                                        <input class="form-check-input" type="checkbox" id="none" value="未執行">
+                                        <label class="form-check-label" for="none">未執行</label>
+                                    </div>
+                                    <div class="form-check form-check-inline dropdown-item">
+                                        <input class="form-check-input" type="checkbox" id="tracked" value="追蹤中">
+                                        <label class="form-check-label" for="tracked">追蹤中</label>
+                                    </div>
+                                    <div class="form-check form-check-inline dropdown-item">
+                                        <input class="form-check-input" type="checkbox" id="reject" value="婉拒">
+                                        <label class="form-check-label" for="reject">婉拒</label>
+                                    </div>
+                                    <div class="form-check form-check-inline dropdown-item">
+                                        <input class="form-check-input" type="checkbox" id="accepted" value="已受理">
+                                        <label class="form-check-label" for="accepted">已受理</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2 ">
+                            <label>名單來源</label>
+                            <select class="selectpicker inputstyleSelect">
+                                <option>網路進件</option>
+                                <option>EBM</option>
+                                <option>全部</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3 ">
+                            <label>統一編號
+                                <span class="loanChartNote">(擇一必填)</span>
+                            </label>
+                            <input id="custID" type="text" class="form-control inputstyle " placeholder="e.g. A123456789 " maxlength="10">
+                            <div class="error-msg">
+                                <span>請輸入正確身分證字號</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>分派/建立日期
+                                <span class="loanChartNote">(擇一必填)</span>
+                            </label>
+                            <input class="form-control inputstyle" type="text" name="singledate" placeholder="請選擇日期...">
+
+                        </div>
+                        <div class=" col-md-2 search-btn-pad">
+                            <button id="searchBtn-0" type="button " class="btn btn-ylw " onclick="onSearchCust()" disabled>
+                                <i class="fa fa-search iconspace" aria-hidden="true"></i>搜尋</button>
+                            <button type="button " class="btn btn-gry " onclick="onClearSearchParam()">清除</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Customer 表單 -->
+            <div id="data-list-0" class="table-responsive data-list">
+                <table class="table table-striped tableinfo">
+                    <thead>
+                        <tr>
+                            <th scope="col "></th>
+                            <th scope="col ">名單狀態
+                                <a href="#" data-toggle="modal" data-target="#stateInfo" data-whatever="@mdo ">
+                                    <i class="fa fa-question-circle-o iconspace" aria-hidden="true"></i>
+                                </a>
+                            </th>
+                            <th scope="col ">分派/建立日期</th>
+                            <th scope="col ">統一編號</th>
+                            <th scope="col ">戶名</th>
+                            <th scope="col ">產品</th>
+                            <th scope="col ">行銷單位</th>
+                            <th scope="col ">行銷人員</th>
+
+                            <th scope="col ">名單來源</th>
+                            <th scope="col ">名單類型</th>
+                            <th scope="col "></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="iconyellow">
+                                <a class="addlove">
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <span class="light light-gary"></span>未執行</td>
+                            <td>107/02/10</td>
+                            <td>A128940184</td>
+                            <td>
+                                <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                            </td>
+                            <td>副擔保</td>
+                            <td>消金營運部</td>
+                            <td>李媛媛</td>
+                            <td>網路進件</td>
+                            <td>網路留言板</td>
+                            <td class="money-right">
+                                <div class="btn-group ">
+                                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_EBM.html' } ">
+                                        檢視
+                                    </button>
+                                    <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                                        aria-haspopup="true " aria-expanded="fals">
+                                        <span class="sr-only ">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu ">
+                                        <a class="dropdown-item " href="# ">調閱行內帳務資訊</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#bankInfo" data-whatever="@mdo ">新增行程</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#uplateInfo" data-whatever="@mdo ">上傳文件</a>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="iconyellow">
+                                <a class="addlove">
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <span class="light light-gary"></span>未執行</td>
+                            <td>107/02/10</td>
+                            <td>A128940184</td>
+                            <td>
+                                <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                            </td>
+                            <td>副擔保</td>
+                            <td>消金營運部</td>
+                            <td>李媛媛</td>
+                            <td>網路進件</td>
+                            <td>網路留言板</td>
+                            <td class="money-right">
+                                <div class="btn-group ">
+                                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_EBM.html' } ">
+                                        檢視
+                                    </button>
+                                    <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                                        aria-haspopup="true " aria-expanded="fals">
+                                        <span class="sr-only ">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu ">
+                                        <a class="dropdown-item " href="# ">調閱行內帳務資訊</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#bankInfo" data-whatever="@mdo ">新增行程</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#uplateInfo" data-whatever="@mdo ">上傳文件</a>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="iconyellow">
+                                <a class="addlove">
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <span class="light light-gary"></span>未執行</td>
+                            <td>107/02/10</td>
+                            <td>A128940184</td>
+                            <td>
+                                <a href="customer_data.html" class="alink" target=_blank>陳先生</a>
+                            </td>
+                            <td>副擔保</td>
+                            <td>消金營運部</td>
+                            <td>李媛媛</td>
+                            <td>網路進件</td>
+                            <td>網路留言板</td>
+                            <td class="money-right">
+                                <div class="btn-group ">
+                                    <button class="btn btn-outline-primary btn-sm " type="button" onclick="{location.href='./namelist_data_EBM.html' } ">
+                                        檢視
+                                    </button>
+                                    <button type="button " class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                                        aria-haspopup="true " aria-expanded="fals">
+                                        <span class="sr-only ">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu ">
+                                        <a class="dropdown-item " href="# ">調閱行內帳務資訊</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#bankInfo" data-whatever="@mdo ">新增行程</a>
+                                        <a class="dropdown-item " href="# " data-toggle="modal" data-target="#uplateInfo" data-whatever="@mdo ">上傳文件</a>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- pageNum -->
+            <nav class="navNum navbar-light">
+                <form class="form-inline">
+                    <div>
+                        <button class=" btn-sm pageNum">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </button>
+                        <button class=" btn-sm pageNum">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </button>
+                        <span class="loanChartNote">1 of 1</span>
+                    </div>
+                    <div>
+                        <span class="loanChartNote">Items per page:
+                            <select class="form-control inputstyle">
+                                <option>50</option>
+                            </select>
+                        </span>
+                    </div>
+                </form>
+            </nav>
+        </div>
+
+        <!-- 狀態說明 -->
+        <div class="modal fade" id="stateInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">狀態說明</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table statusInfo">
+                            <thead>
+                                <tr>
+                                    <th scope="col">標示</th>
+                                    <th scope="col">說明</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+                                    <td>
+                                        <span class="light light-red">
+                                        </span>
+                                    </td>
+                                    <td>紅色燈號，當此燈亮起閃爍時代表該名單即將逾期，原因包含如下：(1)未分派(限主管) (2)未執行 (3)追蹤逾期 (4)到期通知</td>
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                        <span class="light light-gary">
+                                        </span>
+                                    </td>
+                                    <td>灰色燈號，該名單尚未逾期</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="iconyellow">
+                                            <i class="fa fa-clock-o " aria-hidden="true"></i>
+                                        </span>
+                                    </td>
+                                    <td>當顯示此標示時，即代表該名單待主管放行</td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="markRed">
+                                            <i class="fa fa-ban" aria-hidden="true"></i>
+                                        </span>
+                                    </td>
+                                    <td>當顯示此標示時，即代表該名單遭主管退回</td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                        <i class="fa fa-clone " aria-hidden="true"></i>
+
+                                    </td>
+                                    <td>當顯示此標示時，即代表該名單為重複商機</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- 調閱行內帳務資訊 -->
+        <div class="modal fade" id="bankInfo" tabindex="-1" role="dialog" aria-labelledby="bankInfo" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">行銷警示註記</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>此顧客
+                            <span class="markRed">不接受電話行銷</span>，請留意！</p>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-gry" data-dismiss="modal" aria-label="Close">取消</button>
+                        <button type="button" class="btn btn-ylw " data-dismiss="modal" aria-label="Close">新增行程</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 上傳文件 -->
+        <div class="modal fade" id="uplateInfo" tabindex="-1" role="dialog" aria-labelledby="uplateInfo" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="uplateInfo">上傳文件</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="uplatearea">
+                            <div>
+                                <a href="#">
+                                    <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                                </a>
+                                <span>申請書</span>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                                </a>
+                                <span>身分證</span>
+                            </div>
+
+                            <div>
+                                <a href="#">
+                                    <i class="fa fa-plus fa-" aria-hidden="true"></i>
+                                </a>
+                                <span>所得文件</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+@@include('./components/footer.html')
+<script>
+    var custType = 0;
+    var custID = '';
+    var custIDIValid = true;
+    $(document).ready(function () {
+
+        /**/
+
+        // dropdown-menu-stop 
+        $(document).on('click', '.dropdown-menu-stop', function (e) {
+            e.stopPropagation();
+        });
+        $('input[type=checkbox].form-check-input').on('change', function () {
+            var id = '#' + $(this).closest('.form-check').closest(
+                '.dropdown-menu.dropdown-menu-stop').closest('.dropdown')[0].id;
+            var strings = [];
+            $(id).find('.dropdown-menu.dropdown-menu-stop').children().each(function () {
+                var checked = $(this).find('input').prop('checked')
+                if (checked) {
+                    strings.push($(this).find('input').val())
+                }
+            })
+            var buttonTitle = strings.length == 0 ? '請選擇' : strings.join(', ');
+            $(id).find('.btn-text').text(buttonTitle)
+        })
+    });
+
+    // function openDatePicker(id) {
+    //     console.log('aaa')
+    //     var did = "#" + id
+    //     $(did).datepicker('show');
+    // }
+
+</script>
+
+<script id="search_error" type="text/template">
+    <div class="nodata">
+        <div>
+            <img src="../img/img_empty.png" class="d-inline-block align-top" alt="">
+        </div>
+        <h6>查無資料</h6>
+
+    </div>
+</script>
+</body>
+</html>
