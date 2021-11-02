@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Data Tables</title>
+
+    
+    <link href="../Content/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../Content/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="../Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Content/css/plugins/iCheck/custom.css" rel="stylesheet">
+
+    <link href="../Content/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <!-- c3 Charts -->
+    <link href="../Content/css/plugins/c3/c3.min.css" rel="stylesheet">
+
+    <link href="../Content/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+
+    <link href="../Content/css/animate.css" rel="stylesheet">
+    <link href="../Content/css/style.css" rel="stylesheet">
+
+
+    <!-- 修改的CSS -->
+    <link href="../Content/css/modify.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="../images/profile_small.jpg" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
+                             </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="mailbox.html">Mailbox</a></li>
+                            <li class="divider"></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="index.html">Dashboard v.1</a></li>
+                        <li><a href="dashboard_2.html">Dashboard v.2</a></li>
+                        <li><a href="dashboard_3.html">Dashboard v.3</a></li>
+                        <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
+                        <li><a href="dashboard_5.html">Dashboard v.5 <span class="label label-primary pull-right">NEW</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="graph_flot.html">Flot Charts</a></li>
+                        <li><a href="graph_morris.html">Morris.js Charts</a></li>
+                        <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
+                        <li><a href="graph_chartjs.html">Chart.js</a></li>
+                        <li><a href="graph_chartist.html">Chartist</a></li>
+                        <li><a href="c3.html">c3 charts</a></li>
+                        <li><a href="graph_peity.html">Peity Charts</a></li>
+                        <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="mailbox.html">Inbox</a></li>
+                        <li><a href="mail_detail.html">Email view</a></li>
+                        <li><a href="mail_compose.html">Compose email</a></li>
+                        <li><a href="email_template.html">Email templates</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>  </a>
+                </li>
+                <li>
+                    <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="form_basic.html">Basic form</a></li>
+                        <li><a href="form_advanced.html">Advanced Plugins</a></li>
+                        <li><a href="form_wizard.html">Wizard</a></li>
+                        <li><a href="form_file_upload.html">File Upload</a></li>
+                        <li><a href="form_editors.html">Text Editor</a></li>
+                        <li><a href="form_markdown.html">Markdown</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="contacts.html">Contacts</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="profile_2.html">Profile v.2</a></li>
+                        <li><a href="contacts_2.html">Contacts v.2</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="project_detail.html">Project detail</a></li>
+                        <li><a href="teams_board.html">Teams board</a></li>
+                        <li><a href="social_feed.html">Social feed</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="full_height.html">Outlook view</a></li>
+                        <li><a href="vote_list.html">Vote list</a></li>
+                        <li><a href="file_manager.html">File manager</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="issue_tracker.html">Issue tracker</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="article.html">Article</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="timeline.html">Timeline</a></li>
+                        <li><a href="pin_board.html">Pin board</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="search_results.html">Search results</a></li>
+                        <li><a href="lockscreen.html">Lockscreen</a></li>
+                        <li><a href="invoice.html">Invoice</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="login_two_columns.html">Login v.2</a></li>
+                        <li><a href="forgot_password.html">Forget password</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="404.html">404 Page</a></li>
+                        <li><a href="500.html">500 Page</a></li>
+                        <li><a href="empty_page.html">Empty page</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="toastr_notifications.html">Notification</a></li>
+                        <li><a href="nestable_list.html">Nestable list</a></li>
+                        <li><a href="agile_board.html">Agile board</a></li>
+                        <li><a href="timeline_2.html">Timeline v.2</a></li>
+                        <li><a href="diff.html">Diff</a></li>
+                        <li><a href="i18support.html">i18 support</a></li>
+                        <li><a href="sweetalert.html">Sweet alert</a></li>
+                        <li><a href="idle_timer.html">Idle timer</a></li>
+                        <li><a href="truncate.html">Truncate</a></li>
+                        <li><a href="spinners.html">Spinners</a></li>
+                        <li><a href="tinycon.html">Live favicon</a></li>
+                        <li><a href="google_maps.html">Google maps</a></li>
+                        <li><a href="code_editor.html">Code editor</a></li>
+                        <li><a href="modal_window.html">Modal window</a></li>
+                        <li><a href="clipboard.html">Clipboard</a></li>
+                        <li><a href="forum_main.html">Forum view</a></li>
+                        <li><a href="validation.html">Validation</a></li>
+                        <li><a href="tree_view.html">Tree view</a></li>
+                        <li><a href="loading_buttons.html">Loading buttons</a></li>
+                        <li><a href="chat_view.html">Chat view</a></li>
+                        <li><a href="masonry.html">Masonry</a></li>
+                        <li><a href="tour.html">Tour</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="icons.html">Icons</a></li>
+                        <li><a href="draggable_panels.html">Draggable Panels</a></li> <li><a href="resizeable_panels.html">Resizeable Panels</a></li>
+                        <li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="video.html">Video</a></li>
+                        <li><a href="tabs_panels.html">Panels</a></li>
+                        <li><a href="tabs.html">Tabs</a></li>
+                        <li><a href="notifications.html">Notifications & Tooltips</a></li>
+                        <li><a href="badges_labels.html">Badges, Labels, Progress</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
+                </li>
+                <li class="active">
+                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="table_basic.html">Static Tables</a></li>
+                        <li class="active"><a href="table_data_tables.html">Data Tables</a></li>
+                        <li><a href="table_foo_table.html">Foo Tables</a></li>
+                        <li><a href="jq_grid.html">jqGrid</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="ecommerce_products_grid.html">Products grid</a></li>
+                        <li><a href="ecommerce_product_list.html">Products list</a></li>
+                        <li><a href="ecommerce_product.html">Product edit</a></li>
+                        <li><a href="ecommerce_product_detail.html">Product detail</a></li>
+                        <li><a href="ecommerce-cart.html">Cart</a></li>
+                        <li><a href="ecommerce-orders.html">Orders</a></li>
+                        <li><a href="ecommerce_payments.html">Credit Card form</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="basic_gallery.html">Lightbox Gallery</a></li>
+                        <li><a href="slick_carousel.html">Slick Carousel</a></li>
+                        <li><a href="carousel.html">Bootstrap Carousel</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li>
+                            <a href="#">Third Level <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="#">Third Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level Item</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><a href="#">Second Level Item</a></li>
+                        <li>
+                            <a href="#">Second Level Item</a></li>
+                        <li>
+                            <a href="#">Second Level Item</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>
+                </li>
+                <li class="landing_link">
+                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>
+                </li>
+                <li class="special_link">
+                    <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            <form role="search" class="navbar-form-custom" action="search_results.html">
+                <div class="form-group">
+                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                </div>
+            </form>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="../images/a7.jpg">
+                                </a>
+                                <div class="media-body">
+                                    <small class="pull-right">46h ago</small>
+                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                                    <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="../images/a4.jpg">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right text-navy">5h ago</small>
+                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                                    <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="../images/profile.jpg">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right">23h ago</small>
+                                    <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                                    <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="mailbox.html">
+                                    <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="profile.html">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="login.html">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-sm-6">
+                <h2>客戶基本資料</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html">首頁</a>
+                    </li>
+                    <li>
+                        <a href="＃">客戶管理</a>
+                    </li>
+                    <li class="active">
+                        <strong>客戶基本資料</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-sm-6">
+                <div class="padding-t-30 text-align-r">
+                    <!-- <button type="button" class="btn btn-primary"><i class="fa fa-times"></i> 取消</button> -->
+                    <!-- <a href="kgis_stroke_booking.html" class="btn btn-primary"><i class="fa fa-times"></i> 取消</a> -->
+                    <a href="#" class="btn btn-fail margin-b-5"><i class="fa fa-mail-reply"></i> </a>
+                    <!-- <a href="#" class="btn btn-primary saveFile margin-b-5"><i class="fa fa-briefcase"></i> 安排拜訪</a>
+                    <a href="#" class="btn btn-primary saveFile margin-b-5"><i class="fa fa-plus"></i> 新增訪談紀錄</a>
+                    <a href="#" class="btn btn-primary saveFile margin-b-5"><i class="fa fa-wrench"></i> 維護KYC</a> -->
+                    <!-- <a href="#" class="btn btn-primary"><i class="fa fa-check"></i> 放行</a> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- wrapper-content -->
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row m-b-lg border-b-e7eaec">
+                
+                <div class="col-md-12 col-lg-6">
+                    <div class="row ">
+                        <div class="col-md-6 col-lg-6 padding-b-20">
+                            <div class="clearfix">
+
+                                <div class="profile-image">
+                                    <img src="../images/a4.jpg" class="img-circle circle-border" alt="profile">
+                                    <ul class="client-info-list">
+                                        <li><strong>生日：</strong><span>1989/7/31</span></li>
+                                        <li><strong>年齡：</strong><span>61</span></li>
+                                        <li><strong>婚姻：</strong><span>已婚</span></li>
+                                    </ul>
+                                </div>
+                                <div class="profile-info">
+                                    <div class="profile-info-box">
+
+                                            <h2 class="no-margins">
+                                                林美麗
+                                                <!-- <a href="#" data-toggle="modal" data-target="#detailListModal" tabindex="-1"><i class="fa fa-refresh"></i></a>   -->
+                                                <!-- <a href="#"><i class="fa fa-refresh"></i></a>   --> 
+                                            </h2>
+                                            <h4>Lin Mary（美美）</h4>
+                                            <div class="adress-select-wrap">
+                                                <strong>Twitter, Inc.</strong>
+
+                                                <div class="input-group-btn">
+                                                    <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button"><span class="caret"></span></button>
+                                                    <ul class="dropdown-menu pull-left">
+                                                        <li><a href="#">795 Folsom Ave, Suite 600 San Francisco, CA 94107</a></li>
+                                                        <li><a href="#">888 Folsom Ave, Suite 8888
+                                                San Francisco, CA 88888</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="adress-msg">
+                                                    <span class="adress">
+                                                    795 Folsom Ave, Suite 600
+                                                    San Francisco, CA 94107</span>
+                                                    <a class="adress-map"><i class="fa fa-map-marker"></i></a>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="phone-number-select-wrap">
+                                                <div class="input-group-btn">
+                                                    <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button"><span class="caret"></span></button>
+                                                    <ul class="dropdown-menu pull-left">
+                                                        <li><a href="#">(123) 456-7890</a></li>
+                                                        <li><a href="#">(321) 123-1233</a></li>
+                                                    </ul>
+                                                </div>
+                                                <abbr title="Phone">P:</abbr> <span class="phone-number">(123) 456-7890</span>
+                                            </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 padding-b-20">
+                            
+                            <strong class="font-size-16">興趣</strong>
+                            <div class="dl-wrap">
+                                <div class="dl">
+                                    <div class="dt">休閒/運動:</div>
+                                    <div class="dd">
+                                        <div class="label label-danger">騎重機</div>
+                                        <div class="label label-danger">高爾夫球</div>
+                                        <div class="label label-danger">旅遊</div>
+                                    </div> 
+                                </div>
+                            
+                            
+                                <div class="dl">
+                                    <div class="dt">音樂:</div>
+                                    <div class="dd"> 
+                                        <div class="label label-danger">西洋</div>
+                                        <div class="label label-danger">搖滾</div>
+                                    </div>
+                                </div>
+
+                                <div class="dl">
+                                    <div class="dt">飲食偏好:</div>
+                                    <div class="dd"> 
+                                        <div class="label label-danger">義式</div>
+                                        <div class="label label-danger">日式</div>
+                                        <div class="label label-danger">忌 : 海鮮</div>
+                                        <div class="label label-danger">烹飪喜好 : 快炒</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="dl">
+                                    <div class="dt">禮品偏好:</div>
+                                    <div class="dd"> 
+                                        <div class="label label-danger">3c產品</div>
+                                        <div class="label label-danger">名錶</div>
+                                    </div>
+                                </div>
+                                
+                            
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                
+                <div class="col-md-12 col-lg-6">
+                    <div class="row ">
+                        <div class="col-md-6 col-lg-6 padding-b-20">
+                            <strong class="font-size-16">代辦事項</strong>
+                            <div class="font-size-12 padding-t-5">
+                                <a href="#">今日到期</a> |
+                                <a href="#">客戶交辦<span>(2)</span></a> |
+                                <a href="#">行程<span>(1)</span></a> |
+                                <a href="#">訪談紀錄<span>(2)</span></a>
+                            </div>
+                            <ul class="todo-list m-t small-list ui-sortable label-no-margin">
+                                <li>
+                                    <small class="label label-primary"><i class="fa fa-clock-o"></i></small>
+                                    <span class="m-l-xs">Buy a milk</span>
+                                </li>
+                                <li>
+                                    <small class="label label-info"><i class="fa fa-clock-o"></i></small>
+                                    <span class="m-l-xs">Go to shop and find some products.</span>
+                                </li>
+                                <li>
+                                    <small class="label label-warning"><i class="fa fa-clock-o"></i></small>
+                                    <span class="m-l-xs">Send documents to Mike</span>
+                                </li>
+                                <li>
+                                    <small class="label label-danger"><i class="fa fa-clock-o"></i></small>
+                                    <span class="m-l-xs">Go to the doctor dr Smith</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 padding-b-20">
+
+                            <div id="gauge" class="text-center"></div>
+                            <div class="text-align-c">
+                                <a href="#">KYC完成率</a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="tabs-container tabs-container-client margin-b-20">
+                        <ul id="clickTabBtnActive" class="nav nav-tabs">
+                            <li class=""><a class="tabs-bg-warning" href="#tab-1" data-toggle="tab">彙總</a></li>
+                            <li class="active"><a class="bg-1c84c6" data-toggle="tab" href="#tab-2">台股市佔衰退、低於頻率</a></li>
+                            <li class=""><a href="#tab-3" class="disable">期貨</a></li>
+                            <li class=""><a data-toggle="tab" href="#tab-4">複委託</a></li>
+                            <li class=""><a data-toggle="tab" href="#tab-5">金錢信託</a></li>
+                            <li class=""><a data-toggle="tab" href="#tab-6">借券信託</a></li>
+                            <li class=""><a href="#tab-7" class="disable">保險</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab-1" class="tab-pane ">
+                                <div class="panel-body">
+                                    1
+                                </div>
+                            </div>
+                            <div id="tab-2" class="tab-pane active">
+                                <div class="panel-body">
+                                    <div class="dl-wrap">
+
+                                        <div class="dl">
+                                            <div class="dt">台股峰值：</div>
+                                            <div class="dd">
+                                                2,500萬（已損<span class="color-ed5565">-250萬,-10%</span>）
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">台股庫存：</div>
+                                            <div class="dd">
+                                                1,288萬（未損<span class="color-ed5565">-188萬,-15%</span>）
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">成交市佔：</div>
+                                            <div class="dd">
+                                                本月1,098萬（0.655%）
+                                                <br>
+                                                近12月38.5億 (0.915%）
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">現金(估)：</div>
+                                            <div class="dd">
+                                                774萬元
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">持倉率：</div>
+                                            <div class="dd">
+                                                66%
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">現持：</div>
+                                            <div class="dd">
+                                                2檔（過去：<span class="color-ed5565">持股集中</span>3.4檔 <span class="color-ed5565">高波動</span>（貝他1.35））
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">投資偏好：</div>
+                                            <div class="dd">
+                                                台灣五十/通信網路
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">投資頻率：</div>
+                                            <div class="dd">
+                                                近月<span class="color-ed5565">7天</span><月均成交13天
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab-3" class="tab-pane">
+                                <div class="panel-body">
+                                    3
+                                </div>
+                            </div>
+                            <div id="tab-4" class="tab-pane">
+                                <div class="panel-body">
+                                    <div class="dl-wrap">
+
+                                       
+                                        <div class="dl">
+                                            <div class="dt">現金(估)：</div>
+                                            <div class="dd">
+                                                774萬元
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">持倉率：</div>
+                                            <div class="dd">
+                                                66%
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">現持：</div>
+                                            <div class="dd">
+                                                2檔（過去：<span class="color-ed5565">持股集中</span>3.4檔 <span class="color-ed5565">高波動</span>（貝他1.35））
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">投資偏好：</div>
+                                            <div class="dd">
+                                                台灣五十/通信網路
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">投資頻率：</div>
+                                            <div class="dd">
+                                                近月<span class="color-ed5565">7天</span><月均成交13天
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab-5" class="tab-pane">
+                                <div class="panel-body">
+                                    <div class="dl-wrap">
+
+                                        <div class="dl">
+                                            <div class="dt">成交市佔：</div>
+                                            <div class="dd">
+                                                本月1,098萬（0.655%）
+                                                <br>
+                                                近12月38.5億 (0.915%）
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">現金(估)：</div>
+                                            <div class="dd">
+                                                774萬元
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">持倉率：</div>
+                                            <div class="dd">
+                                                66%
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">現持：</div>
+                                            <div class="dd">
+                                                2檔（過去：<span class="color-ed5565">持股集中</span>3.4檔 <span class="color-ed5565">高波動</span>（貝他1.35））
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">投資偏好：</div>
+                                            <div class="dd">
+                                                台灣五十/通信網路
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">投資頻率：</div>
+                                            <div class="dd">
+                                                近月<span class="color-ed5565">7天</span><月均成交13天
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab-6" class="tab-pane">
+                                <div class="panel-body">
+                                    <div class="dl-wrap">
+
+                                        <div class="dl">
+                                            <div class="dt">台股庫存：</div>
+                                            <div class="dd">
+                                                1,288萬（未損<span class="color-ed5565">-188萬,-15%</span>）
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">成交市佔：</div>
+                                            <div class="dd">
+                                                本月1,098萬（0.655%）
+                                                <br>
+                                                近12月38.5億 (0.915%）
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">現金(估)：</div>
+                                            <div class="dd">
+                                                774萬元
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">持倉率：</div>
+                                            <div class="dd">
+                                                66%
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">現持：</div>
+                                            <div class="dd">
+                                                2檔（過去：<span class="color-ed5565">持股集中</span>3.4檔 <span class="color-ed5565">高波動</span>（貝他1.35））
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">投資偏好：</div>
+                                            <div class="dd">
+                                                台灣五十/通信網路
+                                            </div>
+                                        </div>
+                                        <div class="dl">
+                                            <div class="dt">投資頻率：</div>
+                                            <div class="dd">
+                                                近月<span class="color-ed5565">7天</span><月均成交13天
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab-7" class="tab-pane">
+                                <div class="panel-body">
+                                    7
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 m-b-lg">
+                    <div class="vertical-timeline-client-wrap">
+                        <div id="vertical-timeline" class="vertical-container vertical-container-client light-timeline no-margins">
+                            <div class="vertical-timeline-block">
+                                <div class="vertical-timeline-icon navy-bg">
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+
+                                <div class="vertical-timeline-content">
+                                    <h2>拜訪紀錄</h2>
+                                    <p class="timeline-msg">顯是以們，鄉人親可態人就面都一好，放心法不見新：論他所、別利來別東坐，花變民士或黨：全原命！選還形高發部送爸為是山八比的……場接了天真生性排我少社女，如賽在是看差。親能容灣運出間興過考事物照以大文落我是車法國麼世屋，究機技大地道應會著失、別行氣有可水還小師常國態臺：及地年老之在，技制上天奇太場以開證中投性，然日參裡。身的媽際絕離自超的生到只命城情向自生政告的藥為義生管用。聲和他……見訴三後最神。是成洋精送會己不選不庭著低國究話製本天空議……相他品定花風取所人可不提施陽要果？</p>
+                                    <a href="#" class="btn btn-sm btn-info">more</a>
+                                        <span class="vertical-date">
+                                            Today <br>
+                                            <small>Dec 24</small>
+                                        </span>
+                                </div>
+                            </div>
+
+                            <div class="vertical-timeline-block">
+                                <div class="vertical-timeline-icon blue-bg">
+                                    <i class="fa fa-file-text"></i>
+                                </div>
+
+                                <div class="vertical-timeline-content">
+                                    <h2>拜訪行程</h2>
+                                    <p>提供完整拜訪前置文件給大戶</p>
+                                    
+                                        <span class="vertical-date">
+                                            Today <br>
+                                            <small>Dec 24</small>
+                                        </span>
+                                </div>
+                            </div>
+
+                            <div class="vertical-timeline-block">
+                                <div class="vertical-timeline-icon lazur-bg">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+
+                                <div class="vertical-timeline-content">
+                                    <h2>來電紀錄</h2>
+                                    <p>提醒客戶額度相關事項</p>
+                                    
+                                    <span class="vertical-date"> Yesterday <br><small>Dec 23</small></span>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <div class="row"> 
+            	<div class="col-lg-12">
+	            	<div class="client-chart-wrap">
+		            	<div class="row">
+		            	
+			                <div class="col-lg-6">
+			                    <div id="chart-1-wrap" class="">
+			                        <div class="clearfix">
+			                            <strong class="padding-l-30 font-size-16 color-f8ac59">市佔率</strong>
+			                            <button href="#" id="chart-1-btn" class="btn btn-sm btn-primary float-r client-chart-btn" > <i class="fa fa-search-plus"></i> 檢視</button> 
+			                        </div>
+			                        
+			                        <div id="chart-1"></div>
+			                    </div>
+			                    
+			                    <div id="chart-2-wrap" class="">
+			                        <div class="clearfix">
+			                            <strong class="padding-l-30 font-size-16 color-f8ac59">市佔率</strong>
+			                            <a href="#" id="chart-2-btn" class="btn btn-sm btn-primary float-r client-chart-btn"> <i class="fa fa-search-plus"></i> 檢視</a>
+			                        </div>
+			                        <div id="chart-2"></div>
+			                    </div>
+
+			                    <div id="chart-3-wrap" class="">
+			                        <div class="clearfix">
+			                            <strong class="padding-l-30 font-size-16 color-f8ac59">市佔率</strong>
+			                            <a href="#" id="chart-3-btn" class="btn btn-sm btn-primary float-r client-chart-btn"> <i class="fa fa-search-plus"></i> 檢視</a>
+			                        </div>
+			                        <div id="chart-3"></div>
+			                    </div>
+
+			                    
+
+			                </div>
+			                <div class="col-lg-6">
+			                    <div id="chart-4-wrap" class="">
+			                        <div class="clearfix">
+			                            <strong class="padding-l-30 font-size-16 color-f8ac59">市佔率</strong>
+			                            <a href="#" id="chart-4-btn" class="btn btn-sm btn-primary float-r client-chart-btn"> <i class="fa fa-search-plus"></i> 檢視</a>
+			                        </div>
+			                        <div id="chart-4"></div>
+			                    </div>
+			                    <div id="chart-5-wrap" class="margin-b-20">
+			                        <div class="clearfix">
+			                            <strong class="padding-l-30 font-size-16 color-f8ac59">市佔率</strong>
+			                            <a href="#" class="btn btn-sm btn-primary float-r pie-chart-back btn-disable"> <i class="fa fa-mail-reply"> 返回</i></a>
+			                        </div>
+			                        <div id="chart-5"></div>
+			                    </div>  
+			                    
+			                    <div id="chart-6-wrap" class="margin-b-20">
+			                        <div class="clearfix">
+			                            <strong class="padding-l-30 font-size-16 color-f8ac59 ">市佔率</strong>
+			                            <a href="#" id="chart-6-btn" class="btn btn-sm btn-primary float-r client-chart-btn"> <i class="fa fa-search-plus"></i> 檢視</a>
+			                        </div>
+			                        <div id="chart-6"></div>
+			                    </div>
+			                    
+			                </div>
+						
+						</div>
+	                </div>	
+                </div>	
+                
+            </div>
+            
+            
+
+
+            
+        </div>
+        <!-- wrapper-content End -->
+
+
+        <!-- clientChartModal -->
+        <div class="modal fade " id="clientChartModal-1" role="dialog">
+            <div class="modal-dialog modal-xlg">
+                
+                <div class="modal-content">
+                    <div class="modal-header modal-header-view-list">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">市佔率</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                                <div class="col-md-12">
+                                     <div id="chart-modal-1"></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade " id="clientChartModal-2" role="dialog">
+            <div class="modal-dialog modal-xlg">
+                
+                <div class="modal-content">
+                    <div class="modal-header modal-header-view-list">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">市佔率</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                                <div class="col-md-12">
+                                     <div id="chart-modal-2"></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade " id="clientChartModal-3" role="dialog">
+            <div class="modal-dialog modal-xlg">
+                
+                <div class="modal-content">
+                    <div class="modal-header modal-header-view-list">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">市佔率</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                                <div class="col-md-12">
+                                     <div id="chart-modal-3"></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade " id="clientChartModal-4" role="dialog">
+            <div class="modal-dialog modal-xlg">
+                
+                <div class="modal-content">
+                    <div class="modal-header modal-header-view-list">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">市佔率</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                                <div class="col-md-12">
+                                     <div id="chart-modal-4"></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade " id="clientChartModal-6" role="dialog">
+            <div class="modal-dialog modal-xlg">
+                
+                <div class="modal-content">
+                    <div class="modal-header modal-header-view-list">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">市佔率</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                                <div class="col-md-12">
+                                     <div id="chart-modal-6"></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2015
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+    
+
+    <!-- Mainly scripts -->
+    <script src="../Scripts/jquery-2.1.1.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../Scripts/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../Scripts/plugins/jeditable/jquery.jeditable.js"></script>
+
+    
+    <!-- Chosen -->
+    <script src="../Scripts/plugins/chosen/chosen.jquery.js"></script>
+    
+
+    <!-- Custom and plugin javascript -->
+    <script src="../Scripts/inspinia.js"></script>
+    <script src="../Scripts/plugins/pace/pace.min.js"></script>
+
+
+    <!-- d3 and c3 charts -->
+    <script src="../Scripts//plugins/d3/d3.min.js"></script>
+    <script src="../Scripts//plugins/c3/c3.min.js"></script>
+
+    <!-- Page-Level Scripts -->
+    <script>
+        $(document).ready(function(){
+            
+            // timeline read more
+            $(".vertical-timeline-content").each(function(){
+                var $this = $(this);
+                $this.find(".btn").click(function(e){
+                    
+                    if($this.find(".timeline-msg").hasClass("readMore")){
+                        $this.find(".timeline-msg").removeClass("readMore");
+                        $(this).text("Read more");
+                    }else{
+                        $this.find(".timeline-msg").addClass("readMore");
+                        $(this).text("Close");
+                    }
+                    return false;
+                });
+            });
+
+            // 面板全展開全關閉
+            $("#openAllPanel").click(function(){
+                $(".collapse-link").each(function(){
+                   if($(this).find(">i").hasClass("fa-chevron-down")){
+                        $(this).click();
+                    }
+                });
+            });
+            $("#closeAllPanel").click(function(){
+                $(".collapse-link").each(function(){
+                   if($(this).find(">i").hasClass("fa-chevron-up")){
+                        $(this).click();
+                    }
+                });
+            });
+
+            // 地址和電話切換
+            $(".adress-select-wrap .dropdown-menu li").click(function(){
+                $(".adress").text($(this).text());
+            });
+            $(".phone-number-select-wrap .dropdown-menu li").click(function(){
+                $(".phone-number").text($(this).text());
+            });
+            $(".cellPhone-number-select-wrap .dropdown-menu li").click(function(){
+                $(".cellPhone-number").text($(this).text());
+            });
+
+            // content header when scroll set position fixed 
+            var _headerPosTop = $(".navbar-static-top").innerHeight(),
+                _headerH = $(".page-heading").innerHeight();
+            $(window).resize(function(){
+                if($(".page-heading").innerHeight() != _headerH){
+                    _headerH = $(".page-heading").innerHeight();
+                    if($("body").scrollTop() > _headerPosTop ){
+                        $(".wrapper-content").css("margin-top",_headerH);
+                    }
+                }
+                if($(".page-heading").offset().top != _headerPosTop){
+                    _headerPosTop = $(".navbar-static-top").innerHeight();
+                }
+
+            });
+            $(window).scroll(function(){
+                if( $("body").scrollTop() > _headerPosTop ){
+                    // console.log($("body").scrollTop(),_headerPosTop);
+                    $(".page-heading").addClass("active");
+                    $(".wrapper-content").css("margin-top",_headerH);
+                }else{
+                    $(".page-heading").removeClass("active");
+                    $(".wrapper-content").removeAttr("style");
+                }
+            }).scroll();
+
+
+        });
+
+
+
+
+
+        var config = {
+                '.chosen-select'           : {},
+                '.chosen-select-deselect'  : {allow_single_deselect:true},
+                '.chosen-select-no-single' : {disable_search_threshold:10},
+                '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+                '.chosen-select-width'     : {width:"95%"}
+                }
+            for (var selector in config) {
+                $(selector).chosen(config[selector]);
+            }
+
+
+        c3.generate({
+                bindto: '#gauge',
+                data:{
+                    columns: [
+                        ['data', 100]
+                    ],
+
+                    type: 'gauge'
+                },
+                size :{
+                    width : 200
+                },
+                color:{
+                    pattern: ['#ed5565', '#f8ac59', '#1ab394', '#1c84c6'],
+                    threshold: {
+			            values: [25, 50, 75, 100]
+			        }
+
+                }
+            });
+
+
+        function catchChartDataMinMaxNum(data){
+            chart_data_name = data.splice(0,1);
+            chart_data_max = Math.max.apply(null, data),
+            chart_data_min = Math.min.apply(null, data);
+            // console.log(chart_data_name);
+            // for( var i = 0; i < data.length; i++){
+            //     if( data[i]  == chart_data_max ){
+            //         maxIndex = i + 1;
+            //         console.log(maxIndex);
+            //     }
+            //     if( data[i]  == chart_data_min ){
+            //         minIndex = i + 1;
+            //         console.log(minIndex);
+            //     }
+            // }
+            data.unshift(chart_data_name);   
+        }
+
+
+
+        function catchChart_3_data(data){
+            // chart_3_data_1 = data.copy.unshift("台股值");
+            // chart_3_data_2 = data.copy.unshift("持倉率");
+            chart_3_data_1 = data.slice(0);
+            chart_3_data_2 = data.slice(0);
+            chart_3_data_1.unshift("台股值");
+            chart_3_data_2.unshift("持倉率");
+            
+        }
+
+        function catchChartDataThreeMinMaxNum(data){
+            chart_data_3_name = data.splice(0,1);
+            chart_data_3_max = Math.max.apply(null, data),
+            chart_data_3_min = Math.min.apply(null, data);
+            console.log(chart_data_3_name,chart_data_3_min);
+            // console.log(chart_data_name);
+            // for( var i = 0; i < data.length; i++){
+            //     if( data[i]  == chart_data_max ){
+            //         maxIndex = i + 1;
+            //         console.log(maxIndex);
+            //     }
+            //     if( data[i]  == chart_data_min ){
+            //         minIndex = i + 1;
+            //         console.log(minIndex);
+            //     }
+            // }
+            data.unshift(chart_data_3_name);   
+        }
+
+            
+        var chart_data_max,
+            chart_data_min,
+            chart_data_3_max,
+            chart_data_3_min,
+            chart_3_data_1,
+            chart_3_data_2;
+
+        
+        var chart_1_data = ['市佔率（扣外資）', 0.9, 0.6, 1, 0.4, 1.3, 1, 1.1, 0.3, 1, 0.8, 1.2, 1.5];
+        var chart_1_year_num = { thisYear:0.915, lastYear:0.48 };
+        // console.log(chart_1_year_num);
+        catchChartDataMinMaxNum(chart_1_data);
+        var chart_1 = c3.generate({
+                bindto: '#chart-1',
+                data: {
+                    columns: [
+                        chart_1_data
+                    ],
+                    type: "line",
+                    labels: {
+                       format:   function (v, id, i, j) { 
+                                if( v === chart_data_max ){
+                                    
+                                    return chart_data_max;
+                                }else if( v === chart_data_min ){
+                                    return chart_data_min;
+                                }
+                            }
+                    }
+                },
+                
+                size :{
+                    height : 250
+                },
+                axis: {
+                    x: {
+                        type: 'category',
+                        categories: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月',]
+                    }
+                },
+                grid: {
+                    y: {
+                        show: true,
+                        // lines: [
+                        //     {value: chart_data_max, class: 'grid-bc2324', text: '最大 ' + chart_data_max },
+                        //     {value: chart_data_min, class: 'grid-018001', text: '最小 ' + chart_data_min },
+                        // ]
+                        lines: [
+                            {value: chart_1_year_num.thisYear, class: 'grid-018001', text: '今年 ' + chart_1_year_num.thisYear },
+                            {value: chart_1_year_num.lastYear, class: 'grid-bc2324', text: '去年 ' + chart_1_year_num.lastYear }
+                        ]
+                    }
+                }
+
+                
+            });
+
+        var chart_2_data = ['已實現損益', 90, 50, -100, -20, 150, 130, 80, -40, 50, -140, 10, 130 ];
+        var chart_2_year_num = { thisYear:11, lastYear:-222 };
+        var chart_2 = c3.generate({
+                bindto: '#chart-2',
+                data: {
+                    columns: [
+                        chart_2_data
+                    ],
+                    type: 'bar',
+                    colors: {
+                        已實現損益: function(d){
+                            return d.value < 0 ? '#1cc09f' : '#ed5565'
+                        }
+                    }
+                },
+                size :{
+                    height : 250
+                },
+                axis: {
+                    x: {
+                        type: 'category',
+                        categories: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+                    },
+                    y: {
+                        max: 150,
+                        min: -200,
+                    }
+                },
+                grid: {
+                    y: {
+                        show: true,
+                        lines: [
+                            {value: chart_2_year_num.thisYear, class: 'grid-018001', text: '今年 ' + chart_2_year_num.thisYear + "萬" },
+                            {value: chart_2_year_num.lastYear, class: 'grid-bc2324', text: '去年 ' + chart_2_year_num.lastYear + "萬" }
+                        ]
+                    }
+                },
+                
+            });
+
+        var chart_3_data = [900, 500, 1000, 200, 1500, 1300, 800, 400, 500, 1400, 1990, 1300 ];
+        catchChart_3_data(chart_3_data);
+        catchChartDataThreeMinMaxNum(chart_3_data);
+        
+        var chart_3 = c3.generate({
+                bindto: '#chart-3',
+                data: {
+                    columns: [
+                        chart_3_data_1,
+                        chart_3_data_2
+                    ],
+                    types: { 台股值: "bar", 持倉率: "line"},
+                    colors: {
+                        台股值: '#f8ac59',
+                        持倉率: '#1f77b4'
+                    },
+                    labels: {
+                       format:{  
+                            持倉率 :function (v, id, i, j) { 
+                                if( v === chart_data_3_max ){
+                                    
+                                    return v;
+                                }else if( v === chart_data_3_min ){
+                                    return v;
+                                }
+                            }
+                        }
+                        
+
+                    }
+                },
+                
+                size :{
+                    height : 250
+                },
+                axis: {
+                    x: {
+                        type: 'category',
+                        categories: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+                    },
+                },
+                grid: {
+                    y: {
+                        show: true,
+                        // lines: [
+                        //     {value: chart_data_max, class: 'grid-bc2324', text: '最大 ' + chart_data_max },
+                        //     {value: chart_data_min, class: 'grid-018001', text: '最小 ' + chart_data_min }
+                        // ]
+                    }
+                }
+            });
+
+        var chart_4_year_num = { thisYear:109, lastYear:-108 };
+        var chart_4 = c3.generate({
+                bindto: '#chart-4',
+                data: {
+                    columns: [
+                        ['買賣超金額', 90, 50, -100, -20, 150, 130, 80, -40, 50, -140, 10, 130 ]
+                    ],
+                    type: 'bar',
+                    colors: {
+                        買賣超金額: function(d){
+                            return d.value < 0 ? '#1cc09f' : '#ed5565'
+                        }
+                        // 買賣超金額: '#f8ac59'
+                    }
+                },
+                
+                size :{
+                    height : 250
+                },
+                axis: {
+                    x: {
+                        type: 'category',
+                        categories: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+                    },
+                    y: {
+                        max: 150,
+                        min: -200,
+                    }
+                },
+                grid: {
+                    y: {
+                        show: true,
+                        lines: [
+                            {value: chart_4_year_num.thisYear, class: 'grid-018001', text: '今年 ' + chart_4_year_num.thisYear + "萬" },
+                            {value: chart_4_year_num.lastYear, class: 'grid-bc2324', text: '去年 ' + chart_4_year_num.lastYear + "萬" }
+                        ]
+                    }
+                },
+                legend: {
+                    
+                }
+            });
+
+        $(".pie-chart-back").click(function(){
+            chart_5.load({
+                columns: [
+                    ['台股', 1000],
+                    ['期貨', 3000],
+                    ['複委託', 500],
+                    ['金錢信託', 1800],
+                    ['借卷信託', 1200],
+                    ['保險', 2500]
+                ]
+            });
+            $(".pie-chart-back").addClass("btn-disable");
+
+            return false;
+        });
+        var chart_5 = c3.generate({
+                bindto: '#chart-5',
+                data: {
+                    columns: [
+                        ['台股', 1000],
+                        ['期貨', 3000],
+                        ['複委託', 500],
+                        ['金錢信託', 1800],
+                        ['借卷信託', 1200],
+                        ['保險', 2500]
+                    ],
+                    type: 'pie',
+                    onclick: function (d, element) { 
+                        if( $(".pie-chart-back").hasClass("btn-disable")){
+                            if(d.index == 1){
+                                chart_5.load({
+                                    columns: [
+                                        ['台股', 0],
+                                        ['期貨', 3000],
+                                        ['複委託', 500],
+                                        ['金錢信託', 0],
+                                        ['借卷信託', 1200],
+                                        ['保險', 0]
+                                    ]
+                                });
+                            }else if(d.index == 2){
+                                chart_5.load({
+                                    columns: [
+                                        ['台股', 1000],
+                                        ['期貨', 0],
+                                        ['複委託', 500],
+                                        ['金錢信託', 0],
+                                        ['借卷信託', 1200],
+                                        ['保險', 2500]
+                                    ]
+                                });
+                            }else if(d.index == 3){
+                                chart_5.load({
+                                    columns: [
+                                        ['台股', 1000],
+                                        ['期貨', 3000],
+                                        ['複委託', 0],
+                                        ['金錢信託', 1800],
+                                        ['借卷信託', 0],
+                                        ['保險', 2500]
+                                    ]
+                                });
+                            }else if(d.index == 4){
+                                chart_5.load({
+                                    columns: [
+                                        ['台股', 0],
+                                        ['期貨', 0],
+                                        ['複委託', 500],
+                                        ['金錢信託', 1800],
+                                        ['借卷信託', 1200],
+                                        ['保險', 2500]
+                                    ]
+                                });
+                            }else if(d.index == 5){
+                                chart_5.load({
+                                    columns: [
+                                        ['台股', 0],
+                                        ['期貨', 3000],
+                                        ['複委託', 500],
+                                        ['金錢信託', 1800],
+                                        ['借卷信託', 0],
+                                        ['保險', 2500]
+                                    ]
+                                });
+                            }else if(d.index == 0){
+                                chart_5.load({
+                                    columns: [
+                                        ['台股', 1000],
+                                        ['期貨', 0],
+                                        ['複委託', 500],
+                                        ['金錢信託', 0],
+                                        ['借卷信託', 1200],
+                                        ['保險', 0]
+                                    ]
+                                });
+                            } 
+                        	$(".pie-chart-back").removeClass("btn-disable");  
+                        }else{
+                        	chart_5.load({
+				                columns: [
+				                    ['台股', 1000],
+				                    ['期貨', 3000],
+				                    ['複委託', 500],
+				                    ['金錢信託', 1800],
+				                    ['借卷信託', 1200],
+				                    ['保險', 2500]
+				                ]
+				            });
+				            $(".pie-chart-back").addClass("btn-disable");
+                        }
+                        
+                        console.log(d.index);
+                        
+                    }
+                },
+                
+                size :{
+                    height : 250
+                },
+                pie: {
+                    label: {
+                        format: function (value, ratio, id) {
+                            return value + " 萬";
+                        }
+                    }
+                }
+            });
+
+        var chart_6_data = ['data1', -100, 80, -40, 50, 130 ];
+        var chart_6 = c3.generate({
+                bindto: '#chart-6',
+                data: {
+                    x : "x",
+                    columns: [
+                        ["x",1,2,3,4,5],
+                        chart_6_data
+                    ],
+                    type: 'bar',
+                    colors: {
+                        data1: function(d){
+                            return d.value < 0 ? '#1cc09f' : '#ed5565'
+                        }
+                        // data1: '#23c6c8'
+                    },
+                    labels: {
+
+                       format: {
+                           data1: function (v, id, i, j) { 
+                            for(var k = 0; k <= chart_6_data.length; k++ ){
+                                // console.log(chart_6_data.length,i);
+                                if(i==0){
+                                    return "台股 " + v;
+                                }else if(i==1){
+                                    return "期貨 " + v;
+                                }else if(i==2){
+                                    return "複委託 " + v;
+                                }else if(i==3){
+                                    return "金錢信託 " + v;
+                                }else if(i==4){
+                                    return "借貸信託 " + v;
+                                }else{
+
+                                }
+                            }
+                        },
+                       }
+                    }
+                },
+                
+                size :{
+                    height : 250
+                },
+                axis: {
+                    x: {
+                        tick: {
+                            culling: false,
+                            format: function (d) { return d + "月"; }
+                        }
+                    },
+                    y: {
+                        max: 150,
+                        min: -200,
+                    }
+                },
+                grid: {
+                    y: {
+                        show: true
+                    }
+                },
+                legend: {
+                    hide: true
+                }
+            });
+
+            //  
+            $('#chart-1-btn').click(function (e) {
+                $("#clientChartModal-1").modal("show");
+
+                return false;
+            })
+            $('#clientChartModal-1').on('shown.bs.modal', function (e) {
+                
+                // chart_1_data = ['市佔率（扣外資）', 0.9, 0.6, 1, 0.4, 1.3, 1, 1.1, 0.3, 1, 0.8, 1.2, 1.5];
+                catchChartDataMinMaxNum(chart_1_data);
+                chart_7 = c3.generate({
+                        bindto: '#chart-modal-1',
+                        data: {
+                            columns: [
+                                chart_1_data
+                            ],
+                            type: "line",
+                            labels: {
+                               format:   function (v, id, i, j) { 
+                                        if( v == chart_data_max ){
+                                            
+                                            return v;
+                                        }else if( v == chart_data_min ){
+                                            return v;
+                                        }
+                                    }
+                                
+                            }
+                        },
+                        
+                        size :{
+                            height : 320
+                        },
+                        axis: {
+                            x: {
+                                type: 'category',
+                                categories: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月',]
+                            }
+                        },
+                        grid: {
+                            // x: {
+                            //     lines: [
+                            //         {value: maxIndex, class: 'grid-bc2324', text: '最大 ' + chart_data_max },
+                            //         {value: minIndex, class: 'grid-018001', text: '最小 ' + chart_data_min },
+                            //     ]
+                            // },
+                            y: {
+                                show: true,
+                                lines: [
+                                    {value: chart_1_year_num.thisYear, class: 'grid-018001', text: '今年 ' + chart_1_year_num.thisYear },
+                                    {value: chart_1_year_num.lastYear, class: 'grid-bc2324', text: '去年 ' + chart_1_year_num.lastYear }
+                                ]
+                            }
+                        },
+                        zoom: {
+                            enabled: true
+                        }
+                    });
+            })
+
+            $('#chart-2-btn').click(function (e) {
+                $("#clientChartModal-2").modal("show");
+
+                return false;
+            })
+            $('#clientChartModal-2').on('shown.bs.modal', function (e) {
+                console.log(e);
+                chart_7 = c3.generate({
+                        bindto: '#chart-modal-2',
+                        data: {
+                            columns: [
+                                chart_2_data
+                            ],
+                            type: 'bar',
+                            colors: {
+                                已實現損益: function(d){
+                                    return d.value < 0 ? '#1cc09f' : '#ed5565'
+                                }
+                            }
+                        },
+                        
+                        size :{
+                            height : 320
+                        },
+                        axis: {
+                            x: {
+                                type: 'category',
+                                categories: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月',]
+                            },
+                            y: {
+                                max: 150,
+                                min: -200,
+                            }
+                        },
+                        grid: {
+                            y: {
+                                show: true,
+                                lines: [
+                                    {value: chart_2_year_num.thisYear, class: 'grid-018001', text: '今年 ' + chart_2_year_num.thisYear },
+                                    {value: chart_2_year_num.lastYear, class: 'grid-bc2324', text: '去年 ' + chart_2_year_num.lastYear }
+                                ]
+                            }
+                        },
+                        zoom: {
+                            enabled: true
+                        }
+                        
+                    });
+            })
+
+            $('#chart-3-btn').click(function (e) {
+                $("#clientChartModal-3").modal("show");
+
+                return false;
+            })
+            $('#clientChartModal-3').on('shown.bs.modal', function (e) {
+                // console.log(e);
+                // chart_3_data = [ 90, 50, 100, 20, 150, 130, 80, 40, 50, 140, 10, 130 ];
+                catchChart_3_data(chart_3_data);
+                catchChartDataThreeMinMaxNum(chart_3_data);    
+                chart_7 = c3.generate({
+                        bindto: '#chart-modal-3',
+                        data: {
+                            columns: [
+                                chart_3_data_1,
+                                chart_3_data_2
+                            ],
+                            types: { 台股值: "bar", 持倉率: "line"},
+                            colors: {
+                                台股值: '#f8ac59',
+                                持倉率: '#1f77b4'
+                            },
+                            labels: {
+                               format:{  
+                                    持倉率 :function (v, id, i, j) { 
+                                        if( v === chart_data_3_max ){
+                                            
+                                            return v;
+                                        }else if( v === chart_data_3_min ){
+                                            return v;
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        
+                        size :{
+                            height : 320
+                        },
+                        axis: {
+                            x: {
+                                type: 'category',
+                                categories: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月',]
+                            }
+                        },
+                        grid: {
+                            y: {
+                                show: true,
+                                // lines: [
+                                //     {value: chart_data_max, class: 'grid-bc2324', text: '最大 ' + chart_data_max },
+                                //     {value: chart_data_min, class: 'grid-018001', text: '最小 ' + chart_data_min },
+                                // ]
+                            }
+                        },
+                        zoom: {
+                            enabled: true
+                        }
+                    });
+            })
+
+            $('#chart-4-btn').click(function (e) {
+                $("#clientChartModal-4").modal("show");
+
+                return false;
+            })
+            $('#clientChartModal-4').on('shown.bs.modal', function (e) {
+                console.log(e);
+                chart_7 = c3.generate({
+                        bindto: '#chart-modal-4',
+                        data: {
+                            columns: [
+                                ['買賣超金額', 90, 50, -100, -20, 150, 130, 80, -40, 50, -140, 10, 130 ]
+                            ],
+                            type: 'bar',
+                            colors: {
+                                買賣超金額: function(d){
+                                    return d.value < 0 ? '#1cc09f' : '#ed5565'
+                                }
+                            }
+                        },
+                        
+                        size :{
+                            height : 320
+                        },
+                        axis: {
+                            x: {
+                                type: 'category',
+                                categories: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月',]
+                            },
+                            y: {
+                                max: 150,
+                                min: -200,
+                            }
+                        },
+                        grid: {
+                            y: {
+                                show: true,
+                                lines: [
+                                    {value: chart_4_year_num.thisYear, class: 'grid-018001', text: '今年 ' + chart_4_year_num.thisYear },
+                                    {value: chart_4_year_num.lastYear, class: 'grid-bc2324', text: '去年 ' + chart_4_year_num.lastYear }
+                                ]
+                            }
+                        },
+                        zoom: {
+                            enabled: true
+                        }
+                    });
+            })
+
+            $('#chart-6-btn').click(function (e) {
+                $("#clientChartModal-6").modal("show");
+            })
+            $('#clientChartModal-6').on('shown.bs.modal', function (e) {
+                console.log(e);
+                chart_7 = c3.generate({
+                        bindto: '#chart-modal-6',
+                        data: {
+                            x : "x",
+                            columns: [
+                                ["x",1,2,3,4,5],
+                                ['data1', -100, 80, -40, 50, 130 ]
+                            ],
+                            type: 'bar',
+                            colors: {
+                                data1: function(d){
+                                    return d.value < 0 ? '#1cc09f' : '#ed5565'
+                                }
+                                // data1: '#23c6c8'
+                            },
+                            labels: {
+
+                               format: {
+                                   data1: function (v, id, i, j) { 
+                                    for(var k = 0; k <= chart_6_data.length; k++ ){
+                                        console.log(chart_6_data.length,i);
+                                        if(i==0){
+                                            return "台股 " + v;
+                                        }else if(i==1){
+                                            return "期貨 " + v;
+                                        }else if(i==2){
+                                            return "複委託 " + v;
+                                        }else if(i==3){
+                                            return "金錢信託 " + v;
+                                        }else if(i==4){
+                                            return "借貸信託 " + v;
+                                        }else{
+
+                                        }
+                                    }
+                                },
+                               }
+                            }
+                        },
+                        
+                        size :{
+                            height : 320
+                        },
+                        axis: {
+                            x: {
+                                tick: {
+                                    culling: false,
+                                    format: function (d) { return d + "月"; }
+                                }
+                            },
+                            y: {
+                                max: 150,
+                                min: -200,
+                            }
+                        },
+                        grid: {
+                            y: {
+                                show: true
+                            }
+                        },
+                        legend: {
+                            hide: true
+                        },
+                        zoom: {
+                            enabled: true
+                        }
+                    });
+            })
+
+            $("#clickTabBtnActive li").click(function(){
+                var $this = $(this),
+                    _thisIndex = $this.index();
+                if(_thisIndex == 1){
+                    $("#chart-1-wrap").removeClass("hidden");
+                    $("#chart-2-wrap").removeClass("hidden");
+                    $("#chart-3-wrap").removeClass("hidden");
+                    $("#chart-4-wrap").removeClass("hidden");
+
+                    chart_1_data = ['市佔率（扣外資）', 0.9, 0.6, 1, 0.4, 1.3, 1, 1.1, 0.3, 1, 0.8, 1.2, 1.5];
+                    chart_1_year_num = { thisYear:0.915, lastYear:0.48 };
+                    catchChartDataMinMaxNum(chart_1_data);
+
+                    chart_1.load({
+                        columns: [
+                            chart_1_data
+                        ]
+                    })
+                    chart_1.ygrids([
+                            {value: chart_1_year_num.thisYear, class: 'grid-018001', text: '今年 ' + chart_1_year_num.thisYear },
+                            {value: chart_1_year_num.lastYear, class: 'grid-bc2324', text: '去年 ' + chart_1_year_num.lastYear }
+                    ])
+
+                    chart_2_data = ['已實現損益', 90, 50, -100, -20, 150, 130, 80, -40, 50, -140, 10, 130 ];
+                    chart_2.load({
+                        columns: [
+                            chart_2_data
+                        ]
+                    })
+
+                    chart_3_data = [900, 500, 1000, 200, 1500, 1300, 800, 400, 500, 1400, 1990, 1300 ];
+                    catchChart_3_data(chart_3_data);
+                    catchChartDataThreeMinMaxNum(chart_3_data);
+                    chart_3.load({
+                        columns: [
+                            chart_3_data_1,
+                            chart_3_data_2
+                        ]
+                    })
+                    // chart_3.ygrids([
+                    //         {value: chart_data_max, class: 'grid-bc2324', text: '最大 ' + chart_data_max },
+                    //         {value: chart_data_min, class: 'grid-018001', text: '最小 ' + chart_data_min }
+                    // ]);
+
+                }else if(_thisIndex == 3){
+                    $("#chart-1-wrap").removeClass("hidden");
+                    $("#chart-2-wrap").removeClass("hidden");
+                    $("#chart-3-wrap").removeClass("hidden");
+                    $("#chart-4-wrap").addClass("hidden");
+
+                    chart_1_data = ['市佔率（扣外資）', 0.3, 0.6, 1, 1, 1.3, 1, 1.2, 0.3, 1, 0.8, 1.2, 1.8];
+                    chart_1_year_num = { thisYear:0.78, lastYear:0.46 };
+                    catchChartDataMinMaxNum(chart_1_data);
+
+                    chart_1.load({
+                        columns: [
+                            chart_1_data
+                        ]
+                    })
+                    chart_1.ygrids([
+                            {value: chart_1_year_num.thisYear, class: 'grid-018001', text: '今年 ' + chart_1_year_num.thisYear },
+                            {value: chart_1_year_num.lastYear, class: 'grid-bc2324', text: '去年 ' + chart_1_year_num.lastYear }
+                    ])
+
+                    chart_2_data = ['已實現損益', 40, 50, -120, -50, 50, 110, 100, -80, 90, -100, 10, 150 ]
+                    chart_2.load({
+                        columns: [
+                            chart_2_data
+                        ]
+                    })
+
+                    chart_3_data = [ 900, 500, 1000, 200, 1500, 1030, 800, 400, 500, 1400, 1000, 1300 ];
+                    catchChart_3_data(chart_3_data);
+                    catchChartDataThreeMinMaxNum(chart_3_data);
+                    chart_3.load({
+                        columns: [
+                            chart_3_data_1,
+                            chart_3_data_2
+                        ]
+                    })
+                    // chart_3.ygrids([
+                    //         {value: chart_data_max, class: 'grid-bc2324', text: '最大 ' + chart_data_max },
+                    //         {value: chart_data_min, class: 'grid-018001', text: '最小 ' + chart_data_min }
+                    // ]);
+                }else if(_thisIndex == 4){
+                    $("#chart-1-wrap").addClass("hidden");
+                    $("#chart-2-wrap").removeClass("hidden");
+                    $("#chart-3-wrap").removeClass("hidden");
+                    $("#chart-4-wrap").addClass("hidden");
+
+                    chart_2_data = ['已實現損益', 140, -50, -120, -150, 110, 40, 100, -100, 50, -110, 40, -180 ]
+                    chart_2.load({
+                        columns: [
+                            chart_2_data
+                        ]
+                    })
+
+                    chart_3_data = [ 90, 50, 100, 20, 0, 130, 80, 40, 50, 140, 0, 130 ];
+                    catchChart_3_data(chart_3_data);
+                    catchChartDataThreeMinMaxNum(chart_3_data);
+                    chart_3.load({
+                        columns: [
+                            chart_3_data_1,
+                            chart_3_data_2
+                        ]
+                    })
+                    // chart_3.ygrids([
+                    //         {value: chart_data_max, class: 'grid-bc2324', text: '最大 ' + chart_data_max },
+                    //         {value: chart_data_min, class: 'grid-018001', text: '最小 ' + chart_data_min }
+                    // ]);
+                }else if(_thisIndex == 5){
+                    $("#chart-1-wrap").removeClass("hidden");
+                    $("#chart-2-wrap").removeClass("hidden");
+                    $("#chart-3-wrap").removeClass("hidden");
+                    $("#chart-4-wrap").addClass("hidden");
+
+                    chart_1_data = ['市佔率（扣外資）', 1.3, 0.4, 0.4, 0.9, 0.9, 0.2, 1.1, 0.3, 1, 1.1, 0.8, 1.3];
+                    chart_1_year_num = { thisYear:0.81, lastYear:0.53 };
+                    catchChartDataMinMaxNum(chart_1_data);
+
+                    chart_1.load({
+                        columns: [
+                            chart_1_data
+                        ],
+                        labels: true
+                    })
+                    chart_1.ygrids([
+                            {value: chart_1_year_num.thisYear, class: 'grid-018001', text: '今年 ' + chart_1_year_num.thisYear },
+                            {value: chart_1_year_num.lastYear, class: 'grid-bc2324', text: '去年 ' + chart_1_year_num.lastYear }
+                    ]);
+                    
+                    chart_2_data = ['已實現損益', 140, -50, -120, -150, 110, 40, 100, -100, 50, -110, 40, -180 ]
+                    chart_2.load({
+                        columns: [
+                            chart_2_data
+                        ]
+                    })
+
+                    chart_3_data = [ 300, 900, 1000, 2000, 1000, 1300, 800, 400, 500, 1100, 100, 600 ];
+                    catchChart_3_data(chart_3_data);
+                    catchChartDataThreeMinMaxNum(chart_3_data);
+                    chart_3.load({
+                        columns: [
+                            chart_3_data_1,
+                            chart_3_data_2
+                        ]
+                    })
+                    // chart_3.ygrids([
+                    //         {value: chart_data_max, class: 'grid-bc2324', text: '最大 ' + chart_data_max },
+                    //         {value: chart_data_min, class: 'grid-018001', text: '最小 ' + chart_data_min }
+                    // ]);
+
+
+                }
+            });
+
+        $(window).resize(function(){
+            
+        });
+    </script>
+
+</body>
+
+</html>
